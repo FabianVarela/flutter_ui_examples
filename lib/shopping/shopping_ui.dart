@@ -1,0 +1,120 @@
+import 'package:flutter/material.dart';
+import 'product_card.dart';
+import 'custom_icon.dart';
+
+class ShoppingUI extends StatefulWidget {
+  @override
+  _ShoppingUIState createState() => _ShoppingUIState();
+}
+
+class _ShoppingUIState extends State<ShoppingUI> {
+  int _currentIndex = 0;
+
+  List<Widget> bottomNavIconList = [
+    Image.asset(
+      "assets/store.png",
+      width: 35,
+      height: 35,
+    ),
+    Icon(
+      CustomIcon.search,
+      size: 32,
+    ),
+    Icon(
+      CustomIcon.favorite,
+      size: 32,
+    ),
+    Icon(
+      CustomIcon.cart,
+      size: 32,
+    ),
+    Image.asset(
+      "assets/profile.png",
+      width: 35,
+      height: 35,
+    ),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+          child: Column(
+            children: <Widget>[
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 30, bottom: 25),
+                  child: Image.asset(
+                    "assets/logo.png",
+                    width: 62,
+                    height: 43,
+                  ),
+                ),
+              ),
+              ProductCard(
+                0xFFfaecfb,
+                "assets/shoes_01.png",
+                "Hybrid Rocket WNS",
+                "\$ 999.0",
+                "\$ 749.0",
+              ),
+              SizedBox(
+                height: 32,
+              ),
+              ProductCard(
+                0xFFf8e1da,
+                "assets/shoes_02.png",
+                "Hybrid Runner ARS",
+                "\$ 699.0",
+                "\$ 599.0",
+              ),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 70,
+        decoration: BoxDecoration(color: Colors.white, boxShadow: [
+          BoxShadow(
+            color: Colors.black12.withOpacity(0.065),
+            offset: Offset(0.0, -3.0),
+            blurRadius: 10,
+          ),
+        ]),
+        child: Row(
+          children: bottomNavIconList.map((item) {
+            var index = bottomNavIconList.indexOf(item);
+            return Expanded(
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+                child: bottomNavItem(item, index == _currentIndex),
+              ),
+            );
+          }).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+bottomNavItem(Widget item, bool isSelected) => Container(
+      decoration: BoxDecoration(
+          boxShadow: isSelected
+              ? [
+                  BoxShadow(
+                    color: Colors.black12.withOpacity(.2),
+                    offset: Offset(0.0, 5.0),
+                    blurRadius: 10,
+                  ),
+                ]
+              : []),
+      child: item,
+    );
