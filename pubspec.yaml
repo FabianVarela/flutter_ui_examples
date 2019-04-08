@@ -28,6 +28,10 @@ flutter:
     - assets/profile.png
     - assets/shoes_01.png
     - assets/shoes_02.png
+    - assets/image_01.png
+    - assets/image_02.jpg
+    - assets/image_03.jpg
+    - assets/image_04.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -47,3 +51,7 @@ flutter:
     - family: VarelaRound
       fonts:
         - asset: assets/VarelaRound.ttf
+
+    - family: CustomIcons
+      fonts:
+        - asset: assets/CustomIcons.ttf
