@@ -12,7 +12,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
 
   List<Widget> bottomNavIconList = [
     Image.asset(
-      "assets/store.png",
+      "assets/images/store.png",
       width: 35,
       height: 35,
     ),
@@ -29,7 +29,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
       size: 32,
     ),
     Image.asset(
-      "assets/profile.png",
+      "assets/images/profile.png",
       width: 35,
       height: 35,
     ),
@@ -49,7 +49,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
                 child: Padding(
                   padding: EdgeInsets.only(top: 30, bottom: 25),
                   child: Image.asset(
-                    "assets/logo.png",
+                    "assets/images/logo.png",
                     width: 62,
                     height: 43,
                   ),
@@ -57,7 +57,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
               ),
               ProductCard(
                 0xFFfaecfb,
-                "assets/shoes_01.png",
+                "assets/images/shoes_01.png",
                 "Hybrid Rocket WNS",
                 "\$ 999.0",
                 "\$ 749.0",
@@ -67,7 +67,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
               ),
               ProductCard(
                 0xFFf8e1da,
-                "assets/shoes_02.png",
+                "assets/images/shoes_02.png",
                 "Hybrid Runner ARS",
                 "\$ 699.0",
                 "\$ 599.0",

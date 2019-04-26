@@ -1,8 +1,8 @@
 List<String> images = [
-  "assets/image_01.png",
-  "assets/image_02.jpg",
-  "assets/image_03.jpg",
-  "assets/image_04.jpg",
+  "assets/images/image_01.png",
+  "assets/images/image_02.jpg",
+  "assets/images/image_03.jpg",
+  "assets/images/image_04.jpg",
 ];
 
 List<String> titles = [

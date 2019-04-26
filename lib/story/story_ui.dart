@@ -191,7 +191,7 @@ class _StoryUIState extends State<StoryUI> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: Image.asset(
-                        "assets/image_02.jpg",
+                        "assets/images/image_02.jpg",
                         width: 296,
                         height: 222,
                       ),
