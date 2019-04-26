@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.2
+  fluttery_seekbar: ^0.0.1
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +33,7 @@ flutter:
     - assets/images/image_02.jpg
     - assets/images/image_03.jpg
     - assets/images/image_04.jpg
+    - assets/images/bonJovi.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -55,3 +57,11 @@ flutter:
     - family: CustomIcons
       fonts:
         - asset: assets/fonts/CustomIcons.ttf
+
+    - family: Muli
+      fonts:
+        - asset: assets/fonts/Muli.ttf
+
+    - family: MuliLight
+      fonts:
+        - asset: assets/fonts/MuliLight.ttf
