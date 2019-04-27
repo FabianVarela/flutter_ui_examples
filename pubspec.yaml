@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   fluttery_seekbar: ^0.0.1
+  gradient_text: ^1.0.2
 
 dev_dependencies:
   flutter_test:
@@ -42,6 +43,9 @@ flutter:
     - assets/images/avengers.jpeg
     - assets/images/batman.jpg
     - assets/images/onePunchMan.png
+    - assets/images/illustration.png
+    - assets/images/illustration2.png
+    - assets/images/illustration3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -73,3 +77,11 @@ flutter:
     - family: MuliLight
       fonts:
         - asset: assets/fonts/MuliLight.ttf
+
+    - family: MontserratBlack
+      fonts:
+        - asset: assets/fonts/MontserratBlack.ttf
+
+    - family: MontserratMedium
+      fonts:
+        - asset: assets/fonts/MontserratMedium.ttf

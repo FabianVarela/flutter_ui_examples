@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/music/music_ui.dart';
+import 'package:flutter_ui_examples/on_boarding/on_boarding_ui.dart';
 import 'package:flutter_ui_examples/shopping/shopping_ui.dart';
 import 'package:flutter_ui_examples/story/story_ui.dart';
 import 'package:flutter_ui_examples/streaming/streaming_ui.dart';
@@ -13,7 +14,8 @@ class MyApp extends StatelessWidget {
       //home: ShoppingUI(),
       //home: StoryUI(),
       //home: MusicUI(),
-      home: StreamingUI(),
+      //home: StreamingUI(),
+      home: OnBoardingUI(),
     );
   }
 }
