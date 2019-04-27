@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/music/my_clipper.dart';
 import 'package:fluttery_seekbar/fluttery_seekbar.dart';
 
 class MusicUI extends StatefulWidget {
@@ -32,40 +31,68 @@ class _MusicUIState extends State<MusicUI> {
     );
   }
 
+  Widget _customSongText(
+      String text, Color color, double size, bool isOpacity) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: isOpacity ? color.withOpacity(.5) : color,
+        fontSize: size,
+        fontFamily: "Muli",
+      ),
+    );
+  }
+
+  Widget _customItemText(String text, Color color) =>
+      Text(text, style: TextStyle(color: color));
+
+  Widget _customHeightSizedBox(double height) => SizedBox(height: height);
+
+  Widget _customWidthSizedBox(double width) => SizedBox(width: width);
+
   Widget _song(String image, String title, String subtitle) {
     return Padding(
       padding: EdgeInsets.all(8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Image.asset(
-            image,
-            width: 40,
-            height: 40,
-          ),
-          SizedBox(
-            height: 8,
-          ),
+          Image.asset(image, width: 40, height: 40),
+          _customWidthSizedBox(8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                title,
-                style: TextStyle(
-                  color: _color,
-                ),
-              ),
-              Text(
-                subtitle,
-                style: TextStyle(
-                  color: _color,
-                ),
-              ),
+              _customItemText(title, _color),
+              _customItemText(subtitle, _color),
             ],
           ),
         ],
       ),
     );
+  }
+
+  Widget _customPositioned(bool isLeft) {
+    var borderRadius = isLeft
+        ? BorderRadius.only(
+            topRight: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          )
+        : BorderRadius.only(
+            topLeft: Radius.circular(30),
+            bottomLeft: Radius.circular(30),
+          );
+
+    var container = Container(
+      width: 50,
+      height: 190,
+      decoration: BoxDecoration(
+        color: _color,
+        borderRadius: borderRadius,
+      ),
+    );
+
+    return isLeft
+        ? Positioned(left: -25, child: container)
+        : Positioned(right: -25, child: container);
   }
 
   @override
@@ -81,10 +108,7 @@ class _MusicUIState extends State<MusicUI> {
         ),
         title: Text(
           "Music player",
-          style: TextStyle(
-            color: _color,
-            fontFamily: "Muli",
-          ),
+          style: TextStyle(color: _color, fontFamily: "Muli"),
         ),
         centerTitle: true,
         actions: <Widget>[
@@ -97,9 +121,7 @@ class _MusicUIState extends State<MusicUI> {
       ),
       body: Column(
         children: <Widget>[
-          SizedBox(
-            height: 30,
-          ),
+          _customHeightSizedBox(30),
           Center(
             child: Container(
               height: 250,
@@ -136,35 +158,15 @@ class _MusicUIState extends State<MusicUI> {
               ),
             ),
           ),
-          SizedBox(
-            height: 25,
-          ),
+          _customHeightSizedBox(25),
           Column(
             children: <Widget>[
-              Text(
-                "Bon Jovi",
-                style: TextStyle(
-                  color: _color,
-                  fontSize: 20,
-                  fontFamily: "Muli",
-                ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                "Livin' On A Prayer",
-                style: TextStyle(
-                  color: _color.withOpacity(.5),
-                  fontSize: 18,
-                  fontFamily: "MuliLight",
-                ),
-              )
+              _customSongText("Bon Jovi", _color, 20, false),
+              _customHeightSizedBox(8),
+              _customSongText("Livin' On A Prayer", _color, 18, true)
             ],
           ),
-          SizedBox(
-            height: 10,
-          ),
+          _customHeightSizedBox(10),
           Container(
             width: 350,
             height: 150,
@@ -175,10 +177,7 @@ class _MusicUIState extends State<MusicUI> {
                     height: 65,
                     width: 290,
                     decoration: BoxDecoration(
-                      border: Border.all(
-                        color: _color,
-                        width: 3,
-                      ),
+                      border: Border.all(color: _color, width: 3),
                       borderRadius: BorderRadius.circular(40),
                     ),
                     child: Padding(
@@ -190,9 +189,7 @@ class _MusicUIState extends State<MusicUI> {
                             size: 55,
                             color: _color,
                           ),
-                          Expanded(
-                            child: Container(),
-                          ),
+                          Expanded(child: Container()),
                           Icon(
                             Icons.fast_forward,
                             size: 55,
@@ -225,50 +222,26 @@ class _MusicUIState extends State<MusicUI> {
               ],
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
+          _customHeightSizedBox(10),
           SingleChildScrollView(
             child: Container(
               height: 190,
               width: double.infinity,
               child: Stack(
                 children: <Widget>[
-                  Positioned(
-                    left: -25,
-                    child: Container(
-                      width: 50,
-                      height: 190,
-                      decoration: BoxDecoration(
-                        color: _color,
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(30),
-                          bottomRight: Radius.circular(30),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    right: -25,
-                    child: Container(
-                      width: 50,
-                      height: 190,
-                      decoration: BoxDecoration(
-                        color: _color,
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          bottomLeft: Radius.circular(30),
-                        ),
-                      ),
-                    ),
-                  ),
+                  _customPositioned(true),
+                  _customPositioned(false),
                   Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        _song("", "", ""),
-                        _song("", "", ""),
+                        _song(
+                            "assets/images/metallica.jpg", "The unforgiven", "Metallica"),
+                        _song("assets/images/gunsNroses.jpeg", "Stranged",
+                            "Guns n roses"),
+                        _song("assets/images/fooFighters.jpg", "Walk",
+                            "Foo fighters"),
                       ],
                     ),
                   ),
@@ -279,23 +252,5 @@ class _MusicUIState extends State<MusicUI> {
         ],
       ),
     );
-  }
-}
-
-class MyClipper extends CustomClipper<Rect> {
-  @override
-  Rect getClip(Size size) {
-    return Rect.fromCircle(
-      center: Offset(
-        size.width / 2,
-        size.height / 2,
-      ),
-      radius: min(size.width, size.height) / 2,
-    );
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Rect> oldClipper) {
-    return true;
   }
 }

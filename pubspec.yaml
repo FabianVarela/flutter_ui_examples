@@ -34,6 +34,9 @@ flutter:
     - assets/images/image_03.jpg
     - assets/images/image_04.jpg
     - assets/images/bonJovi.jpg
+    - assets/images/metallica.jpg
+    - assets/images/gunsNroses.jpeg
+    - assets/images/fooFighters.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
