@@ -100,7 +100,7 @@ class _MusicUIState extends State<MusicUI> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         leading: IconButton(
           color: _color,
           icon: Icon(Icons.arrow_back_ios),
@@ -119,137 +119,139 @@ class _MusicUIState extends State<MusicUI> {
           ),
         ],
       ),
-      body: Column(
-        children: <Widget>[
-          _customHeightSizedBox(30),
-          Center(
-            child: Container(
-              height: 250,
-              width: 250,
-              child: Stack(
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      color: _color.withOpacity(.5),
-                      shape: BoxShape.circle,
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(12),
-                      child: _buildRadialSeekBar(),
-                    ),
-                  ),
-                  Center(
-                    child: Container(
-                      height: 200,
-                      width: 200,
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            _customHeightSizedBox(30),
+            Center(
+              child: Container(
+                height: 250,
+                width: 250,
+                child: Stack(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        color: _color.withOpacity(.5),
+                        shape: BoxShape.circle,
+                      ),
                       child: Padding(
-                        padding: EdgeInsets.all(3),
-                        child: ClipOval(
-                          clipper: MyClipper(),
-                          child: Image.asset(
-                            "assets/images/bonJovi.jpg",
-                            fit: BoxFit.cover,
+                        padding: EdgeInsets.all(12),
+                        child: _buildRadialSeekBar(),
+                      ),
+                    ),
+                    Center(
+                      child: Container(
+                        height: 200,
+                        width: 200,
+                        child: Padding(
+                          padding: EdgeInsets.all(3),
+                          child: ClipOval(
+                            clipper: MyClipper(),
+                            child: Image.asset(
+                              "assets/images/bonJovi.jpg",
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                     ),
+                  ],
+                ),
+              ),
+            ),
+            _customHeightSizedBox(25),
+            Column(
+              children: <Widget>[
+                _customSongText("Bon Jovi", _color, 20, false),
+                _customHeightSizedBox(8),
+                _customSongText("Livin' On A Prayer", _color, 18, true)
+              ],
+            ),
+            _customHeightSizedBox(10),
+            Container(
+              width: 350,
+              height: 150,
+              child: Stack(
+                children: <Widget>[
+                  Center(
+                    child: Container(
+                      height: 65,
+                      width: 290,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: _color, width: 3),
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 25),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.fast_rewind,
+                              size: 55,
+                              color: _color,
+                            ),
+                            Expanded(child: Container()),
+                            Icon(
+                              Icons.fast_forward,
+                              size: 55,
+                              color: _color,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Container(
+                      width: 92,
+                      height: 92,
+                      decoration: BoxDecoration(
+                        color: _color,
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.play_arrow,
+                          size: 45,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-          ),
-          _customHeightSizedBox(25),
-          Column(
-            children: <Widget>[
-              _customSongText("Bon Jovi", _color, 20, false),
-              _customHeightSizedBox(8),
-              _customSongText("Livin' On A Prayer", _color, 18, true)
-            ],
-          ),
-          _customHeightSizedBox(10),
-          Container(
-            width: 350,
-            height: 150,
-            child: Stack(
-              children: <Widget>[
-                Center(
-                  child: Container(
-                    height: 65,
-                    width: 290,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: _color, width: 3),
-                      borderRadius: BorderRadius.circular(40),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 25),
-                      child: Row(
+            _customHeightSizedBox(10),
+            SingleChildScrollView(
+              child: Container(
+                height: 190,
+                width: double.infinity,
+                child: Stack(
+                  children: <Widget>[
+                    _customPositioned(true),
+                    _customPositioned(false),
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Icon(
-                            Icons.fast_rewind,
-                            size: 55,
-                            color: _color,
-                          ),
-                          Expanded(child: Container()),
-                          Icon(
-                            Icons.fast_forward,
-                            size: 55,
-                            color: _color,
-                          ),
+                          _song("assets/images/metallica.jpg", "The unforgiven",
+                              "Metallica"),
+                          _song("assets/images/gunsNroses.jpeg", "Stranged",
+                              "Guns n roses"),
+                          _song("assets/images/fooFighters.jpg", "Walk",
+                              "Foo fighters"),
                         ],
                       ),
                     ),
-                  ),
+                  ],
                 ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Container(
-                    width: 92,
-                    height: 92,
-                    decoration: BoxDecoration(
-                      color: _color,
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.play_arrow,
-                        size: 45,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {},
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          _customHeightSizedBox(10),
-          SingleChildScrollView(
-            child: Container(
-              height: 190,
-              width: double.infinity,
-              child: Stack(
-                children: <Widget>[
-                  _customPositioned(true),
-                  _customPositioned(false),
-                  Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        _song(
-                            "assets/images/metallica.jpg", "The unforgiven", "Metallica"),
-                        _song("assets/images/gunsNroses.jpeg", "Stranged",
-                            "Guns n roses"),
-                        _song("assets/images/fooFighters.jpg", "Walk",
-                            "Foo fighters"),
-                      ],
-                    ),
-                  ),
-                ],
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
