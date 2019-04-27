@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/music/music_ui.dart';
 import 'package:flutter_ui_examples/shopping/shopping_ui.dart';
 import 'package:flutter_ui_examples/story/story_ui.dart';
+import 'package:flutter_ui_examples/streaming/streaming_ui.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       //home: ShoppingUI(),
       //home: StoryUI(),
-      home: MusicUI(),
+      //home: MusicUI(),
+      home: StreamingUI(),
     );
   }
 }
