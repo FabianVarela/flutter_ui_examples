@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   fluttery_seekbar: ^0.0.1
   gradient_text: ^1.0.2
+  flutter_screenutil: ^0.5.2
 
 dev_dependencies:
   flutter_test:
@@ -49,6 +50,9 @@ flutter:
     - assets/images/hemes.png
     - assets/images/sofa.png
     - assets/images/wooden.png
+    - assets/images/login_image_01.png
+    - assets/images/login_image_02.png
+    - assets/images/login_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -92,3 +96,7 @@ flutter:
     - family: CustomIconsFurniture
       fonts:
         - asset: assets/fonts/CustomIconsFurniture.ttf
+
+    - family: SocialIcons
+      fonts:
+        - asset: assets/fonts/SocialIcons.ttf
