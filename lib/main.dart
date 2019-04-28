@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/furniture/furniture_ui.dart';
 import 'package:flutter_ui_examples/music/music_ui.dart';
 import 'package:flutter_ui_examples/on_boarding/on_boarding_ui.dart';
 import 'package:flutter_ui_examples/shopping/shopping_ui.dart';
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
       //home: StoryUI(),
       //home: MusicUI(),
       //home: StreamingUI(),
-      home: OnBoardingUI(),
+      //home: OnBoardingUI(),
+      home: FurnitureUI(),
     );
   }
 }

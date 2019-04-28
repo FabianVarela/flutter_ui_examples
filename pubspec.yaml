@@ -46,6 +46,9 @@ flutter:
     - assets/images/illustration.png
     - assets/images/illustration2.png
     - assets/images/illustration3.png
+    - assets/images/hemes.png
+    - assets/images/sofa.png
+    - assets/images/wooden.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -85,3 +88,7 @@ flutter:
     - family: MontserratMedium
       fonts:
         - asset: assets/fonts/MontserratMedium.ttf
+
+    - family: CustomIconsFurniture
+      fonts:
+        - asset: assets/fonts/CustomIconsFurniture.ttf
