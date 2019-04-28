@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/adidas_ecommerce/adidas_ui.dart';
 import 'package:flutter_ui_examples/furniture/furniture_ui.dart';
 import 'package:flutter_ui_examples/login/login_ui.dart';
 import 'package:flutter_ui_examples/music/music_ui.dart';
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       //home: StreamingUI(),
       //home: OnBoardingUI(),
       //home: FurnitureUI(),
-      home: LoginUI(),
+      //home: LoginUI(),
+      home: AdidasUI(),
     );
   }
 }
