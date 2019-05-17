@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'product_card.dart';
 import 'custom_icon.dart';
 
@@ -39,21 +40,38 @@ class _ShoppingUIState extends State<ShoppingUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
           child: Column(
             children: <Widget>[
-              Align(
-                alignment: Alignment.center,
-                child: Padding(
-                  padding: EdgeInsets.only(top: 30, bottom: 25),
-                  child: Image.asset(
-                    "assets/images/logo.png",
-                    width: 62,
-                    height: 43,
+              Row(
+                children: <Widget>[
+                  Flexible(
+                    flex: 1,
+                    child: Builder(
+                      builder: (context) => IconButton(
+                            icon: Icon(Icons.menu),
+                            onPressed: () => Scaffold.of(context).openDrawer(),
+                          ),
+                    ),
                   ),
-                ),
+                  Flexible(
+                    flex: 2,
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 30, bottom: 25),
+                        child: Image.asset(
+                          "assets/images/logo.png",
+                          width: 62,
+                          height: 43,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               ProductCard(
                 0xFFfaecfb,

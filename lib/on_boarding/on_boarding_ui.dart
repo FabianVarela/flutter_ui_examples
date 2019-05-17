@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/login/login_ui.dart';
 import 'package:flutter_ui_examples/on_boarding/data.dart';
 import 'package:flutter_ui_examples/on_boarding/page_indicator.dart';
 import 'package:gradient_text/gradient_text.dart';
@@ -159,7 +160,11 @@ class _OnBoardingUIState extends State<OnBoardingUI>
                           Icons.arrow_forward,
                           color: Colors.black,
                         ),
-                        onPressed: () {},
+                        onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginUI()),
+                            ),
                       )
                     : Container(),
               ),

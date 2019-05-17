@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/furniture/card_item.dart';
 import 'package:flutter_ui_examples/furniture/custom_icon.dart';
 import 'package:flutter_ui_examples/furniture/data.dart';
@@ -39,12 +40,11 @@ class _FurnitureUIState extends State<FurnitureUI> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          IconButton(
-            icon: Icon(
-              CustomIcons.menu,
-              color: Colors.black,
-            ),
-            onPressed: () {},
+          Builder(
+            builder: (context) => IconButton(
+                  icon: Icon(CustomIcons.menu, color: Colors.black),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
           ),
           IconButton(
             icon: Icon(
@@ -89,6 +89,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF2F3F8),
+      drawer: CustomDrawer(),
       body: LayoutBuilder(builder: (context, constraints) {
         var width = constraints.maxWidth;
         var height = constraints.maxHeight;

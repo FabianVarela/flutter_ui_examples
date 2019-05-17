@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/adidas_ecommerce/product_screen_bottom_part.dart';
 import 'package:flutter_ui_examples/adidas_ecommerce/product_screen_top_part.dart';
+import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'utils.dart';
 
 class AdidasUI extends StatefulWidget {
@@ -26,15 +27,18 @@ class _AdidasUIState extends State<AdidasUI> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
+        drawer: CustomDrawer(),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              size: screenAwareSize(20, context),
-            ),
-            onPressed: () {},
+          leading: Builder(
+            builder: (context) => IconButton(
+                  icon: Icon(
+                    Icons.menu,
+                    size: screenAwareSize(20, context),
+                  ),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
           ),
           title: Text(
             "Energy Cloud",

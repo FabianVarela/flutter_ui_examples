@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/story/card_scroll.dart';
 import 'custom_icon.dart';
 import 'data.dart';
@@ -22,6 +23,7 @@ class _StoryUIState extends State<StoryUI> {
 
     return Scaffold(
       backgroundColor: Color(0xFF243447),
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -35,13 +37,15 @@ class _StoryUIState extends State<StoryUI> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  IconButton(
-                    icon: Icon(
-                      CustomIcons.menu,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                    onPressed: () {},
+                  Builder(
+                    builder: (context) => IconButton(
+                          icon: Icon(
+                            CustomIcons.menu,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                          onPressed: () => Scaffold.of(context).openDrawer(),
+                        ),
                   ),
                   IconButton(
                     icon: Icon(

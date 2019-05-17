@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_ui_examples/login/card_form.dart';
 import 'package:flutter_ui_examples/login/custom_icon.dart';
 import 'package:flutter_ui_examples/login/social_icons.dart';
+import 'package:flutter_ui_examples/shopping/shopping_ui.dart';
 
 class LoginUI extends StatefulWidget {
   @override
@@ -151,7 +152,11 @@ class _LoginUIState extends State<LoginUI> {
                           child: Material(
                             color: Colors.transparent,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ShoppingUI()),
+                                  ),
                               child: Center(
                                 child: Text(
                                   "Sign In",

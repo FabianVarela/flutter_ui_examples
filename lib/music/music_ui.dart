@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/music/my_clipper.dart';
 import 'package:fluttery_seekbar/fluttery_seekbar.dart';
 
@@ -99,6 +100,7 @@ class _MusicUIState extends State<MusicUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      drawer: CustomDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
@@ -112,10 +114,12 @@ class _MusicUIState extends State<MusicUI> {
         ),
         centerTitle: true,
         actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.menu),
-            color: _color,
-            onPressed: () {},
+          Builder(
+            builder: (context) => IconButton(
+                  icon: Icon(Icons.menu),
+                  color: _color,
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
           ),
         ],
       ),

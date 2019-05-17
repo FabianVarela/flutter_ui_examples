@@ -70,6 +70,22 @@ class HomeScreenTopPart extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SafeArea(
+                    child: Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: Builder(
+                          builder: (context) => IconButton(
+                                icon: Icon(Icons.menu, color: Colors.white),
+                                onPressed: () =>
+                                    Scaffold.of(context).openDrawer(),
+                              ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
