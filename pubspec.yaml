@@ -4,14 +4,13 @@ description: Flutter UI Examples
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   cupertino_icons: ^0.1.2
-  fluttery_seekbar: ^0.0.1
   gradient_text: ^1.0.2
   flutter_screenutil: ^0.5.2
 
@@ -24,45 +23,8 @@ flutter:
 
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/logo.png
-    - assets/images/store.png
-    - assets/images/profile.png
-    - assets/images/shoes_01.png
-    - assets/images/shoes_02.png
-    - assets/images/image_01.png
-    - assets/images/image_02.jpg
-    - assets/images/image_03.jpg
-    - assets/images/image_04.jpg
-    - assets/images/bonJovi.jpg
-    - assets/images/metallica.jpg
-    - assets/images/gunsNroses.jpeg
-    - assets/images/fooFighters.jpg
-    - assets/images/fullMetalAlchemist.jpg
-    - assets/images/daredevil.jpg
-    - assets/images/avengers.jpeg
-    - assets/images/batman.jpg
-    - assets/images/onePunchMan.png
-    - assets/images/illustration.png
-    - assets/images/illustration2.png
-    - assets/images/illustration3.png
-    - assets/images/hemes.png
-    - assets/images/sofa.png
-    - assets/images/wooden.png
-    - assets/images/login_image_01.png
-    - assets/images/login_image_02.png
-    - assets/images/login_logo.png
-    - assets/images/360.png
-    - assets/images/adidas.png
-    - assets/images/cart.png
-    - assets/images/flutter_logo.png
-
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.io/assets-and-images/#resolution-aware.
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.io/assets-and-images/#from-packages
+    - assets/images/
 
   fonts:
     - family: CustomIcon
