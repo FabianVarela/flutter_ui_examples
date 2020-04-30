@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/custom_drawer.dart';
+import 'package:flutter_ui_examples/music/radial/custom_radial_seek.dart';
 import 'package:flutter_ui_examples/music/my_clipper.dart';
-import 'package:fluttery_seekbar/fluttery_seekbar.dart';
 
 class MusicUI extends StatefulWidget {
   @override
@@ -13,22 +13,15 @@ class _MusicUIState extends State<MusicUI> {
   double _thumbPercent = 0.4;
 
   Widget _buildRadialSeekBar() {
-    return RadialSeekBar(
-      trackColor: Colors.blue.withOpacity(.5),
-      trackWidth: 2,
+    return CustomRadialSeek(
+      width: 2,
+      color: Colors.blue.withOpacity(.5),
       progressColor: _color,
       progressWidth: 5,
-      thumb: CircleThumb(
-        color: _color,
-        diameter: 20,
-      ),
       thumbPercent: _thumbPercent,
       progress: _thumbPercent,
-      onDragUpdate: (percent) {
-        setState(() {
-          _thumbPercent = percent;
-        });
-      },
+      onDragUpdate: (double percent) => setState(() => _thumbPercent = percent),
+      thumb: CircleThumb(color: _color, diameter: 20),
     );
   }
 
@@ -116,10 +109,10 @@ class _MusicUIState extends State<MusicUI> {
         actions: <Widget>[
           Builder(
             builder: (context) => IconButton(
-                  icon: Icon(Icons.menu),
-                  color: _color,
-                  onPressed: () => Scaffold.of(context).openDrawer(),
-                ),
+              icon: Icon(Icons.menu),
+              color: _color,
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            ),
           ),
         ],
       ),
