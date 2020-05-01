@@ -25,8 +25,10 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 SizedBox(height: 15),
                 Text(
-                  "Flutter UI Examples",
-                  style: TextStyle(color: Colors.grey),
+                  'Flutter UI Examples',
+                  style: TextStyle(
+                    color: Colors.grey,
+                  ),
                 )
               ],
             ),
@@ -35,56 +37,68 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text("Shopping UI"),
+            title: Text('Shopping UI'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => ShoppingUI()),
+                MaterialPageRoute<void>(
+                  builder: (_) => ShoppingUI(),
+                ),
               );
             },
           ),
           ListTile(
-            title: Text("Story UI"),
+            title: Text('Story UI'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => StoryUI()),
+                MaterialPageRoute<void>(
+                  builder: (_) => StoryUI(),
+                ),
               );
             },
           ),
           ListTile(
-            title: Text("Music UI"),
+            title: Text('Music UI'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => MusicUI()),
+                MaterialPageRoute<void>(
+                  builder: (_) => MusicUI(),
+                ),
               );
             },
           ),
           ListTile(
-            title: Text("Streaming UI"),
+            title: Text('Streaming UI'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => StreamingUI()),
+                MaterialPageRoute<void>(
+                  builder: (_) => StreamingUI(),
+                ),
               );
             },
           ),
           ListTile(
-            title: Text("Furniture UI"),
+            title: Text('Furniture UI'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => FurnitureUI()),
+                MaterialPageRoute<void>(
+                  builder: (_) => FurnitureUI(),
+                ),
               );
             },
           ),
           ListTile(
-            title: Text("Adidas e-commerce UI"),
+            title: Text('Adidas e-commerce UI'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => AdidasUI()),
+                MaterialPageRoute<void>(
+                  builder: (_) => AdidasUI(),
+                ),
               );
             },
           ),
