@@ -1,51 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/responsive.dart';
 import 'custom_icon.dart';
 
 class ProductCard extends StatelessWidget {
-  int cardColor;
-  String imageUrl;
-  String title;
-  String previousPrice;
-  String price;
-
   ProductCard(this.cardColor, this.imageUrl, this.title, this.previousPrice,
       this.price);
+
+  final Color cardColor;
+  final String imageUrl;
+  final String title;
+  final String previousPrice;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 320,
+      height: Responsive().setHeight(320),
       decoration: BoxDecoration(
-        color: Color(cardColor),
+        color: cardColor,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: Colors.grey.withOpacity(.3),
-          width: .2,
-        ),
+        border: Border.all(color: Colors.grey.withOpacity(.3), width: .2),
       ),
       child: Column(
         children: <Widget>[
-          SizedBox(
-            height: 8,
-          ),
+          SizedBox(height: Responsive().setHeight(8)),
           Image.asset(
             imageUrl,
-            width: 201,
-            height: 191,
+            width: Responsive().setWidth(201),
+            height: Responsive().setHeight(191),
           ),
           Text(
             title,
             style: TextStyle(
-              fontSize: 25,
-              fontFamily: "Ubuntu",
+              fontSize: Responsive().setSp(25),
+              fontFamily: 'Ubuntu',
             ),
           ),
-          SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: Responsive().setHeight(15)),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30),
+            padding: EdgeInsets.symmetric(
+              horizontal: Responsive().setWidth(30),
+            ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -59,18 +55,16 @@ class ProductCard extends StatelessWidget {
                       previousPrice,
                       style: TextStyle(
                         color: Color(0xFFfeb0ba),
-                        fontSize: 16,
-                        fontFamily: "VarelaRound",
+                        fontSize: Responsive().setSp(16),
+                        fontFamily: 'VarelaRound',
                       ),
                     ),
-                    SizedBox(
-                      height: 12,
-                    ),
+                    SizedBox(height: Responsive().setHeight(12)),
                     Text(
                       price,
                       style: TextStyle(
-                        fontSize: 28,
-                        fontFamily: "VarelaRound",
+                        fontSize: Responsive().setSp(28),
+                        fontFamily: 'VarelaRound',
                       ),
                     ),
                   ],

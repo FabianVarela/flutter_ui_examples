@@ -3,7 +3,7 @@ import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_login/card_form.dart';
 import 'package:flutter_ui_examples/ui_login/custom_icon.dart';
 import 'package:flutter_ui_examples/ui_login/social_icons.dart';
-import 'package:flutter_ui_examples/ui_shopping/shopping_ui.dart';
+import 'package:flutter_ui_examples/ui_shopping/shopping.ui.dart';
 
 class LoginUI extends StatefulWidget {
   @override
