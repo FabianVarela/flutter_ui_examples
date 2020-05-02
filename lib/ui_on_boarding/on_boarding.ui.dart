@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_login/login.ui.dart';
-import 'package:flutter_ui_examples/ui_on_boarding/data.dart';
+import 'package:flutter_ui_examples/ui_on_boarding/page_model.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/page_indicator.dart';
 import 'package:gradient_text/gradient_text.dart';
 
