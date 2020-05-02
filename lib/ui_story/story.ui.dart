@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_story/card_scroll.dart';
-import 'custom_icon.dart';
-import 'data.dart';
+import 'package:flutter_ui_examples/ui_story/custom_icon.dart';
+import 'package:flutter_ui_examples/ui_story/story_model.dart';
 
 class StoryUI extends StatefulWidget {
   @override
@@ -18,9 +18,9 @@ class _StoryUIState extends State<StoryUI> {
   void initState() {
     super.initState();
 
-    _currentPage = (images.length - 1).toDouble();
+    _currentPage = (stories.length - 1).toDouble();
 
-    _pageController = PageController(initialPage: images.length - 1);
+    _pageController = PageController(initialPage: stories.length - 1);
     _pageController.addListener(() {
       setState(() => _currentPage = _pageController.page);
     });
@@ -48,7 +48,7 @@ class _StoryUIState extends State<StoryUI> {
                 CardScroll(_currentPage),
                 Positioned.fill(
                   child: PageView.builder(
-                    itemCount: images.length,
+                    itemCount: stories.length,
                     controller: _pageController,
                     reverse: true,
                     itemBuilder: (_, int index) => Container(),

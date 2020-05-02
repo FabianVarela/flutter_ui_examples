@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_story/data.dart';
+import 'package:flutter_ui_examples/ui_story/story_model.dart';
 
 double _cardAspectRatio = 12.0 / 16.0;
 double _widgetAspectRatio = _cardAspectRatio * 1.2;
@@ -37,7 +37,7 @@ class CardScroll extends StatelessWidget {
         final double horizontalInset = primaryCardLeft / 2;
 
         return Stack(
-          children: List<Widget>.generate(images.length, (int index) {
+          children: List<Widget>.generate(stories.length, (int index) {
             final double delta = index - currentPage;
             final double a = primaryCardLeft -
                 horizontalInset * -delta * (delta > 0 ? 15 : 1);
@@ -76,7 +76,7 @@ class CardScroll extends StatelessWidget {
             fit: StackFit.expand,
             children: <Widget>[
               Image.asset(
-                images[index],
+                stories[index].image,
                 fit: BoxFit.cover,
               ),
               _setDescription(index),
@@ -100,7 +100,7 @@ class CardScroll extends StatelessWidget {
               vertical: Responsive().setHeight(8),
             ),
             child: Text(
-              titles[index],
+              stories[index].name,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: Responsive().setSp(25),
