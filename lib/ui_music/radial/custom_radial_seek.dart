@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/music/radial/custom_gesture_detector_radial.dart';
+import 'package:flutter_ui_examples/ui_music/radial/custom_gesture_detector_radial.dart';
 
 class CustomRadialSeek extends StatefulWidget {
   CustomRadialSeek({
