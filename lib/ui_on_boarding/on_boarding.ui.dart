@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/login/login_ui.dart';
-import 'package:flutter_ui_examples/on_boarding/data.dart';
-import 'package:flutter_ui_examples/on_boarding/page_indicator.dart';
+import 'package:flutter_ui_examples/common/responsive.dart';
+import 'package:flutter_ui_examples/ui_login/login.ui.dart';
+import 'package:flutter_ui_examples/ui_on_boarding/data.dart';
+import 'package:flutter_ui_examples/ui_on_boarding/page_indicator.dart';
 import 'package:gradient_text/gradient_text.dart';
 
 class OnBoardingUI extends StatefulWidget {
@@ -45,6 +46,12 @@ class _OnBoardingUIState extends State<OnBoardingUI>
 
   @override
   Widget build(BuildContext context) {
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+
+    Responsive.init(context,
+        width: width, height: height, allowFontScaling: true);
+
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -108,8 +115,8 @@ class _OnBoardingUIState extends State<OnBoardingUI>
       children: <Widget>[
         Image.asset(pageModel.imageUrl),
         Container(
-          height: 100,
-          margin: EdgeInsets.only(left: 12),
+          height: Responsive().setHeight(100),
+          margin: EdgeInsets.only(left: Responsive().setWidth(12)),
           child: Stack(
             children: <Widget>[
               Opacity(
@@ -118,19 +125,22 @@ class _OnBoardingUIState extends State<OnBoardingUI>
                   pageModel.title,
                   gradient: LinearGradient(colors: pageModel.titleGradient),
                   style: TextStyle(
-                    fontSize: 80,
+                    fontSize: Responsive().setSp(80),
                     letterSpacing: 1,
                     fontFamily: 'MontserratBlack',
                   ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 30, left: 22),
+                padding: EdgeInsets.only(
+                  top: Responsive().setHeight(30),
+                  left: Responsive().setWidth(22),
+                ),
                 child: GradientText(
                   pageModel.title,
                   gradient: LinearGradient(colors: pageModel.titleGradient),
                   style: TextStyle(
-                    fontSize: 60,
+                    fontSize: Responsive().setSp(60),
                     fontFamily: 'MontserratBlack',
                     letterSpacing: 1,
                   ),
@@ -140,13 +150,16 @@ class _OnBoardingUIState extends State<OnBoardingUI>
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 12, left: 34),
+          padding: EdgeInsets.only(
+            top: Responsive().setHeight(12),
+            left: Responsive().setWidth(34),
+          ),
           child: Transform(
             transform: Matrix4.translationValues(0.0, 50 * (1 - y), 0.0),
             child: Text(
               pageModel.body,
               style: TextStyle(
-                fontSize: 20,
+                fontSize: Responsive().setSp(20),
                 fontFamily: 'MontserratMedium',
                 color: Color(0xFF9B9B9B),
               ),
@@ -159,10 +172,10 @@ class _OnBoardingUIState extends State<OnBoardingUI>
 
   Widget _setPageIndicator() {
     return Positioned(
-      left: 30,
-      bottom: 30,
+      left: Responsive().setWidth(30),
+      bottom: Responsive().setHeight(30),
       child: Container(
-        width: 160,
+        width: Responsive().setWidth(160),
         child: PageIndicator(_currentPage, pageList.length),
       ),
     );
@@ -170,8 +183,8 @@ class _OnBoardingUIState extends State<OnBoardingUI>
 
   Widget _setFloatingButton() {
     return Positioned(
-      right: 30,
-      bottom: 30,
+      right: Responsive().setWidth(30),
+      bottom: Responsive().setHeight(30),
       child: ScaleTransition(
         scale: _scaleAnimation,
         child: _isLastPage
