@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/adidas_ecommerce/adidas_ui.dart';
 import 'package:flutter_ui_examples/furniture/furniture_ui.dart';
-import 'package:flutter_ui_examples/streaming/streaming_ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
 import 'package:flutter_ui_examples/ui_shopping/shopping.ui.dart';
 import 'package:flutter_ui_examples/ui_story/story.ui.dart';
+import 'package:flutter_ui_examples/ui_streaming/streaming.ui.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override

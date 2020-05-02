@@ -31,11 +31,11 @@ class _MusicUIState extends State<MusicUI> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            _customHeightSizedBox(20),
+            _customHeightSizedBox(30),
             _setCurrentSong(),
-            _customHeightSizedBox(10),
+            _customHeightSizedBox(20),
             _setControl(),
-            _customHeightSizedBox(10),
+            _customHeightSizedBox(20),
             _setPlaylist(),
           ],
         ),
@@ -208,60 +208,58 @@ class _MusicUIState extends State<MusicUI> {
   Widget _setPlaylist() {
     return SingleChildScrollView(
       child: Container(
+        height: Responsive().setHeight(250),
         width: double.infinity,
         child: Stack(
           children: <Widget>[
             _customPositioned(true),
             _customPositioned(false),
-            Container(
-              height: Responsive().setHeight(190),
-              child: Center(
-                child: ListView.builder(
-                  itemCount: musics.length,
-                  itemBuilder: (_, int index) {
-                    return Padding(
-                      padding: EdgeInsets.all(8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Expanded(
-                            child: Image.asset(
-                              musics[index].image,
-                              fit: BoxFit.contain,
-                              width: Responsive().setWidth(40),
-                              height: Responsive().setHeight(40),
-                            ),
+            Center(
+              child: ListView.builder(
+                itemCount: musics.length,
+                itemBuilder: (_, int index) {
+                  return Padding(
+                    padding: EdgeInsets.all(8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Expanded(
+                          child: Image.asset(
+                            musics[index].image,
+                            fit: BoxFit.contain,
+                            width: Responsive().setWidth(40),
+                            height: Responsive().setHeight(40),
                           ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  musics[index].artist,
-                                  style: TextStyle(
-                                    color: _color,
-                                    fontWeight: _currentSong == index
-                                        ? FontWeight.w700
-                                        : FontWeight.w400,
-                                  ),
+                        ),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                musics[index].artist,
+                                style: TextStyle(
+                                  color: _color,
+                                  fontWeight: _currentSong == index
+                                      ? FontWeight.w700
+                                      : FontWeight.w400,
                                 ),
-                                Text(
-                                  musics[index].song,
-                                  style: TextStyle(
-                                    color: _color,
-                                    fontWeight: _currentSong == index
-                                        ? FontWeight.w700
-                                        : FontWeight.w400,
-                                  ),
+                              ),
+                              Text(
+                                musics[index].song,
+                                style: TextStyle(
+                                  color: _color,
+                                  fontWeight: _currentSong == index
+                                      ? FontWeight.w700
+                                      : FontWeight.w400,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
           ],
@@ -273,7 +271,7 @@ class _MusicUIState extends State<MusicUI> {
   Widget _customPositioned(bool isLeft) {
     final Widget container = Container(
       width: Responsive().setWidth(50),
-      height: Responsive().setHeight(190),
+      height: Responsive().setHeight(250),
       decoration: BoxDecoration(
         color: _color,
         borderRadius: isLeft
