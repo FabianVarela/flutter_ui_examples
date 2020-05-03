@@ -3,7 +3,6 @@ import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_login/card_form.dart';
 import 'package:flutter_ui_examples/ui_login/custom_icon.dart';
 import 'package:flutter_ui_examples/ui_login/social_icons.dart';
-import 'package:flutter_ui_examples/ui_shopping/shopping.ui.dart';
 
 class LoginUI extends StatefulWidget {
   @override
@@ -100,10 +99,7 @@ class _LoginUIState extends State<LoginUI> {
           ],
         ),
         InkWell(
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute<dynamic>(builder: (_) => ShoppingUI()),
-          ),
+          onTap: () => Navigator.pushNamed(context, '/shopping'),
           child: Container(
             width: Responsive().setWidth(200),
             height: Responsive().setHeight(60),

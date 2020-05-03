@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas.ui.dart';
-import 'package:flutter_ui_examples/ui_furniture/furniture.ui.dart';
-import 'package:flutter_ui_examples/ui_music/music_ui.dart';
-import 'package:flutter_ui_examples/ui_shopping/shopping.ui.dart';
-import 'package:flutter_ui_examples/ui_story/story.ui.dart';
-import 'package:flutter_ui_examples/ui_streaming/streaming.ui.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override
@@ -38,69 +32,27 @@ class CustomDrawer extends StatelessWidget {
           ),
           ListTile(
             title: Text('Shopping UI'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (_) => ShoppingUI(),
-                ),
-              );
-            },
+            onTap: () => Navigator.pushReplacementNamed(context, '/shopping'),
           ),
           ListTile(
             title: Text('Story UI'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (_) => StoryUI(),
-                ),
-              );
-            },
+            onTap: () => Navigator.pushReplacementNamed(context, '/story'),
           ),
           ListTile(
             title: Text('Music UI'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (_) => MusicUI(),
-                ),
-              );
-            },
+            onTap: () => Navigator.pushReplacementNamed(context, '/music'),
           ),
           ListTile(
             title: Text('Streaming UI'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (_) => StreamingUI(),
-                ),
-              );
-            },
+            onTap: () => Navigator.pushReplacementNamed(context, '/streaming'),
           ),
           ListTile(
             title: Text('Furniture UI'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (_) => FurnitureUI(),
-                ),
-              );
-            },
+            onTap: () => Navigator.pushReplacementNamed(context, '/furniture'),
           ),
           ListTile(
             title: Text('Adidas e-commerce UI'),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (_) => AdidasUI(),
-                ),
-              );
-            },
+            onTap: () => Navigator.pushReplacementNamed(context, '/e-commerce'),
           ),
         ],
       ),
