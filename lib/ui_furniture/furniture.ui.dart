@@ -14,12 +14,6 @@ class _FurnitureUIState extends State<FurnitureUI> {
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
-
-    Responsive.init(context,
-        width: width, height: height, allowFontScaling: true);
-
     return Scaffold(
       backgroundColor: Color(0xFFF2F3F8),
       drawer: CustomDrawer(),

@@ -46,12 +46,6 @@ class _OnBoardingUIState extends State<OnBoardingUI>
 
   @override
   Widget build(BuildContext context) {
-    final double width = MediaQuery.of(context).size.width;
-    final double height = MediaQuery.of(context).size.height;
-
-    Responsive.init(context,
-        width: width, height: height, allowFontScaling: true);
-
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
