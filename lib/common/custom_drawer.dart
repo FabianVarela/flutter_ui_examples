@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/adidas_ecommerce/adidas_ui.dart';
-import 'package:flutter_ui_examples/ui_furniture/furniture_ui.dart';
+import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas.ui.dart';
+import 'package:flutter_ui_examples/ui_furniture/furniture.ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
 import 'package:flutter_ui_examples/ui_shopping/shopping.ui.dart';
 import 'package:flutter_ui_examples/ui_story/story.ui.dart';

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    Path path = Path();
+    final Path path = Path();
 
     path.lineTo(0.0, size.height);
     path.lineTo(size.width * 0.2, size.height);
@@ -15,7 +15,5 @@ class MyClipper extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
-  }
+  bool shouldReclip(CustomClipper<Path> oldClipper) => true;
 }
