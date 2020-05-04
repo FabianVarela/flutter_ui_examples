@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_shopping/custom_icon.dart';
 import 'product_card.dart';
 
 class ShoppingUI extends StatefulWidget {
+  ShoppingUI({@required this.onPressedMenu});
+
+  final Function onPressedMenu;
+
   @override
   _ShoppingUIState createState() => _ShoppingUIState();
 }
@@ -16,7 +19,6 @@ class _ShoppingUIState extends State<ShoppingUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(
@@ -29,11 +31,9 @@ class _ShoppingUIState extends State<ShoppingUI> {
                 children: <Widget>[
                   Flexible(
                     flex: 1,
-                    child: Builder(
-                      builder: (BuildContext context) => IconButton(
-                        icon: Icon(Icons.menu),
-                        onPressed: () => Scaffold.of(context).openDrawer(),
-                      ),
+                    child: IconButton(
+                      icon: Icon(Icons.menu),
+                      onPressed: widget.onPressedMenu,
                     ),
                   ),
                   Flexible(

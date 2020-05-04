@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_streaming/my_clipper.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming_model.dart';
 
 class StreamingUI extends StatefulWidget {
+  StreamingUI({@required this.onPressedMenu});
+
+  final Function onPressedMenu;
+
   @override
   _StreamingUIState createState() => _StreamingUIState();
 }
@@ -13,7 +16,6 @@ class _StreamingUIState extends State<StreamingUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -128,11 +130,9 @@ class _StreamingUIState extends State<StreamingUI> {
                       ),
                       child: Align(
                         alignment: Alignment.topLeft,
-                        child: Builder(
-                          builder: (BuildContext context) => IconButton(
-                            icon: Icon(Icons.menu, color: Colors.white),
-                            onPressed: () => Scaffold.of(context).openDrawer(),
-                          ),
+                        child: IconButton(
+                          icon: Icon(Icons.menu, color: Colors.white),
+                          onPressed: widget.onPressedMenu,
                         ),
                       ),
                     ),

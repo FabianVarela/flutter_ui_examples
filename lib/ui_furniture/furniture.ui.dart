@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_furniture/custom_icon.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture_model.dart';
 
 class FurnitureUI extends StatefulWidget {
+  FurnitureUI({@required this.onPressedMenu});
+
+  final Function onPressedMenu;
+
   @override
   _FurnitureUIState createState() => _FurnitureUIState();
 }
@@ -16,7 +19,6 @@ class _FurnitureUIState extends State<FurnitureUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF2F3F8),
-      drawer: CustomDrawer(),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -89,11 +91,9 @@ class _FurnitureUIState extends State<FurnitureUI> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Builder(
-            builder: (BuildContext context) => IconButton(
-              icon: Icon(CustomIcons.menu, color: Colors.black),
-              onPressed: () => Scaffold.of(context).openDrawer(),
-            ),
+          IconButton(
+            icon: Icon(CustomIcons.menu, color: Colors.black),
+            onPressed: widget.onPressedMenu,
           ),
           IconButton(
             icon: Icon(

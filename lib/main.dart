@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas.ui.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture.ui.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_ui_examples/ui_on_boarding/on_boarding.ui.dart';
 import 'package:flutter_ui_examples/ui_shopping/shopping.ui.dart';
 import 'package:flutter_ui_examples/ui_story/story.ui.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming.ui.dart';
+import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,7 +18,7 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,29 +34,53 @@ class _MyAppState extends State<MyApp> {
             Responsive.init(ctx,
                 width: width, height: height, allowFontScaling: true);
 
-            switch (settings.name) {
-              case '/':
-                return OnBoardingUI();
-              case '/login':
-                return LoginUI();
-              case '/shopping':
-                return ShoppingUI();
-              case '/story':
-                return StoryUI();
-              case '/music':
-                return MusicUI();
-              case '/streaming':
-                return StreamingUI();
-              case '/furniture':
-                return FurnitureUI();
-              case '/e-commerce':
-                return AdidasUI();
-              default:
-                return null;
-            }
+            return SimpleHiddenDrawer(
+              isDraggable: false,
+              menu: CustomDrawer(),
+              screenSelectedBuilder:
+                  (int position, SimpleHiddenDrawerBloc controller) {
+                if (settings.name == '/' || settings.name == '/login') {
+                  return _setRoute(settings.name);
+                } else {
+                  return _setScreenFromMenu(position, controller);
+                }
+              },
+            );
           },
         );
       },
     );
+  }
+
+  Widget _setRoute(String routeName) {
+    switch (routeName) {
+      case '/':
+        return OnBoardingUI();
+      case '/login':
+        return LoginUI();
+      case '/shopping':
+        return ShoppingUI(onPressedMenu: () {});
+      default:
+        return null;
+    }
+  }
+
+  Widget _setScreenFromMenu(int position, SimpleHiddenDrawerBloc controller) {
+    switch (position) {
+      case 0:
+        return ShoppingUI(onPressedMenu: controller.toggle);
+      case 1:
+        return StoryUI(onPressedMenu: controller.toggle);
+      case 2:
+        return MusicUI(onPressedMenu: controller.toggle);
+      case 3:
+        return StreamingUI(onPressedMenu: controller.toggle);
+      case 4:
+        return FurnitureUI(onPressedMenu: controller.toggle);
+      case 5:
+        return AdidasUI(onPressedMenu: controller.toggle);
+      default:
+        return null;
+    }
   }
 }

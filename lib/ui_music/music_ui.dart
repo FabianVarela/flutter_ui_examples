@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_music/music_model.dart';
 import 'package:flutter_ui_examples/ui_music/my_clipper.dart';
 import 'package:flutter_ui_examples/ui_music/radial/custom_radial_seek.dart';
 
 class MusicUI extends StatefulWidget {
+  MusicUI({@required this.onPressedMenu});
+
+  final Function onPressedMenu;
+
   @override
   _MusicUIState createState() => _MusicUIState();
 }
@@ -20,7 +23,6 @@ class _MusicUIState extends State<MusicUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      drawer: CustomDrawer(),
       appBar: _setAppBar(),
       body: SingleChildScrollView(
         child: Column(
@@ -54,12 +56,10 @@ class _MusicUIState extends State<MusicUI> {
       ),
       centerTitle: true,
       actions: <Widget>[
-        Builder(
-          builder: (BuildContext context) => IconButton(
-            icon: Icon(Icons.menu),
-            color: _color,
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
+        IconButton(
+          icon: Icon(Icons.menu),
+          color: _color,
+          onPressed: widget.onPressedMenu,
         ),
       ],
     );

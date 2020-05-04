@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/data.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/my_clipper.dart';
 
 class AdidasUI extends StatefulWidget {
+  AdidasUI({@required this.onPressedMenu});
+
+  final Function onPressedMenu;
+
   @override
   _AdidasUIState createState() => _AdidasUIState();
 }
@@ -33,7 +36,6 @@ class _AdidasUIState extends State<AdidasUI> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        drawer: CustomDrawer(),
         appBar: _buildAppBar(),
         body: SingleChildScrollView(
           child: Column(
@@ -52,14 +54,12 @@ class _AdidasUIState extends State<AdidasUI> {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0.0,
-      leading: Builder(
-        builder: (BuildContext context) => IconButton(
-          icon: Icon(
-            Icons.menu,
-            size: 25,
-          ),
-          onPressed: () => Scaffold.of(context).openDrawer(),
+      leading: IconButton(
+        icon: Icon(
+          Icons.menu,
+          size: 25,
         ),
+        onPressed: widget.onPressedMenu,
       ),
       title: Text(
         'Energy Cloud',

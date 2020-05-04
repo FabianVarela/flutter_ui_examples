@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_story/card_scroll.dart';
 import 'package:flutter_ui_examples/ui_story/custom_icon.dart';
 import 'package:flutter_ui_examples/ui_story/story_model.dart';
 
 class StoryUI extends StatefulWidget {
+  StoryUI({@required this.onPressedMenu});
+
+  final Function onPressedMenu;
+
   @override
   _StoryUIState createState() => _StoryUIState();
 }
@@ -30,7 +33,6 @@ class _StoryUIState extends State<StoryUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF243447),
-      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -89,15 +91,13 @@ class _StoryUIState extends State<StoryUI> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Builder(
-            builder: (BuildContext context) => IconButton(
-              icon: Icon(
-                CustomIcons.menu,
-                color: Colors.white,
-                size: 30,
-              ),
-              onPressed: () => Scaffold.of(context).openDrawer(),
+          IconButton(
+            icon: Icon(
+              CustomIcons.menu,
+              color: Colors.white,
+              size: 30,
             ),
+            onPressed: widget.onPressedMenu,
           ),
           IconButton(
             icon: Icon(
