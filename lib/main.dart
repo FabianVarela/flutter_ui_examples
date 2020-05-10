@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas.ui.dart';
@@ -11,7 +12,14 @@ import 'package:flutter_ui_examples/ui_story/story.ui.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming.ui.dart';
 import 'package:hidden_drawer_menu/hidden_drawer/hidden_drawer_menu.dart';
 
-void main() => runApp(MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SystemChrome.setPreferredOrientations(
+      <DeviceOrientation>[DeviceOrientation.portraitUp]);
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   @override
