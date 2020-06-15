@@ -12,7 +12,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   gradient_text: ^1.0.2
-  hidden_drawer_menu: ^1.1.2
+  google_fonts: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -30,39 +30,12 @@ flutter:
     - family: CustomIcon
       fonts:
         - asset: assets/fonts/CustomIcon.ttf
-
-    - family: Ubuntu
-      fonts:
-        - asset: assets/fonts/Ubuntu.ttf
-
-    - family: VarelaRound
-      fonts:
-        - asset: assets/fonts/VarelaRound.ttf
-
     - family: CustomIcons
       fonts:
         - asset: assets/fonts/CustomIcons.ttf
-
-    - family: Muli
-      fonts:
-        - asset: assets/fonts/Muli.ttf
-
-    - family: MuliLight
-      fonts:
-        - asset: assets/fonts/MuliLight.ttf
-
-    - family: MontserratBlack
-      fonts:
-        - asset: assets/fonts/MontserratBlack.ttf
-
-    - family: MontserratMedium
-      fonts:
-        - asset: assets/fonts/MontserratMedium.ttf
-
     - family: CustomIconsFurniture
       fonts:
         - asset: assets/fonts/CustomIconsFurniture.ttf
-
     - family: SocialIcons
       fonts:
         - asset: assets/fonts/SocialIcons.ttf
