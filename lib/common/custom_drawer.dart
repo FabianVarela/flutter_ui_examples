@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hidden_drawer_menu/simple_hidden_drawer/provider/simple_hidden_drawer_provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class CustomDrawer extends StatefulWidget {
-  @override
-  _CustomDrawerState createState() => _CustomDrawerState();
-}
+class CustomDrawer extends StatelessWidget {
+  CustomDrawer({@required this.onCloseMenu});
 
-class _CustomDrawerState extends State<CustomDrawer> {
+  final Function() onCloseMenu;
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -19,12 +18,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _setMenuItem(context, 'Shopping UI', 0),
-              _setMenuItem(context, 'Story UI', 1),
-              _setMenuItem(context, 'Music UI', 2),
-              _setMenuItem(context, 'Streaming UI', 3),
-              _setMenuItem(context, 'Furniture UI', 4),
-              _setMenuItem(context, 'Adidas e-commerce UI', 5),
+              _setMenuItem(context, 'Shopping UI', '/shopping'),
+              _setMenuItem(context, 'Story UI', '/story'),
+              _setMenuItem(context, 'Music UI', '/music'),
+              _setMenuItem(context, 'Streaming UI', '/streaming'),
+              _setMenuItem(context, 'Furniture UI', '/furniture'),
+              _setMenuItem(context, 'Adidas e-commerce UI', '/adidas'),
+              _setMenuItem(context, 'Beer UI', '/beer'),
             ],
           ),
         ),
@@ -32,17 +32,13 @@ class _CustomDrawerState extends State<CustomDrawer> {
     );
   }
 
-  Widget _setMenuItem(BuildContext context, String text, int position) {
+  Widget _setMenuItem(BuildContext context, String text, String route) {
     return ListTile(
-      title: Text(
-        text,
-        style: TextStyle(
-          fontSize: 20,
-          fontFamily: 'Muli',
-        ),
-      ),
-      onTap: () => SimpleHiddenDrawerProvider.of(context)
-          .setSelectedMenuPosition(position),
+      title: Text(text, style: GoogleFonts.muli(fontSize: 20)),
+      onTap: () {
+        onCloseMenu();
+        Navigator.of(context).pushReplacementNamed(route);
+      },
     );
   }
 }
