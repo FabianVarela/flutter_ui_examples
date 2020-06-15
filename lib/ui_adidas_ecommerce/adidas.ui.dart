@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/data.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/my_clipper.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AdidasUI extends StatefulWidget {
   AdidasUI({@required this.onPressedMenu});
@@ -63,10 +64,10 @@ class _AdidasUIState extends State<AdidasUI> {
       ),
       title: Text(
         'Energy Cloud',
-        style: TextStyle(
+        style: GoogleFonts.montserrat(
           color: Colors.white,
           fontSize: Responsive().setSp(20),
-          fontFamily: 'MontserratBlack',
+          fontWeight: FontWeight.w900,
         ),
       ),
       centerTitle: true,
@@ -131,10 +132,10 @@ class _AdidasUIState extends State<AdidasUI> {
                   padding: EdgeInsets.only(bottom: Responsive().setHeight(8)),
                   child: Text(
                     'Rating',
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       color: Color(0xFF949598),
                       fontSize: Responsive().setSp(14),
-                      fontFamily: 'MontserratMedium',
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
@@ -224,18 +225,18 @@ class _AdidasUIState extends State<AdidasUI> {
         firstChild: Text(
           productDescription,
           maxLines: 2,
-          style: TextStyle(
+          style: GoogleFonts.montserrat(
             color: Colors.white,
             fontSize: Responsive().setSp(14),
-            fontFamily: 'MontserratMedium',
+            fontWeight: FontWeight.w500,
           ),
         ),
         secondChild: Text(
           productDescription,
-          style: TextStyle(
+          style: GoogleFonts.montserrat(
             color: Colors.white,
             fontSize: Responsive().setSp(14),
-            fontFamily: 'MontserratMedium',
+            fontWeight: FontWeight.w500,
           ),
         ),
         crossFadeState:
@@ -277,18 +278,18 @@ class _AdidasUIState extends State<AdidasUI> {
         children: <Widget>[
           Text(
             'Size',
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: Color(0xFF949598),
               fontSize: Responsive().setSp(14),
-              fontFamily: 'MontserratMedium',
+              fontWeight: FontWeight.w500,
             ),
           ),
           Text(
             'Quantity',
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               color: Color(0xFF949598),
               fontSize: Responsive().setSp(14),
-              fontFamily: 'MontserratMedium',
+              fontWeight: FontWeight.w500,
             ),
           )
         ],
@@ -336,7 +337,7 @@ class _AdidasUIState extends State<AdidasUI> {
                       color: index == _currentSizeIndex
                           ? Colors.black.withOpacity(.5)
                           : Colors.black12,
-                      offset: Offset(0.0, 10),
+                      offset: Offset(0, 10),
                       blurRadius: 10,
                     )
                   ],
@@ -344,9 +345,9 @@ class _AdidasUIState extends State<AdidasUI> {
                 child: Center(
                   child: Text(
                     sizeNumList[index],
-                    style: TextStyle(
+                    style: GoogleFonts.montserrat(
                       color: Colors.white,
-                      fontFamily: 'MontserratBlack',
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
@@ -383,10 +384,10 @@ class _AdidasUIState extends State<AdidasUI> {
                 }),
                 child: Text(
                   '-',
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     color: Colors.white,
                     fontSize: Responsive().setSp(24),
-                    fontFamily: 'MontserratBlack',
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
               ),
@@ -396,10 +397,10 @@ class _AdidasUIState extends State<AdidasUI> {
               flex: 3,
               child: Text(
                 '$_quantityValue',
-                style: TextStyle(
+                style: GoogleFonts.montserrat(
                   color: Colors.white,
                   fontSize: Responsive().setSp(22),
-                  fontFamily: 'MontserratBlack',
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ),
@@ -410,10 +411,10 @@ class _AdidasUIState extends State<AdidasUI> {
                 onTap: () => setState(() => _quantityValue++),
                 child: Text(
                   '+',
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     color: Colors.white,
                     fontSize: Responsive().setSp(24),
-                    fontFamily: 'MontserratBlack',
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
               ),
@@ -439,10 +440,10 @@ class _AdidasUIState extends State<AdidasUI> {
       ),
       child: Text(
         'Select Color',
-        style: TextStyle(
+        style: GoogleFonts.montserrat(
           color: Color(0xFF949598),
           fontSize: Responsive().setSp(14),
-          fontFamily: 'MontserratBlack',
+          fontWeight: FontWeight.w900,
         ),
       ),
     );
@@ -473,7 +474,7 @@ class _AdidasUIState extends State<AdidasUI> {
                           BoxShadow(
                             color: Colors.black.withOpacity(.8),
                             blurRadius: 10,
-                            offset: Offset(0.0, 10),
+                            offset: Offset(0, 10),
                           )
                         ]
                       : <BoxShadow>[],
@@ -502,9 +503,9 @@ class _AdidasUIState extends State<AdidasUI> {
       ),
       child: Text(
         'Price',
-        style: TextStyle(
+        style: GoogleFonts.montserrat(
           color: Color(0xFF949598),
-          fontFamily: 'MontserratBlack',
+          fontWeight: FontWeight.w900,
         ),
       ),
     );
@@ -532,18 +533,18 @@ class _AdidasUIState extends State<AdidasUI> {
                     children: <Widget>[
                       Text(
                         '\$',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: Responsive().setSp(26),
-                          fontFamily: 'MontserratMedium',
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       Text(
                         '80',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: Responsive().setSp(35),
-                          fontFamily: 'MontserratMedium',
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],

@@ -3,6 +3,7 @@ import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_music/music_model.dart';
 import 'package:flutter_ui_examples/ui_music/my_clipper.dart';
 import 'package:flutter_ui_examples/ui_music/radial/custom_radial_seek.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MusicUI extends StatefulWidget {
   MusicUI({@required this.onPressedMenu});
@@ -52,7 +53,7 @@ class _MusicUIState extends State<MusicUI> {
       ),
       title: Text(
         'Music player',
-        style: TextStyle(color: _color, fontFamily: 'Muli'),
+        style: GoogleFonts.muli(color: _color),
       ),
       centerTitle: true,
       actions: <Widget>[
@@ -119,18 +120,16 @@ class _MusicUIState extends State<MusicUI> {
           children: <Widget>[
             Text(
               musics[_currentSong].artist,
-              style: TextStyle(
+              style: GoogleFonts.muli(
                 color: _color,
                 fontSize: Responsive().setSp(20),
-                fontFamily: 'Muli',
               ),
             ),
             Text(
               musics[_currentSong].song,
-              style: TextStyle(
+              style: GoogleFonts.muli(
                 color: _color.withOpacity(.5),
                 fontSize: Responsive().setSp(18),
-                fontFamily: 'Muli',
               ),
             ),
           ],

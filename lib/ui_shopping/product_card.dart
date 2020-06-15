@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'custom_icon.dart';
 
 class ProductCard extends StatelessWidget {
@@ -32,9 +33,8 @@ class ProductCard extends StatelessWidget {
           ),
           Text(
             title,
-            style: TextStyle(
+            style: GoogleFonts.ubuntu(
               fontSize: Responsive().setSp(25),
-              fontFamily: 'Ubuntu',
             ),
           ),
           SizedBox(height: Responsive().setHeight(15)),
@@ -53,18 +53,16 @@ class ProductCard extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       previousPrice,
-                      style: TextStyle(
-                        color: Color(0xFFfeb0ba),
+                      style: GoogleFonts.varelaRound(
+                        color: Color(0xFFFEB0BA),
                         fontSize: Responsive().setSp(16),
-                        fontFamily: 'VarelaRound',
                       ),
                     ),
                     SizedBox(height: Responsive().setHeight(12)),
                     Text(
                       price,
-                      style: TextStyle(
+                      style: GoogleFonts.varelaRound(
                         fontSize: Responsive().setSp(28),
-                        fontFamily: 'VarelaRound',
                       ),
                     ),
                   ],

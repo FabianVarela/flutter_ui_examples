@@ -3,6 +3,7 @@ import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_login/card_form.dart';
 import 'package:flutter_ui_examples/ui_login/custom_icon.dart';
 import 'package:flutter_ui_examples/ui_login/social_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginUI extends StatefulWidget {
   @override
@@ -74,8 +75,7 @@ class _LoginUIState extends State<LoginUI> {
         ),
         Text(
           'LOGO',
-          style: TextStyle(
-            fontFamily: 'Muli',
+          style: GoogleFonts.muli(
             fontSize: Responsive().setSp(30),
             letterSpacing: .6,
             fontWeight: FontWeight.bold,
@@ -112,7 +112,7 @@ class _LoginUIState extends State<LoginUI> {
               boxShadow: <BoxShadow>[
                 BoxShadow(
                   color: Color(0xFF6078EA).withOpacity(.3),
-                  offset: Offset(0.0, 8.0),
+                  offset: Offset(0, 8),
                   blurRadius: 8,
                 ),
               ],
@@ -120,9 +120,8 @@ class _LoginUIState extends State<LoginUI> {
             child: Center(
               child: Text(
                 'Sign In',
-                style: TextStyle(
+                style: GoogleFonts.muli(
                   color: Colors.white,
-                  fontFamily: 'Muli',
                   fontSize: Responsive().setSp(18),
                   letterSpacing: 1,
                 ),
@@ -159,10 +158,7 @@ class _LoginUIState extends State<LoginUI> {
         SizedBox(width: 8),
         Text(
           text,
-          style: TextStyle(
-            fontSize: 12,
-            fontFamily: 'Muli',
-          ),
+          style: GoogleFonts.muli(fontSize: 12),
         ),
       ],
     );
@@ -175,10 +171,7 @@ class _LoginUIState extends State<LoginUI> {
         _horizontalLine(),
         Text(
           'Social login',
-          style: TextStyle(
-            fontSize: 16,
-            fontFamily: 'Muli',
-          ),
+          style: GoogleFonts.muli(fontSize: 16),
         ),
         _horizontalLine()
       ],
@@ -243,16 +236,13 @@ class _LoginUIState extends State<LoginUI> {
       children: <Widget>[
         Text(
           'New User? ',
-          style: TextStyle(fontFamily: 'Muli'),
+          style: GoogleFonts.muli(),
         ),
         InkWell(
           onTap: () {},
           child: Text(
             'Sign Up',
-            style: TextStyle(
-              color: Color(0xFF5D74E3),
-              fontFamily: 'Muli',
-            ),
+            style: GoogleFonts.muli(color: Color(0xFF5D74E3)),
           ),
         ),
       ],

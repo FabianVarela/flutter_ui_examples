@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_streaming/my_clipper.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StreamingUI extends StatefulWidget {
   StreamingUI({@required this.onPressedMenu});
@@ -104,18 +105,16 @@ class _StreamingUIState extends State<StreamingUI> {
                         children: <Widget>[
                           Text(
                             'WATCH BEFORE EVERYONE',
-                            style: TextStyle(
+                            style: GoogleFonts.muli(
                               color: Colors.white,
                               fontSize: Responsive().setSp(15),
-                              fontFamily: 'Muli',
                             ),
                           ),
                           Text(
                             streamingList[0].title,
-                            style: TextStyle(
+                            style: GoogleFonts.muli(
                               color: Colors.white,
                               fontSize: Responsive().setSp(40),
-                              fontFamily: 'Muli',
                             ),
                           ),
                         ],

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_story/story_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 double _cardAspectRatio = 12.0 / 16.0;
 double _widgetAspectRatio = _cardAspectRatio * 1.2;
@@ -101,10 +102,9 @@ class CardScroll extends StatelessWidget {
             ),
             child: Text(
               stories[index].name,
-              style: TextStyle(
+              style: GoogleFonts.varelaRound(
                 color: Colors.white,
                 fontSize: Responsive().setSp(25),
-                fontFamily: 'VarelaRound',
               ),
             ),
           ),

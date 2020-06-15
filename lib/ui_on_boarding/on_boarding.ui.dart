@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/page_model.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/page_indicator.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_text/gradient_text.dart';
 
 class OnBoardingUI extends StatefulWidget {
@@ -117,10 +118,10 @@ class _OnBoardingUIState extends State<OnBoardingUI>
                 child: GradientText(
                   pageModel.title,
                   gradient: LinearGradient(colors: pageModel.titleGradient),
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontSize: Responsive().setSp(80),
                     letterSpacing: 1,
-                    fontFamily: 'MontserratBlack',
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
               ),
@@ -132,9 +133,9 @@ class _OnBoardingUIState extends State<OnBoardingUI>
                 child: GradientText(
                   pageModel.title,
                   gradient: LinearGradient(colors: pageModel.titleGradient),
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     fontSize: Responsive().setSp(60),
-                    fontFamily: 'MontserratBlack',
+                    fontWeight: FontWeight.w900,
                     letterSpacing: 1,
                   ),
                 ),
@@ -151,9 +152,9 @@ class _OnBoardingUIState extends State<OnBoardingUI>
             transform: Matrix4.translationValues(0.0, 50 * (1 - y), 0.0),
             child: Text(
               pageModel.body,
-              style: TextStyle(
+              style: GoogleFonts.montserrat(
                 fontSize: Responsive().setSp(20),
-                fontFamily: 'MontserratMedium',
+                fontWeight: FontWeight.w500,
                 color: Color(0xFF9B9B9B),
               ),
             ),

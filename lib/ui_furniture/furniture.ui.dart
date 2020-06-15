@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_furniture/custom_icon.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FurnitureUI extends StatefulWidget {
   FurnitureUI({@required this.onPressedMenu});
@@ -48,7 +49,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: Color(0xFFF78A6C).withOpacity(.8),
-              offset: Offset(0.0, 10),
+              offset: Offset(0, 10),
               blurRadius: 10,
             )
           ],
@@ -117,16 +118,16 @@ class _FurnitureUIState extends State<FurnitureUI> {
         children: <Widget>[
           Text(
             'Wooden Armchairs',
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               fontSize: Responsive().setSp(20),
-              fontFamily: 'MontserratBlack',
+              fontWeight: FontWeight.w900,
             ),
           ),
           Text(
             'Beautiful armchairs to decorate your home',
-            style: TextStyle(
+            style: GoogleFonts.montserrat(
               fontSize: Responsive().setSp(16),
-              fontFamily: 'MontserratMedium',
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],
@@ -174,7 +175,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                       color: Colors.black12,
-                      offset: Offset(0.0, 10),
+                      offset: Offset(0, 10),
                       blurRadius: 10,
                     ),
                   ],
@@ -198,9 +199,9 @@ class _FurnitureUIState extends State<FurnitureUI> {
                     children: <Widget>[
                       Text(
                         furniture.title,
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: Responsive().setSp(16),
-                          fontFamily: 'MontserratBlack',
+                          fontWeight: FontWeight.w900,
                           color: (index % 2 == 0)
                               ? Color(0xFF2A2D3F)
                               : Colors.white,
@@ -209,9 +210,9 @@ class _FurnitureUIState extends State<FurnitureUI> {
                       SizedBox(height: Responsive().setHeight(7)),
                       Text(
                         'New Sell',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: Responsive().setSp(12),
-                          fontFamily: 'MontserratMedium',
+                          fontWeight: FontWeight.w500,
                           color: (index % 2 == 0)
                               ? Color(0xFF2A2D3F)
                               : Colors.white,
@@ -220,9 +221,9 @@ class _FurnitureUIState extends State<FurnitureUI> {
                       SizedBox(height: Responsive().setHeight(45)),
                       Text(
                         '${furniture.price} \$',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           fontSize: Responsive().setSp(30),
-                          fontFamily: 'MontserratBold',
+                          fontWeight: FontWeight.w700,
                           color: (index % 2 == 0)
                               ? Color(0xFF2A2D3F)
                               : Colors.white,

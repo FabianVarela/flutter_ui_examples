@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardForm extends StatelessWidget {
   @override
@@ -13,12 +14,12 @@ class CardForm extends StatelessWidget {
         boxShadow: <BoxShadow>[
           BoxShadow(
             color: Colors.black12,
-            offset: Offset(0.0, 15.0),
+            offset: Offset(0, 15),
             blurRadius: 15,
           ),
           BoxShadow(
             color: Colors.black12,
-            offset: Offset(0.0, 15.0),
+            offset: Offset(0, 15),
             blurRadius: 10,
           ),
         ],
@@ -30,19 +31,15 @@ class CardForm extends StatelessWidget {
           children: <Widget>[
             Text(
               'Login',
-              style: TextStyle(
+              style: GoogleFonts.muli(
                 fontSize: Responsive().setSp(35),
-                fontFamily: 'Muli',
                 letterSpacing: .6,
               ),
             ),
             SizedBox(height: Responsive().setHeight(20)),
             Text(
               'Username',
-              style: TextStyle(
-                fontFamily: 'Muli',
-                fontSize: Responsive().setSp(20),
-              ),
+              style: GoogleFonts.muli(fontSize: Responsive().setSp(20)),
             ),
             TextField(
               decoration: InputDecoration(
@@ -56,10 +53,7 @@ class CardForm extends StatelessWidget {
             SizedBox(height: Responsive().setHeight(20)),
             Text(
               'Password',
-              style: TextStyle(
-                fontFamily: 'Muli',
-                fontSize: Responsive().setSp(20),
-              ),
+              style: GoogleFonts.muli(fontSize: Responsive().setSp(20)),
             ),
             TextField(
               obscureText: true,
@@ -77,9 +71,8 @@ class CardForm extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Forgot password',
-                  style: TextStyle(
+                  style: GoogleFonts.muli(
                     color: Colors.blue,
-                    fontFamily: 'Muli',
                     fontSize: Responsive().setSp(20),
                   ),
                 )

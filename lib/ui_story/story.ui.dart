@@ -3,6 +3,7 @@ import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_story/card_scroll.dart';
 import 'package:flutter_ui_examples/ui_story/custom_icon.dart';
 import 'package:flutter_ui_examples/ui_story/story_model.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StoryUI extends StatefulWidget {
   StoryUI({@required this.onPressedMenu});
@@ -120,10 +121,9 @@ class _StoryUIState extends State<StoryUI> {
         children: <Widget>[
           Text(
             title,
-            style: TextStyle(
+            style: GoogleFonts.ubuntu(
               color: Colors.white,
               fontSize: Responsive().setSp(46),
-              fontFamily: 'Ubuntu',
               letterSpacing: 1,
             ),
           ),
