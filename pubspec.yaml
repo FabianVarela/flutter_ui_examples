@@ -24,6 +24,14 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/images/adidas/
+    - assets/images/furniture/
+    - assets/images/login/
+    - assets/images/music/
+    - assets/images/onboarding/
+    - assets/images/shopping/
+    - assets/images/story/
+    - assets/images/streaming/
     - assets/images/
 
   fonts:

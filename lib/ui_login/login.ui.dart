@@ -54,12 +54,12 @@ class _LoginUIState extends State<LoginUI> {
       children: <Widget>[
         Padding(
           padding: EdgeInsets.only(top: Responsive().setHeight(20)),
-          child: Image.asset('assets/images/login_image_01.png'),
+          child: Image.asset('assets/images/login/login_image_01.png'),
         ),
         Expanded(child: Container()),
         Padding(
           padding: EdgeInsets.only(top: Responsive().setHeight(20)),
-          child: Image.asset('assets/images/login_image_02.png'),
+          child: Image.asset('assets/images/login/login_image_02.png'),
         ),
       ],
     );
@@ -69,7 +69,7 @@ class _LoginUIState extends State<LoginUI> {
     return Row(
       children: <Widget>[
         Image.asset(
-          'assets/images/login_logo.png',
+          'assets/images/login/login_logo.png',
           width: Responsive().setWidth(70),
           height: Responsive().setHeight(70),
         ),

@@ -96,7 +96,7 @@ class _AdidasUIState extends State<AdidasUI> {
             children: <Widget>[
               Container(
                 child: Image.asset(
-                  'assets/images/adidas.png',
+                  'assets/images/adidas/adidas.png',
                   width: double.infinity,
                   height: double.infinity,
                   fit: BoxFit.cover,
@@ -116,7 +116,7 @@ class _AdidasUIState extends State<AdidasUI> {
                       color: Colors.black26,
                       shape: BoxShape.circle,
                     ),
-                    child: Image.asset('assets/images/360.png'),
+                    child: Image.asset('assets/images/adidas/360.png'),
                   ),
                 ),
               ),
@@ -579,7 +579,7 @@ class _AdidasUIState extends State<AdidasUI> {
             right: -40,
             bottom: -45,
             child: Image.asset(
-              'assets/images/cart.png',
+              'assets/images/adidas/cart.png',
               width: Responsive().setWidth(190),
               height: Responsive().setHeight(155),
               fit: BoxFit.cover,

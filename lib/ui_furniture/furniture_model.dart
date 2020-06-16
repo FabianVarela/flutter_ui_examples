@@ -7,7 +7,7 @@ class FurnitureModel {
 }
 
 List<FurnitureModel> furnitureList = <FurnitureModel>[
-  FurnitureModel('assets/images/hemes.png', 'Hemes ArmChair', '126'),
-  FurnitureModel('assets/images/sofa.png', 'Sofar ArmChair', '148'),
-  FurnitureModel('assets/images/wooden.png', 'Wooden ArmChair', '179'),
+  FurnitureModel('assets/images/furniture/hemes.png', 'Hemes ArmChair', '126'),
+  FurnitureModel('assets/images/furniture/sofa.png', 'Sofar ArmChair', '148'),
+  FurnitureModel('assets/images/furniture/wooden.png', 'Wooden ArmChair', '179'),
 ];

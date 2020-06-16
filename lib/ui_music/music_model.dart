@@ -8,32 +8,32 @@ class MusicModel {
 
 List<MusicModel> musics = <MusicModel>[
   MusicModel(
-    'assets/images/metallica.jpg',
+    'assets/images/music/metallica.jpg',
     'The unforgiven',
     'Metallica',
   ),
   MusicModel(
-    'assets/images/gunsNroses.jpeg',
+    'assets/images/music/gunsNroses.jpeg',
     'Stranged',
     'Guns n roses',
   ),
   MusicModel(
-    'assets/images/fooFighters.jpg',
+    'assets/images/music/fooFighters.jpg',
     'Walk',
     'Foo fighters',
   ),
   MusicModel(
-    'assets/images/bonJovi.jpg',
+    'assets/images/music/bonJovi.jpg',
     'Livin\' On A Prayer',
     'Bon Jovi',
   ),
   MusicModel(
-    'assets/images/metallica.jpg',
+    'assets/images/music/metallica.jpg',
     'Fuel',
     'Metallica',
   ),
   MusicModel(
-    'assets/images/fooFighters.jpg',
+    'assets/images/music/fooFighters.jpg',
     'Everlong',
     'Foo fighters',
   ),

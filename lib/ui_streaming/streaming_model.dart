@@ -6,12 +6,12 @@ class StreamingModel {
 }
 
 List<StreamingModel> streamingList = <StreamingModel>[
-  StreamingModel('assets/images/fullMetalAlchemist.jpg',
+  StreamingModel('assets/images/streaming/fullMetalAlchemist.jpg',
       'Fullmetal alchemist: Brotherhood'),
-  StreamingModel('assets/images/daredevil.jpg', 'Daredevil'),
-  StreamingModel('assets/images/avengers.jpeg', 'Avengers: Infinity war'),
-  StreamingModel('assets/images/batman.jpg', 'Batman: The dark knight'),
-  StreamingModel('assets/images/onePunchMan.png', 'One punch man'),
-  StreamingModel('assets/images/breakingBad.jpg', 'Breaking bad'),
-  StreamingModel('assets/images/dark.jpg', 'Dark'),
+  StreamingModel('assets/images/streaming/daredevil.jpg', 'Daredevil'),
+  StreamingModel('assets/images/streaming/avengers.jpeg', 'Avengers: Infinity war'),
+  StreamingModel('assets/images/streaming/batman.jpg', 'Batman: The dark knight'),
+  StreamingModel('assets/images/streaming/onePunchMan.png', 'One punch man'),
+  StreamingModel('assets/images/streaming/breakingBad.jpg', 'Breaking bad'),
+  StreamingModel('assets/images/streaming/dark.jpg', 'Dark'),
 ];

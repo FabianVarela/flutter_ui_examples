@@ -43,7 +43,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
                       child: Padding(
                         padding: EdgeInsets.only(top: 30, bottom: 25),
                         child: Image.asset(
-                          'assets/images/logo.png',
+                          'assets/images/shopping/logo.png',
                           width: Responsive().setWidth(62),
                           height: Responsive().setHeight(43),
                         ),
@@ -54,7 +54,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
               ),
               ProductCard(
                 Color(0xFFFAECFB),
-                'assets/images/shoes_01.png',
+                'assets/images/shopping/shoes_01.png',
                 'Hybrid Rocket WNS',
                 '\$ 999.0',
                 '\$ 749.0',
@@ -62,7 +62,7 @@ class _ShoppingUIState extends State<ShoppingUI> {
               SizedBox(height: Responsive().setHeight(32)),
               ProductCard(
                 Color(0xFFF8E1DA),
-                'assets/images/shoes_02.png',
+                'assets/images/shopping/shoes_02.png',
                 'Hybrid Runner ARS',
                 '\$ 699.0',
                 '\$ 599.0"',
@@ -113,10 +113,10 @@ class _ShoppingUIState extends State<ShoppingUI> {
   }
 
   List<Widget> _bottomNavIconList = <Widget>[
-    Image.asset('assets/images/store.png', width: 35, height: 35),
+    Image.asset('assets/images/shopping/store.png', width: 35, height: 35),
     Icon(CustomIcon.search, size: 32),
     Icon(CustomIcon.favorite, size: 32),
     Icon(CustomIcon.cart, size: 32),
-    Image.asset('assets/images/profile.png', width: 35, height: 35),
+    Image.asset('assets/images/shopping/profile.png', width: 35, height: 35),
   ];
 }
