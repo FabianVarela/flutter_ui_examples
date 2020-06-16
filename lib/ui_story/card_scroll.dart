@@ -125,7 +125,7 @@ class CardScroll extends StatelessWidget {
               ),
               child: Text(
                 'Read later',
-                style: TextStyle(color: Colors.white),
+                style: GoogleFonts.varelaRound(color: Colors.white),
               ),
             ),
           ),

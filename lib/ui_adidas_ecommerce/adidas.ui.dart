@@ -149,7 +149,7 @@ class _AdidasUIState extends State<AdidasUI> {
                       padding: EdgeInsets.only(right: 8),
                       child: Text(
                         '4.5',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           color: Color(0xFFFFE600),
                           fontSize: Responsive().setSp(16),
                         ),
@@ -159,7 +159,7 @@ class _AdidasUIState extends State<AdidasUI> {
                       padding: EdgeInsets.only(right: 8),
                       child: Text(
                         '(478 people)',
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: Responsive().setSp(16),
                         ),
@@ -206,10 +206,10 @@ class _AdidasUIState extends State<AdidasUI> {
       ),
       child: Text(
         'Product Description',
-        style: TextStyle(
+        style: GoogleFonts.montserrat(
           color: Color(0xFF949598),
           fontSize: Responsive().setSp(14),
-          fontFamily: 'MontserratSemibold',
+          fontWeight: FontWeight.w600,
         ),
       ),
     );
@@ -256,7 +256,7 @@ class _AdidasUIState extends State<AdidasUI> {
       child: GestureDetector(
         child: Text(
           _isExpanded ? 'less' : 'more...',
-          style: TextStyle(
+          style: GoogleFonts.montserrat(
             color: Color(0xFFFB382F),
             fontWeight: FontWeight.w700,
           ),
@@ -564,7 +564,7 @@ class _AdidasUIState extends State<AdidasUI> {
                       child: Text(
                         'Add to cart',
                         textAlign: TextAlign.left,
-                        style: TextStyle(
+                        style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: Responsive().setSp(15),
                         ),

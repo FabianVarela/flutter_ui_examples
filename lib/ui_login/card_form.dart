@@ -44,7 +44,7 @@ class CardForm extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 hintText: 'Set the username',
-                hintStyle: TextStyle(
+                hintStyle: GoogleFonts.muli(
                   color: Colors.grey,
                   fontSize: Responsive().setSp(14),
                 ),
@@ -59,7 +59,7 @@ class CardForm extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Set the password',
-                hintStyle: TextStyle(
+                hintStyle: GoogleFonts.muli(
                   color: Colors.grey,
                   fontSize: Responsive().setSp(14),
                 ),

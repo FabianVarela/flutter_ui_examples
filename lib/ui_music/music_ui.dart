@@ -230,7 +230,7 @@ class _MusicUIState extends State<MusicUI> {
                             children: <Widget>[
                               Text(
                                 musics[index].artist,
-                                style: TextStyle(
+                                style: GoogleFonts.muli(
                                   color: _color,
                                   fontWeight: _currentSong == index
                                       ? FontWeight.w700
@@ -239,7 +239,7 @@ class _MusicUIState extends State<MusicUI> {
                               ),
                               Text(
                                 musics[index].song,
-                                style: TextStyle(
+                                style: GoogleFonts.muli(
                                   color: _color,
                                   fontWeight: _currentSong == index
                                       ? FontWeight.w700

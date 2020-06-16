@@ -158,7 +158,7 @@ class _StoryUIState extends State<StoryUI> {
                 ),
                 child: Text(
                   title,
-                  style: TextStyle(color: Colors.white),
+                  style: GoogleFonts.ubuntu(color: Colors.white),
                 ),
               ),
             ),
@@ -166,7 +166,7 @@ class _StoryUIState extends State<StoryUI> {
           SizedBox(width: Responsive().setWidth(15)),
           Text(
             message,
-            style: TextStyle(color: Colors.blueAccent),
+            style: GoogleFonts.ubuntu(color: Colors.blueAccent),
           ),
         ],
       ),
