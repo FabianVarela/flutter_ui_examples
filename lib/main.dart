@@ -4,6 +4,7 @@ import 'package:flutter_ui_examples/common/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/custom_hidden_menu.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas.ui.dart';
+import 'package:flutter_ui_examples/ui_beer/beer.ui.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture.ui.dart';
 import 'package:flutter_ui_examples/ui_login/login.ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
@@ -76,6 +77,8 @@ class _MyAppState extends State<MyApp> {
         return FurnitureUI(onPressedMenu: _openDrawer);
       case '/adidas':
         return AdidasUI(onPressedMenu: _openDrawer);
+      case '/beer':
+        return BeerUI(onPressedMenu: _openDrawer);
       default:
         return null;
     }
