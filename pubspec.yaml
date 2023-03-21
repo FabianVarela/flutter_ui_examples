@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   gradient_text: ^1.0.2
   google_fonts: ^1.1.0
+  flutter_rating_bar: ^3.0.1+1
 
 dev_dependencies:
   flutter_test:
@@ -25,6 +26,7 @@ flutter:
 
   assets:
     - assets/images/adidas/
+    - assets/images/beer/
     - assets/images/furniture/
     - assets/images/login/
     - assets/images/music/
