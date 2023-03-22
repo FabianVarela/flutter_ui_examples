@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/common/hooks/tween_animation_hook.dart';
+import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/model/page_model.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/widget/on_boarding_item.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/widget/page_indicator.dart';
@@ -82,7 +82,10 @@ class _OnBoardingUIState extends State<OnBoardingUI> {
                   child: FloatingActionButton(
                     backgroundColor: Colors.white,
                     child: const Icon(Icons.arrow_forward, color: Colors.black),
-                    onPressed: () => Navigator.pushNamed(context, '/login'),
+                    onPressed: () => Navigator.pushReplacementNamed(
+                      context,
+                      '/login',
+                    ),
                   ),
                 ),
               ),

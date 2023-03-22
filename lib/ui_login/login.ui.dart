@@ -101,7 +101,7 @@ class _LoginUIState extends State<LoginUI> {
           ],
         ),
         InkWell(
-          onTap: () => Navigator.pushNamed(context, '/shopping'),
+          onTap: () => Navigator.pushReplacementNamed(context, '/shopping'),
           child: Container(
             width: Responsive().setWidth(200),
             height: Responsive().setHeight(60),
