@@ -5,9 +5,9 @@ import 'package:flutter_ui_examples/ui_adidas_ecommerce/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdidasUI extends StatefulWidget {
-  AdidasUI({@required this.onPressedMenu});
+  AdidasUI({required this.onPressedMenu});
 
-  final Function onPressedMenu;
+  final VoidCallback onPressedMenu;
 
   @override
   _AdidasUIState createState() => _AdidasUIState();
@@ -26,10 +26,7 @@ class _AdidasUIState extends State<AdidasUI> {
       width: double.infinity,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: <Color>[
-            Color(0xFF696D77),
-            Color(0xFF292C36),
-          ],
+          colors: <Color>[Color(0xFF696D77), Color(0xFF292C36)],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           tileMode: TileMode.clamp,
@@ -41,25 +38,19 @@ class _AdidasUIState extends State<AdidasUI> {
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              _buildTopSection(),
-              _buildProductSection(),
-            ],
+            children: <Widget>[_buildTopSection(), _buildProductSection()],
           ),
         ),
       ),
     );
   }
 
-  Widget _buildAppBar() {
+  PreferredSizeWidget _buildAppBar() {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       leading: IconButton(
-        icon: Icon(
-          Icons.menu,
-          size: 25,
-        ),
+        icon: Icon(Icons.menu, size: 25),
         onPressed: widget.onPressedMenu,
       ),
       title: Text(
@@ -73,11 +64,7 @@ class _AdidasUIState extends State<AdidasUI> {
       centerTitle: true,
       actions: <Widget>[
         IconButton(
-          icon: Icon(
-            Icons.favorite_border,
-            size: 25,
-            color: Colors.white,
-          ),
+          icon: Icon(Icons.favorite_border, size: 25, color: Colors.white),
           onPressed: () {},
         ),
       ],
@@ -306,10 +293,7 @@ class _AdidasUIState extends State<AdidasUI> {
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          _buildSizeSection(),
-          _buildQuantitySection(),
-        ],
+        children: <Widget>[_buildSizeSection(), _buildQuantitySection()],
       ),
     );
   }
@@ -552,13 +536,15 @@ class _AdidasUIState extends State<AdidasUI> {
                 ),
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: RaisedButton(
-                    onPressed: () {},
-                    color: Color(0xFFFB382F),
-                    padding: EdgeInsets.symmetric(
-                      vertical: Responsive().setHeight(14),
-                      horizontal: Responsive().setWidth(35),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFFB382F),
+                      padding: EdgeInsets.symmetric(
+                        vertical: Responsive().setHeight(14),
+                        horizontal: Responsive().setWidth(35),
+                      ),
                     ),
+                    onPressed: () {},
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomHiddenMenu extends StatefulWidget {
-  CustomHiddenMenu({@required this.menu, @required this.child, this.isOpen});
+  CustomHiddenMenu({
+    required this.menu,
+    required this.child,
+    this.isOpen = false,
+  });
 
   final Widget menu;
   final Widget child;
@@ -13,12 +17,11 @@ class CustomHiddenMenu extends StatefulWidget {
 
 class _CustomHiddenMenuState extends State<CustomHiddenMenu>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Curve _curve;
+  late AnimationController _controller;
+  late Curve _curve;
 
   double _value = 0.0;
 
-  RenderBox _box;
   double _width = 0;
   double _slideAmount = 0.0;
   double _contentScale = 1.0;
@@ -28,7 +31,12 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback(_afterLayout);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+      _width = renderBox?.size.width ?? 0;
+
+      setState(() {});
+    });
 
     _controller = AnimationController(vsync: this);
     _curve = Interval(0.0, 1.0, curve: Curves.decelerate);
@@ -71,7 +79,7 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
         widget.menu,
         AnimatedBuilder(
           animation: _controller,
-          builder: (_, Widget child) {
+          builder: (_, Widget? child) {
             final double animatePercent = _value;
 
             _slideAmount = (_width / 100 * 80) * animatePercent;
@@ -104,13 +112,6 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
         ),
       ],
     );
-  }
-
-  void _afterLayout(Duration timeStamp) {
-    setState(() {
-      _box = context.findRenderObject();
-      _width = _box.size.width;
-    });
   }
 
   void _open([double percent = 0.0]) => _controller.forward(from: percent);

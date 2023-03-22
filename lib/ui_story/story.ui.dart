@@ -6,17 +6,17 @@ import 'package:flutter_ui_examples/ui_story/story_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StoryUI extends StatefulWidget {
-  StoryUI({@required this.onPressedMenu});
+  StoryUI({required this.onPressedMenu});
 
-  final Function onPressedMenu;
+  final VoidCallback onPressedMenu;
 
   @override
   _StoryUIState createState() => _StoryUIState();
 }
 
 class _StoryUIState extends State<StoryUI> {
-  PageController _pageController;
-  double _currentPage;
+  late PageController _pageController;
+  double _currentPage = 0;
 
   @override
   void initState() {
@@ -26,7 +26,7 @@ class _StoryUIState extends State<StoryUI> {
 
     _pageController = PageController(initialPage: stories.length - 1);
     _pageController.addListener(() {
-      setState(() => _currentPage = _pageController.page);
+      setState(() => _currentPage = _pageController.page ?? 0);
     });
   }
 

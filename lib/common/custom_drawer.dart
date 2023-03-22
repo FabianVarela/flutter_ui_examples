@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomDrawer extends StatelessWidget {
-  CustomDrawer({@required this.onCloseMenu});
+  CustomDrawer({required this.onCloseMenu});
 
-  final Function() onCloseMenu;
+  final VoidCallback onCloseMenu;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class CustomDrawer extends StatelessWidget {
 
   Widget _setMenuItem(BuildContext context, String text, String route) {
     return ListTile(
-      title: Text(text, style: GoogleFonts.muli(fontSize: 20)),
+      title: Text(text, style: GoogleFonts.mulish(fontSize: 20)),
       onTap: () {
         onCloseMenu();
         Navigator.of(context).pushReplacementNamed(route);

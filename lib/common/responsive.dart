@@ -1,34 +1,32 @@
 import 'package:flutter/material.dart';
 
 class Responsive {
-  static Responsive _instance;
+  static Responsive _instance = Responsive._();
 
   static const int _defaultWidth = 1080;
   static const int _defaultHeight = 1920;
 
-  double width;
-  double height;
+  double width = 0;
+  double height = 0;
 
-  bool allowFontScaling;
+  bool allowFontScaling = false;
 
-  static double _screenWidth;
-  static double _screenHeight;
-  static double _textScaleFactor;
+  static double _screenWidth = 0;
+  static double _screenHeight = 0;
+  static double _textScaleFactor = 0;
 
   Responsive._();
 
   factory Responsive() => _instance;
 
   static void init(
-      BuildContext context, {
-        num width = _defaultWidth,
-        num height = _defaultHeight,
-        bool allowFontScaling = false,
-      }) {
-    _instance ??= Responsive._();
-
-    _instance.width = width;
-    _instance.height = height;
+    BuildContext context, {
+    num width = _defaultWidth,
+    num height = _defaultHeight,
+    bool allowFontScaling = false,
+  }) {
+    _instance.width = width as double;
+    _instance.height = height as double;
     _instance.allowFontScaling = allowFontScaling;
 
     final MediaQueryData mediaQuery = MediaQuery.of(context);

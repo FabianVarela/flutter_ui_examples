@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_on_boarding/page_model.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/page_indicator.dart';
+import 'package:flutter_ui_examples/ui_on_boarding/page_model.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gradient_text/gradient_text.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class OnBoardingUI extends StatefulWidget {
   @override
@@ -12,10 +12,10 @@ class OnBoardingUI extends StatefulWidget {
 
 class _OnBoardingUIState extends State<OnBoardingUI>
     with TickerProviderStateMixin {
-  PageController _pageController;
+  late PageController _pageController;
 
-  AnimationController _animationController;
-  Animation<double> _scaleAnimation;
+  late AnimationController _animationController;
+  late Animation<double> _scaleAnimation;
 
   int _currentPage = 0;
   bool _isLastPage = false;
@@ -81,14 +81,14 @@ class _OnBoardingUIState extends State<OnBoardingUI>
           children: <Widget>[
             AnimatedBuilder(
               animation: _pageController,
-              builder: (_, Widget child) {
+              builder: (_, Widget? child) {
                 final PageModel pageModel = pageList[index];
 
                 double delta;
                 double y = 1.0;
 
                 if (_pageController.position.haveDimensions) {
-                  delta = _pageController.page - index;
+                  delta = (_pageController.page ?? 0) - index;
                   y = 1 - delta.abs().clamp(0.0, 1.0);
                 }
 
@@ -117,7 +117,7 @@ class _OnBoardingUIState extends State<OnBoardingUI>
                 opacity: .10,
                 child: GradientText(
                   pageModel.title,
-                  gradient: LinearGradient(colors: pageModel.titleGradient),
+                  colors: pageModel.titleGradient,
                   style: GoogleFonts.montserrat(
                     fontSize: Responsive().setSp(80),
                     letterSpacing: 1,
@@ -132,7 +132,7 @@ class _OnBoardingUIState extends State<OnBoardingUI>
                 ),
                 child: GradientText(
                   pageModel.title,
-                  gradient: LinearGradient(colors: pageModel.titleGradient),
+                  colors: pageModel.titleGradient,
                   style: GoogleFonts.montserrat(
                     fontSize: Responsive().setSp(60),
                     fontWeight: FontWeight.w900,

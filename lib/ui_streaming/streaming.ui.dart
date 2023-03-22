@@ -5,9 +5,9 @@ import 'package:flutter_ui_examples/ui_streaming/streaming_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StreamingUI extends StatefulWidget {
-  StreamingUI({@required this.onPressedMenu});
+  StreamingUI({required this.onPressedMenu});
 
-  final Function onPressedMenu;
+  final VoidCallback onPressedMenu;
 
   @override
   _StreamingUIState createState() => _StreamingUIState();
@@ -28,25 +28,24 @@ class _StreamingUIState extends State<StreamingUI> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: GoogleFonts.mulish(color: Color(0xFFE52020)),
+        unselectedLabelStyle: GoogleFonts.mulish(),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home, color: Color(0xFFE52020)),
-            title: Text(
-              'Home',
-              style: GoogleFonts.muli(color: Color(0xFFE52020)),
-            ),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text('Search', style: GoogleFonts.muli()),
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.bookmark),
-            title: Text('Bookmarks', style: GoogleFonts.muli()),
+            label: 'Bookmarks',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
-            title: Text('Profile', style: GoogleFonts.muli()),
+            label: 'Profile',
           )
         ],
       ),
@@ -105,14 +104,14 @@ class _StreamingUIState extends State<StreamingUI> {
                         children: <Widget>[
                           Text(
                             'WATCH BEFORE EVERYONE',
-                            style: GoogleFonts.muli(
+                            style: GoogleFonts.mulish(
                               color: Colors.white,
                               fontSize: Responsive().setSp(15),
                             ),
                           ),
                           Text(
                             streamingList[0].title,
-                            style: GoogleFonts.muli(
+                            style: GoogleFonts.mulish(
                               color: Colors.white,
                               fontSize: Responsive().setSp(40),
                             ),
@@ -158,17 +157,19 @@ class _StreamingUIState extends State<StreamingUI> {
                   SizedBox(width: Responsive().setWidth(12)),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
-                    child: RaisedButton(
-                      color: Color(0xFFE52020),
-                      padding: EdgeInsets.symmetric(
-                        vertical: Responsive().setHeight(15),
-                        horizontal: Responsive().setWidth(80),
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFFE52020),
+                        padding: EdgeInsets.symmetric(
+                          vertical: Responsive().setHeight(15),
+                          horizontal: Responsive().setWidth(80),
+                        ),
                       ),
                       child: Row(
                         children: <Widget>[
                           Text(
                             'Watch now',
-                            style: GoogleFonts.muli(
+                            style: GoogleFonts.mulish(
                               color: Colors.white,
                               fontSize: Responsive().setSp(15),
                             ),
@@ -207,9 +208,9 @@ class _StreamingUIState extends State<StreamingUI> {
               children: <Widget>[
                 Text(
                   'Watch now',
-                  style: GoogleFonts.muli(fontSize: Responsive().setSp(22)),
+                  style: GoogleFonts.mulish(fontSize: Responsive().setSp(22)),
                 ),
-                FlatButton(
+                TextButton(
                   child: Text('View more'),
                   onPressed: () {},
                 )
@@ -250,7 +251,7 @@ class _StreamingUIState extends State<StreamingUI> {
                               streamingList[index].title,
                               textAlign: TextAlign.center,
                               overflow: TextOverflow.ellipsis,
-                              style: GoogleFonts.muli(
+                              style: GoogleFonts.mulish(
                                 fontSize: Responsive().setSp(16),
                               ),
                             ),

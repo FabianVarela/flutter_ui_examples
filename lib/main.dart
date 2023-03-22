@@ -16,7 +16,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await SystemChrome.setPreferredOrientations(
-      <DeviceOrientation>[DeviceOrientation.portraitUp]);
+    <DeviceOrientation>[DeviceOrientation.portraitUp],
+  );
 
   runApp(MyApp());
 }
@@ -27,7 +28,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _isExpand;
+  bool _isExpand = false;
 
   @override
   Widget build(BuildContext context) {
@@ -58,10 +59,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Widget _setRoute(String routeName) {
+  Widget _setRoute(String? routeName) {
     switch (routeName) {
-      case '/':
-        return OnBoardingUI();
       case '/login':
         return LoginUI();
       case '/shopping':
@@ -76,18 +75,13 @@ class _MyAppState extends State<MyApp> {
         return FurnitureUI(onPressedMenu: _openDrawer);
       case '/adidas':
         return AdidasUI(onPressedMenu: _openDrawer);
+      case '/':
       default:
-        return null;
+        return OnBoardingUI();
     }
   }
 
   void _openDrawer() {
-    setState(() {
-      if (_isExpand ?? false) {
-        _isExpand = false;
-      } else {
-        _isExpand = true;
-      }
-    });
+    setState(() => _isExpand = !_isExpand);
   }
 }

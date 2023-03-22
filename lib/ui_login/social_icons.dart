@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 
 class SocialIcons extends StatelessWidget {
+  SocialIcons({
+    required this.colors,
+    required this.iconData,
+    required this.onPressed,
+  });
+
   final List<Color> colors;
   final IconData iconData;
-  final Function onPressed;
-
-  SocialIcons({this.colors, this.iconData, this.onPressed});
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +28,7 @@ class SocialIcons extends StatelessWidget {
         child: RawMaterialButton(
           shape: CircleBorder(),
           onPressed: onPressed,
-          child: Icon(
-            iconData,
-            color: Colors.white,
-          ),
+          child: Icon(iconData, color: Colors.white),
         ),
       ),
     );

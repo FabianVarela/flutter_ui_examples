@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/ui_music/radial/custom_gesture_detector_radial.dart';
 
@@ -32,12 +31,12 @@ class CustomRadialSeek extends StatefulWidget {
   final double progressWidth;
   final Color progressColor;
   final double progress;
-  final Widget thumb;
+  final Widget? thumb;
   final double thumbPercent;
-  final Widget centerContent;
-  final Function(double) onDragStart;
-  final Function(double) onDragUpdate;
-  final Function(double) onDragEnd;
+  final Widget? centerContent;
+  final ValueSetter<double>? onDragStart;
+  final ValueSetter<double>? onDragUpdate;
+  final ValueSetter<double>? onDragEnd;
 
   @override
   _CustomRadialSeekState createState() => _CustomRadialSeekState();
@@ -46,8 +45,8 @@ class CustomRadialSeek extends StatefulWidget {
 class _CustomRadialSeekState extends State<CustomRadialSeek> {
   double _thumbPercent = 0;
 
-  Coordinates _startCoordinates;
-  double _currentPercent;
+  Coordinates? _startCoordinates;
+  double? _currentPercent;
 
   @override
   void initState() {
@@ -68,7 +67,7 @@ class _CustomRadialSeekState extends State<CustomRadialSeek> {
   Widget build(BuildContext context) {
     double thumbPosition = widget.thumbPercent;
     if (_currentPercent != null) {
-      thumbPosition = _currentPercent;
+      thumbPosition = _currentPercent!;
     }
 
     return CustomGestureDetectorRadial(
@@ -106,34 +105,34 @@ class _CustomRadialSeekState extends State<CustomRadialSeek> {
   void _onDragStart(Coordinates coordinates) {
     _startCoordinates = coordinates;
     if (widget.onDragStart != null) {
-      widget.onDragStart(_thumbPercent);
+      widget.onDragStart?.call(_thumbPercent);
     }
   }
 
   void _onDragUpdate(Coordinates coordinates) {
-    final double angle = coordinates.angle - _startCoordinates.angle;
+    final double angle = coordinates.angle - (_startCoordinates?.angle ?? 0);
     final double percent = angle / (2 * pi);
 
     _currentPercent = (_thumbPercent + percent) % 1.0;
 
     if (widget.onDragUpdate != null) {
-      widget.onDragUpdate(_thumbPercent);
+      widget.onDragUpdate?.call(_thumbPercent);
     }
   }
 
   void _onDragEnd() {
     if (widget.onDragEnd != null) {
-      widget.onDragEnd(_currentPercent);
+      widget.onDragEnd?.call(_currentPercent ?? 0);
     }
 
-    _thumbPercent = _currentPercent;
+    _thumbPercent = _currentPercent ?? 0;
     _startCoordinates = null;
     _currentPercent = null;
   }
 }
 
 class CircleThumb extends StatelessWidget {
-  CircleThumb({this.color, this.diameter});
+  CircleThumb({required this.color, required this.diameter});
 
   final Color color;
   final double diameter;
@@ -178,9 +177,9 @@ class _RadialProgress extends StatefulWidget {
   final double progressWidth;
   final Color progressColor;
   final double progressPercent;
-  final Widget thumb;
+  final Widget? thumb;
   final double thumbPosition;
-  final Widget centerContent;
+  final Widget? centerContent;
 
   @override
   _RadialProgressState createState() => _RadialProgressState();
@@ -252,14 +251,14 @@ class _RadialProgressState extends State<_RadialProgress> {
 
 class _RadialSeekPainter extends CustomPainter {
   _RadialSeekPainter({
-    @required this.width,
-    @required Color color,
-    @required this.seekWidth,
-    @required Color seekColor,
-    @required this.seekPercent,
-    @required this.progressWidth,
-    @required Color progressColor,
-    @required this.progressPercent,
+    required this.width,
+    required Color color,
+    required this.seekWidth,
+    required Color seekColor,
+    required this.seekPercent,
+    required this.progressWidth,
+    required Color progressColor,
+    required this.progressPercent,
   })  : radialPaint = Paint()
           ..color = color
           ..style = PaintingStyle.stroke

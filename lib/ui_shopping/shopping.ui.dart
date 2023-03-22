@@ -4,9 +4,9 @@ import 'package:flutter_ui_examples/ui_shopping/custom_icon.dart';
 import 'product_card.dart';
 
 class ShoppingUI extends StatefulWidget {
-  ShoppingUI({@required this.onPressedMenu});
+  ShoppingUI({required this.onPressedMenu});
 
-  final Function onPressedMenu;
+  final VoidCallback onPressedMenu;
 
   @override
   _ShoppingUIState createState() => _ShoppingUIState();

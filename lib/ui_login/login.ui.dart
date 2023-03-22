@@ -17,7 +17,7 @@ class _LoginUIState extends State<LoginUI> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      resizeToAvoidBottomPadding: true,
+      resizeToAvoidBottomInset: true,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -75,7 +75,7 @@ class _LoginUIState extends State<LoginUI> {
         ),
         Text(
           'LOGO',
-          style: GoogleFonts.muli(
+          style: GoogleFonts.mulish(
             fontSize: Responsive().setSp(30),
             letterSpacing: .6,
             fontWeight: FontWeight.bold,
@@ -120,7 +120,7 @@ class _LoginUIState extends State<LoginUI> {
             child: Center(
               child: Text(
                 'Sign In',
-                style: GoogleFonts.muli(
+                style: GoogleFonts.mulish(
                   color: Colors.white,
                   fontSize: Responsive().setSp(18),
                   letterSpacing: 1,
@@ -158,7 +158,7 @@ class _LoginUIState extends State<LoginUI> {
         SizedBox(width: 8),
         Text(
           text,
-          style: GoogleFonts.muli(fontSize: 12),
+          style: GoogleFonts.mulish(fontSize: 12),
         ),
       ],
     );
@@ -171,7 +171,7 @@ class _LoginUIState extends State<LoginUI> {
         _horizontalLine(),
         Text(
           'Social login',
-          style: GoogleFonts.muli(fontSize: 16),
+          style: GoogleFonts.mulish(fontSize: 16),
         ),
         _horizontalLine()
       ],
@@ -236,13 +236,13 @@ class _LoginUIState extends State<LoginUI> {
       children: <Widget>[
         Text(
           'New User? ',
-          style: GoogleFonts.muli(),
+          style: GoogleFonts.mulish(),
         ),
         InkWell(
           onTap: () {},
           child: Text(
             'Sign Up',
-            style: GoogleFonts.muli(color: Color(0xFF5D74E3)),
+            style: GoogleFonts.mulish(color: Color(0xFF5D74E3)),
           ),
         ),
       ],

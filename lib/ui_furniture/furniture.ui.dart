@@ -5,9 +5,9 @@ import 'package:flutter_ui_examples/ui_furniture/furniture_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FurnitureUI extends StatefulWidget {
-  FurnitureUI({@required this.onPressedMenu});
+  FurnitureUI({required this.onPressedMenu});
 
-  final Function onPressedMenu;
+  final VoidCallback onPressedMenu;
 
   @override
   _FurnitureUIState createState() => _FurnitureUIState();
@@ -35,9 +35,13 @@ class _FurnitureUIState extends State<FurnitureUI> {
         currentIndex: _currentIndex,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.panorama_horizontal), title: Container()),
+            icon: Icon(Icons.panorama_horizontal),
+            label: '',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark_border), title: Container()),
+            icon: Icon(Icons.bookmark_border),
+            label: '',
+          ),
         ],
       ),
       floatingActionButton: Container(

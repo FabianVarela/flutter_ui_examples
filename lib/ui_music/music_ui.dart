@@ -6,9 +6,9 @@ import 'package:flutter_ui_examples/ui_music/radial/custom_radial_seek.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MusicUI extends StatefulWidget {
-  MusicUI({@required this.onPressedMenu});
+  MusicUI({required this.onPressedMenu});
 
-  final Function onPressedMenu;
+  final VoidCallback onPressedMenu;
 
   @override
   _MusicUIState createState() => _MusicUIState();
@@ -43,7 +43,7 @@ class _MusicUIState extends State<MusicUI> {
   Widget _customHeightSizedBox(double height) =>
       SizedBox(height: Responsive().setHeight(height));
 
-  Widget _setAppBar() {
+  PreferredSizeWidget _setAppBar() {
     return AppBar(
       backgroundColor: Colors.white,
       leading: IconButton(
@@ -53,7 +53,7 @@ class _MusicUIState extends State<MusicUI> {
       ),
       title: Text(
         'Music player',
-        style: GoogleFonts.muli(color: _color),
+        style: GoogleFonts.mulish(color: _color),
       ),
       centerTitle: true,
       actions: <Widget>[
@@ -120,14 +120,14 @@ class _MusicUIState extends State<MusicUI> {
           children: <Widget>[
             Text(
               musics[_currentSong].artist,
-              style: GoogleFonts.muli(
+              style: GoogleFonts.mulish(
                 color: _color,
                 fontSize: Responsive().setSp(20),
               ),
             ),
             Text(
               musics[_currentSong].song,
-              style: GoogleFonts.muli(
+              style: GoogleFonts.mulish(
                 color: _color.withOpacity(.5),
                 fontSize: Responsive().setSp(18),
               ),
@@ -230,7 +230,7 @@ class _MusicUIState extends State<MusicUI> {
                             children: <Widget>[
                               Text(
                                 musics[index].artist,
-                                style: GoogleFonts.muli(
+                                style: GoogleFonts.mulish(
                                   color: _color,
                                   fontWeight: _currentSong == index
                                       ? FontWeight.w700
@@ -239,7 +239,7 @@ class _MusicUIState extends State<MusicUI> {
                               ),
                               Text(
                                 musics[index].song,
-                                style: GoogleFonts.muli(
+                                style: GoogleFonts.mulish(
                                   color: _color,
                                   fontWeight: _currentSong == index
                                       ? FontWeight.w700

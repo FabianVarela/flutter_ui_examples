@@ -31,7 +31,7 @@ class CardForm extends StatelessWidget {
           children: <Widget>[
             Text(
               'Login',
-              style: GoogleFonts.muli(
+              style: GoogleFonts.mulish(
                 fontSize: Responsive().setSp(35),
                 letterSpacing: .6,
               ),
@@ -39,12 +39,12 @@ class CardForm extends StatelessWidget {
             SizedBox(height: Responsive().setHeight(20)),
             Text(
               'Username',
-              style: GoogleFonts.muli(fontSize: Responsive().setSp(20)),
+              style: GoogleFonts.mulish(fontSize: Responsive().setSp(20)),
             ),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Set the username',
-                hintStyle: GoogleFonts.muli(
+                hintStyle: GoogleFonts.mulish(
                   color: Colors.grey,
                   fontSize: Responsive().setSp(14),
                 ),
@@ -53,13 +53,13 @@ class CardForm extends StatelessWidget {
             SizedBox(height: Responsive().setHeight(20)),
             Text(
               'Password',
-              style: GoogleFonts.muli(fontSize: Responsive().setSp(20)),
+              style: GoogleFonts.mulish(fontSize: Responsive().setSp(20)),
             ),
             TextField(
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Set the password',
-                hintStyle: GoogleFonts.muli(
+                hintStyle: GoogleFonts.mulish(
                   color: Colors.grey,
                   fontSize: Responsive().setSp(14),
                 ),
@@ -71,7 +71,7 @@ class CardForm extends StatelessWidget {
               children: <Widget>[
                 Text(
                   'Forgot password',
-                  style: GoogleFonts.muli(
+                  style: GoogleFonts.mulish(
                     color: Colors.blue,
                     fontSize: Responsive().setSp(20),
                   ),
