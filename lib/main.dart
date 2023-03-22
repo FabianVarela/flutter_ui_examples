@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_ui_examples/common/custom_drawer.dart';
-import 'package:flutter_ui_examples/common/custom_hidden_menu.dart';
+import 'package:flutter_ui_examples/common/menu/custom_drawer.dart';
+import 'package:flutter_ui_examples/common/menu/custom_hidden_menu.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas.ui.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture_ui.dart';
