@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_furniture/custom_icon.dart';
-import 'package:flutter_ui_examples/ui_furniture/furniture_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_ui_examples/ui_furniture/model/furniture_model.dart';
+import 'package:flutter_ui_examples/ui_furniture/widget/custom_icon.dart';
+import 'package:flutter_ui_examples/ui_furniture/widget/custom_title.dart';
+import 'package:flutter_ui_examples/ui_furniture/widget/furniture_item.dart';
+import 'package:flutter_ui_examples/ui_furniture/widget/gradient_container.dart';
 
 class FurnitureUI extends StatefulWidget {
   const FurnitureUI({required this.onPressedMenu, super.key});
@@ -19,20 +21,68 @@ class _FurnitureUIState extends State<FurnitureUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       backgroundColor: const Color(0xFFF2F3F8),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: IconButton(
+            icon: const Icon(CustomIcons.menu, color: Colors.black),
+            onPressed: widget.onPressedMenu,
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              icon: const Icon(CustomIcons.search, color: Colors.black),
+              onPressed: () {},
+            ),
+          ),
+        ],
+      ),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          _buildGradientContainer(),
-          _buildAppBar(),
-          _buildTitle(),
-          _buildList(),
+          const GradientContainer(),
+          Positioned(
+            top: Responsive().setHeight(Responsive().height * .15),
+            left: Responsive().setWidth(30),
+            right: Responsive().setHeight(20),
+            child: const CustomTitle(
+              title: 'Wooden Armchairs',
+              subtitle: 'Beautiful armchairs to decorate your home',
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: SizedBox(
+              height: Responsive().setHeight(
+                Responsive().height >= 750
+                    ? Responsive().height * .55
+                    : Responsive().height * .65,
+              ),
+              child: ListView.builder(
+                itemCount: furnitureList.length,
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (_, index) => FurnitureItem(
+                  image: furnitureList[index].image,
+                  title: furnitureList[index].title,
+                  price: furnitureList[index].price,
+                  currentIndex: index,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.black,
-        onTap: (int index) => setState(() => _currentIndex = index),
         currentIndex: _currentIndex,
+        onTap: (index) => setState(() => _currentIndex = index),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.panorama_horizontal),
@@ -44,198 +94,27 @@ class _FurnitureUIState extends State<FurnitureUI> {
           ),
         ],
       ),
-      floatingActionButton: Container(
-        width: Responsive().setHeight(65),
-        height: Responsive().setWidth(65),
-        decoration: BoxDecoration(
-          color: const Color(0x0FFA7B58),
-          shape: BoxShape.circle,
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: const Color(0xFFF78A6C).withOpacity(.8),
-              offset: const Offset(0, 10),
-              blurRadius: 10,
-            ),
-          ],
-        ),
-        child: RawMaterialButton(
-          onPressed: () {},
-          shape: const CircleBorder(),
-          child: const Icon(Icons.add, size: 35, color: Colors.white),
+      floatingActionButton: SizedBox.fromSize(
+        size: Size(Responsive().setWidth(65), Responsive().setHeight(65)),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: const Color(0x0FFA7B58),
+            shape: BoxShape.circle,
+            boxShadow: <BoxShadow>[
+              BoxShadow(
+                color: const Color(0xFFF78A6C).withOpacity(.8),
+                blurRadius: 10,
+              ),
+            ],
+          ),
+          child: RawMaterialButton(
+            onPressed: () {},
+            shape: const CircleBorder(),
+            child: const Icon(Icons.add, size: 35, color: Colors.white),
+          ),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-    );
-  }
-
-  Widget _buildGradientContainer() {
-    return Align(
-      alignment: Alignment.topRight,
-      child: Container(
-        width: Responsive().setWidth(Responsive().width * .8),
-        height: Responsive().setHeight(Responsive().height / 2),
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: <Color>[
-              Color(0xFFFBFCFD),
-              Color(0xFFF2F3F8),
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildAppBar() {
-    return Positioned(
-      top: Responsive().setHeight(30),
-      left: Responsive().setWidth(20),
-      right: Responsive().setWidth(20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-            icon: const Icon(CustomIcons.menu, color: Colors.black),
-            onPressed: widget.onPressedMenu,
-          ),
-          IconButton(
-            icon: const Icon(CustomIcons.search, color: Colors.black),
-            onPressed: () {},
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTitle() {
-    return Positioned(
-      top: Responsive().setHeight(Responsive().height * .15),
-      left: Responsive().setWidth(30),
-      right: Responsive().setHeight(20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            'Wooden Armchairs',
-            style: GoogleFonts.montserrat(
-              fontSize: Responsive().setSp(20),
-              fontWeight: FontWeight.w900,
-            ),
-          ),
-          Text(
-            'Beautiful armchairs to decorate your home',
-            style: GoogleFonts.montserrat(
-              fontSize: Responsive().setSp(16),
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildList() {
-    return Align(
-      alignment: Alignment.bottomCenter,
-      child: SizedBox(
-        height: Responsive().setHeight(
-          Responsive().height >= 750
-              ? Responsive().height * .55
-              : Responsive().height * .65,
-        ),
-        child: ListView.builder(
-          itemCount: furnitureList.length,
-          scrollDirection: Axis.horizontal,
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (_, index) => _buildItem(furnitureList[index], index),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildItem(FurnitureModel furniture, int index) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: Responsive().setWidth(35),
-        bottom: Responsive().setHeight(50),
-      ),
-      child: SizedBox(
-        width: Responsive().setWidth(200),
-        child: Stack(
-          fit: StackFit.expand,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.only(top: Responsive().setHeight(45)),
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: index.isEven ? Colors.white : const Color(0xFF2A2D3F),
-                  boxShadow: const <BoxShadow>[
-                    BoxShadow(
-                      color: Colors.black12,
-                      offset: Offset(0, 10),
-                      blurRadius: 10,
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Image.asset(
-                  furniture.image,
-                  width: Responsive().setWidth(172),
-                  height: Responsive().setHeight(199),
-                ),
-                SizedBox(height: Responsive().setHeight(12)),
-                Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        furniture.title,
-                        style: GoogleFonts.montserrat(
-                          fontSize: Responsive().setSp(16),
-                          fontWeight: FontWeight.w900,
-                          color: index.isEven
-                              ? const Color(0xFF2A2D3F)
-                              : Colors.white,
-                        ),
-                      ),
-                      SizedBox(height: Responsive().setHeight(7)),
-                      Text(
-                        'New Sell',
-                        style: GoogleFonts.montserrat(
-                          fontSize: Responsive().setSp(12),
-                          fontWeight: FontWeight.w500,
-                          color: index.isEven
-                              ? const Color(0xFF2A2D3F)
-                              : Colors.white,
-                        ),
-                      ),
-                      SizedBox(height: Responsive().setHeight(45)),
-                      Text(
-                        '${furniture.price} \$',
-                        style: GoogleFonts.montserrat(
-                          fontSize: Responsive().setSp(30),
-                          fontWeight: FontWeight.w700,
-                          color: index.isEven
-                              ? const Color(0xFF2A2D3F)
-                              : Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
