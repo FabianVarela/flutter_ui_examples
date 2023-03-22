@@ -37,27 +37,26 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter UI examples',
       initialRoute: '/',
-      onGenerateRoute: (RouteSettings settings) {
-        return MaterialPageRoute<dynamic>(
-          settings: settings,
-          builder: (BuildContext ctx) {
-            Responsive.init(
-              ctx,
-              width: MediaQuery.of(ctx).size.width,
-              height: MediaQuery.of(ctx).size.height,
-              allowFontScaling: true,
-            );
+      onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
+        settings: settings,
+        builder: (ctx) {
+          final w = MediaQuery.of(ctx).size.width;
+          final h = MediaQuery.of(ctx).size.height;
+          Responsive.init(ctx, width: w, height: h, allowFontScaling: true);
 
-            return CustomHiddenMenu(
-              isOpen: _isExpand,
-              menu: CustomDrawer(
-                onCloseMenu: () => setState(() => _isExpand = false),
-              ),
-              child: _setRoute(settings.name),
-            );
-          },
-        );
-      },
+          return CustomHiddenMenu(
+            isOpen: _isExpand,
+            menu: CustomDrawer(
+              isShowing: _isExpand,
+              onRedirect: (route) {
+                Navigator.of(ctx).pushReplacementNamed(route);
+              },
+              onCloseMenu: () => setState(() => _isExpand = false),
+            ),
+            child: _setRoute(settings.name),
+          );
+        },
+      ),
     );
   }
 
