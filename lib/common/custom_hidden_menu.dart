@@ -80,12 +80,10 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
         widget.menu,
         AnimatedBuilder(
           animation: _controller,
-          builder: (_, Widget? child) {
-            final animatePercent = _value;
-
-            _slideAmount = (_width / 100 * 80) * animatePercent;
-            _contentScale = 1.0 - (((100 - 80) / 100) * animatePercent);
-            _cornerRadius = 10 * animatePercent;
+          builder: (_, child) {
+            _slideAmount = (_width / 100 * 80) * _value;
+            _contentScale = 1.0 - (((100 - 80) / 100) * _value);
+            _cornerRadius = 30 * _value;
 
             return Transform(
               transform: Matrix4.translationValues(_slideAmount, 0, 0)
