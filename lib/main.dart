@@ -19,10 +19,12 @@ Future<void> main() async {
     <DeviceOrientation>[DeviceOrientation.portraitUp],
   );
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -62,7 +64,7 @@ class _MyAppState extends State<MyApp> {
   Widget _setRoute(String? routeName) {
     switch (routeName) {
       case '/login':
-        return LoginUI();
+        return const LoginUI();
       case '/shopping':
         return ShoppingUI(onPressedMenu: _openDrawer);
       case '/story':
@@ -77,7 +79,7 @@ class _MyAppState extends State<MyApp> {
         return AdidasUI(onPressedMenu: _openDrawer);
       case '/':
       default:
-        return OnBoardingUI();
+        return const OnBoardingUI();
     }
   }
 

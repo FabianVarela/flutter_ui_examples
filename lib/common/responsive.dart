@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Responsive {
-  static Responsive _instance = Responsive._();
+  factory Responsive() => _instance;
+
+  Responsive._();
+
+  static final Responsive _instance = Responsive._();
 
   static const int _defaultWidth = 1080;
   static const int _defaultHeight = 1920;
@@ -15,10 +19,6 @@ class Responsive {
   static double _screenHeight = 0;
   static double _textScaleFactor = 0;
 
-  Responsive._();
-
-  factory Responsive() => _instance;
-
   static void init(
     BuildContext context, {
     num width = _defaultWidth,
@@ -29,7 +29,7 @@ class Responsive {
     _instance.height = height as double;
     _instance.allowFontScaling = allowFontScaling;
 
-    final MediaQueryData mediaQuery = MediaQuery.of(context);
+    final mediaQuery = MediaQuery.of(context);
 
     _screenWidth = mediaQuery.size.width;
     _screenHeight = mediaQuery.size.height;
@@ -46,7 +46,8 @@ class Responsive {
 
   double setHeight(double height) => height * scaleHeight;
 
-  /// Respect text size accessibility if {allowFontScaling} is true, default is false
+  /// Respect text size accessibility if {allowFontScaling} is true,
+  /// default is false.
   double setSp(double fontSize) => allowFontScaling
       ? fontSize * textScale
       : (fontSize * textScale) / _textScaleFactor;

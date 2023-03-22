@@ -5,7 +5,7 @@ import 'package:flutter_ui_examples/ui_streaming/streaming_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StreamingUI extends StatefulWidget {
-  StreamingUI({required this.onPressedMenu});
+  const StreamingUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
@@ -26,11 +26,10 @@ class _StreamingUIState extends State<StreamingUI> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
         type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: GoogleFonts.mulish(color: Color(0xFFE52020)),
+        selectedLabelStyle: GoogleFonts.mulish(color: const Color(0xFFE52020)),
         unselectedLabelStyle: GoogleFonts.mulish(),
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home, color: Color(0xFFE52020)),
             label: 'Home',
@@ -53,7 +52,7 @@ class _StreamingUIState extends State<StreamingUI> {
   }
 
   Widget _setHeaderSection() {
-    return Container(
+    return SizedBox(
       height: Responsive().setHeight(400),
       child: Stack(
         children: <Widget>[
@@ -61,14 +60,14 @@ class _StreamingUIState extends State<StreamingUI> {
             clipper: MyClipper(),
             child: Container(
               height: Responsive().setHeight(370),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 boxShadow: <BoxShadow>[
                   BoxShadow(
                     color: Colors.black12,
                     offset: Offset(0, 10),
                     blurRadius: 10,
-                  )
+                  ),
                 ],
               ),
               child: Stack(
@@ -82,15 +81,15 @@ class _StreamingUIState extends State<StreamingUI> {
                   Container(
                     height: double.infinity,
                     width: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: <Color>[
                           Color(0x00000000),
                           Color(0xD9333333),
                         ],
-                        stops: <double>[0.0, 0.9],
-                        begin: FractionalOffset(0.0, 0.0),
-                        end: FractionalOffset(0.0, 1.0),
+                        stops: <double>[0, 0.9],
+                        begin: FractionalOffset.topLeft,
+                        end: FractionalOffset.bottomLeft,
                       ),
                     ),
                     child: Padding(
@@ -129,7 +128,7 @@ class _StreamingUIState extends State<StreamingUI> {
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: IconButton(
-                          icon: Icon(Icons.menu, color: Colors.white),
+                          icon: const Icon(Icons.menu, color: Colors.white),
                           onPressed: widget.onPressedMenu,
                         ),
                       ),
@@ -143,15 +142,12 @@ class _StreamingUIState extends State<StreamingUI> {
             top: Responsive().setHeight(360),
             right: Responsive().setWidth(-30),
             child: FractionalTranslation(
-              translation: Offset(0.0, -.5),
+              translation: const Offset(0, -.5),
               child: Row(
                 children: <Widget>[
                   FloatingActionButton(
                     backgroundColor: Colors.white,
-                    child: Icon(
-                      Icons.add,
-                      color: Color(0xFFE52020),
-                    ),
+                    child: const Icon(Icons.add, color: Color(0xFFE52020)),
                     onPressed: () {},
                   ),
                   SizedBox(width: Responsive().setWidth(12)),
@@ -159,7 +155,7 @@ class _StreamingUIState extends State<StreamingUI> {
                     borderRadius: BorderRadius.circular(30),
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFFE52020),
+                        backgroundColor: const Color(0xFFE52020),
                         padding: EdgeInsets.symmetric(
                           vertical: Responsive().setHeight(15),
                           horizontal: Responsive().setWidth(80),
@@ -175,10 +171,7 @@ class _StreamingUIState extends State<StreamingUI> {
                             ),
                           ),
                           SizedBox(width: Responsive().setWidth(5)),
-                          Icon(
-                            Icons.arrow_forward,
-                            color: Colors.white,
-                          )
+                          const Icon(Icons.arrow_forward, color: Colors.white),
                         ],
                       ),
                       onPressed: () {},
@@ -211,18 +204,18 @@ class _StreamingUIState extends State<StreamingUI> {
                   style: GoogleFonts.mulish(fontSize: Responsive().setSp(22)),
                 ),
                 TextButton(
-                  child: Text('View more'),
+                  child: const Text('View more'),
                   onPressed: () {},
                 )
               ],
             ),
           ),
-          Container(
+          SizedBox(
             height: Responsive().setHeight(250),
             child: ListView.builder(
               itemCount: streamingList.length,
               scrollDirection: Axis.horizontal,
-              itemBuilder: (_, int index) {
+              itemBuilder: (_, index) {
                 return Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: Responsive().setHeight(25),
@@ -234,7 +227,7 @@ class _StreamingUIState extends State<StreamingUI> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Container(
+                    child: SizedBox(
                       height: Responsive().setHeight(220),
                       width: Responsive().setWidth(135),
                       child: Column(
@@ -246,7 +239,7 @@ class _StreamingUIState extends State<StreamingUI> {
                             fit: BoxFit.cover,
                           ),
                           Padding(
-                            padding: EdgeInsets.all(4),
+                            padding: const EdgeInsets.all(4),
                             child: Text(
                               streamingList[index].title,
                               textAlign: TextAlign.center,

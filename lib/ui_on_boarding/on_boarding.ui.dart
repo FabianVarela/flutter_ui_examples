@@ -6,6 +6,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class OnBoardingUI extends StatefulWidget {
+  const OnBoardingUI({super.key});
+
   @override
   _OnBoardingUIState createState() => _OnBoardingUIState();
 }
@@ -26,13 +28,13 @@ class _OnBoardingUIState extends State<OnBoardingUI>
 
     _pageController = PageController(initialPage: _currentPage);
     _animationController = AnimationController(
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       vsync: this,
     );
 
     _scaleAnimation = Tween<double>(
       begin: 0.6,
-      end: 1.0,
+      end: 1,
     ).animate(_animationController);
   }
 
@@ -46,14 +48,13 @@ class _OnBoardingUIState extends State<OnBoardingUI>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
+    return DecoratedBox(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: <Color>[Color(0xFF485563), Color(0xFF29323C)],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          tileMode: TileMode.clamp,
-          stops: <double>[0.0, 1.0],
+          stops: <double>[0, 1],
         ),
       ),
       child: Scaffold(
@@ -81,11 +82,11 @@ class _OnBoardingUIState extends State<OnBoardingUI>
           children: <Widget>[
             AnimatedBuilder(
               animation: _pageController,
-              builder: (_, Widget? child) {
-                final PageModel pageModel = pageList[index];
+              builder: (_, child) {
+                final pageModel = pageList[index];
 
                 double delta;
-                double y = 1.0;
+                var y = 1.0;
 
                 if (_pageController.position.haveDimensions) {
                   delta = (_pageController.page ?? 0) - index;
@@ -149,13 +150,13 @@ class _OnBoardingUIState extends State<OnBoardingUI>
             left: Responsive().setWidth(34),
           ),
           child: Transform(
-            transform: Matrix4.translationValues(0.0, 50 * (1 - y), 0.0),
+            transform: Matrix4.translationValues(0, 50 * (1 - y), 0),
             child: Text(
               pageModel.body,
               style: GoogleFonts.montserrat(
                 fontSize: Responsive().setSp(20),
                 fontWeight: FontWeight.w500,
-                color: Color(0xFF9B9B9B),
+                color: const Color(0xFF9B9B9B),
               ),
             ),
           ),
@@ -168,7 +169,7 @@ class _OnBoardingUIState extends State<OnBoardingUI>
     return Positioned(
       left: Responsive().setWidth(30),
       bottom: Responsive().setHeight(30),
-      child: Container(
+      child: SizedBox(
         width: Responsive().setWidth(160),
         child: PageIndicator(_currentPage, pageList.length),
       ),
@@ -184,7 +185,7 @@ class _OnBoardingUIState extends State<OnBoardingUI>
         child: _isLastPage
             ? FloatingActionButton(
                 backgroundColor: Colors.white,
-                child: Icon(Icons.arrow_forward, color: Colors.black),
+                child: const Icon(Icons.arrow_forward, color: Colors.black),
                 onPressed: () => Navigator.pushNamed(context, '/login'),
               )
             : Container(),

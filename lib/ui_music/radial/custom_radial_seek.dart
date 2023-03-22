@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/ui_music/radial/custom_gesture_detector_radial.dart';
 
 class CustomRadialSeek extends StatefulWidget {
-  CustomRadialSeek({
+  const CustomRadialSeek({
     this.padding = EdgeInsets.zero,
     this.width = 1,
     this.color = Colors.white,
@@ -20,6 +20,7 @@ class CustomRadialSeek extends StatefulWidget {
     this.onDragStart,
     this.onDragUpdate,
     this.onDragEnd,
+    super.key,
   });
 
   final EdgeInsets padding;
@@ -65,7 +66,7 @@ class _CustomRadialSeekState extends State<CustomRadialSeek> {
 
   @override
   Widget build(BuildContext context) {
-    double thumbPosition = widget.thumbPercent;
+    var thumbPosition = widget.thumbPercent;
     if (_currentPercent != null) {
       thumbPosition = _currentPercent!;
     }
@@ -79,9 +80,7 @@ class _CustomRadialSeekState extends State<CustomRadialSeek> {
         height: double.infinity,
         color: Colors.transparent,
         child: Center(
-          child: SizedBox(
-            width: double.infinity,
-            height: double.infinity,
+          child: SizedBox.expand(
             child: _RadialProgress(
               padding: widget.padding,
               color: widget.color,
@@ -110,8 +109,8 @@ class _CustomRadialSeekState extends State<CustomRadialSeek> {
   }
 
   void _onDragUpdate(Coordinates coordinates) {
-    final double angle = coordinates.angle - (_startCoordinates?.angle ?? 0);
-    final double percent = angle / (2 * pi);
+    final angle = coordinates.angle - (_startCoordinates?.angle ?? 0);
+    final percent = angle / (2 * pi);
 
     _currentPercent = (_thumbPercent + percent) % 1.0;
 
@@ -132,7 +131,7 @@ class _CustomRadialSeekState extends State<CustomRadialSeek> {
 }
 
 class CircleThumb extends StatelessWidget {
-  CircleThumb({required this.color, required this.diameter});
+  const CircleThumb({required this.color, required this.diameter, super.key});
 
   final Color color;
   final double diameter;
@@ -153,7 +152,7 @@ class CircleThumb extends StatelessWidget {
 /// Radial Progress Widget
 
 class _RadialProgress extends StatefulWidget {
-  _RadialProgress({
+  const _RadialProgress({
     this.padding = EdgeInsets.zero,
     this.width = 3,
     this.color = Colors.grey,
@@ -213,17 +212,19 @@ class _RadialProgressState extends State<_RadialProgress> {
                 ),
               ),
               LayoutBuilder(
-                builder: (_, BoxConstraints constraints) {
-                  final double width = constraints.maxWidth;
-                  final double height = constraints.maxHeight;
+                builder: (_, constraints) {
+                  final width = constraints.maxWidth;
+                  final height = constraints.maxHeight;
 
-                  final double radius = min(width, height) / 2;
-                  final double thumbAngle =
-                      2 * pi * widget.thumbPosition - (pi / 2);
+                  final radius = min(width, height) / 2;
+                  final thumbAngle = 2 * pi * widget.thumbPosition - (pi / 2);
 
-                  final Offset relativeCenter = Offset(
-                      cos(thumbAngle) * radius, sin(thumbAngle) * radius);
-                  final Offset thumbAbsoluteCenter =
+                  final relativeCenter = Offset(
+                    cos(thumbAngle) * radius,
+                    sin(thumbAngle) * radius,
+                  );
+
+                  final thumbAbsoluteCenter =
                       Offset(width / 2, height / 2) + relativeCenter;
 
                   return Transform(
@@ -233,8 +234,8 @@ class _RadialProgressState extends State<_RadialProgress> {
                       0,
                     ),
                     child: FractionalTranslation(
-                      translation: Offset(-.5, -.5),
-                      child: Center(child: widget.thumb ?? SizedBox()),
+                      translation: const Offset(-.5, -.5),
+                      child: Center(child: widget.thumb ?? const Offstage()),
                     ),
                   );
                 },
@@ -285,29 +286,26 @@ class _RadialSeekPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final Size finalSize = size;
-    final Offset center = Offset(size.width / 2, size.height / 2);
-    final double radius = min(finalSize.width, finalSize.height) / 2;
+    final finalSize = size;
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = min(finalSize.width, finalSize.height) / 2;
 
-    if (width > 0) {
-      canvas.drawCircle(center, radius, radialPaint);
-    }
+    if (width > 0) canvas.drawCircle(center, radius, radialPaint);
 
     if (seekWidth > 0) {
-      final double angle =
-          2 * pi * (seekPercent >= 0 ? seekPercent : seekPercent + 1);
+      final angle = 2 * pi * (seekPercent >= 0 ? seekPercent : seekPercent + 1);
 
-      canvas.drawArc(Rect.fromCircle(center: center, radius: radius), -pi / 2,
-          angle, false, seekPaint);
+      final rect = Rect.fromCircle(center: center, radius: radius);
+      canvas.drawArc(rect, -pi / 2, angle, false, seekPaint);
     }
 
     if (progressWidth > 0) {
-      final double angle = 2 *
+      final angle = 2 *
           pi *
           (progressPercent >= 0 ? progressPercent : progressPercent + 1);
 
-      canvas.drawArc(Rect.fromCircle(center: center, radius: radius), -pi / 2,
-          angle, false, progressPaint);
+      final rect = Rect.fromCircle(center: center, radius: radius);
+      canvas.drawArc(rect, -pi / 2, angle, false, progressPaint);
     }
   }
 

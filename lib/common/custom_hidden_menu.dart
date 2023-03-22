@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomHiddenMenu extends StatefulWidget {
-  CustomHiddenMenu({
+  const CustomHiddenMenu({
     required this.menu,
     required this.child,
     this.isOpen = false,
+    super.key,
   });
 
   final Widget menu;
@@ -20,29 +21,29 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
   late AnimationController _controller;
   late Curve _curve;
 
-  double _value = 0.0;
+  double _value = 0;
 
   double _width = 0;
-  double _slideAmount = 0.0;
-  double _contentScale = 1.0;
-  double _cornerRadius = 0.0;
+  double _slideAmount = 0;
+  double _contentScale = 1;
+  double _cornerRadius = 0;
 
   @override
   void initState() {
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+      final renderBox = context.findRenderObject() as RenderBox?;
       _width = renderBox?.size.width ?? 0;
 
       setState(() {});
     });
 
     _controller = AnimationController(vsync: this);
-    _curve = Interval(0.0, 1.0, curve: Curves.decelerate);
+    _curve = const Interval(0, 1, curve: Curves.decelerate);
 
     _controller
-      ..duration = Duration(milliseconds: 500)
+      ..duration = const Duration(milliseconds: 500)
       ..addListener(() => _value = _curve.transform(_controller.value))
       ..addStatusListener((AnimationStatus status) {
         if (status == AnimationStatus.dismissed) {
@@ -80,22 +81,22 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
         AnimatedBuilder(
           animation: _controller,
           builder: (_, Widget? child) {
-            final double animatePercent = _value;
+            final animatePercent = _value;
 
             _slideAmount = (_width / 100 * 80) * animatePercent;
             _contentScale = 1.0 - (((100 - 80) / 100) * animatePercent);
             _cornerRadius = 10 * animatePercent;
 
             return Transform(
-              transform: Matrix4.translationValues(_slideAmount, 0.0, 0.0)
+              transform: Matrix4.translationValues(_slideAmount, 0, 0)
                 ..scale(_contentScale, _contentScale),
               alignment: Alignment.centerLeft,
-              child: Container(
-                decoration: BoxDecoration(
+              child: DecoratedBox(
+                decoration: const BoxDecoration(
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                       color: Color(0x44000000),
-                      offset: Offset(0.0, 5.0),
+                      offset: Offset(0, 5),
                       blurRadius: 20,
                       spreadRadius: 5,
                     ),

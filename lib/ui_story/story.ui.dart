@@ -6,7 +6,7 @@ import 'package:flutter_ui_examples/ui_story/story_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StoryUI extends StatefulWidget {
-  StoryUI({required this.onPressedMenu});
+  const StoryUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
@@ -33,13 +33,13 @@ class _StoryUIState extends State<StoryUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF243447),
+      backgroundColor: const Color(0xFF243447),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             _setBar(),
             _setTitle('Trending'),
-            _setTag(Color(0xFFFF6E6E), 'Animated', '25+ stories'),
+            _setTag(const Color(0xFFFF6E6E), 'Animated', '25+ stories'),
             Stack(
               children: <Widget>[
                 CardScroll(_currentPage),
@@ -48,7 +48,7 @@ class _StoryUIState extends State<StoryUI> {
                     itemCount: stories.length,
                     controller: _pageController,
                     reverse: true,
-                    itemBuilder: (_, int index) => Container(),
+                    itemBuilder: (_, index) => const Offstage(),
                   ),
                 )
               ],
@@ -93,19 +93,11 @@ class _StoryUIState extends State<StoryUI> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
-            icon: Icon(
-              CustomIcons.menu,
-              color: Colors.white,
-              size: 30,
-            ),
+            icon: const Icon(CustomIcons.menu, color: Colors.white, size: 30),
             onPressed: widget.onPressedMenu,
           ),
           IconButton(
-            icon: Icon(
-              Icons.search,
-              color: Colors.white,
-              size: 30,
-            ),
+            icon: const Icon(Icons.search, color: Colors.white, size: 30),
             onPressed: () {},
           ),
         ],
@@ -115,7 +107,7 @@ class _StoryUIState extends State<StoryUI> {
 
   Widget _setTitle(String title) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -128,11 +120,7 @@ class _StoryUIState extends State<StoryUI> {
             ),
           ),
           IconButton(
-            icon: Icon(
-              CustomIcons.option,
-              color: Colors.white,
-              size: 12,
-            ),
+            icon: const Icon(CustomIcons.option, color: Colors.white, size: 12),
             onPressed: () {},
           )
         ],
@@ -145,7 +133,7 @@ class _StoryUIState extends State<StoryUI> {
       padding: EdgeInsets.only(left: Responsive().setWidth(20)),
       child: Row(
         children: <Widget>[
-          Container(
+          DecoratedBox(
             decoration: BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(20),

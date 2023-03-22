@@ -1,9 +1,9 @@
 class MusicModel {
+  MusicModel(this.image, this.song, this.artist);
+
   final String image;
   final String song;
   final String artist;
-
-  MusicModel(this.image, this.song, this.artist);
 }
 
 List<MusicModel> musics = <MusicModel>[
@@ -24,7 +24,7 @@ List<MusicModel> musics = <MusicModel>[
   ),
   MusicModel(
     'assets/images/music/bonJovi.jpg',
-    'Livin\' On A Prayer',
+    "Livin' On A Prayer",
     'Bon Jovi',
   ),
   MusicModel(

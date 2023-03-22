@@ -5,7 +5,7 @@ import 'package:flutter_ui_examples/ui_adidas_ecommerce/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AdidasUI extends StatefulWidget {
-  AdidasUI({required this.onPressedMenu});
+  const AdidasUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
@@ -24,12 +24,11 @@ class _AdidasUIState extends State<AdidasUI> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: <Color>[Color(0xFF696D77), Color(0xFF292C36)],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          tileMode: TileMode.clamp,
         ),
       ),
       child: Scaffold(
@@ -48,9 +47,9 @@ class _AdidasUIState extends State<AdidasUI> {
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
       backgroundColor: Colors.transparent,
-      elevation: 0.0,
+      elevation: 0,
       leading: IconButton(
-        icon: Icon(Icons.menu, size: 25),
+        icon: const Icon(Icons.menu, size: 25),
         onPressed: widget.onPressedMenu,
       ),
       title: Text(
@@ -64,7 +63,11 @@ class _AdidasUIState extends State<AdidasUI> {
       centerTitle: true,
       actions: <Widget>[
         IconButton(
-          icon: Icon(Icons.favorite_border, size: 25, color: Colors.white),
+          icon: const Icon(
+            Icons.favorite_border,
+            size: 25,
+            color: Colors.white,
+          ),
           onPressed: () {},
         ),
       ],
@@ -74,20 +77,18 @@ class _AdidasUIState extends State<AdidasUI> {
   /// Top Section
 
   Widget _buildTopSection() {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: Responsive().setHeight(300),
       child: Stack(
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Container(
-                child: Image.asset(
-                  'assets/images/adidas/adidas.png',
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+              Image.asset(
+                'assets/images/adidas/adidas.png',
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -99,7 +100,7 @@ class _AdidasUIState extends State<AdidasUI> {
                   child: Container(
                     width: Responsive().setWidth(50),
                     height: Responsive().setHeight(50),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.black26,
                       shape: BoxShape.circle,
                     ),
@@ -120,7 +121,7 @@ class _AdidasUIState extends State<AdidasUI> {
                   child: Text(
                     'Rating',
                     style: GoogleFonts.montserrat(
-                      color: Color(0xFF949598),
+                      color: const Color(0xFF949598),
                       fontSize: Responsive().setSp(14),
                       fontWeight: FontWeight.w500,
                     ),
@@ -128,22 +129,22 @@ class _AdidasUIState extends State<AdidasUI> {
                 ),
                 Row(
                   children: <Widget>[
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8),
                       child: Icon(Icons.star, color: Color(0xFFFFE600)),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 8),
+                      padding: const EdgeInsets.only(right: 8),
                       child: Text(
                         '4.5',
                         style: GoogleFonts.montserrat(
-                          color: Color(0xFFFFE600),
+                          color: const Color(0xFFFFE600),
                           fontSize: Responsive().setSp(16),
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 8),
+                      padding: const EdgeInsets.only(right: 8),
                       child: Text(
                         '(478 people)',
                         style: GoogleFonts.montserrat(
@@ -194,7 +195,7 @@ class _AdidasUIState extends State<AdidasUI> {
       child: Text(
         'Product Description',
         style: GoogleFonts.montserrat(
-          color: Color(0xFF949598),
+          color: const Color(0xFF949598),
           fontSize: Responsive().setSp(14),
           fontWeight: FontWeight.w600,
         ),
@@ -244,7 +245,7 @@ class _AdidasUIState extends State<AdidasUI> {
         child: Text(
           _isExpanded ? 'less' : 'more...',
           style: GoogleFonts.montserrat(
-            color: Color(0xFFFB382F),
+            color: const Color(0xFFFB382F),
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -266,7 +267,7 @@ class _AdidasUIState extends State<AdidasUI> {
           Text(
             'Size',
             style: GoogleFonts.montserrat(
-              color: Color(0xFF949598),
+              color: const Color(0xFF949598),
               fontSize: Responsive().setSp(14),
               fontWeight: FontWeight.w500,
             ),
@@ -274,7 +275,7 @@ class _AdidasUIState extends State<AdidasUI> {
           Text(
             'Quantity',
             style: GoogleFonts.montserrat(
-              color: Color(0xFF949598),
+              color: const Color(0xFF949598),
               fontSize: Responsive().setSp(14),
               fontWeight: FontWeight.w500,
             ),
@@ -299,7 +300,7 @@ class _AdidasUIState extends State<AdidasUI> {
   }
 
   Widget _buildSizeSection() {
-    return Container(
+    return SizedBox(
       height: Responsive().setHeight(38),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -313,15 +314,15 @@ class _AdidasUIState extends State<AdidasUI> {
                 height: Responsive().setHeight(40),
                 decoration: BoxDecoration(
                   color: index == _currentSizeIndex
-                      ? Color(0xFFFC3930)
-                      : Color(0xFF525663),
+                      ? const Color(0xFFFC3930)
+                      : const Color(0xFF525663),
                   borderRadius: BorderRadius.circular(5),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
                       color: index == _currentSizeIndex
                           ? Colors.black.withOpacity(.5)
                           : Colors.black12,
-                      offset: Offset(0, 10),
+                      offset: const Offset(0, 10),
                       blurRadius: 10,
                     )
                   ],
@@ -345,18 +346,17 @@ class _AdidasUIState extends State<AdidasUI> {
 
   Widget _buildQuantitySection() {
     return Padding(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Container(
         width: Responsive().setWidth(120),
         height: Responsive().setHeight(40),
         decoration: BoxDecoration(
-          color: Color(0xFF525663),
+          color: const Color(0xFF525663),
           borderRadius: BorderRadius.circular(5),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Flexible(
               flex: 3,
@@ -411,7 +411,7 @@ class _AdidasUIState extends State<AdidasUI> {
 
   Widget _divider() {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
       child: Container(width: 0.8, color: Colors.black),
     );
   }
@@ -425,7 +425,7 @@ class _AdidasUIState extends State<AdidasUI> {
       child: Text(
         'Select Color',
         style: GoogleFonts.montserrat(
-          color: Color(0xFF949598),
+          color: const Color(0xFF949598),
           fontSize: Responsive().setSp(14),
           fontWeight: FontWeight.w900,
         ),
@@ -458,7 +458,7 @@ class _AdidasUIState extends State<AdidasUI> {
                           BoxShadow(
                             color: Colors.black.withOpacity(.8),
                             blurRadius: 10,
-                            offset: Offset(0, 10),
+                            offset: const Offset(0, 10),
                           )
                         ]
                       : <BoxShadow>[],
@@ -488,7 +488,7 @@ class _AdidasUIState extends State<AdidasUI> {
       child: Text(
         'Price',
         style: GoogleFonts.montserrat(
-          color: Color(0xFF949598),
+          color: const Color(0xFF949598),
           fontWeight: FontWeight.w900,
         ),
       ),
@@ -496,7 +496,7 @@ class _AdidasUIState extends State<AdidasUI> {
   }
 
   Widget _buildPriceSection() {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: Responsive().setHeight(120),
       child: Stack(
@@ -516,7 +516,7 @@ class _AdidasUIState extends State<AdidasUI> {
                   child: Row(
                     children: <Widget>[
                       Text(
-                        '\$',
+                        r'$',
                         style: GoogleFonts.montserrat(
                           color: Colors.white,
                           fontSize: Responsive().setSp(26),
@@ -538,7 +538,7 @@ class _AdidasUIState extends State<AdidasUI> {
                   borderRadius: BorderRadius.circular(10),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFFB382F),
+                      backgroundColor: const Color(0xFFFB382F),
                       padding: EdgeInsets.symmetric(
                         vertical: Responsive().setHeight(14),
                         horizontal: Responsive().setWidth(35),

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
+import 'package:flutter_ui_examples/ui_shopping/custom_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'custom_icon.dart';
 
 class ProductCard extends StatelessWidget {
-  ProductCard(this.cardColor, this.imageUrl, this.title, this.previousPrice,
-      this.price);
+  const ProductCard(
+    this.cardColor,
+    this.imageUrl,
+    this.title,
+    this.previousPrice,
+    this.price, {
+    super.key,
+  });
 
   final Color cardColor;
   final String imageUrl;
@@ -46,7 +52,7 @@ class ProductCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 IconButton(
-                  icon: Icon(CustomIcon.favorite),
+                  icon: const Icon(CustomIcon.favorite),
                   onPressed: () {},
                 ),
                 Column(
@@ -54,7 +60,7 @@ class ProductCard extends StatelessWidget {
                     Text(
                       previousPrice,
                       style: GoogleFonts.varelaRound(
-                        color: Color(0xFFFEB0BA),
+                        color: const Color(0xFFFEB0BA),
                         fontSize: Responsive().setSp(16),
                       ),
                     ),
@@ -68,7 +74,7 @@ class ProductCard extends StatelessWidget {
                   ],
                 ),
                 IconButton(
-                  icon: Icon(CustomIcon.cart),
+                  icon: const Icon(CustomIcon.cart),
                   onPressed: () {},
                 ),
               ],

@@ -6,6 +6,8 @@ import 'package:flutter_ui_examples/ui_login/social_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginUI extends StatefulWidget {
+  const LoginUI({super.key});
+
   @override
   _LoginUIState createState() => _LoginUIState();
 }
@@ -24,12 +26,12 @@ class _LoginUIState extends State<LoginUI> {
           _setBackgroundImages(),
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.only(left: 20, right: 28, top: 60),
+              padding: const EdgeInsets.only(left: 20, right: 28, top: 60),
               child: Column(
                 children: <Widget>[
                   _setLogoImages(),
                   SizedBox(height: Responsive().setHeight(120)),
-                  CardForm(),
+                  const CardForm(),
                   SizedBox(height: Responsive().setHeight(20)),
                   _setSignIn(),
                   SizedBox(height: Responsive().setHeight(30)),
@@ -91,7 +93,7 @@ class _LoginUIState extends State<LoginUI> {
       children: <Widget>[
         Row(
           children: <Widget>[
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             GestureDetector(
               onTap: () => setState(() => _isSelected = !_isSelected),
               child: _radioButton(_isSelected, 'Remember me'),
@@ -104,15 +106,14 @@ class _LoginUIState extends State<LoginUI> {
             width: Responsive().setWidth(200),
             height: Responsive().setHeight(60),
             decoration: BoxDecoration(
-              gradient: LinearGradient(colors: <Color>[
-                Color(0xFF17EAD9),
-                Color(0xFF6078EA),
-              ]),
+              gradient: const LinearGradient(
+                colors: <Color>[Color(0xFF17EAD9), Color(0xFF6078EA)],
+              ),
               borderRadius: BorderRadius.circular(6),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: Color(0xFF6078EA).withOpacity(.3),
-                  offset: Offset(0, 8),
+                  color: const Color(0xFF6078EA).withOpacity(.3),
+                  offset: const Offset(0, 8),
                   blurRadius: 8,
                 ),
               ],
@@ -139,23 +140,23 @@ class _LoginUIState extends State<LoginUI> {
         Container(
           width: 16,
           height: 16,
-          padding: EdgeInsets.all(2),
+          padding: const EdgeInsets.all(2),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(width: 2, color: Colors.black),
+            border: Border.all(width: 2),
           ),
           child: isSelected
               ? Container(
                   width: double.infinity,
                   height: double.infinity,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.black,
                   ),
                 )
               : Container(),
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Text(
           text,
           style: GoogleFonts.mulish(fontSize: 12),
@@ -180,7 +181,7 @@ class _LoginUIState extends State<LoginUI> {
 
   Widget _horizontalLine() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Container(
         width: Responsive().setWidth(85),
         height: 1,
@@ -194,7 +195,7 @@ class _LoginUIState extends State<LoginUI> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         SocialIcons(
-          colors: <Color>[
+          colors: const <Color>[
             Color(0xFF102397),
             Color(0xFF187ADF),
             Color(0xFF00EAF8),
@@ -203,26 +204,17 @@ class _LoginUIState extends State<LoginUI> {
           onPressed: () {},
         ),
         SocialIcons(
-          colors: <Color>[
-            Color(0xFFFF4F38),
-            Color(0xFFFF355D),
-          ],
+          colors: const <Color>[Color(0xFFFF4F38), Color(0xFFFF355D)],
           iconData: CustomIcon.google,
           onPressed: () {},
         ),
         SocialIcons(
-          colors: <Color>[
-            Color(0xFF17EAD9),
-            Color(0xFF6078EA),
-          ],
+          colors: const <Color>[Color(0xFF17EAD9), Color(0xFF6078EA)],
           iconData: CustomIcon.twitter,
           onPressed: () {},
         ),
         SocialIcons(
-          colors: <Color>[
-            Color(0xFF00C6FB),
-            Color(0xFF005BEA),
-          ],
+          colors: const <Color>[Color(0xFF00C6FB), Color(0xFF005BEA)],
           iconData: CustomIcon.linkedin,
           onPressed: () {},
         ),
@@ -242,7 +234,7 @@ class _LoginUIState extends State<LoginUI> {
           onTap: () {},
           child: Text(
             'Sign Up',
-            style: GoogleFonts.mulish(color: Color(0xFF5D74E3)),
+            style: GoogleFonts.mulish(color: const Color(0xFF5D74E3)),
           ),
         ),
       ],

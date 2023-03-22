@@ -1,9 +1,9 @@
 class FurnitureModel {
+  FurnitureModel(this.image, this.title, this.price);
+
   final String image;
   final String title;
   final String price;
-
-  FurnitureModel(this.image, this.title, this.price);
 }
 
 List<FurnitureModel> furnitureList = <FurnitureModel>[

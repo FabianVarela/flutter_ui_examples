@@ -6,7 +6,7 @@ import 'package:flutter_ui_examples/ui_music/radial/custom_radial_seek.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MusicUI extends StatefulWidget {
-  MusicUI({required this.onPressedMenu});
+  const MusicUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
@@ -15,7 +15,7 @@ class MusicUI extends StatefulWidget {
 }
 
 class _MusicUIState extends State<MusicUI> {
-  final Color _color = Color(0xFF4B9AD5);
+  final Color _color = const Color(0xFF4B9AD5);
   final int _currentSong = 1;
 
   double _thumbPercent = 0.4;
@@ -48,7 +48,7 @@ class _MusicUIState extends State<MusicUI> {
       backgroundColor: Colors.white,
       leading: IconButton(
         color: _color,
-        icon: Icon(Icons.arrow_back_ios),
+        icon: const Icon(Icons.arrow_back_ios),
         onPressed: () {},
       ),
       title: Text(
@@ -58,7 +58,7 @@ class _MusicUIState extends State<MusicUI> {
       centerTitle: true,
       actions: <Widget>[
         IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           color: _color,
           onPressed: widget.onPressedMenu,
         ),
@@ -70,18 +70,18 @@ class _MusicUIState extends State<MusicUI> {
     return Column(
       children: <Widget>[
         Center(
-          child: Container(
+          child: SizedBox(
             height: Responsive().setHeight(250),
             width: Responsive().setWidth(250),
             child: Stack(
               children: <Widget>[
-                Container(
+                DecoratedBox(
                   decoration: BoxDecoration(
                     color: _color.withOpacity(.5),
                     shape: BoxShape.circle,
                   ),
                   child: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: CustomRadialSeek(
                       width: 2,
                       color: Colors.blue.withOpacity(.5),
@@ -89,18 +89,19 @@ class _MusicUIState extends State<MusicUI> {
                       progressWidth: 5,
                       thumbPercent: _thumbPercent,
                       progress: _thumbPercent,
-                      onDragUpdate: (double percent) =>
-                          setState(() => _thumbPercent = percent),
+                      onDragUpdate: (percent) => setState(
+                        () => _thumbPercent = percent,
+                      ),
                       thumb: CircleThumb(color: _color, diameter: 20),
                     ),
                   ),
                 ),
                 Center(
-                  child: Container(
+                  child: SizedBox(
                     height: Responsive().setHeight(200),
                     width: Responsive().setWidth(200),
                     child: Padding(
-                      padding: EdgeInsets.all(3),
+                      padding: const EdgeInsets.all(3),
                       child: ClipOval(
                         clipper: MyClipper(),
                         child: Image.asset(
@@ -139,7 +140,7 @@ class _MusicUIState extends State<MusicUI> {
   }
 
   Widget _setControl() {
-    return Container(
+    return SizedBox(
       width: Responsive().setWidth(350),
       height: Responsive().setHeight(110),
       child: Stack(
@@ -175,7 +176,6 @@ class _MusicUIState extends State<MusicUI> {
             ),
           ),
           Align(
-            alignment: Alignment.center,
             child: Container(
               width: Responsive().setWidth(92),
               height: Responsive().setHeight(92),
@@ -184,7 +184,7 @@ class _MusicUIState extends State<MusicUI> {
                 shape: BoxShape.circle,
               ),
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.play_arrow,
                   size: 45,
                   color: Colors.white,
@@ -200,7 +200,7 @@ class _MusicUIState extends State<MusicUI> {
 
   Widget _setPlaylist() {
     return SingleChildScrollView(
-      child: Container(
+      child: SizedBox(
         height: Responsive().setHeight(250),
         width: double.infinity,
         child: Stack(
@@ -212,7 +212,7 @@ class _MusicUIState extends State<MusicUI> {
                 itemCount: musics.length,
                 itemBuilder: (_, int index) {
                   return Padding(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -268,18 +268,18 @@ class _MusicUIState extends State<MusicUI> {
       decoration: BoxDecoration(
         color: _color,
         borderRadius: isLeft
-            ? BorderRadius.only(
+            ? const BorderRadius.only(
                 topRight: Radius.circular(30),
                 bottomRight: Radius.circular(30),
               )
-            : BorderRadius.only(
+            : const BorderRadius.only(
                 topLeft: Radius.circular(30),
                 bottomLeft: Radius.circular(30),
               ),
       ),
     );
 
-    final double positionValue = Responsive().setWidth(-25);
+    final positionValue = Responsive().setWidth(-25);
     return isLeft
         ? Positioned(left: positionValue, child: container)
         : Positioned(right: positionValue, child: container);

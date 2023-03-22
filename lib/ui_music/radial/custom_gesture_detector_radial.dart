@@ -2,12 +2,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+typedef RadialDragStart = void Function(Coordinates startCoords);
+typedef RadialDragUpdate = void Function(Coordinates updateCoords);
+typedef RadialDragEnd = void Function();
+
 class CustomGestureDetectorRadial extends StatefulWidget {
-  CustomGestureDetectorRadial({
+  const CustomGestureDetectorRadial({
     required this.child,
     this.onRadialDragStart,
     this.onRadialDragUpdate,
     this.onRadialDragEnd,
+    super.key,
   });
 
   final Widget child;
@@ -27,16 +32,18 @@ class _CustomGestureDetectorRadialState
     return GestureDetector(
       child: widget.child,
       onPanStart: (DragStartDetails details) {
-        if (widget.onRadialDragStart != null)
+        if (widget.onRadialDragStart != null) {
           widget.onRadialDragStart?.call(
             _getCoordinatesFromOffset(details.globalPosition),
           );
+        }
       },
       onPanUpdate: (DragUpdateDetails details) {
-        if (widget.onRadialDragUpdate != null)
+        if (widget.onRadialDragUpdate != null) {
           widget.onRadialDragUpdate?.call(
             _getCoordinatesFromOffset(details.globalPosition),
           );
+        }
       },
       onPanEnd: (DragEndDetails details) {
         if (widget.onRadialDragEnd != null) {
@@ -47,15 +54,17 @@ class _CustomGestureDetectorRadialState
   }
 
   Coordinates _getCoordinatesFromOffset(Offset offset) {
-    final Offset localOffset =
-        (context.findRenderObject() as RenderBox).globalToLocal(offset);
-    final Point<double> localPoint =
-        Point<double>(localOffset.dx, localOffset.dy);
+    final renderBox = context.findRenderObject() as RenderBox?;
+    final localOffset = renderBox?.globalToLocal(offset);
+    final localPoint = Point<double>(
+      localOffset?.dx ?? 0,
+      localOffset?.dy ?? 0,
+    );
 
-    final double w = context.size?.width ?? 0;
-    final double h = context.size?.height ?? 0;
+    final w = context.size?.width ?? 0;
+    final h = context.size?.height ?? 0;
 
-    final Point<double> originPoint = Point<double>(w / 2, h / 2);
+    final originPoint = Point<double>(w / 2, h / 2);
     return Coordinates.fromPoints(originPoint, localPoint);
   }
 }
@@ -63,18 +72,16 @@ class _CustomGestureDetectorRadialState
 class Coordinates {
   Coordinates(this.angle, this.radius);
 
-  final double angle;
-  final double radius;
-
   factory Coordinates.fromPoints(
-      Point<double> origin, Point<double> destination) {
-    final Point<double> point = destination - origin;
-    final Offset offset = Offset(point.x, point.y);
+    Point<double> origin,
+    Point<double> destination,
+  ) {
+    final point = destination - origin;
+    final offset = Offset(point.x, point.y);
 
     return Coordinates(offset.direction, offset.distance);
   }
-}
 
-typedef RadialDragStart = Function(Coordinates startCoords);
-typedef RadialDragUpdate = Function(Coordinates updateCoords);
-typedef RadialDragEnd = Function();
+  final double angle;
+  final double radius;
+}

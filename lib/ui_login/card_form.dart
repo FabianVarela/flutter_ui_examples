@@ -3,6 +3,8 @@ import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CardForm extends StatelessWidget {
+  const CardForm({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,7 +13,7 @@ class CardForm extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
-        boxShadow: <BoxShadow>[
+        boxShadow: const <BoxShadow>[
           BoxShadow(
             color: Colors.black12,
             offset: Offset(0, 15),
@@ -25,7 +27,7 @@ class CardForm extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.only(left: 16, top: 16, right: 16),
+        padding: const EdgeInsets.only(left: 16, top: 16, right: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -75,7 +77,7 @@ class CardForm extends StatelessWidget {
                     color: Colors.blue,
                     fontSize: Responsive().setSp(20),
                   ),
-                )
+                ),
               ],
             ),
           ],

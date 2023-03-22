@@ -1,8 +1,8 @@
 class StoryModel {
+  StoryModel(this.image, this.name);
+
   final String image;
   final String name;
-
-  StoryModel(this.image, this.name);
 }
 
 List<StoryModel> stories = <StoryModel>[

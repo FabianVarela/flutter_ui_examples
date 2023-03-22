@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SocialIcons extends StatelessWidget {
-  SocialIcons({
+  const SocialIcons({
     required this.colors,
     required this.iconData,
     required this.onPressed,
+    super.key,
   });
 
   final List<Color> colors;
@@ -14,19 +15,16 @@ class SocialIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 14),
+      padding: const EdgeInsets.only(left: 14),
       child: Container(
         width: 45,
         height: 45,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          gradient: LinearGradient(
-            colors: colors,
-            tileMode: TileMode.clamp,
-          ),
+          gradient: LinearGradient(colors: colors),
         ),
         child: RawMaterialButton(
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           onPressed: onPressed,
           child: Icon(iconData, color: Colors.white),
         ),

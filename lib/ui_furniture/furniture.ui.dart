@@ -5,7 +5,7 @@ import 'package:flutter_ui_examples/ui_furniture/furniture_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FurnitureUI extends StatefulWidget {
-  FurnitureUI({required this.onPressedMenu});
+  const FurnitureUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
@@ -19,7 +19,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF2F3F8),
+      backgroundColor: const Color(0xFFF2F3F8),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -33,7 +33,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
         fixedColor: Colors.black,
         onTap: (int index) => setState(() => _currentIndex = index),
         currentIndex: _currentIndex,
-        items: <BottomNavigationBarItem>[
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.panorama_horizontal),
             label: '',
@@ -48,20 +48,20 @@ class _FurnitureUIState extends State<FurnitureUI> {
         width: Responsive().setHeight(65),
         height: Responsive().setWidth(65),
         decoration: BoxDecoration(
-          color: Color(0x0FFA7B58),
+          color: const Color(0x0FFA7B58),
           shape: BoxShape.circle,
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Color(0xFFF78A6C).withOpacity(.8),
-              offset: Offset(0, 10),
+              color: const Color(0xFFF78A6C).withOpacity(.8),
+              offset: const Offset(0, 10),
               blurRadius: 10,
-            )
+            ),
           ],
         ),
         child: RawMaterialButton(
           onPressed: () {},
-          shape: CircleBorder(),
-          child: Icon(Icons.add, size: 35, color: Colors.white),
+          shape: const CircleBorder(),
+          child: const Icon(Icons.add, size: 35, color: Colors.white),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -74,7 +74,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
       child: Container(
         width: Responsive().setWidth(Responsive().width * .8),
         height: Responsive().setHeight(Responsive().height / 2),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: <Color>[
               Color(0xFFFBFCFD),
@@ -97,14 +97,11 @@ class _FurnitureUIState extends State<FurnitureUI> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           IconButton(
-            icon: Icon(CustomIcons.menu, color: Colors.black),
+            icon: const Icon(CustomIcons.menu, color: Colors.black),
             onPressed: widget.onPressedMenu,
           ),
           IconButton(
-            icon: Icon(
-              CustomIcons.search,
-              color: Colors.black,
-            ),
+            icon: const Icon(CustomIcons.search, color: Colors.black),
             onPressed: () {},
           )
         ],
@@ -151,9 +148,8 @@ class _FurnitureUIState extends State<FurnitureUI> {
         child: ListView.builder(
           itemCount: furnitureList.length,
           scrollDirection: Axis.horizontal,
-          physics: BouncingScrollPhysics(),
-          itemBuilder: (_, int index) =>
-              _buildItem(furnitureList[index], index),
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (_, index) => _buildItem(furnitureList[index], index),
         ),
       ),
     );
@@ -175,8 +171,8 @@ class _FurnitureUIState extends State<FurnitureUI> {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: (index % 2 == 0) ? Colors.white : Color(0xFF2A2D3F),
-                  boxShadow: <BoxShadow>[
+                  color: index.isEven ? Colors.white : const Color(0xFF2A2D3F),
+                  boxShadow: const <BoxShadow>[
                     BoxShadow(
                       color: Colors.black12,
                       offset: Offset(0, 10),
@@ -188,7 +184,6 @@ class _FurnitureUIState extends State<FurnitureUI> {
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
                   furniture.image,
@@ -197,7 +192,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
                 ),
                 SizedBox(height: Responsive().setHeight(12)),
                 Padding(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -206,8 +201,8 @@ class _FurnitureUIState extends State<FurnitureUI> {
                         style: GoogleFonts.montserrat(
                           fontSize: Responsive().setSp(16),
                           fontWeight: FontWeight.w900,
-                          color: (index % 2 == 0)
-                              ? Color(0xFF2A2D3F)
+                          color: index.isEven
+                              ? const Color(0xFF2A2D3F)
                               : Colors.white,
                         ),
                       ),
@@ -217,8 +212,8 @@ class _FurnitureUIState extends State<FurnitureUI> {
                         style: GoogleFonts.montserrat(
                           fontSize: Responsive().setSp(12),
                           fontWeight: FontWeight.w500,
-                          color: (index % 2 == 0)
-                              ? Color(0xFF2A2D3F)
+                          color: index.isEven
+                              ? const Color(0xFF2A2D3F)
                               : Colors.white,
                         ),
                       ),
@@ -228,8 +223,8 @@ class _FurnitureUIState extends State<FurnitureUI> {
                         style: GoogleFonts.montserrat(
                           fontSize: Responsive().setSp(30),
                           fontWeight: FontWeight.w700,
-                          color: (index % 2 == 0)
-                              ? Color(0xFF2A2D3F)
+                          color: index.isEven
+                              ? const Color(0xFF2A2D3F)
                               : Colors.white,
                         ),
                       ),
