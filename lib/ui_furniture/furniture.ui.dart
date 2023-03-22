@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_furniture/model/furniture_model.dart';
 import 'package:flutter_ui_examples/ui_furniture/widget/custom_icon.dart';
@@ -6,20 +7,15 @@ import 'package:flutter_ui_examples/ui_furniture/widget/custom_title.dart';
 import 'package:flutter_ui_examples/ui_furniture/widget/furniture_item.dart';
 import 'package:flutter_ui_examples/ui_furniture/widget/gradient_container.dart';
 
-class FurnitureUI extends StatefulWidget {
+class FurnitureUI extends HookWidget {
   const FurnitureUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
   @override
-  _FurnitureUIState createState() => _FurnitureUIState();
-}
-
-class _FurnitureUIState extends State<FurnitureUI> {
-  int _currentIndex = 0;
-
-  @override
   Widget build(BuildContext context) {
+    final currentIndex = useState(0);
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: const Color(0xFFF2F3F8),
@@ -30,7 +26,7 @@ class _FurnitureUIState extends State<FurnitureUI> {
           padding: const EdgeInsets.only(left: 10),
           child: IconButton(
             icon: const Icon(CustomIcons.menu, color: Colors.black),
-            onPressed: widget.onPressedMenu,
+            onPressed: onPressedMenu,
           ),
         ),
         actions: [
@@ -81,8 +77,8 @@ class _FurnitureUIState extends State<FurnitureUI> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         fixedColor: Colors.black,
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
+        currentIndex: currentIndex.value,
+        onTap: (index) => currentIndex.value = index,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.panorama_horizontal),
