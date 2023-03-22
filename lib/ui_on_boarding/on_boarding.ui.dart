@@ -1,53 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_on_boarding/page_indicator.dart';
-import 'package:flutter_ui_examples/ui_on_boarding/page_model.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
+import 'package:flutter_ui_examples/common/tween_animation_hook.dart';
+import 'package:flutter_ui_examples/ui_on_boarding/model/page_model.dart';
+import 'package:flutter_ui_examples/ui_on_boarding/widget/on_boarding_item.dart';
+import 'package:flutter_ui_examples/ui_on_boarding/widget/page_indicator.dart';
 
-class OnBoardingUI extends StatefulWidget {
+class OnBoardingUI extends StatefulHookWidget {
   const OnBoardingUI({super.key});
 
   @override
   _OnBoardingUIState createState() => _OnBoardingUIState();
 }
 
-class _OnBoardingUIState extends State<OnBoardingUI>
-    with TickerProviderStateMixin {
-  late PageController _pageController;
-
-  late AnimationController _animationController;
-  late Animation<double> _scaleAnimation;
-
-  int _currentPage = 0;
-  bool _isLastPage = false;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _pageController = PageController(initialPage: _currentPage);
-    _animationController = AnimationController(
-      duration: const Duration(milliseconds: 300),
-      vsync: this,
-    );
-
-    _scaleAnimation = Tween<double>(
-      begin: 0.6,
-      end: 1,
-    ).animate(_animationController);
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    _animationController.dispose();
-
-    super.dispose();
-  }
-
+class _OnBoardingUIState extends State<OnBoardingUI> {
   @override
   Widget build(BuildContext context) {
+    final currentPage = useState(0);
+    final isLastPage = useState(false);
+    final pageController = usePageController();
+
+    final animController = useAnimationController(
+      duration: const Duration(milliseconds: 300),
+    );
+    final animation = useTweenAnimation(animController, begin: .6, end: 1)
+        .animate(animController);
+
     return DecoratedBox(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -62,148 +40,55 @@ class _OnBoardingUIState extends State<OnBoardingUI>
         body: Stack(
           fit: StackFit.expand,
           children: <Widget>[
-            _setPageView(),
-            _setPageIndicator(),
-            _setFloatingButton(),
-          ],
-        ),
-      ),
-    );
-  }
+            PageView.builder(
+              itemCount: pageList.length,
+              controller: pageController,
+              onPageChanged: (index) {
+                currentPage.value = index;
 
-  Widget _setPageView() {
-    return PageView.builder(
-      itemCount: pageList.length,
-      controller: _pageController,
-      onPageChanged: _changePage,
-      itemBuilder: (_, int index) {
-        return Stack(
-          fit: StackFit.expand,
-          children: <Widget>[
-            AnimatedBuilder(
-              animation: _pageController,
-              builder: (_, child) {
-                final pageModel = pageList[index];
-
-                double delta;
-                var y = 1.0;
-
-                if (_pageController.position.haveDimensions) {
-                  delta = (_pageController.page ?? 0) - index;
-                  y = 1 - delta.abs().clamp(0.0, 1.0);
+                if (currentPage.value == pageList.length - 1) {
+                  isLastPage.value = true;
+                  animController.forward();
+                } else {
+                  animController.reverse();
+                  Future.delayed(const Duration(milliseconds: 300), () {
+                    isLastPage.value = false;
+                  });
                 }
-
-                return _setPageContent(pageModel, y);
               },
+              itemBuilder: (_, index) => OnboardingItem(
+                pageModel: pageList[index],
+                pageController: pageController,
+                index: index,
+              ),
             ),
+            Positioned(
+              left: Responsive().setWidth(30),
+              bottom: Responsive().setHeight(30),
+              child: SizedBox(
+                width: Responsive().setWidth(160),
+                child: PageIndicator(
+                  pageCount: pageList.length,
+                  currentPage: currentPage.value,
+                ),
+              ),
+            ),
+            if (isLastPage.value)
+              Positioned(
+                right: Responsive().setWidth(30),
+                bottom: Responsive().setHeight(30),
+                child: ScaleTransition(
+                  scale: animation,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.white,
+                    child: const Icon(Icons.arrow_forward, color: Colors.black),
+                    onPressed: () => Navigator.pushNamed(context, '/login'),
+                  ),
+                ),
+              ),
           ],
-        );
-      },
-    );
-  }
-
-  Widget _setPageContent(PageModel pageModel, double y) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Image.asset(pageModel.imageUrl),
-        Container(
-          height: Responsive().setHeight(100),
-          margin: EdgeInsets.only(left: Responsive().setWidth(12)),
-          child: Stack(
-            children: <Widget>[
-              Opacity(
-                opacity: .10,
-                child: GradientText(
-                  pageModel.title,
-                  colors: pageModel.titleGradient,
-                  style: GoogleFonts.montserrat(
-                    fontSize: Responsive().setSp(80),
-                    letterSpacing: 1,
-                    fontWeight: FontWeight.w900,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: Responsive().setHeight(30),
-                  left: Responsive().setWidth(22),
-                ),
-                child: GradientText(
-                  pageModel.title,
-                  colors: pageModel.titleGradient,
-                  style: GoogleFonts.montserrat(
-                    fontSize: Responsive().setSp(60),
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: 1,
-                  ),
-                ),
-              ),
-            ],
-          ),
         ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: Responsive().setHeight(12),
-            left: Responsive().setWidth(34),
-          ),
-          child: Transform(
-            transform: Matrix4.translationValues(0, 50 * (1 - y), 0),
-            child: Text(
-              pageModel.body,
-              style: GoogleFonts.montserrat(
-                fontSize: Responsive().setSp(20),
-                fontWeight: FontWeight.w500,
-                color: const Color(0xFF9B9B9B),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _setPageIndicator() {
-    return Positioned(
-      left: Responsive().setWidth(30),
-      bottom: Responsive().setHeight(30),
-      child: SizedBox(
-        width: Responsive().setWidth(160),
-        child: PageIndicator(_currentPage, pageList.length),
       ),
     );
-  }
-
-  Widget _setFloatingButton() {
-    return Positioned(
-      right: Responsive().setWidth(30),
-      bottom: Responsive().setHeight(30),
-      child: ScaleTransition(
-        scale: _scaleAnimation,
-        child: _isLastPage
-            ? FloatingActionButton(
-                backgroundColor: Colors.white,
-                child: const Icon(Icons.arrow_forward, color: Colors.black),
-                onPressed: () => Navigator.pushNamed(context, '/login'),
-              )
-            : Container(),
-      ),
-    );
-  }
-
-  void _changePage(int index) {
-    setState(() {
-      _currentPage = index;
-
-      if (_currentPage == pageList.length - 1) {
-        _isLastPage = true;
-        _animationController.forward();
-      } else {
-        _isLastPage = false;
-        _animationController.reset();
-      }
-    });
   }
 }
