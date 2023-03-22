@@ -4,25 +4,22 @@ description: Flutter UI Examples
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: ">=2.18.0 <3.0.0"
+  flutter: 3.7.0
 
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^0.1.2
-  gradient_text: ^1.0.2
-  google_fonts: ^1.1.0
+  flutter_rating_bar: ^4.0.1
+  google_fonts: ^4.0.3
+  simple_gradient_text: ^1.2.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 flutter:
-
   uses-material-design: true
-
   assets:
     - assets/images/adidas/
     - assets/images/furniture/
@@ -33,7 +30,6 @@ flutter:
     - assets/images/story/
     - assets/images/streaming/
     - assets/images/
-
   fonts:
     - family: CustomIcon
       fonts:
