@@ -6,7 +6,7 @@ class Furniture {
   final String price;
 }
 
-List<Furniture> furnitureList = <Furniture>[
+final furnitureList = <Furniture>[
   Furniture('assets/images/furniture/hemes.png', 'Hemes ArmChair', '126'),
   Furniture('assets/images/furniture/sofa.png', 'Sofar ArmChair', '148'),
   Furniture('assets/images/furniture/wooden.png', 'Wooden ArmChair', '179'),

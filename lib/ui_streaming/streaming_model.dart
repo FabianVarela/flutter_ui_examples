@@ -5,7 +5,7 @@ class StreamingModel {
   final String title;
 }
 
-List<StreamingModel> streamingList = <StreamingModel>[
+final streamingList = <StreamingModel>[
   StreamingModel(
     'assets/images/streaming/fullMetalAlchemist.jpg',
     'Fullmetal alchemist: Brotherhood',
