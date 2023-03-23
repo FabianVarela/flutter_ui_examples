@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_shopping/custom_icon.dart';
+import 'package:flutter_ui_examples/ui_shopping/model/shopping_model.dart';
+import 'package:flutter_ui_examples/ui_shopping/widget/custom_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard(
-    this.cardColor,
-    this.imageUrl,
-    this.title,
-    this.previousPrice,
-    this.price, {
-    super.key,
-  });
+  const ProductCard({required this.shopping, super.key});
 
-  final Color cardColor;
-  final String imageUrl;
-  final String title;
-  final String previousPrice;
-  final String price;
+  final ShoppingModel shopping;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +15,7 @@ class ProductCard extends StatelessWidget {
       width: double.infinity,
       height: Responsive().setHeight(320),
       decoration: BoxDecoration(
-        color: cardColor,
+        color: shopping.color,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.grey.withOpacity(.3), width: .2),
       ),
@@ -33,15 +23,13 @@ class ProductCard extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: Responsive().setHeight(8)),
           Image.asset(
-            imageUrl,
+            shopping.image,
             width: Responsive().setWidth(201),
             height: Responsive().setHeight(191),
           ),
           Text(
-            title,
-            style: GoogleFonts.ubuntu(
-              fontSize: Responsive().setSp(25),
-            ),
+            shopping.title,
+            style: GoogleFonts.ubuntu(fontSize: Responsive().setSp(25)),
           ),
           SizedBox(height: Responsive().setHeight(15)),
           Padding(
@@ -58,7 +46,7 @@ class ProductCard extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     Text(
-                      previousPrice,
+                      shopping.originalPrice,
                       style: GoogleFonts.varelaRound(
                         color: const Color(0xFFFEB0BA),
                         fontSize: Responsive().setSp(16),
@@ -66,7 +54,7 @@ class ProductCard extends StatelessWidget {
                     ),
                     SizedBox(height: Responsive().setHeight(12)),
                     Text(
-                      price,
+                      shopping.discountPrice,
                       style: GoogleFonts.varelaRound(
                         fontSize: Responsive().setSp(28),
                       ),
