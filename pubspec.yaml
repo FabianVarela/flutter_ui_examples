@@ -8,6 +8,7 @@ environment:
   flutter: 3.7.0
 
 dependencies:
+  collection: ^1.17.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.18.6
