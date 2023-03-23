@@ -8,6 +8,7 @@ environment:
   flutter: 3.7.0
 
 dependencies:
+  circular_seek_bar: ^1.1.0+2
   collection: ^1.17.0
   flutter:
     sdk: flutter

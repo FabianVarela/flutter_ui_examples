@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
+  circular_seek_bar:
+    dependency: "direct main"
+    description:
+      name: circular_seek_bar
+      sha256: "78ff5e54b6012523f3ce19b33c870ab75433ea96977f44606f1641a8ac5c1873"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0+2"
   clock:
     dependency: transitive
     description:
