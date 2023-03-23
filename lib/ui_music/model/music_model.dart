@@ -1,12 +1,13 @@
 class MusicModel {
-  MusicModel(this.image, this.song, this.artist);
+  MusicModel(this.image, this.song, this.artist, {this.isCurrent = false});
 
   final String image;
   final String song;
   final String artist;
+  final bool isCurrent;
 }
 
-List<MusicModel> musics = <MusicModel>[
+final musics = <MusicModel>[
   MusicModel(
     'assets/images/music/metallica.jpg',
     'The unforgiven',
@@ -16,6 +17,7 @@ List<MusicModel> musics = <MusicModel>[
     'assets/images/music/gunsNroses.jpeg',
     'Stranged',
     'Guns n roses',
+    isCurrent: true,
   ),
   MusicModel(
     'assets/images/music/fooFighters.jpg',
