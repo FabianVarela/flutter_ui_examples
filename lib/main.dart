@@ -8,7 +8,7 @@ import 'package:flutter_ui_examples/ui_furniture/furniture_ui.dart';
 import 'package:flutter_ui_examples/ui_login/login.ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/on_boarding_ui.dart';
-import 'package:flutter_ui_examples/ui_shopping/shopping.ui.dart';
+import 'package:flutter_ui_examples/ui_shopping/shopping_ui.dart';
 import 'package:flutter_ui_examples/ui_story/story.ui.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming_ui.dart';
 
