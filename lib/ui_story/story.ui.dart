@@ -1,162 +1,89 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_story/card_scroll.dart';
-import 'package:flutter_ui_examples/ui_story/custom_icon.dart';
-import 'package:flutter_ui_examples/ui_story/story_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_ui_examples/ui_story/widget/card_scroll.dart';
+import 'package:flutter_ui_examples/ui_story/model/story_model.dart';
+import 'package:flutter_ui_examples/ui_story/widget/custom_icon.dart';
+import 'package:flutter_ui_examples/ui_story/widget/custom_tag.dart';
+import 'package:flutter_ui_examples/ui_story/widget/custom_title.dart';
+import 'package:flutter_ui_examples/ui_story/widget/favorite_item.dart';
 
-class StoryUI extends StatefulWidget {
+class StoryUI extends HookWidget {
   const StoryUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
   @override
-  _StoryUIState createState() => _StoryUIState();
-}
-
-class _StoryUIState extends State<StoryUI> {
-  late PageController _pageController;
-  double _currentPage = 0;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _currentPage = (stories.length - 1).toDouble();
-
-    _pageController = PageController(initialPage: stories.length - 1);
-    _pageController.addListener(() {
-      setState(() => _currentPage = _pageController.page ?? 0);
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final favoriteList = stories.where((item) => item.isFavorite).toList();
+
+    final currentPage = useState<double>(stories.length - 1);
+    final pageController = usePageController(initialPage: stories.length - 1);
+
+    pageController.addListener(
+      () => currentPage.value = pageController.page ?? 0,
+    );
+
     return Scaffold(
       backgroundColor: const Color(0xFF243447),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            _setBar(),
-            _setTitle('Trending'),
-            _setTag(const Color(0xFFFF6E6E), 'Animated', '25+ stories'),
-            Stack(
-              children: <Widget>[
-                CardScroll(_currentPage),
-                Positioned.fill(
-                  child: PageView.builder(
-                    itemCount: stories.length,
-                    controller: _pageController,
-                    reverse: true,
-                    itemBuilder: (_, index) => const Offstage(),
-                  ),
-                )
-              ],
-            ),
-            _setTitle('Favourite'),
-            _setTag(Colors.blueAccent, 'Latest', '9+ Stories'),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                vertical: Responsive().setHeight(20),
-              ),
-              child: Row(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(left: Responsive().setWidth(18)),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(
-                        'assets/images/story/image_02.jpg',
-                        width: Responsive().setWidth(296),
-                        height: Responsive().setHeight(222),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: const Icon(CustomIcons.menu, color: Colors.white, size: 30),
+          onPressed: onPressedMenu,
         ),
-      ),
-    );
-  }
-
-  Widget _setBar() {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(
-        Responsive().setWidth(12),
-        Responsive().setHeight(30),
-        Responsive().setWidth(12),
-        Responsive().setHeight(8),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-            icon: const Icon(CustomIcons.menu, color: Colors.white, size: 30),
-            onPressed: widget.onPressedMenu,
-          ),
+        actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.search, color: Colors.white, size: 30),
             onPressed: () {},
           ),
         ],
       ),
-    );
-  }
-
-  Widget _setTitle(String title) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text(
-            title,
-            style: GoogleFonts.ubuntu(
-              color: Colors.white,
-              fontSize: Responsive().setSp(46),
-              letterSpacing: 1,
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            const CustomTitle(title: 'Trending'),
+            const CustomTag(
+              title: 'Animated',
+              message: '25+ stories',
+              tagColor: Color(0xFFFF6E6E),
             ),
-          ),
-          IconButton(
-            icon: const Icon(CustomIcons.option, color: Colors.white, size: 12),
-            onPressed: () {},
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget _setTag(Color color, String title, String message) {
-    return Padding(
-      padding: EdgeInsets.only(left: Responsive().setWidth(20)),
-      child: Row(
-        children: <Widget>[
-          DecoratedBox(
-            decoration: BoxDecoration(
-              color: color,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: Responsive().setWidth(22),
-                  vertical: Responsive().setHeight(6),
+            Stack(
+              children: <Widget>[
+                CardScroll(stories: stories, currentPage: currentPage.value),
+                Positioned.fill(
+                  child: PageView.builder(
+                    reverse: true,
+                    itemCount: stories.length,
+                    controller: pageController,
+                    physics: const BouncingScrollPhysics(),
+                    itemBuilder: (_, __) => const SizedBox(),
+                  ),
                 ),
-                child: Text(
-                  title,
-                  style: GoogleFonts.ubuntu(color: Colors.white),
+              ],
+            ),
+            const CustomTitle(title: 'Favourite'),
+            const CustomTag(
+              title: 'Latest',
+              message: '9+ Stories',
+              tagColor: Colors.blueAccent,
+            ),
+            SizedBox(
+              height: Responsive().setHeight(250),
+              child: ListView.builder(
+                itemCount: favoriteList.length,
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(
+                  vertical: Responsive().setHeight(20),
+                ),
+                itemBuilder: (_, index) => FavoriteItem(
+                  image: favoriteList[index].image,
                 ),
               ),
             ),
-          ),
-          SizedBox(width: Responsive().setWidth(15)),
-          Text(
-            message,
-            style: GoogleFonts.ubuntu(color: Colors.blueAccent),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
