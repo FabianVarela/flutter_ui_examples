@@ -8,7 +8,7 @@ class QuantitySection extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final quantity = useState(0);
+    final amount = useState(0);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ class QuantitySection extends HookWidget {
               Flexible(
                 flex: 3,
                 child: IconButton(
-                  onPressed: quantity.value > 0 ? () => quantity.value-- : null,
+                  onPressed: amount.value > 0 ? () => amount.value-- : null,
                   icon: const Icon(
                     Icons.remove,
                     size: 24,
@@ -57,7 +57,7 @@ class QuantitySection extends HookWidget {
                     horizontal: Responsive().setWidth(12),
                   ),
                   child: Text(
-                    '${quantity.value}',
+                    '${amount.value}',
                     style: GoogleFonts.montserrat(
                       color: Colors.white,
                       fontSize: Responsive().setSp(22),
@@ -73,7 +73,7 @@ class QuantitySection extends HookWidget {
               Flexible(
                 flex: 3,
                 child: IconButton(
-                  onPressed: () => quantity.value++,
+                  onPressed: amount.value < 50 ? () => amount.value++ : null,
                   icon: const Icon(Icons.add, size: 24, color: Colors.white),
                 ),
               ),
