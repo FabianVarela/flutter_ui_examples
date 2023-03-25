@@ -7,9 +7,7 @@ class CardForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: Responsive().setHeight(350),
+    return DecoratedBox(
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
@@ -27,18 +25,20 @@ class CardForm extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 16, top: 16, right: 16),
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'Login',
-              style: GoogleFonts.mulish(
-                fontSize: Responsive().setSp(35),
-                letterSpacing: .6,
+            Padding(
+              padding: EdgeInsets.only(bottom: Responsive().setHeight(20)),
+              child: Text(
+                'Login',
+                style: GoogleFonts.mulish(
+                  fontSize: Responsive().setSp(35),
+                  letterSpacing: .6,
+                ),
               ),
             ),
-            SizedBox(height: Responsive().setHeight(20)),
             Text(
               'Username',
               style: GoogleFonts.mulish(fontSize: Responsive().setSp(20)),
@@ -67,18 +67,21 @@ class CardForm extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: Responsive().setHeight(40)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Text(
-                  'Forgot password',
-                  style: GoogleFonts.mulish(
-                    color: Colors.blue,
-                    fontSize: Responsive().setSp(20),
+            Padding(
+              padding: EdgeInsets.only(top: Responsive().setHeight(40)),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: InkWell(
+                  onTap: () {},
+                  child: Text(
+                    'Forgot password',
+                    style: GoogleFonts.mulish(
+                      color: Colors.blue,
+                      fontSize: Responsive().setSp(20),
+                    ),
                   ),
                 ),
-              ],
+              ),
             ),
           ],
         ),
