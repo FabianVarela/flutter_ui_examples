@@ -3,19 +3,16 @@ import 'package:flutter/material.dart';
 class MyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    final Path path = Path();
-    path.lineTo(0, size.height - 100);
+    final totalSize = size.height * .53;
+    final path = Path()..lineTo(0, totalSize - 100);
 
-    final Offset controlPoint = Offset(20, size.height);
-    final Offset endPoint = Offset(size.width / 2, size.height);
+    final point = Offset(20, totalSize);
+    final endPoint = Offset(size.width / 2, totalSize);
 
-    path.quadraticBezierTo(
-        controlPoint.dx, controlPoint.dy, endPoint.dx, endPoint.dy);
-
-    path.lineTo(size.width, size.height);
-    path.lineTo(size.width, 0);
-
-    return path;
+    return path
+      ..quadraticBezierTo(point.dx, point.dy, endPoint.dx, endPoint.dy)
+      ..lineTo(size.width, totalSize)
+      ..lineTo(size.width, 0);
   }
 
   @override
