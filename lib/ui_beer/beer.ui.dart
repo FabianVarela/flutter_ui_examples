@@ -1,205 +1,181 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_beer/beer_model.dart';
 import 'package:flutter_ui_examples/ui_beer/my_clipper.dart';
+import 'package:flutter_ui_examples/ui_beer/widget/beer_bottle_item.dart';
+import 'package:flutter_ui_examples/ui_beer/widget/beer_detail_item.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BeerUI extends StatefulWidget {
-  BeerUI({@required this.onPressedMenu});
+class BeerUI extends HookWidget {
+  const BeerUI({required this.onPressedMenu, super.key});
 
-  final Function onPressedMenu;
-
-  @override
-  _BeerUIState createState() => _BeerUIState();
-}
-
-class _BeerUIState extends State<BeerUI> {
-  int _currentIndex = 0;
+  final VoidCallback onPressedMenu;
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
+    final currentIndex = useState(0);
+    final bottlePageController = usePageController(viewportFraction: .5);
+    final detailPageController = usePageController();
+
+    bottlePageController.addListener(() {
+      detailPageController.animateToPage(
+        currentIndex.value,
+        duration: const Duration(milliseconds: 100),
+        curve: Curves.ease,
+      );
+    });
+
+    detailPageController.addListener(() {
+      bottlePageController.animateToPage(
+        currentIndex.value,
+        duration: const Duration(milliseconds: 100),
+        curve: Curves.ease,
+      );
+    });
+
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          Stack(
-            children: <Widget>[
-              ClipPath(
-                clipper: MyClipper(),
-                child: _setHeader(),
-              ),
-              Container(
-                height: Responsive().setHeight(
-                  MediaQuery.of(context).size.height,
-                ),
-              ),
-              Positioned.fill(
-                top: 30,
-                child: _setBeerPage(),
-              ),
-              Positioned(
-                bottom: 40,
-                left: 40,
-                right: 40,
-                child: _setGrabButton(),
-              ),
-            ],
-          ),
-          _buildAppBar(),
-        ],
-      ),
-    );
-  }
-
-  Widget _setHeader() {
-    return Container(
-      height: Responsive().setHeight(MediaQuery.of(context).size.height * 0.5),
-      width: Responsive().setWidth(MediaQuery.of(context).size.width),
-      decoration: BoxDecoration(
-        color: beers[_currentIndex].color,
-        boxShadow: <BoxShadow>[
-          BoxShadow(
-            color: Colors.black12,
-            offset: Offset(0, 10),
-            blurRadius: 10,
-          )
-        ],
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(top: 130, left: 40),
-        child: Text(
-          'Grab\nyour\nbeer.',
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: const Icon(Icons.menu, size: 32, color: Colors.black),
+          onPressed: onPressedMenu,
+        ),
+        title: Text(
+          'Welcome, Fabián',
+          textAlign: TextAlign.center,
           style: GoogleFonts.montserrat(
-              fontSize: 30,
-              fontWeight: FontWeight.w500,
-              color: beers[_currentIndex].textColor),
+            color: Colors.black,
+            fontSize: Responsive().setSp(20),
+            fontWeight: FontWeight.w300,
+          ),
         ),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: SizedBox.fromSize(
+              size: const Size(36, 36),
+              child: Image.asset(
+                'assets/images/beer/profile.png',
+                fit: BoxFit.contain,
+              ),
+            ),
+          ),
+        ],
       ),
-    );
-  }
-
-  Widget _setBeerPage() {
-    return PageView.builder(
-      itemCount: beers.length,
-      onPageChanged: (int index) {
-        setState(() => _currentIndex = index);
-      },
-      itemBuilder: (_, int index) {
-        final BeerModel item = beers[index];
-        return Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              item.bottleLogo,
-              height: 400,
-              fit: BoxFit.fitHeight,
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 20, bottom: 5),
-              child: Text(
-                item.name,
-                style: GoogleFonts.montserrat(
-                  fontSize: 35,
-                  fontWeight: FontWeight.w700,
+      body: Stack(
+        clipBehavior: Clip.none,
+        children: <Widget>[
+          ClipPath(
+            clipper: MyClipper(),
+            child: Container(
+              width: Responsive().setWidth(width),
+              height: Responsive().setHeight(height),
+              decoration: BoxDecoration(
+                color: beers[currentIndex.value].color,
+                boxShadow: const <BoxShadow>[
+                  BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(0, 10),
+                    blurRadius: 10,
+                  )
+                ],
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 130, left: 40, right: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text(
+                      'Grab\nyour\nbeer.',
+                      style: GoogleFonts.montserrat(
+                        fontSize: Responsive().setSp(30),
+                        fontWeight: FontWeight.w700,
+                        color: Colors.black,
+                        // beers[currentIndex.value].textColor,
+                      ),
+                    ),
+                    // TODO(FV): Separate it
+                    /*
+                    Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: SizedBox.fromSize(
+                        size: const Size(120, 60),
+                        child: Image.asset(
+                          beers[currentIndex.value].imageLogo,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    */
+                  ],
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 5),
-              child: Text(
-                item.slogan,
-                style: GoogleFonts.montserrat(fontSize: 14),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 5, bottom: 10),
-              child: RatingBar(
-                initialRating: item.rating,
-                onRatingUpdate: null,
-                itemBuilder: (_, __) => Icon(
-                  Icons.star,
-                  color: Colors.yellow,
+          ),
+          // TODO(FV): Clip path set a color transition
+          // TODO(FV): Set small image with bottle image
+          Positioned.fill(
+            top: 150,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: PageView.builder(
+                    itemCount: beers.length,
+                    controller: bottlePageController,
+                    onPageChanged: (index) => currentIndex.value = index,
+                    itemBuilder: (_, index) => BeerBottleItem(
+                      index: index,
+                      beer: beers[index],
+                      controller: bottlePageController,
+                    ),
+                  ),
                 ),
-                allowHalfRating: true,
-                itemSize: 22,
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.fromLTRB(30, 10, 30, 20),
-              child: Text(
-                item.description,
-                textAlign: TextAlign.center,
-                style: GoogleFonts.montserrat(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w300,
+                SizedBox(
+                  height: 270,
+                  child: PageView.builder(
+                    itemCount: beers.length,
+                    controller: detailPageController,
+                    onPageChanged: (index) => currentIndex.value = index,
+                    itemBuilder: (_, index) => BeerDetailItem(
+                      beer: beers[index],
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _setGrabButton() {
-    return RaisedButton(
-      onPressed: () {},
-      color: Colors.blueAccent,
-      padding: EdgeInsets.symmetric(vertical: 15),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Text(
-        'Grab',
-        style: GoogleFonts.montserrat(
-          fontSize: 18,
-          color: Colors.white,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildAppBar() {
-    return SafeArea(
-      bottom: true,
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.menu,
-                size: 32,
-                color: Colors.white,
-              ),
-              onPressed: widget.onPressedMenu,
-            ),
-            Expanded(
-              child: Text(
-                'Welcome, Fabián',
-                textAlign: TextAlign.center,
-                style: GoogleFonts.montserrat(
-                  color: Colors.white,
-                  fontSize: Responsive().setSp(20),
-                  fontWeight: FontWeight.w300,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 50,
+                    vertical: 30,
+                  ),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      fixedSize: Size(width, 50),
+                      backgroundColor: Colors.blueAccent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Grab',
+                      style: GoogleFonts.montserrat(
+                        fontSize: Responsive().setSp(18),
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(50),
-              child: Container(
-                height: 36,
-                width: 36,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                  image: AssetImage('assets/images/beer/profile.png'),
-                  fit: BoxFit.contain,
-                )),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
