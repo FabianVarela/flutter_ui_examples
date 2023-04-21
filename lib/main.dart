@@ -10,6 +10,7 @@ import 'package:flutter_ui_examples/ui_login/login_ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/on_boarding_ui.dart';
 import 'package:flutter_ui_examples/ui_shopping/shopping_ui.dart';
+import 'package:flutter_ui_examples/ui_sneaky/sneaky_ui.dart';
 import 'package:flutter_ui_examples/ui_story/story_ui.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming_ui.dart';
 
@@ -77,6 +78,8 @@ class _MyAppState extends State<MyApp> {
         return FurnitureUI(onPressedMenu: _openDrawer);
       case '/adidas':
         return AdidasUI(onPressedMenu: _openDrawer);
+      case '/sneaky':
+        return SneakyUI(onPressedMenu: _openDrawer);
       case '/beer':
         return BeerUI(onPressedMenu: _openDrawer);
       case '/':

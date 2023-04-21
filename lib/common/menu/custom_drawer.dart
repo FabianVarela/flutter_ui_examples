@@ -53,6 +53,10 @@ class CustomDrawer extends StatelessWidget {
                   onTap: () => _redirectTo(context, '/adidas'),
                 ),
                 _MenuItem(
+                  text: 'Sneaky UI',
+                  onTap: () => _redirectTo(context, '/sneaky'),
+                ),
+                _MenuItem(
                   text: 'Beer UI',
                   onTap: () => _redirectTo(context, '/beer'),
                 ),
