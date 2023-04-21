@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
+import 'package:flutter_ui_examples/ui_sneaky/widget/control_360.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_button.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/sneaky_color_list.dart';
@@ -12,7 +14,7 @@ class SneakyDetailArguments {
   final String uuid;
 }
 
-class SneakyDetailUI extends StatelessWidget {
+class SneakyDetailUI extends HookWidget {
   const SneakyDetailUI({required this.sneaky, required this.uuid, super.key});
 
   final Sneaky sneaky;
@@ -20,6 +22,8 @@ class SneakyDetailUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentValue = useState<double>(360);
+
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(.9),
       body: SafeArea(
@@ -76,6 +80,13 @@ class SneakyDetailUI extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                    FractionalTranslation(
+                      translation: const Offset(.55, .9),
+                      child: Control360(
+                        value: currentValue.value,
+                        onChangeValue: (value) => currentValue.value = value,
+                      ),
                     ),
                   ],
                 ),
