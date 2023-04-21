@@ -69,7 +69,7 @@ class SneakyDetailUI extends HookWidget {
                           child: SneakySizeList(sizes: sneaky.sizes),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 50),
+                          padding: const EdgeInsets.symmetric(vertical: 50),
                           child: Text(
                             sneaky.description,
                             style: const TextStyle(
