@@ -50,3 +50,13 @@ flutter:
     - family: SocialIcons
       fonts:
         - asset: assets/fonts/SocialIcons.ttf
+    - family: AvenirLTStd
+      fonts:
+        - asset: assets/fonts/AvenirLTStd/AvenirLTStd-Book.otf
+          weight: 300
+        - asset: assets/fonts/AvenirLTStd/AvenirLTStd-Roman.otf
+        - asset: assets/fonts/AvenirLTStd/AvenirLTStd-Black.otf
+          weight: 700
+    - family: PoetsenOne
+      fonts:
+        - asset: assets/fonts/PoetsenOne/PoetsenOne-Regular.ttf
