@@ -43,7 +43,7 @@ class SneakyDetailUI extends HookWidget {
                           child: Text(
                             '\$ ${sneaky.price.toStringAsFixed(2)}',
                             style: const TextStyle(
-                              // fontFamily: 'PoetsenOne',
+                              fontFamily: 'PoetsenOne',
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                             ),
@@ -54,7 +54,7 @@ class SneakyDetailUI extends HookWidget {
                           child: Text(
                             sneaky.name,
                             style: const TextStyle(
-                              // fontFamily: 'AvenirLTStd',
+                              fontFamily: 'AvenirLTStd',
                               fontSize: 25,
                               fontWeight: FontWeight.w500,
                             ),
@@ -73,7 +73,7 @@ class SneakyDetailUI extends HookWidget {
                           child: Text(
                             sneaky.description,
                             style: const TextStyle(
-                              // fontFamily: 'AvenirLTStd',
+                              fontFamily: 'AvenirLTStd',
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                             ),

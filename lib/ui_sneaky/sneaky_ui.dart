@@ -30,7 +30,7 @@ class SneakyUI extends StatelessWidget {
                           Text(
                             item.name,
                             style: const TextStyle(
-                              // fontFamily: 'PoetsenOne',
+                              fontFamily: 'PoetsenOne',
                               fontSize: 30,
                             ),
                           ),
@@ -39,7 +39,7 @@ class SneakyUI extends StatelessWidget {
                               Text(
                                 '${item.quantity}',
                                 style: const TextStyle(
-                                  // fontFamily: 'PoetsenOne',
+                                  fontFamily: 'PoetsenOne',
                                   fontSize: 18,
                                 ),
                               ),

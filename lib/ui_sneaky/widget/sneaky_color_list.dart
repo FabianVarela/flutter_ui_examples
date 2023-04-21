@@ -16,7 +16,7 @@ class SneakyColorList extends HookWidget {
         Text(
           'Color'.toUpperCase(),
           style: const TextStyle(
-            // fontFamily: 'AvenirLTStd',
+            fontFamily: 'AvenirLTStd',
             fontSize: 16,
             fontWeight: FontWeight.w900,
           ),

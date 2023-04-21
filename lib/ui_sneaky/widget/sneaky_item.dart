@@ -38,7 +38,7 @@ class SneakyItem extends StatelessWidget {
                           child: Text(
                             '\$ ${sneaky.price.toStringAsFixed(2)}',
                             style: const TextStyle(
-                              // fontFamily: 'AvenirLTStd',
+                              fontFamily: 'AvenirLTStd',
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
@@ -49,7 +49,7 @@ class SneakyItem extends StatelessWidget {
                           child: Text(
                             sneaky.name,
                             style: const TextStyle(
-                              // fontFamily: 'AvenirLTStd',
+                              fontFamily: 'AvenirLTStd',
                               fontSize: 16,
                             ),
                           ),
