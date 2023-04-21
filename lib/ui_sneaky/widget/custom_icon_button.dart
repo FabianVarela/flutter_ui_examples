@@ -21,9 +21,7 @@ class CustomIconButton extends StatelessWidget {
         elevation: 10,
         padding: const EdgeInsets.all(10),
         minimumSize: const Size(50, 50),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
       child: Container(
         alignment: Alignment.center,
