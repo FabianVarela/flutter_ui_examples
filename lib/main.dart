@@ -10,6 +10,7 @@ import 'package:flutter_ui_examples/ui_login/login_ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/on_boarding_ui.dart';
 import 'package:flutter_ui_examples/ui_shopping/shopping_ui.dart';
+import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/sneaky_ui.dart';
 import 'package:flutter_ui_examples/ui_story/story_ui.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming_ui.dart';
@@ -55,15 +56,15 @@ class _MyAppState extends State<MyApp> {
               },
               onCloseMenu: () => setState(() => _isExpand = false),
             ),
-            child: _setRoute(settings.name),
+            child: _setRoute(settings),
           );
         },
       ),
     );
   }
 
-  Widget _setRoute(String? routeName) {
-    switch (routeName) {
+  Widget _setRoute(RouteSettings settings) {
+    switch (settings.name) {
       case '/login':
         return const LoginUI();
       case '/shopping':
@@ -80,6 +81,9 @@ class _MyAppState extends State<MyApp> {
         return AdidasUI(onPressedMenu: _openDrawer);
       case '/sneaky':
         return SneakyUI(onPressedMenu: _openDrawer);
+      case '/sneaky_detail':
+        final args = settings.arguments as SneakyDetailArguments?;
+        return SneakyDetailUI(uuid: args!.uuid, sneaky: args.sneaky);
       case '/beer':
         return BeerUI(onPressedMenu: _openDrawer);
       case '/':
