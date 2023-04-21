@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
+import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/sneaky_item.dart';
 import 'package:uuid/uuid.dart';
@@ -12,6 +13,7 @@ class SneakyUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white.withOpacity(.9),
       body: SafeArea(
         child: Stack(
           children: <Widget>[
@@ -58,7 +60,7 @@ class SneakyUI extends StatelessWidget {
                             final sneaky = item.sneakyList[index];
 
                             return GestureDetector(
-                              onTap: () {},
+                              onTap: () => _goToDetail(context, sneaky, uuid),
                               child: SneakyItem(sneaky: sneaky, uuid: uuid),
                             );
                           },
@@ -101,6 +103,13 @@ class SneakyUI extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void _goToDetail(BuildContext context, Sneaky sneaky, String uuid) {
+    Navigator.of(context).pushNamed(
+      '/sneaky_detail',
+      arguments: SneakyDetailArguments(sneaky, uuid),
     );
   }
 }
