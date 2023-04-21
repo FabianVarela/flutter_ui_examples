@@ -122,6 +122,6 @@ final _sneakyList = <Sneaky>[
 ];
 
 final sneakyCategories = <SneakyCategory>[
-  SneakyCategory('Casual', 80, _sneakyList..shuffle()),
-  SneakyCategory('Sporty', 30, _sneakyList..shuffle()),
+  SneakyCategory('Casual', 80, _sneakyList),
+  SneakyCategory('Sporty', 30, _sneakyList),
 ];
