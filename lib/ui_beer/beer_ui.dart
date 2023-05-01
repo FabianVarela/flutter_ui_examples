@@ -73,7 +73,9 @@ class BeerUI extends HookWidget {
         children: <Widget>[
           ClipPath(
             clipper: MyClipper(),
-            child: Container(
+            child: AnimatedContainer(
+              curve: Curves.fastOutSlowIn,
+              duration: const Duration(seconds: 1),
               width: Responsive().setWidth(width),
               height: Responsive().setHeight(height),
               decoration: BoxDecoration(
@@ -83,7 +85,7 @@ class BeerUI extends HookWidget {
                     color: Colors.black12,
                     offset: Offset(0, 10),
                     blurRadius: 10,
-                  )
+                  ),
                 ],
               ),
               child: Padding(
@@ -92,14 +94,15 @@ class BeerUI extends HookWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      'Grab\nyour\nbeer.',
+                    AnimatedDefaultTextStyle(
+                      curve: Curves.fastOutSlowIn,
+                      duration: const Duration(seconds: 1),
                       style: GoogleFonts.montserrat(
                         fontSize: Responsive().setSp(30),
                         fontWeight: FontWeight.w700,
-                        color: Colors.black,
-                        // beers[currentIndex.value].textColor,
+                        color: beers[currentIndex.value].textColor,
                       ),
+                      child: const Text('Grab\nyour\nbeer.'),
                     ),
                     // TODO(FV): Separate it
                     /*
@@ -119,7 +122,6 @@ class BeerUI extends HookWidget {
               ),
             ),
           ),
-          // TODO(FV): Clip path set a color transition
           // TODO(FV): Set small image with bottle image
           Positioned.fill(
             top: 150,
