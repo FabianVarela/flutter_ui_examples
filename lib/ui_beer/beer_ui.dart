@@ -4,6 +4,7 @@ import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/beer_bottle_item.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/beer_detail_item.dart';
+import 'package:flutter_ui_examples/ui_beer/widget/beer_header.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -77,7 +78,7 @@ class BeerUI extends HookWidget {
               curve: Curves.fastOutSlowIn,
               duration: const Duration(seconds: 1),
               width: Responsive().setWidth(width),
-              height: Responsive().setHeight(height),
+              height: Responsive().setHeight(height * .53),
               decoration: BoxDecoration(
                 color: beers[currentIndex.value].color,
                 boxShadow: const <BoxShadow>[
@@ -88,41 +89,10 @@ class BeerUI extends HookWidget {
                   ),
                 ],
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 130, left: 40, right: 20),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    AnimatedDefaultTextStyle(
-                      curve: Curves.fastOutSlowIn,
-                      duration: const Duration(seconds: 1),
-                      style: GoogleFonts.montserrat(
-                        fontSize: Responsive().setSp(30),
-                        fontWeight: FontWeight.w700,
-                        color: beers[currentIndex.value].textColor,
-                      ),
-                      child: const Text('Grab\nyour\nbeer.'),
-                    ),
-                    // TODO(FV): Separate it
-                    /*
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: SizedBox.fromSize(
-                        size: const Size(120, 60),
-                        child: Image.asset(
-                          beers[currentIndex.value].imageLogo,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                    */
-                  ],
-                ),
-              ),
+              child: BeerHeader(index: currentIndex.value),
             ),
           ),
-          // TODO(FV): Set small image with bottle image
+          const SizedBox.expand(),
           Positioned.fill(
             top: 150,
             child: Column(
