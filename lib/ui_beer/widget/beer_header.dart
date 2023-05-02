@@ -69,7 +69,7 @@ class _BeerHeaderState extends State<BeerHeader> with TickerProviderStateMixin {
               position: _animation,
               child: Opacity(
                 opacity: .15,
-                child: Image.asset(beers[_imageIndex].imageLogo),
+                child: Image.asset(beers[_imageIndex].backimage),
               ),
             ),
           ),

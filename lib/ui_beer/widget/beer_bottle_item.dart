@@ -35,7 +35,7 @@ class BeerBottleItem extends StatelessWidget {
           ),
         );
       },
-      child: Image.asset(beer.bottleLogo, fit: BoxFit.fitHeight),
+      child: Image.asset(beer.bottleImage, fit: BoxFit.fitHeight),
     );
   }
 }
