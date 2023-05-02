@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
-    final totalSize = size.height * .53;
+    final totalSize = size.height;
     final path = Path()..lineTo(0, totalSize - 100);
 
     final point = Offset(20, totalSize);
