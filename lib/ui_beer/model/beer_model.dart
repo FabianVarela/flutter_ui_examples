@@ -6,8 +6,9 @@ class BeerModel {
     required this.slogan,
     required this.description,
     required this.rating,
-    required this.backimage,
     required this.bottleImage,
+    required this.backImage,
+    required this.smallImage,
     required this.color,
     required this.textColor,
   });
@@ -16,8 +17,9 @@ class BeerModel {
   final String slogan;
   final String description;
   final double rating;
-  final String backimage;
   final String bottleImage;
+  final String backImage;
+  final String smallImage;
   final Color color;
   final Color textColor;
 }
@@ -30,8 +32,9 @@ final beers = <BeerModel>[
         'Aguila Original, classic, tasty and refreshing lager beer than has '
         'been enjoyed for more than a century.',
     rating: 5,
-    backimage: 'assets/images/beer/aguila_back_logo.png',
     bottleImage: 'assets/images/beer/aguila.png',
+    backImage: 'assets/images/beer/aguila_back_logo.png',
+    smallImage: 'assets/images/beer/aguila_small_logo.png',
     color: const Color(0xFFF7DB4A),
     textColor: const Color(0xFF5B350E),
   ),
@@ -42,8 +45,9 @@ final beers = <BeerModel>[
         'Introduced by Adolphus Busch in 1876 and is still produced with the '
         'same care and high quality, extracting standards.',
     rating: 4.1,
-    backimage: 'assets/images/beer/budweiser_back_logo.png',
     bottleImage: 'assets/images/beer/budweiser.png',
+    backImage: 'assets/images/beer/budweiser_back_logo.png',
+    smallImage: 'assets/images/beer/budweiser_small_logo.png',
     color: const Color(0xFFB73A32),
     textColor: const Color(0xFFFDF2EC),
   ),
@@ -53,8 +57,9 @@ final beers = <BeerModel>[
     description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 3.9,
-    backimage: 'assets/images/beer/club_colombia_back_logo.png',
     bottleImage: 'assets/images/beer/club_colombia_dorada.png',
+    backImage: 'assets/images/beer/club_colombia_back_logo.png',
+    smallImage: 'assets/images/beer/club_colombia_small_logo.png',
     color: const Color(0xFFAB9352),
     textColor: const Color(0xFF3B2106),
   ),
@@ -64,8 +69,9 @@ final beers = <BeerModel>[
     description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 3.5,
-    backimage: 'assets/images/beer/club_colombia_back_logo.png',
     bottleImage: 'assets/images/beer/club_colombia_roja.png',
+    backImage: 'assets/images/beer/club_colombia_back_logo.png',
+    smallImage: 'assets/images/beer/club_colombia_small_logo.png',
     color: const Color(0xFF930F18),
     textColor: const Color(0xFFF1EBE7),
   ),
@@ -75,8 +81,9 @@ final beers = <BeerModel>[
     description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 4.5,
-    backimage: 'assets/images/beer/club_colombia_back_logo.png',
     bottleImage: 'assets/images/beer/club_colombia_negra.png',
+    backImage: 'assets/images/beer/club_colombia_back_logo.png',
+    smallImage: 'assets/images/beer/club_colombia_small_logo.png',
     color: const Color(0xFF4E4847),
     textColor: const Color(0xFFEFECE5),
   ),
@@ -86,8 +93,9 @@ final beers = <BeerModel>[
     description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 4.3,
-    backimage: 'assets/images/beer/club_colombia_back_logo.png',
     bottleImage: 'assets/images/beer/club_colombia_trigo.png',
+    backImage: 'assets/images/beer/club_colombia_back_logo.png',
+    smallImage: 'assets/images/beer/club_colombia_small_logo.png',
     color: const Color(0xFFCBB2A4),
     textColor: const Color(0xFF532213),
   ),
@@ -98,8 +106,9 @@ final beers = <BeerModel>[
         'Belgian pilsner of between 4.8 and 5.2 percent ABV which was first '
         'brewed by Brouwerij Artois.',
     rating: 5,
-    backimage: 'assets/images/beer/stella_artois_back_logo.png',
     bottleImage: 'assets/images/beer/stella_artois.png',
+    backImage: 'assets/images/beer/stella_artois_back_logo.png',
+    smallImage: 'assets/images/beer/stella_artois_small_logo.png',
     color: const Color(0xFFE7E7E3),
     textColor: const Color(0xFF483931),
   ),
