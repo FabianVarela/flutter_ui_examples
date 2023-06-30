@@ -27,12 +27,26 @@ class BeerBottleItem extends StatelessWidget {
           (1 - (value.abs() * .4)).clamp(0.0, 1.0),
         );
 
-        return Center(
-          child: SizedBox(
-            height: value * Responsive().setHeight(400),
-            width: value * Responsive().setWidth(250),
-            child: child,
-          ),
+        return Stack(
+          clipBehavior: Clip.none,
+          children: <Widget>[
+            // TODO(FV): Review logo animation
+            Positioned(
+              right: -30,
+              child: Container(
+                width: 40,
+                height: 60,
+                color: index.isOdd ? Colors.red : Colors.blue,
+              ),
+            ),
+            Center(
+              child: SizedBox(
+                height: value * Responsive().setHeight(400),
+                width: value * Responsive().setWidth(250),
+                child: child,
+              ),
+            ),
+          ],
         );
       },
       child: Image.asset(beer.bottleImage, fit: BoxFit.fitHeight),
