@@ -22,9 +22,9 @@ class ControlSection extends StatelessWidget {
                 border: Border.all(color: const Color(0xFF4B9AD5), width: 3),
                 borderRadius: BorderRadius.circular(40),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const <Widget>[
+                children: <Widget>[
                   Icon(Icons.fast_rewind, size: 55, color: Color(0xFF4B9AD5)),
                   Icon(Icons.fast_forward, size: 55, color: Color(0xFF4B9AD5)),
                 ],
