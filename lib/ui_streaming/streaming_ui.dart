@@ -62,7 +62,7 @@ class _StreamingUIState extends State<StreamingUI> {
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
             label: 'Profile',
-          )
+          ),
         ],
       ),
     );

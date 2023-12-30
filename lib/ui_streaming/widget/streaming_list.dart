@@ -32,7 +32,7 @@ class StreamingList extends StatelessWidget {
                   ),
                   child: const Text('View more'),
                   onPressed: () {},
-                )
+                ),
               ],
             ),
           ),

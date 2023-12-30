@@ -74,7 +74,7 @@ class AdidasDescription extends HookWidget {
             ),
             onTap: () => isExpanded.value = !isExpanded.value,
           ),
-        )
+        ),
       ],
     );
   }
