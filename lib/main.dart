@@ -47,6 +47,7 @@ class _MyAppState extends State<MyApp> {
           final h = MediaQuery.of(ctx).size.height;
           Responsive.init(ctx, width: w, height: h, allowFontScaling: true);
 
+          final args = settings.arguments as SneakyDetailArguments?;
           return CustomHiddenMenu(
             isOpen: _isExpand,
             menu: CustomDrawer(
@@ -56,40 +57,26 @@ class _MyAppState extends State<MyApp> {
               },
               onCloseMenu: () => setState(() => _isExpand = false),
             ),
-            child: _setRoute(settings),
+            child: switch (settings.name) {
+              '/login' => const LoginUI(),
+              '/shopping' => ShoppingUI(onPressedMenu: _openDrawer),
+              '/story' => StoryUI(onPressedMenu: _openDrawer),
+              '/music' => MusicUI(onPressedMenu: _openDrawer),
+              '/streaming' => StreamingUI(onPressedMenu: _openDrawer),
+              '/furniture' => FurnitureUI(onPressedMenu: _openDrawer),
+              '/adidas' => AdidasUI(onPressedMenu: _openDrawer),
+              '/sneaky' => SneakyUI(onPressedMenu: _openDrawer),
+              '/sneaky_detail' => SneakyDetailUI(
+                  uuid: args!.uuid,
+                  sneaky: args.sneaky,
+                ),
+              '/beer' => BeerUI(onPressedMenu: _openDrawer),
+              '/' || _ => const OnBoardingUI(),
+            },
           );
         },
       ),
     );
-  }
-
-  Widget _setRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case '/login':
-        return const LoginUI();
-      case '/shopping':
-        return ShoppingUI(onPressedMenu: _openDrawer);
-      case '/story':
-        return StoryUI(onPressedMenu: _openDrawer);
-      case '/music':
-        return MusicUI(onPressedMenu: _openDrawer);
-      case '/streaming':
-        return StreamingUI(onPressedMenu: _openDrawer);
-      case '/furniture':
-        return FurnitureUI(onPressedMenu: _openDrawer);
-      case '/adidas':
-        return AdidasUI(onPressedMenu: _openDrawer);
-      case '/sneaky':
-        return SneakyUI(onPressedMenu: _openDrawer);
-      case '/sneaky_detail':
-        final args = settings.arguments as SneakyDetailArguments?;
-        return SneakyDetailUI(uuid: args!.uuid, sneaky: args.sneaky);
-      case '/beer':
-        return BeerUI(onPressedMenu: _openDrawer);
-      case '/':
-      default:
-        return const OnBoardingUI();
-    }
   }
 
   void _openDrawer() {
