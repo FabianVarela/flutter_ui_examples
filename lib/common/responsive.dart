@@ -29,11 +29,9 @@ class Responsive {
     _instance.height = height as double;
     _instance.allowFontScaling = allowFontScaling;
 
-    final mediaQuery = MediaQuery.of(context);
-
-    _screenWidth = mediaQuery.size.width;
-    _screenHeight = mediaQuery.size.height;
-    _textScaleFactor = mediaQuery.textScaleFactor;
+    _screenWidth = MediaQuery.sizeOf(context).width;
+    _screenHeight = MediaQuery.sizeOf(context).height;
+    _textScaleFactor = MediaQuery.textScalerOf(context).scale(1);
   }
 
   double get scaleWidth => _screenWidth / width;
