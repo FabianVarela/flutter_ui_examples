@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../on_boarding_ui.dart';
 
 class PageIndicator extends StatelessWidget {
   const PageIndicator({
