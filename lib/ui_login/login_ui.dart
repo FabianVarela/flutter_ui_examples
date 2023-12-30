@@ -49,7 +49,7 @@ class LoginUI extends StatelessWidget {
                   child: const SocialButtons(),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: Responsive().setHeight(30)),
+                  padding: EdgeInsets.only(top: Responsive().setHeight(20)),
                   child: Align(
                     child: RichText(
                       text: TextSpan(

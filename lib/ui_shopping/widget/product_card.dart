@@ -13,7 +13,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: Responsive().setHeight(320),
+      height: Responsive().setHeight(330),
       decoration: BoxDecoration(
         color: shopping.color,
         borderRadius: BorderRadius.circular(20),

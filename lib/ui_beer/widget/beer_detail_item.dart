@@ -15,7 +15,7 @@ class BeerDetailItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 20, bottom: 5),
+          padding: const EdgeInsets.only(top: 12, bottom: 5),
           child: Text(
             beer.name,
             textAlign: TextAlign.center,
@@ -35,7 +35,7 @@ class BeerDetailItem extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 5, bottom: 10),
+          padding: const EdgeInsets.only(top: 5, bottom: 5),
           child: RatingBarIndicator(
             itemSize: 22,
             rating: beer.rating,
@@ -46,7 +46,7 @@ class BeerDetailItem extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+          padding: const EdgeInsets.fromLTRB(30, 10, 30, 8),
           child: Text(
             beer.description,
             textAlign: TextAlign.center,
