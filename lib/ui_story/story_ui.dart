@@ -1,12 +1,17 @@
+import 'dart:math';
+
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_story/model/story_model.dart';
-import 'package:flutter_ui_examples/ui_story/widget/card_scroll.dart';
 import 'package:flutter_ui_examples/ui_story/widget/custom_icon.dart';
-import 'package:flutter_ui_examples/ui_story/widget/custom_tag.dart';
-import 'package:flutter_ui_examples/ui_story/widget/custom_title.dart';
-import 'package:flutter_ui_examples/ui_story/widget/favorite_item.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+part 'widget/card_scroll.dart';
+
+part 'widget/custom_tag.dart';
+
+part 'widget/custom_title.dart';
 
 class StoryUI extends HookWidget {
   const StoryUI({required this.onPressedMenu, super.key});
@@ -70,15 +75,21 @@ class StoryUI extends HookWidget {
               tagColor: Colors.blueAccent,
             ),
             SizedBox(
-              height: Responsive().setHeight(250),
+              height: 250,
               child: ListView.builder(
                 itemCount: favoriteList.length,
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(
-                  vertical: Responsive().setHeight(20),
-                ),
-                itemBuilder: (_, index) => FavoriteItem(
-                  image: favoriteList[index].image,
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                itemBuilder: (_, index) => Padding(
+                  padding: const EdgeInsets.only(left: 18, right: 12),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      favoriteList[index].image,
+                      width: 296,
+                      height: 222,
+                    ),
+                  ),
                 ),
               ),
             ),

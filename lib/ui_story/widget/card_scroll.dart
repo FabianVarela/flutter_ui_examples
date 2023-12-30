@@ -1,10 +1,4 @@
-import 'dart:math';
-
-import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_story/model/story_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../story_ui.dart';
 
 double _cardAspectRatio = 12.0 / 16.0;
 
@@ -97,23 +91,20 @@ class _CardItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: Responsive().setWidth(16),
-                        vertical: Responsive().setHeight(8),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
                       ),
                       child: Text(
                         name,
                         style: GoogleFonts.varelaRound(
                           color: Colors.white,
-                          fontSize: Responsive().setSp(25),
+                          fontSize: 25,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(
-                        left: Responsive().setWidth(12),
-                        bottom: Responsive().setHeight(12),
-                      ),
+                      padding: const EdgeInsets.only(left: 12, bottom: 12),
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
@@ -122,9 +113,9 @@ class _CardItem extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          padding: EdgeInsets.symmetric(
-                            horizontal: Responsive().setWidth(22),
-                            vertical: Responsive().setHeight(6),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 22,
+                            vertical: 6,
                           ),
                         ),
                         child: Text(

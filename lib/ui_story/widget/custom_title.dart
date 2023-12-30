@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_story/widget/custom_icon.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../story_ui.dart';
 
 class CustomTitle extends StatelessWidget {
   const CustomTitle({required this.title, super.key});
@@ -19,7 +16,7 @@ class CustomTitle extends StatelessWidget {
             title,
             style: GoogleFonts.ubuntu(
               color: Colors.white,
-              fontSize: Responsive().setSp(46),
+              fontSize: 46,
               letterSpacing: 1,
             ),
           ),
