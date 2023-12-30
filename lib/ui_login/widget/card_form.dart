@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../login_ui.dart';
 
 class CardForm extends StatelessWidget {
   const CardForm({super.key});
@@ -30,55 +28,46 @@ class CardForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(bottom: Responsive().setHeight(20)),
+              padding: const EdgeInsets.only(bottom: 20),
               child: Text(
                 'Login',
                 style: GoogleFonts.mulish(
-                  fontSize: Responsive().setSp(35),
+                  fontSize: 35,
                   letterSpacing: .6,
                 ),
               ),
             ),
             Text(
               'Username',
-              style: GoogleFonts.mulish(fontSize: Responsive().setSp(20)),
+              style: GoogleFonts.mulish(fontSize: 20),
             ),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Set the username',
-                hintStyle: GoogleFonts.mulish(
-                  color: Colors.grey,
-                  fontSize: Responsive().setSp(14),
-                ),
+                hintStyle: GoogleFonts.mulish(color: Colors.grey, fontSize: 14),
               ),
             ),
-            SizedBox(height: Responsive().setHeight(20)),
+            const SizedBox(height: 20),
             Text(
               'Password',
-              style: GoogleFonts.mulish(fontSize: Responsive().setSp(20)),
+              style: GoogleFonts.mulish(fontSize: 20),
             ),
             TextField(
               obscureText: true,
               decoration: InputDecoration(
                 hintText: 'Set the password',
-                hintStyle: GoogleFonts.mulish(
-                  color: Colors.grey,
-                  fontSize: Responsive().setSp(14),
-                ),
+                hintStyle: GoogleFonts.mulish(color: Colors.grey, fontSize: 14),
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: Responsive().setHeight(40)),
+              padding: const EdgeInsets.only(top: 40),
               child: Align(
                 alignment: Alignment.centerRight,
                 child: InkWell(
                   onTap: () {},
                   child: Text(
                     'Forgot password',
-                    style: GoogleFonts.mulish(
-                      color: Colors.blue,
-                      fontSize: Responsive().setSp(20),
-                    ),
+                    style: GoogleFonts.mulish(color: Colors.blue, fontSize: 20),
                   ),
                 ),
               ),

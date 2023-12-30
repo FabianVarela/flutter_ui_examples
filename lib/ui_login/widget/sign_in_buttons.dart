@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../login_ui.dart';
 
 class SignInButtons extends HookWidget {
   const SignInButtons({required this.onSignIn, super.key});
@@ -16,7 +13,7 @@ class SignInButtons extends HookWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(left: Responsive().setWidth(12)),
+          padding: const EdgeInsets.only(left: 12),
           child: GestureDetector(
             onTap: () => isSelected.value = !isSelected.value,
             child: Row(
@@ -42,14 +39,10 @@ class SignInButtons extends HookWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: Responsive().setWidth(8),
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Text(
                     'Remember me',
-                    style: GoogleFonts.mulish(
-                      fontSize: Responsive().setSp(12),
-                    ),
+                    style: GoogleFonts.mulish(fontSize: 12),
                   ),
                 ),
               ],
@@ -76,17 +69,14 @@ class SignInButtons extends HookWidget {
               disabledForegroundColor: Colors.transparent,
               disabledBackgroundColor: Colors.transparent,
               shadowColor: Colors.transparent,
-              minimumSize: Size(
-                Responsive().setWidth(200),
-                Responsive().setHeight(60),
-              ),
+              minimumSize: const Size(200, 60),
             ),
             onPressed: onSignIn,
             child: Text(
               'Sign In',
               style: GoogleFonts.mulish(
                 color: Colors.white,
-                fontSize: Responsive().setSp(18),
+                fontSize: 18,
                 letterSpacing: 1,
               ),
             ),

@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_login/widget/custom_icon.dart';
-import 'package:flutter_ui_examples/ui_login/widget/social_icons.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../login_ui.dart';
 
 class SocialButtons extends StatelessWidget {
   const SocialButtons({super.key});
@@ -12,28 +8,26 @@ class SocialButtons extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(bottom: Responsive().setHeight(30)),
+          padding: const EdgeInsets.only(bottom: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               SizedBox(
-                width: Responsive().setWidth(85),
+                width: 85,
                 child: Divider(
                   height: 1,
                   color: Colors.black26.withOpacity(.2),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: Responsive().setWidth(16),
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   'Social login',
                   style: GoogleFonts.mulish(fontSize: 16),
                 ),
               ),
               SizedBox(
-                width: Responsive().setWidth(85),
+                width: 85,
                 child: Divider(
                   height: 1,
                   color: Colors.black26.withOpacity(.2),
