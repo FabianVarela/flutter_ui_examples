@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_music/model/music_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../music_ui.dart';
 
 class PlaylistSection extends StatelessWidget {
   const PlaylistSection({required this.musicList, super.key});
@@ -13,11 +10,11 @@ class PlaylistSection extends StatelessWidget {
     return SingleChildScrollView(
       child: SizedBox(
         width: double.infinity,
-        height: Responsive().setHeight(250),
+        height: 250,
         child: Stack(
           children: <Widget>[
-            const _PaintedPositioned(isLeft: true),
-            const _PaintedPositioned(isLeft: false),
+            const _PaintedPositioned(position: _PaintedPosition.left),
+            const _PaintedPositioned(position: _PaintedPosition.right),
             Center(
               child: ListView.builder(
                 itemCount: musicList.length,
@@ -53,8 +50,8 @@ class _PlayListItem extends StatelessWidget {
             child: Image.asset(
               music.image,
               fit: BoxFit.contain,
-              width: Responsive().setWidth(40),
-              height: Responsive().setHeight(40),
+              width: 40,
+              height: 40,
             ),
           ),
           Expanded(
@@ -84,19 +81,21 @@ class _PlayListItem extends StatelessWidget {
   }
 }
 
-class _PaintedPositioned extends StatelessWidget {
-  const _PaintedPositioned({required this.isLeft});
+enum _PaintedPosition { left, right }
 
-  final bool isLeft;
+class _PaintedPositioned extends StatelessWidget {
+  const _PaintedPositioned({required this.position});
+
+  final _PaintedPosition position;
 
   @override
   Widget build(BuildContext context) {
     final container = Container(
-      width: Responsive().setWidth(50),
-      height: Responsive().setHeight(250),
+      width: 50,
+      height: 250,
       decoration: BoxDecoration(
         color: const Color(0xFF4B9AD5),
-        borderRadius: isLeft
+        borderRadius: position == _PaintedPosition.left
             ? const BorderRadius.only(
                 topRight: Radius.circular(30),
                 bottomRight: Radius.circular(30),
@@ -108,9 +107,8 @@ class _PaintedPositioned extends StatelessWidget {
       ),
     );
 
-    final positionValue = Responsive().setWidth(-25);
-    return isLeft
-        ? Positioned(left: positionValue, child: container)
-        : Positioned(right: positionValue, child: container);
+    return position == _PaintedPosition.left
+        ? Positioned(left: -25, child: container)
+        : Positioned(right: -25, child: container);
   }
 }

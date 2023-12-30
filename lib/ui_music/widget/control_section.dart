@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
+part of '../music_ui.dart';
 
 class ControlSection extends StatelessWidget {
   const ControlSection({super.key});
@@ -7,17 +6,15 @@ class ControlSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: Responsive().setWidth(350),
-      height: Responsive().setHeight(110),
+      width: 350,
+      height: 110,
       child: Stack(
         children: <Widget>[
           Center(
             child: Container(
-              width: Responsive().setWidth(290),
-              height: Responsive().setHeight(65),
-              padding: EdgeInsets.symmetric(
-                horizontal: Responsive().setWidth(25),
-              ),
+              width: 290,
+              height: 65,
+              padding: const EdgeInsets.symmetric(horizontal: 25),
               decoration: BoxDecoration(
                 border: Border.all(color: const Color(0xFF4B9AD5), width: 3),
                 borderRadius: BorderRadius.circular(40),
@@ -33,8 +30,8 @@ class ControlSection extends StatelessWidget {
           ),
           Align(
             child: Container(
-              width: Responsive().setWidth(92),
-              height: Responsive().setHeight(92),
+              width: 92,
+              height: 92,
               decoration: const BoxDecoration(
                 color: Color(0xFF4B9AD5),
                 shape: BoxShape.circle,

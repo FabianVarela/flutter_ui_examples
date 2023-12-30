@@ -1,10 +1,4 @@
-import 'package:circular_seek_bar/circular_seek_bar.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_music/model/music_model.dart';
-import 'package:flutter_ui_examples/ui_music/widget/my_clipper.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../music_ui.dart';
 
 class CurrentSongSection extends HookWidget {
   const CurrentSongSection({
@@ -23,9 +17,8 @@ class CurrentSongSection extends HookWidget {
     return Column(
       children: <Widget>[
         Center(
-          child: SizedBox(
-            width: Responsive().setWidth(250),
-            height: Responsive().setHeight(250),
+          child: SizedBox.fromSize(
+            size: const Size(250, 250),
             child: DecoratedBox(
               decoration: BoxDecoration(
                 color: const Color(0xFF4B9AD5).withOpacity(.5),
@@ -44,9 +37,8 @@ class CurrentSongSection extends HookWidget {
                   innerThumbColor: const Color(0xFF4B9AD5),
                   valueNotifier: currentPercent,
                   child: Center(
-                    child: SizedBox(
-                      height: Responsive().setHeight(200),
-                      width: Responsive().setWidth(200),
+                    child: SizedBox.fromSize(
+                      size: const Size(200, 200),
                       child: Padding(
                         padding: const EdgeInsets.all(3),
                         child: ClipOval(
@@ -61,21 +53,21 @@ class CurrentSongSection extends HookWidget {
             ),
           ),
         ),
-        SizedBox(height: Responsive().setHeight(15)),
+        const SizedBox(height: 15),
         Column(
           children: <Widget>[
             Text(
               music.artist,
               style: GoogleFonts.mulish(
                 color: const Color(0xFF4B9AD5),
-                fontSize: Responsive().setSp(20),
+                fontSize: 20,
               ),
             ),
             Text(
               music.song,
               style: GoogleFonts.mulish(
                 color: const Color(0xFF4B9AD5).withOpacity(.5),
-                fontSize: Responsive().setSp(18),
+                fontSize: 18,
               ),
             ),
           ],

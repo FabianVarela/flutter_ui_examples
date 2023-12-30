@@ -1,10 +1,15 @@
+import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_music/model/music_model.dart';
-import 'package:flutter_ui_examples/ui_music/widget/control_section.dart';
-import 'package:flutter_ui_examples/ui_music/widget/current_song_section.dart';
-import 'package:flutter_ui_examples/ui_music/widget/playlist_section.dart';
+import 'package:flutter_ui_examples/ui_music/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+part 'widget/control_section.dart';
+
+part 'widget/current_song_section.dart';
+
+part 'widget/playlist_section.dart';
 
 class MusicUI extends StatefulWidget {
   const MusicUI({required this.onPressedMenu, super.key});
@@ -45,11 +50,11 @@ class _MusicUIState extends State<MusicUI> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(height: Responsive().setHeight(30)),
+            const SizedBox(height: 30),
             CurrentSongSection(music: musics[1], percent: _thumbPercent),
-            SizedBox(height: Responsive().setHeight(20)),
+            const SizedBox(height: 20),
             const ControlSection(),
-            SizedBox(height: Responsive().setHeight(20)),
+            const SizedBox(height: 20),
             PlaylistSection(musicList: musics),
           ],
         ),
