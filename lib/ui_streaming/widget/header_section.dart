@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_streaming/widget/my_clipper.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../streaming_ui.dart';
 
 class HeaderSection extends StatelessWidget {
   const HeaderSection({required this.image, required this.title, super.key});
@@ -12,13 +9,13 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Responsive().setHeight(400),
+      height: 400,
       child: Stack(
         children: <Widget>[
           ClipPath(
             clipper: MyClipper(),
             child: Container(
-              height: Responsive().setHeight(370),
+              height: 370,
               decoration: const BoxDecoration(
                 color: Colors.white,
                 boxShadow: <BoxShadow>[
@@ -40,10 +37,7 @@ class HeaderSection extends StatelessWidget {
                   Container(
                     height: double.infinity,
                     width: double.infinity,
-                    padding: EdgeInsets.only(
-                      top: Responsive().setHeight(100),
-                      left: Responsive().setWidth(90),
-                    ),
+                    padding: const EdgeInsets.only(top: 100, left: 90),
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: <Color>[Color(0x00000000), Color(0xD9333333)],
@@ -60,14 +54,14 @@ class HeaderSection extends StatelessWidget {
                           'WATCH BEFORE EVERYONE',
                           style: GoogleFonts.mulish(
                             color: Colors.white,
-                            fontSize: Responsive().setSp(15),
+                            fontSize: 15,
                           ),
                         ),
                         Text(
                           title,
                           style: GoogleFonts.mulish(
                             color: Colors.white,
-                            fontSize: Responsive().setSp(35),
+                            fontSize: 35,
                           ),
                         ),
                       ],
@@ -78,8 +72,8 @@ class HeaderSection extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: Responsive().setHeight(360),
-            right: Responsive().setWidth(-30),
+            top: 360,
+            right: -30,
             child: FractionalTranslation(
               translation: const Offset(0, -.5),
               child: Row(
@@ -89,16 +83,16 @@ class HeaderSection extends StatelessWidget {
                     child: const Icon(Icons.add, color: Color(0xFFE52020)),
                     onPressed: () {},
                   ),
-                  SizedBox(width: Responsive().setWidth(12)),
+                  const SizedBox(width: 12),
                   Directionality(
                     textDirection: TextDirection.rtl,
                     child: ElevatedButton.icon(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFFE52020),
-                        padding: EdgeInsets.symmetric(
-                          vertical: Responsive().setHeight(15),
-                          horizontal: Responsive().setWidth(80),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 15,
+                          horizontal: 80,
                         ),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -109,7 +103,7 @@ class HeaderSection extends StatelessWidget {
                         'Watch now',
                         style: GoogleFonts.mulish(
                           color: Colors.white,
-                          fontSize: Responsive().setSp(15),
+                          fontSize: 15,
                         ),
                       ),
                     ),
