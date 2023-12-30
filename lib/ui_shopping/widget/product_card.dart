@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_shopping/model/shopping_model.dart';
-import 'package:flutter_ui_examples/ui_shopping/widget/custom_icon.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../shopping_ui.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({required this.shopping, super.key});
@@ -13,7 +9,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: Responsive().setHeight(330),
+      height: 330,
       decoration: BoxDecoration(
         color: shopping.color,
         borderRadius: BorderRadius.circular(20),
@@ -21,21 +17,15 @@ class ProductCard extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
-          SizedBox(height: Responsive().setHeight(8)),
-          Image.asset(
-            shopping.image,
-            width: Responsive().setWidth(201),
-            height: Responsive().setHeight(191),
-          ),
+          const SizedBox(height: 8),
+          Image.asset(shopping.image, width: 201, height: 191),
           Text(
             shopping.title,
-            style: GoogleFonts.ubuntu(fontSize: Responsive().setSp(25)),
+            style: GoogleFonts.ubuntu(fontSize: 25),
           ),
-          SizedBox(height: Responsive().setHeight(15)),
+          const SizedBox(height: 15),
           Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: Responsive().setWidth(30),
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -49,15 +39,13 @@ class ProductCard extends StatelessWidget {
                       shopping.originalPrice,
                       style: GoogleFonts.varelaRound(
                         color: const Color(0xFFFEB0BA),
-                        fontSize: Responsive().setSp(16),
+                        fontSize: 16,
                       ),
                     ),
-                    SizedBox(height: Responsive().setHeight(12)),
+                    const SizedBox(height: 12),
                     Text(
                       shopping.discountPrice,
-                      style: GoogleFonts.varelaRound(
-                        fontSize: Responsive().setSp(28),
-                      ),
+                      style: GoogleFonts.varelaRound(fontSize: 28),
                     ),
                   ],
                 ),
