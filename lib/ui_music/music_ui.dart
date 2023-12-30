@@ -25,6 +25,11 @@ class _MusicUIState extends State<MusicUI> {
 
   @override
   Widget build(BuildContext context) {
+    final currentMusic = musics.firstWhere(
+      (music) => music.isCurrent,
+      orElse: () => musics.first,
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -51,7 +56,7 @@ class _MusicUIState extends State<MusicUI> {
         child: Column(
           children: <Widget>[
             const SizedBox(height: 30),
-            CurrentSongSection(music: musics[1], percent: _thumbPercent),
+            CurrentSongSection(music: currentMusic, percent: _thumbPercent),
             const SizedBox(height: 20),
             const ControlSection(),
             const SizedBox(height: 20),
