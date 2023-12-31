@@ -102,7 +102,7 @@ class SneakyDetailUI extends HookWidget {
             Positioned(
               left: 16,
               right: 16,
-              bottom: 0,
+              bottom: 10,
               child: Row(
                 children: <Widget>[
                   CustomIconButton(
