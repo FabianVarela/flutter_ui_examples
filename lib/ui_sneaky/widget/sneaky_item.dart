@@ -10,6 +10,7 @@ class SneakyItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 10,
+      surfaceTintColor: Colors.white,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       margin: const EdgeInsets.symmetric(horizontal: 16),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
