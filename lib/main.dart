@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ui_examples/common/menu/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/menu/custom_hidden_menu.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas_ui.dart';
 import 'package:flutter_ui_examples/ui_beer/beer_ui.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture_ui.dart';
@@ -42,18 +41,14 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
         settings: settings,
-        builder: (ctx) {
-          final w = MediaQuery.of(ctx).size.width;
-          final h = MediaQuery.of(ctx).size.height;
-          Responsive.init(ctx, width: w, height: h, allowFontScaling: true);
-
+        builder: (buildContext) {
           final args = settings.arguments as SneakyDetailArguments?;
           return CustomHiddenMenu(
             isOpen: _isExpand,
             menu: CustomDrawer(
               isShowing: _isExpand,
               onRedirect: (route) {
-                Navigator.of(ctx).pushReplacementNamed(route);
+                Navigator.of(buildContext).pushReplacementNamed(route);
               },
               onCloseMenu: () => setState(() => _isExpand = false),
             ),
