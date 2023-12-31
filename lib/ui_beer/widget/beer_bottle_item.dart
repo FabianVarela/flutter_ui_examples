@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
+part of '../beer_ui.dart';
 
 class BeerBottleItem extends StatelessWidget {
   const BeerBottleItem({

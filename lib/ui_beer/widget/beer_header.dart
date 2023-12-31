@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../beer_ui.dart';
 
 class BeerHeader extends StatefulWidget {
   const BeerHeader({required this.index, super.key});
