@@ -1,9 +1,14 @@
 part of '../streaming_ui.dart';
 
 class StreamingList extends StatelessWidget {
-  const StreamingList({required this.streamingList, super.key});
+  const StreamingList({
+    required this.streamingList,
+    this.onSelectStream,
+    super.key,
+  });
 
   final List<StreamingModel> streamingList;
+  final ValueSetter<StreamingModel>? onSelectStream;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +23,7 @@ class StreamingList extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  'Watch now',
+                  'Watch more',
                   style: GoogleFonts.mulish(fontSize: 22),
                 ),
                 TextButton(
@@ -36,38 +41,41 @@ class StreamingList extends StatelessWidget {
             child: ListView.builder(
               itemCount: streamingList.length,
               scrollDirection: Axis.horizontal,
-              itemBuilder: (_, index) => Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 25,
-                  horizontal: 12,
-                ),
-                child: Card(
-                  elevation: 10,
-                  surfaceTintColor: Colors.white,
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+              itemBuilder: (_, index) => GestureDetector(
+                onTap: () => onSelectStream?.call(streamingList[index]),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 25,
+                    horizontal: 12,
                   ),
-                  child: SizedBox.fromSize(
-                    size: const Size(220, 135),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Image.asset(
-                          streamingList[index].image,
-                          width: double.infinity,
-                          height: 150,
-                          fit: BoxFit.cover,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: Text(
-                            streamingList[index].title,
-                            overflow: TextOverflow.ellipsis,
-                            style: GoogleFonts.mulish(fontSize: 16),
+                  child: Card(
+                    elevation: 10,
+                    surfaceTintColor: Colors.white,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: SizedBox.fromSize(
+                      size: const Size(220, 135),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Image.asset(
+                            streamingList[index].image,
+                            width: double.infinity,
+                            height: 150,
+                            fit: BoxFit.cover,
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Text(
+                              streamingList[index].title,
+                              overflow: TextOverflow.ellipsis,
+                              style: GoogleFonts.mulish(fontSize: 16),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
