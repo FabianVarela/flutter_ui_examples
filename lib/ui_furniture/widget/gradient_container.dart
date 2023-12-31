@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
+part of '../furniture_ui.dart';
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer({super.key});
@@ -9,8 +8,8 @@ class GradientContainer extends StatelessWidget {
     return Align(
       alignment: Alignment.topRight,
       child: Container(
-        width: Responsive().setWidth(Responsive().width * .8),
-        height: Responsive().setHeight(Responsive().height / 2),
+        width: MediaQuery.sizeOf(context).width * .8,
+        height: MediaQuery.sizeOf(context).height / 2,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: <Color>[

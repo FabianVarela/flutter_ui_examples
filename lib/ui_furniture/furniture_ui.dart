@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_furniture/model/furniture_model.dart';
 import 'package:flutter_ui_examples/ui_furniture/widget/custom_icon.dart';
-import 'package:flutter_ui_examples/ui_furniture/widget/custom_title.dart';
-import 'package:flutter_ui_examples/ui_furniture/widget/furniture_item.dart';
-import 'package:flutter_ui_examples/ui_furniture/widget/gradient_container.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+part 'widget/custom_title.dart';
+
+part 'widget/furniture_item.dart';
+
+part 'widget/gradient_container.dart';
 
 class FurnitureUI extends HookWidget {
   const FurnitureUI({required this.onPressedMenu, super.key});
@@ -14,6 +17,7 @@ class FurnitureUI extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.sizeOf(context).height;
     final currentIndex = useState(0);
 
     return Scaffold(
@@ -44,9 +48,9 @@ class FurnitureUI extends HookWidget {
         children: <Widget>[
           const GradientContainer(),
           Positioned(
-            top: Responsive().setHeight(Responsive().height * .15),
-            left: Responsive().setWidth(30),
-            right: Responsive().setHeight(20),
+            top: height * .15,
+            left: 30,
+            right: 20,
             child: const CustomTitle(
               title: 'Wooden Armchairs',
               subtitle: 'Beautiful armchairs to decorate your home',
@@ -55,11 +59,7 @@ class FurnitureUI extends HookWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: SizedBox(
-              height: Responsive().setHeight(
-                Responsive().height >= 750
-                    ? Responsive().height * .55
-                    : Responsive().height * .65,
-              ),
+              height: height >= 750 ? height * .55 : height * .65,
               child: ListView.builder(
                 itemCount: furnitureList.length,
                 scrollDirection: Axis.horizontal,
@@ -91,7 +91,7 @@ class FurnitureUI extends HookWidget {
         ],
       ),
       floatingActionButton: SizedBox.fromSize(
-        size: Size(Responsive().setWidth(65), Responsive().setHeight(65)),
+        size: const Size(65, 65),
         child: DecoratedBox(
           decoration: BoxDecoration(
             color: const Color(0x0FFA7B58),

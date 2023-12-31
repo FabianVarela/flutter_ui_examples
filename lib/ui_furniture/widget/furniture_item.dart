@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../furniture_ui.dart';
 
 class FurnitureItem extends StatelessWidget {
   const FurnitureItem({
@@ -19,17 +17,14 @@ class FurnitureItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(
-        left: Responsive().setWidth(35),
-        bottom: Responsive().setHeight(50),
-      ),
+      padding: const EdgeInsets.only(left: 35, bottom: 50),
       child: SizedBox(
-        width: Responsive().setWidth(200),
+        width: 200,
         child: Stack(
           fit: StackFit.expand,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.only(top: Responsive().setHeight(45)),
+              padding: const EdgeInsets.only(top: 45),
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
@@ -49,12 +44,8 @@ class FurnitureItem extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Image.asset(
-                  image,
-                  width: Responsive().setWidth(172),
-                  height: Responsive().setHeight(199),
-                ),
-                SizedBox(height: Responsive().setHeight(12)),
+                Image.asset(image, width: 172, height: 199),
+                const SizedBox(height: 12),
                 Padding(
                   padding: const EdgeInsets.all(12),
                   child: Column(
@@ -63,29 +54,29 @@ class FurnitureItem extends StatelessWidget {
                       Text(
                         title,
                         style: GoogleFonts.montserrat(
-                          fontSize: Responsive().setSp(16),
+                          fontSize: 16,
                           fontWeight: FontWeight.w900,
                           color: currentIndex.isEven
                               ? const Color(0xFF2A2D3F)
                               : Colors.white,
                         ),
                       ),
-                      SizedBox(height: Responsive().setHeight(7)),
+                      const SizedBox(height: 7),
                       Text(
                         'New Sell',
                         style: GoogleFonts.montserrat(
-                          fontSize: Responsive().setSp(12),
+                          fontSize: 12,
                           fontWeight: FontWeight.w500,
                           color: currentIndex.isEven
                               ? const Color(0xFF2A2D3F)
                               : Colors.white,
                         ),
                       ),
-                      SizedBox(height: Responsive().setHeight(45)),
+                      const SizedBox(height: 45),
                       Text(
                         '$price \$',
                         style: GoogleFonts.montserrat(
-                          fontSize: Responsive().setSp(30),
+                          fontSize: 30,
                           fontWeight: FontWeight.w700,
                           color: currentIndex.isEven
                               ? const Color(0xFF2A2D3F)
