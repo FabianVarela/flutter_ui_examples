@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../adidas_ui.dart';
 
 class QuantitySection extends HookWidget {
   const QuantitySection({super.key});
@@ -14,19 +11,19 @@ class QuantitySection extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(bottom: Responsive().setHeight(12)),
+          padding: const EdgeInsets.only(bottom: 12),
           child: Text(
             'Quantity',
             style: GoogleFonts.montserrat(
               color: const Color(0xFF949598),
-              fontSize: Responsive().setSp(14),
+              fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
           ),
         ),
         Container(
-          height: Responsive().setHeight(40),
-          margin: EdgeInsets.only(left: Responsive().setWidth(12)),
+          height: 40,
+          margin: const EdgeInsets.only(left: 12),
           decoration: BoxDecoration(
             color: const Color(0xFF525663),
             borderRadius: BorderRadius.circular(5),
@@ -53,15 +50,15 @@ class QuantitySection extends HookWidget {
               Flexible(
                 flex: 3,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: Responsive().setWidth(12),
-                  ),
-                  child: Text(
-                    '${amount.value}',
-                    style: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: Responsive().setSp(22),
-                      fontWeight: FontWeight.w900,
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: FittedBox(
+                    child: Text(
+                      '${amount.value}',
+                      style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   ),
                 ),

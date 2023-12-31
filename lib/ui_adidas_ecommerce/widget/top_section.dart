@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/model/adidas_model.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../adidas_ui.dart';
 
 class TopSection extends StatelessWidget {
   const TopSection({required this.image, required this.rating, super.key});
@@ -11,9 +8,8 @@ class TopSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: Responsive().setHeight(300),
+    return SizedBox.fromSize(
+      size: const Size(double.infinity, 300),
       child: Stack(
         children: <Widget>[
           Stack(
@@ -25,15 +21,12 @@ class TopSection extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Padding(
-                padding: EdgeInsets.only(
-                  top: Responsive().setHeight(60),
-                  right: Responsive().setWidth(35),
-                ),
+                padding: const EdgeInsets.only(top: 60, right: 35),
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Container(
-                    width: Responsive().setWidth(50),
-                    height: Responsive().setHeight(50),
+                    width: 50,
+                    height: 50,
                     decoration: const BoxDecoration(
                       color: Colors.black26,
                       shape: BoxShape.circle,
@@ -45,18 +38,18 @@ class TopSection extends StatelessWidget {
             ],
           ),
           Positioned(
-            left: Responsive().setWidth(18),
-            bottom: Responsive().setHeight(15),
+            left: 18,
+            bottom: 15,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(bottom: Responsive().setHeight(8)),
+                  padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     'Rating',
                     style: GoogleFonts.montserrat(
                       color: const Color(0xFF949598),
-                      fontSize: Responsive().setSp(14),
+                      fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -73,7 +66,7 @@ class TopSection extends StatelessWidget {
                         '${rating.value}',
                         style: GoogleFonts.montserrat(
                           color: const Color(0xFFFFE600),
-                          fontSize: Responsive().setSp(16),
+                          fontSize: 16,
                         ),
                       ),
                     ),
@@ -83,7 +76,7 @@ class TopSection extends StatelessWidget {
                         '(${rating.voted} people)',
                         style: GoogleFonts.montserrat(
                           color: Colors.white,
-                          fontSize: Responsive().setSp(16),
+                          fontSize: 16,
                         ),
                       ),
                     ),

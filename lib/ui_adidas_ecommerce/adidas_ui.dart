@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/model/adidas_model.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/adidas_description.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/color_list_section.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/price_section.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/quantity_section.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/size_list_section.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/top_section.dart';
+import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+part 'widget/adidas_description.dart';
+
+part 'widget/color_list_section.dart';
+
+part 'widget/price_section.dart';
+
+part 'widget/quantity_section.dart';
+
+part 'widget/size_list_section.dart';
+
+part 'widget/top_section.dart';
 
 class AdidasUI extends StatelessWidget {
   const AdidasUI({required this.onPressedMenu, super.key});
@@ -38,7 +45,7 @@ class AdidasUI extends StatelessWidget {
             adidasModel.title,
             style: GoogleFonts.montserrat(
               color: Colors.white,
-              fontSize: Responsive().setSp(20),
+              fontSize: 20,
               fontWeight: FontWeight.w900,
             ),
           ),
@@ -56,17 +63,13 @@ class AdidasUI extends StatelessWidget {
               TopSection(image: adidasModel.image, rating: adidasModel.rating),
               Container(
                 width: double.infinity,
-                padding: EdgeInsets.only(top: Responsive().setHeight(10)),
+                padding: const EdgeInsets.only(top: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     AdidasDescription(description: adidasModel.description),
                     Padding(
-                      padding: EdgeInsets.only(
-                        left: Responsive().setWidth(15),
-                        right: Responsive().setWidth(15),
-                        bottom: Responsive().setHeight(10),
-                      ),
+                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[

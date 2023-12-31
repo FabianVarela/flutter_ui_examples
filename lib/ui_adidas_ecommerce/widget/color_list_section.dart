@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/my_clipper.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../adidas_ui.dart';
 
 class ColorListSection extends HookWidget {
   const ColorListSection({required this.colors, super.key});
@@ -17,48 +13,41 @@ class ColorListSection extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(
-            left: Responsive().setWidth(18),
-            bottom: Responsive().setHeight(10),
-          ),
+          padding: const EdgeInsets.only(left: 18, bottom: 10),
           child: Text(
             'Select Color',
             style: GoogleFonts.montserrat(
               color: const Color(0xFF949598),
-              fontSize: Responsive().setSp(14),
+              fontSize: 14,
               fontWeight: FontWeight.w900,
             ),
           ),
         ),
         Container(
           width: double.infinity,
-          height: Responsive().setHeight(34),
-          margin: EdgeInsets.only(
-            left: Responsive().setWidth(20),
-            bottom: Responsive().setHeight(20),
-          ),
+          height: 34,
+          margin: const EdgeInsets.only(left: 20, bottom: 20),
           child: Row(
             children: <Widget>[
               for (var i = 0; i < colors.length; i++)
                 GestureDetector(
                   onTap: () => currentColor.value = i,
                   child: Padding(
-                    padding: EdgeInsets.only(left: Responsive().setWidth(10)),
+                    padding: const EdgeInsets.only(left: 10),
                     child: Container(
-                      width: Responsive().setWidth(30),
-                      height: Responsive().setHeight(30),
+                      width: 30,
+                      height: 30,
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(5),
-                        boxShadow: currentColor.value == i
-                            ? <BoxShadow>[
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(.8),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ]
-                            : <BoxShadow>[],
+                        boxShadow: <BoxShadow>[
+                          if (currentColor.value == i)
+                            BoxShadow(
+                              color: Colors.black.withOpacity(.8),
+                              blurRadius: 10,
+                              offset: const Offset(0, 10),
+                            ),
+                        ],
                       ),
                       child: ClipPath(
                         clipper: MyClipper(),

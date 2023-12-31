@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../adidas_ui.dart';
 
 class PriceSection extends StatelessWidget {
   const PriceSection({required this.price, super.key});
@@ -13,9 +11,7 @@ class PriceSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(
-            left: Responsive().setWidth(20),
-          ),
+          padding: const EdgeInsets.only(left: 20),
           child: Text(
             'Price',
             style: GoogleFonts.montserrat(
@@ -24,23 +20,19 @@ class PriceSection extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          width: double.infinity,
-          height: Responsive().setHeight(180),
+        SizedBox.fromSize(
+          size: const Size(double.infinity, 180),
           child: Stack(
             alignment: Alignment.topCenter,
             children: <Widget>[
               Container(
-                margin: EdgeInsets.only(left: Responsive().setWidth(22)),
+                margin: const EdgeInsets.only(left: 22),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.only(
-                        left: Responsive().setWidth(18),
-                        bottom: Responsive().setHeight(10),
-                      ),
+                      padding: const EdgeInsets.only(left: 18, bottom: 10),
                       child: RichText(
                         text: TextSpan(
                           style: GoogleFonts.montserrat(
@@ -48,17 +40,13 @@ class PriceSection extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                           ),
                           children: <TextSpan>[
-                            TextSpan(
+                            const TextSpan(
                               text: r'$ ',
-                              style: TextStyle(
-                                fontSize: Responsive().setSp(26),
-                              ),
+                              style: TextStyle(fontSize: 26),
                             ),
                             TextSpan(
                               text: '$price',
-                              style: TextStyle(
-                                fontSize: Responsive().setSp(35),
-                              ),
+                              style: const TextStyle(fontSize: 35),
                             ),
                           ],
                         ),
@@ -70,9 +58,9 @@ class PriceSection extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        padding: EdgeInsets.symmetric(
-                          vertical: Responsive().setHeight(14),
-                          horizontal: Responsive().setWidth(35),
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 14,
+                          horizontal: 35,
                         ),
                       ),
                       onPressed: () {},
@@ -83,7 +71,7 @@ class PriceSection extends StatelessWidget {
                           textAlign: TextAlign.left,
                           style: GoogleFonts.montserrat(
                             color: Colors.white,
-                            fontSize: Responsive().setSp(15),
+                            fontSize: 15,
                           ),
                         ),
                       ),
@@ -92,12 +80,12 @@ class PriceSection extends StatelessWidget {
                 ),
               ),
               Positioned(
-                right: Responsive().setWidth(-40),
-                bottom: Responsive().setHeight(0),
+                right: -40,
+                bottom: 0,
                 child: Image.asset(
                   'assets/images/adidas/cart.png',
-                  width: Responsive().setWidth(190),
-                  height: Responsive().setHeight(155),
+                  width: 190,
+                  height: 155,
                   fit: BoxFit.cover,
                 ),
               ),

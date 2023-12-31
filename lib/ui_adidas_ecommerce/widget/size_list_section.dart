@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
-import 'package:google_fonts/google_fonts.dart';
+part of '../adidas_ui.dart';
 
 class SizeSection extends HookWidget {
   const SizeSection({required this.sizes, super.key});
@@ -16,20 +13,18 @@ class SizeSection extends HookWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(
-            bottom: Responsive().setHeight(8),
-          ),
+          padding: const EdgeInsets.only(bottom: 8),
           child: Text(
             'Size',
             style: GoogleFonts.montserrat(
               color: const Color(0xFF949598),
-              fontSize: Responsive().setSp(14),
+              fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
           ),
         ),
         SizedBox(
-          height: Responsive().setHeight(38),
+          height: 38,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -37,10 +32,10 @@ class SizeSection extends HookWidget {
                 GestureDetector(
                   onTap: () => currentSize.value = i,
                   child: Padding(
-                    padding: EdgeInsets.only(left: Responsive().setWidth(12)),
+                    padding: const EdgeInsets.only(left: 12),
                     child: Container(
-                      width: Responsive().setWidth(40),
-                      height: Responsive().setHeight(40),
+                      width: 40,
+                      height: 40,
                       decoration: BoxDecoration(
                         color: i == currentSize.value
                             ? const Color(0xFFFC3930)
