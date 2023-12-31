@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -54,7 +53,7 @@ class _BeerHeaderState extends State<BeerHeader> with TickerProviderStateMixin {
             curve: Curves.fastOutSlowIn,
             duration: const Duration(seconds: 1),
             style: GoogleFonts.montserrat(
-              fontSize: Responsive().setSp(30),
+              fontSize: 30,
               fontWeight: FontWeight.w700,
               color: beers[widget.index].textColor,
             ),

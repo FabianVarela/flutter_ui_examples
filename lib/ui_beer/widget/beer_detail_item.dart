@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -20,7 +19,7 @@ class BeerDetailItem extends StatelessWidget {
             beer.name,
             textAlign: TextAlign.center,
             style: GoogleFonts.montserrat(
-              fontSize: Responsive().setSp(35),
+              fontSize: 35,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -29,9 +28,7 @@ class BeerDetailItem extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 5),
           child: Text(
             beer.slogan,
-            style: GoogleFonts.montserrat(
-              fontSize: Responsive().setSp(14),
-            ),
+            style: GoogleFonts.montserrat(fontSize: 14),
           ),
         ),
         Padding(
@@ -51,7 +48,7 @@ class BeerDetailItem extends StatelessWidget {
             beer.description,
             textAlign: TextAlign.center,
             style: GoogleFonts.montserrat(
-              fontSize: Responsive().setSp(18),
+              fontSize: 18,
               fontWeight: FontWeight.w300,
             ),
           ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 
 class BeerBottleItem extends StatelessWidget {
@@ -40,9 +39,8 @@ class BeerBottleItem extends StatelessWidget {
               ),
             ),
             Center(
-              child: SizedBox(
-                height: value * Responsive().setHeight(400),
-                width: value * Responsive().setWidth(250),
+              child: SizedBox.fromSize(
+                size: Size(value * 250, value * 400),
                 child: child,
               ),
             ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/responsive.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/beer_bottle_item.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/beer_detail_item.dart';
@@ -15,8 +14,8 @@ class BeerUI extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.sizeOf(context).width;
+    final height = MediaQuery.sizeOf(context).height;
 
     final currentIndex = useState(0);
     final bottlePageController = usePageController(viewportFraction: .5);
@@ -52,7 +51,7 @@ class BeerUI extends HookWidget {
           textAlign: TextAlign.center,
           style: GoogleFonts.montserrat(
             color: Colors.black,
-            fontSize: Responsive().setSp(20),
+            fontSize: 20,
             fontWeight: FontWeight.w300,
           ),
         ),
@@ -77,8 +76,8 @@ class BeerUI extends HookWidget {
             child: AnimatedContainer(
               curve: Curves.fastOutSlowIn,
               duration: const Duration(seconds: 1),
-              width: Responsive().setWidth(width),
-              height: Responsive().setHeight(height * .53),
+              width: width,
+              height: height * .53,
               decoration: BoxDecoration(
                 color: beers[currentIndex.value].color,
                 boxShadow: const <BoxShadow>[
@@ -138,7 +137,7 @@ class BeerUI extends HookWidget {
                     child: Text(
                       'Grab',
                       style: GoogleFonts.montserrat(
-                        fontSize: Responsive().setSp(18),
+                        fontSize: 18,
                         color: Colors.white,
                       ),
                     ),
