@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
+part of '../sneaky_detail_ui.dart';
 
 class SneakySizeList extends HookWidget {
   const SneakySizeList({required this.sizes, super.key});

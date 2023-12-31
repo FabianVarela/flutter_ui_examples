@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+part of '../sneaky_detail_ui.dart';
 
 class SneakyColorList extends HookWidget {
   const SneakyColorList({required this.colors, super.key});

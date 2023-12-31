@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../sneaky_detail_ui.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({required this.text, required this.onPressed, super.key});

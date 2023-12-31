@@ -1,11 +1,18 @@
+import 'dart:math';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
-import 'package:flutter_ui_examples/ui_sneaky/widget/control_360.dart';
-import 'package:flutter_ui_examples/ui_sneaky/widget/custom_button.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
-import 'package:flutter_ui_examples/ui_sneaky/widget/sneaky_color_list.dart';
-import 'package:flutter_ui_examples/ui_sneaky/widget/sneaky_size_list.dart';
+
+part 'widget/control_360.dart';
+
+part 'widget/custom_button.dart';
+
+part 'widget/sneaky_color_list.dart';
+
+part 'widget/sneaky_size_list.dart';
 
 class SneakyDetailArguments {
   SneakyDetailArguments(this.sneaky, this.uuid);

@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
+part of '../sneaky_ui.dart';
 
 class SneakyItem extends StatelessWidget {
   const SneakyItem({required this.sneaky, required this.uuid, super.key});

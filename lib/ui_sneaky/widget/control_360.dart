@@ -1,7 +1,4 @@
-import 'dart:math';
-
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+part of '../sneaky_detail_ui.dart';
 
 num degToRad(num deg) => deg * (pi / 180.0);
 
