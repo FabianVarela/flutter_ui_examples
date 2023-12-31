@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
@@ -30,6 +31,7 @@ class SneakyDetailUI extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final currentValue = useState<double>(360);
+    final isDisableScroll = useState(false);
 
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(.9),
@@ -38,6 +40,9 @@ class SneakyDetailUI extends HookWidget {
           children: <Widget>[
             Positioned.fill(
               child: SingleChildScrollView(
+                physics: isDisableScroll.value
+                    ? const NeverScrollableScrollPhysics()
+                    : const AlwaysScrollableScrollPhysics(),
                 padding: const EdgeInsets.fromLTRB(16, 10, 16, 30),
                 child: Stack(
                   children: <Widget>[
@@ -93,6 +98,9 @@ class SneakyDetailUI extends HookWidget {
                       child: Control360(
                         value: currentValue.value,
                         onChangeValue: (value) => currentValue.value = value,
+                        onDisableScroll: (value) {
+                          isDisableScroll.value = value;
+                        },
                       ),
                     ),
                   ],
