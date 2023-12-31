@@ -11,20 +11,14 @@ part 'widget/current_song_section.dart';
 
 part 'widget/playlist_section.dart';
 
-class MusicUI extends StatefulWidget {
+class MusicUI extends HookWidget {
   const MusicUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
   @override
-  _MusicUIState createState() => _MusicUIState();
-}
-
-class _MusicUIState extends State<MusicUI> {
-  final double _thumbPercent = 20;
-
-  @override
   Widget build(BuildContext context) {
+    final thumbPercent = useState<double>(20);
     final currentMusic = musics.firstWhere(
       (music) => music.isCurrent,
       orElse: () => musics.first,
@@ -48,7 +42,7 @@ class _MusicUIState extends State<MusicUI> {
           IconButton(
             icon: const Icon(Icons.menu),
             color: const Color(0xFF4B9AD5),
-            onPressed: widget.onPressedMenu,
+            onPressed: onPressedMenu,
           ),
         ],
       ),
@@ -56,7 +50,10 @@ class _MusicUIState extends State<MusicUI> {
         child: Column(
           children: <Widget>[
             const SizedBox(height: 30),
-            CurrentSongSection(music: currentMusic, percent: _thumbPercent),
+            CurrentSongSection(
+              music: currentMusic,
+              percent: thumbPercent.value,
+            ),
             const SizedBox(height: 20),
             const ControlSection(),
             const SizedBox(height: 20),

@@ -9,14 +9,9 @@ part 'widget/on_boarding_item.dart';
 
 part 'widget/page_indicator.dart';
 
-class OnBoardingUI extends StatefulHookWidget {
+class OnBoardingUI extends HookWidget {
   const OnBoardingUI({super.key});
 
-  @override
-  _OnBoardingUIState createState() => _OnBoardingUIState();
-}
-
-class _OnBoardingUIState extends State<OnBoardingUI> {
   @override
   Widget build(BuildContext context) {
     final currentPage = useState(0);
