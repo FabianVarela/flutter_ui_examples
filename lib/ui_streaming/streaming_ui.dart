@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_streaming/model/streaming_model.dart';
 import 'package:flutter_ui_examples/ui_streaming/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,18 +8,15 @@ part 'widget/header_section.dart';
 
 part 'widget/streaming_list.dart';
 
-class StreamingUI extends StatefulWidget {
+class StreamingUI extends HookWidget {
   const StreamingUI({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
   @override
-  _StreamingUIState createState() => _StreamingUIState();
-}
-
-class _StreamingUIState extends State<StreamingUI> {
-  @override
   Widget build(BuildContext context) {
+    final currentStreaming = useState(streamingList.first);
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -28,7 +26,7 @@ class _StreamingUIState extends State<StreamingUI> {
           padding: const EdgeInsets.only(left: 20),
           child: IconButton(
             icon: const Icon(Icons.menu, color: Colors.white),
-            onPressed: widget.onPressedMenu,
+            onPressed: onPressedMenu,
           ),
         ),
       ),
@@ -36,10 +34,13 @@ class _StreamingUIState extends State<StreamingUI> {
         child: Column(
           children: <Widget>[
             HeaderSection(
-              image: streamingList[0].image,
-              title: streamingList[0].title,
+              image: currentStreaming.value.image,
+              title: currentStreaming.value.title,
             ),
-            StreamingList(streamingList: streamingList),
+            StreamingList(
+              streamingList: streamingList,
+              onSelectStream: (value) => currentStreaming.value = value,
+            ),
           ],
         ),
       ),
