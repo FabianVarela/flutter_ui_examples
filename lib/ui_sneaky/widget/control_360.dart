@@ -11,6 +11,7 @@ class Control360 extends StatefulWidget {
     this.value = 0,
     this.backgroundColor = Colors.white,
     this.foregroundColor = Colors.black87,
+    this.onDisableScroll,
     super.key,
   });
 
@@ -19,6 +20,7 @@ class Control360 extends StatefulWidget {
   final double value;
   final Color backgroundColor;
   final Color foregroundColor;
+  final ValueSetter<bool>? onDisableScroll;
 
   @override
   _Control360State createState() => _Control360State();
@@ -37,11 +39,26 @@ class _Control360State extends State<Control360> {
     return Stack(
       alignment: Alignment.center,
       children: <Widget>[
-        GestureDetector(
-          onPanStart: (details) => _onPanStart(details, widget.size, width),
-          onPanUpdate: (details) => _onPanUpdate(details, widget.size),
-          onPanEnd: (details) {
-            if (!_isValid) return;
+        RawGestureDetector(
+          gestures: {
+            _AllowMultipleGestures:
+                GestureRecognizerFactoryWithHandlers<_AllowMultipleGestures>(
+              _AllowMultipleGestures.new,
+              (_AllowMultipleGestures instance) {
+                instance
+                  ..onStart = (details) {
+                    _onPanStart(details, widget.size, width);
+                    widget.onDisableScroll?.call(true);
+                  }
+                  ..onUpdate = (details) {
+                    _onPanUpdate(details, widget.size);
+                  }
+                  ..onEnd = (_) {
+                    widget.onDisableScroll?.call(false);
+                    if (!_isValid) return;
+                  };
+              },
+            ),
           },
           child: Container(
             alignment: FractionalOffset.center,
@@ -124,6 +141,13 @@ class _Control360State extends State<Control360> {
 
     if (distance < innerRadius || distance > halfSize) return false;
     return true;
+  }
+}
+
+class _AllowMultipleGestures extends PanGestureRecognizer {
+  @override
+  void rejectGesture(int pointer) {
+    acceptGesture(pointer);
   }
 }
 
