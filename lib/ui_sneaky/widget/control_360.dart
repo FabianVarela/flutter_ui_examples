@@ -84,10 +84,7 @@ class _Control360State extends State<Control360> {
     final offset = _getLocalOffset(details.globalPosition);
     _isValid = _checkValidTouch(offset, size, width);
 
-    if (!_isValid) {
-      if (kDebugMode) print('Start: Is not valid');
-      return;
-    }
+    if (!_isValid) if (kDebugMode) print('Start: Is not valid');
   }
 
   void _onPanUpdate(DragUpdateDetails details, double size) {
