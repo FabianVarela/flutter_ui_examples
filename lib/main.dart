@@ -41,37 +41,36 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       onGenerateRoute: (settings) => MaterialPageRoute<dynamic>(
         settings: settings,
-        builder: (buildContext) {
-          final args = settings.arguments as SneakyDetailArguments?;
-          return CustomHiddenMenu(
-            isOpen: _isExpand,
-            menu: CustomDrawer(
-              isShowing: _isExpand,
-              onRedirect: (route) {
-                Navigator.of(buildContext).pushReplacementNamed(route);
-              },
-              onCloseMenu: () => setState(() => _isExpand = false),
-            ),
-            child: switch (settings.name) {
-              '/login' => const LoginUI(),
-              '/shopping' => ShoppingUI(onPressedMenu: _openDrawer),
-              '/story' => StoryUI(onPressedMenu: _openDrawer),
-              '/music' => MusicUI(onPressedMenu: _openDrawer),
-              '/streaming' => StreamingUI(onPressedMenu: _openDrawer),
-              '/furniture' => FurnitureUI(onPressedMenu: _openDrawer),
-              '/adidas' => AdidasUI(onPressedMenu: _openDrawer),
-              '/sneaky' => SneakyUI(onPressedMenu: _openDrawer),
-              '/sneaky_detail' => SneakyDetailUI(
-                  uuid: args!.uuid,
-                  sneaky: args.sneaky,
-                ),
-              '/beer' => BeerUI(onPressedMenu: _openDrawer),
-              '/' || _ => const OnBoardingUI(),
+        builder: (buildContext) => CustomHiddenMenu(
+          isOpen: _isExpand,
+          menu: CustomDrawer(
+            isShowing: _isExpand,
+            onRedirect: (route) {
+              Navigator.of(buildContext).pushReplacementNamed(route);
             },
-          );
-        },
+            onCloseMenu: () => setState(() => _isExpand = false),
+          ),
+          child: switch (settings.name) {
+            '/login' => const LoginUI(),
+            '/shopping' => ShoppingUI(onPressedMenu: _openDrawer),
+            '/story' => StoryUI(onPressedMenu: _openDrawer),
+            '/music' => MusicUI(onPressedMenu: _openDrawer),
+            '/streaming' => StreamingUI(onPressedMenu: _openDrawer),
+            '/furniture' => FurnitureUI(onPressedMenu: _openDrawer),
+            '/adidas' => AdidasUI(onPressedMenu: _openDrawer),
+            '/sneaky' => SneakyUI(onPressedMenu: _openDrawer),
+            '/sneaky_detail' => _goToSneakyScreen(settings.arguments),
+            '/beer' => BeerUI(onPressedMenu: _openDrawer),
+            '/' || _ => const OnBoardingUI(),
+          },
+        ),
       ),
     );
+  }
+
+  Widget _goToSneakyScreen(Object? arguments) {
+    final args = arguments as SneakyDetailArguments?;
+    return SneakyDetailUI(uuid: args!.uuid, sneaky: args.sneaky);
   }
 
   void _openDrawer() {
