@@ -1,7 +1,7 @@
-part of '../sneaky_detail_ui.dart';
+part of '../../sneaky_detail_ui.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({required this.text, required this.onPressed, super.key});
+class _CustomButton extends StatelessWidget {
+  const _CustomButton({required this.text, required this.onPressed});
 
   final String text;
   final VoidCallback? onPressed;

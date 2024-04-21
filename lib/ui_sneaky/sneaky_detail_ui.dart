@@ -7,13 +7,13 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
 
-part 'widget/control_360.dart';
+part 'widget/detail/control_360.dart';
 
-part 'widget/custom_button.dart';
+part 'widget/detail/custom_button.dart';
 
-part 'widget/sneaky_color_list.dart';
+part 'widget/detail/sneaky_color_list.dart';
 
-part 'widget/sneaky_size_list.dart';
+part 'widget/detail/sneaky_size_list.dart';
 
 class SneakyDetailArguments {
   SneakyDetailArguments(this.sneaky, this.uuid);
@@ -74,11 +74,11 @@ class SneakyDetailUI extends HookWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
-                          child: SneakyColorList(colors: sneaky.colors),
+                          child: _SneakyColorList(colors: sneaky.colors),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 30),
-                          child: SneakySizeList(sizes: sneaky.sizes),
+                          child: _SneakySizeList(sizes: sneaky.sizes),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 50),
@@ -95,7 +95,7 @@ class SneakyDetailUI extends HookWidget {
                     ),
                     FractionalTranslation(
                       translation: const Offset(.55, .9),
-                      child: Control360(
+                      child: _Control360(
                         value: currentValue.value,
                         onChangeValue: (value) => currentValue.value = value,
                         onDisableScroll: (value) {
@@ -120,7 +120,7 @@ class SneakyDetailUI extends HookWidget {
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: CustomButton(
+                      child: _CustomButton(
                         text: 'Add to bag'.toUpperCase(),
                         onPressed: () {},
                       ),

@@ -4,7 +4,7 @@ import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
 import 'package:uuid/uuid.dart';
 
-part 'widget/sneaky_item.dart';
+part 'widget/main/sneaky_item.dart';
 
 class SneakyUI extends StatelessWidget {
   const SneakyUI({required this.onPressedMenu, super.key});
@@ -62,7 +62,7 @@ class SneakyUI extends StatelessWidget {
 
                             return GestureDetector(
                               onTap: () => _goToDetail(context, sneaky, uuid),
-                              child: SneakyItem(sneaky: sneaky, uuid: uuid),
+                              child: _SneakyItem(sneaky: sneaky, uuid: uuid),
                             );
                           },
                         ),

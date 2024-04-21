@@ -1,7 +1,7 @@
-part of '../sneaky_detail_ui.dart';
+part of '../../sneaky_detail_ui.dart';
 
-class SneakyColorList extends HookWidget {
-  const SneakyColorList({required this.colors, super.key});
+class _SneakyColorList extends HookWidget {
+  const _SneakyColorList({required this.colors});
 
   final List<Color> colors;
 

@@ -1,7 +1,7 @@
-part of '../sneaky_detail_ui.dart';
+part of '../../sneaky_detail_ui.dart';
 
-class SneakySizeList extends HookWidget {
-  const SneakySizeList({required this.sizes, super.key});
+class _SneakySizeList extends HookWidget {
+  const _SneakySizeList({required this.sizes});
 
   final List<SneakySize> sizes;
 

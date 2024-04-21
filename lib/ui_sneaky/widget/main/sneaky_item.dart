@@ -1,7 +1,7 @@
-part of '../sneaky_ui.dart';
+part of '../../sneaky_ui.dart';
 
-class SneakyItem extends StatelessWidget {
-  const SneakyItem({required this.sneaky, required this.uuid, super.key});
+class _SneakyItem extends StatelessWidget {
+  const _SneakyItem({required this.sneaky, required this.uuid});
 
   final Sneaky sneaky;
   final String uuid;

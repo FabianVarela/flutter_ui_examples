@@ -1,18 +1,19 @@
-part of '../sneaky_detail_ui.dart';
+// ignore_for_file: unused_element
 
-num degToRad(num deg) => deg * (pi / 180.0);
+part of '../../sneaky_detail_ui.dart';
 
-num radToDeg(num rad) => rad * (180.0 / pi);
+num _degToRad(num deg) => deg * (pi / 180.0);
 
-class Control360 extends StatefulWidget {
-  const Control360({
+num _radToDeg(num rad) => rad * (180.0 / pi);
+
+class _Control360 extends StatefulWidget {
+  const _Control360({
     required this.onChangeValue,
     this.size = 200,
     this.value = 0,
     this.backgroundColor = Colors.white,
     this.foregroundColor = Colors.black87,
     this.onDisableScroll,
-    super.key,
   });
 
   final ValueSetter<double> onChangeValue;
@@ -26,7 +27,7 @@ class Control360 extends StatefulWidget {
   _Control360State createState() => _Control360State();
 }
 
-class _Control360State extends State<Control360> {
+class _Control360State extends State<_Control360> {
   final _circleKey = GlobalKey();
 
   bool _isValid = false;
@@ -117,12 +118,12 @@ class _Control360State extends State<Control360> {
 
     var radians = atan((x - center) / (center - y));
     if (y > center) {
-      radians += degToRad(180);
+      radians += _degToRad(180);
     } else if (x < center) {
-      radians += degToRad(360);
+      radians += _degToRad(360);
     }
 
-    final value = radians / degToRad(360);
+    final value = radians / _degToRad(360);
     _setValue(value * 360);
   }
 
