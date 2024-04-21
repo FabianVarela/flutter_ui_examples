@@ -1,7 +1,7 @@
 part of '../login_ui.dart';
 
-class BackgroundImage extends StatelessWidget {
-  const BackgroundImage({super.key});
+class _BackgroundImage extends StatelessWidget {
+  const _BackgroundImage();
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_login/widget/custom_icon.dart';
-import 'package:flutter_ui_examples/ui_login/widget/social_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/background_image.dart';
@@ -24,7 +23,7 @@ class LoginUI extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          const BackgroundImage(),
+          const _BackgroundImage(),
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -39,16 +38,16 @@ class LoginUI extends StatelessWidget {
                   const Spacer(),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),
-                    child: CardForm(),
+                    child: _CardForm(),
                   ),
-                  SignInButtons(
+                  _SignInButtons(
                     onSignIn: () {
                       Navigator.pushReplacementNamed(context, '/shopping');
                     },
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),
-                    child: SocialButtons(),
+                    child: _SocialButtons(),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 20),

@@ -1,10 +1,29 @@
 part of '../login_ui.dart';
 
-class SocialButtons extends StatelessWidget {
-  const SocialButtons({super.key});
+class _SocialButtons extends StatelessWidget {
+  const _SocialButtons();
 
   @override
   Widget build(BuildContext context) {
+    final socialIconList = <({IconData icon, List<Color> colors})>[
+      (
+        icon: CustomIcon.facebook,
+        colors: const <Color>[Color(0xFF102397), Color(0xFF187ADF)],
+      ),
+      (
+        icon: CustomIcon.google,
+        colors: const <Color>[Color(0xFFFF4F38), Color(0xFFFF355D)],
+      ),
+      (
+        icon: CustomIcon.twitter,
+        colors: const <Color>[Color(0xFF17EAD9), Color(0xFF6078EA)],
+      ),
+      (
+        icon: CustomIcon.linkedin,
+        colors: const <Color>[Color(0xFF00C6FB), Color(0xFF005BEA)],
+      ),
+    ];
+
     return Column(
       children: <Widget>[
         Padding(
@@ -38,30 +57,48 @@ class SocialButtons extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SocialIcons(
-              colors: const <Color>[Color(0xFF102397), Color(0xFF187ADF)],
-              iconData: CustomIcon.facebook,
+          children: socialIconList.map((socialIcon) {
+            return _SocialIcons(
+              colors: socialIcon.colors,
+              iconData: socialIcon.icon,
               onPressed: () {},
-            ),
-            SocialIcons(
-              colors: const <Color>[Color(0xFFFF4F38), Color(0xFFFF355D)],
-              iconData: CustomIcon.google,
-              onPressed: () {},
-            ),
-            SocialIcons(
-              colors: const <Color>[Color(0xFF17EAD9), Color(0xFF6078EA)],
-              iconData: CustomIcon.twitter,
-              onPressed: () {},
-            ),
-            SocialIcons(
-              colors: const <Color>[Color(0xFF00C6FB), Color(0xFF005BEA)],
-              iconData: CustomIcon.linkedin,
-              onPressed: () {},
-            ),
-          ],
+            );
+          }).toList(),
         ),
       ],
+    );
+  }
+}
+
+class _SocialIcons extends StatelessWidget {
+  const _SocialIcons({
+    required this.colors,
+    required this.iconData,
+    required this.onPressed,
+  });
+
+  final List<Color> colors;
+  final IconData iconData;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 14),
+      child: SizedBox.fromSize(
+        size: const Size(45, 45),
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            gradient: LinearGradient(colors: colors),
+          ),
+          child: RawMaterialButton(
+            shape: const CircleBorder(),
+            onPressed: onPressed,
+            child: Icon(iconData, color: Colors.white),
+          ),
+        ),
+      ),
     );
   }
 }
