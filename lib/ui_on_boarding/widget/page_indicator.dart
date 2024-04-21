@@ -1,11 +1,7 @@
 part of '../on_boarding_ui.dart';
 
-class PageIndicator extends StatelessWidget {
-  const PageIndicator({
-    required this.pageCount,
-    this.currentPage = 0,
-    super.key,
-  });
+class _PageIndicator extends StatelessWidget {
+  const _PageIndicator({required this.pageCount, this.currentPage = 0});
 
   final int pageCount;
   final int currentPage;

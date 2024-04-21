@@ -1,11 +1,10 @@
 part of '../on_boarding_ui.dart';
 
-class OnboardingItem extends StatelessWidget {
-  const OnboardingItem({
+class _OnboardingItem extends StatelessWidget {
+  const _OnboardingItem({
     required this.pageModel,
     required this.pageController,
     this.index = 0,
-    super.key,
   });
 
   final PageModel pageModel;

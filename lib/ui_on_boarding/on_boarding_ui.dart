@@ -55,7 +55,7 @@ class OnBoardingUI extends HookWidget {
                     });
                   }
                 },
-                itemBuilder: (_, index) => OnboardingItem(
+                itemBuilder: (_, index) => _OnboardingItem(
                   pageModel: pageList[index],
                   pageController: pageController,
                   index: index,
@@ -66,7 +66,7 @@ class OnBoardingUI extends HookWidget {
                 bottom: 30,
                 child: SizedBox(
                   width: MediaQuery.sizeOf(context).width / 2,
-                  child: PageIndicator(
+                  child: _PageIndicator(
                     pageCount: pageList.length,
                     currentPage: currentPage.value,
                   ),
