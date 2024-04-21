@@ -1,8 +1,9 @@
+import 'dart:math';
+
 import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_music/model/music_model.dart';
-import 'package:flutter_ui_examples/ui_music/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/control_section.dart';
@@ -10,6 +11,8 @@ part 'widget/control_section.dart';
 part 'widget/current_song_section.dart';
 
 part 'widget/playlist_section.dart';
+
+part 'widget/clipper/my_clipper.dart';
 
 class MusicUI extends HookWidget {
   const MusicUI({required this.onPressedMenu, super.key});
@@ -19,10 +22,6 @@ class MusicUI extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final thumbPercent = useState<double>(20);
-    final currentMusic = musics.firstWhere(
-      (music) => music.isCurrent,
-      orElse: () => musics.first,
-    );
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -50,14 +49,17 @@ class MusicUI extends HookWidget {
         child: Column(
           children: <Widget>[
             const SizedBox(height: 30),
-            CurrentSongSection(
-              music: currentMusic,
+            _CurrentSongSection(
+              music: musics.firstWhere(
+                (music) => music.isCurrent,
+                orElse: () => musics.first,
+              ),
               percent: thumbPercent.value,
             ),
             const SizedBox(height: 20),
-            const ControlSection(),
+            const _ControlSection(),
             const SizedBox(height: 20),
-            PlaylistSection(musicList: musics),
+            _PlaylistSection(musicList: musics),
           ],
         ),
       ),

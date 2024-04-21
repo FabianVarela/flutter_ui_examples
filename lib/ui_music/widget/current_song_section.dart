@@ -1,11 +1,7 @@
 part of '../music_ui.dart';
 
-class CurrentSongSection extends HookWidget {
-  const CurrentSongSection({
-    required this.music,
-    required this.percent,
-    super.key,
-  });
+class _CurrentSongSection extends HookWidget {
+  const _CurrentSongSection({required this.music, required this.percent});
 
   final MusicModel music;
   final double percent;

@@ -1,6 +1,4 @@
-import 'dart:math';
-
-import 'package:flutter/material.dart';
+part of '../../music_ui.dart';
 
 class MyClipper extends CustomClipper<Rect> {
   @override

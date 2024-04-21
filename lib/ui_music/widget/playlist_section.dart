@@ -1,7 +1,7 @@
 part of '../music_ui.dart';
 
-class PlaylistSection extends StatelessWidget {
-  const PlaylistSection({required this.musicList, super.key});
+class _PlaylistSection extends StatelessWidget {
+  const _PlaylistSection({required this.musicList});
 
   final List<MusicModel> musicList;
 
