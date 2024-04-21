@@ -46,12 +46,12 @@ class FurnitureUI extends HookWidget {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          const GradientContainer(),
+          const _GradientContainer(),
           Positioned(
             top: height * .15,
             left: 30,
             right: 20,
-            child: const CustomTitle(
+            child: const _CustomTitle(
               title: 'Wooden Armchairs',
               subtitle: 'Beautiful armchairs to decorate your home',
             ),
@@ -64,7 +64,7 @@ class FurnitureUI extends HookWidget {
                 itemCount: furnitureList.length,
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
-                itemBuilder: (_, index) => FurnitureItem(
+                itemBuilder: (_, index) => _FurnitureItem(
                   image: furnitureList[index].image,
                   title: furnitureList[index].title,
                   price: furnitureList[index].price,

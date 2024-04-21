@@ -1,12 +1,11 @@
 part of '../furniture_ui.dart';
 
-class FurnitureItem extends StatelessWidget {
-  const FurnitureItem({
+class _FurnitureItem extends StatelessWidget {
+  const _FurnitureItem({
     required this.image,
     required this.title,
     required this.price,
     this.currentIndex = 0,
-    super.key,
   });
 
   final String image;
