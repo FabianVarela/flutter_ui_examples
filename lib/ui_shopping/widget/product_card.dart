@@ -1,7 +1,7 @@
 part of '../shopping_ui.dart';
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({required this.shopping, super.key});
+class _ProductCard extends StatelessWidget {
+  const _ProductCard({required this.shopping});
 
   final ShoppingModel shopping;
 

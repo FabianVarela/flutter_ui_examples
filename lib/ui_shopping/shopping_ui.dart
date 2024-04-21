@@ -47,7 +47,7 @@ class ShoppingUI extends HookWidget {
         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
         itemBuilder: (_, index) => Padding(
           padding: const EdgeInsets.only(bottom: 32),
-          child: ProductCard(shopping: shoppingList[index]),
+          child: _ProductCard(shopping: shoppingList[index]),
         ),
       ),
       bottomNavigationBar: Container(
