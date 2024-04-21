@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+part of '../../adidas_ui.dart';
 
-class MyClipper extends CustomClipper<Path> {
+class AdidasClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     return Path()

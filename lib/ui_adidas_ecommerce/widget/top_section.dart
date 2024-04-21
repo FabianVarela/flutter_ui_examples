@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
-class TopSection extends StatelessWidget {
-  const TopSection({required this.image, required this.rating, super.key});
+class _TopSection extends StatelessWidget {
+  const _TopSection({required this.image, required this.rating});
 
   final String image;
   final AdidasRating rating;

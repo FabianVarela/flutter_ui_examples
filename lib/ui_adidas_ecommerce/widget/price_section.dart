@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
-class PriceSection extends StatelessWidget {
-  const PriceSection({required this.price, super.key});
+class _PriceSection extends StatelessWidget {
+  const _PriceSection({required this.price});
 
   final double price;
 

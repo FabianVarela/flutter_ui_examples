@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/model/adidas_model.dart';
-import 'package:flutter_ui_examples/ui_adidas_ecommerce/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/adidas_description.dart';
@@ -15,6 +14,8 @@ part 'widget/quantity_section.dart';
 part 'widget/size_list_section.dart';
 
 part 'widget/top_section.dart';
+
+part 'widget/clipper/adidas_clipper.dart';
 
 class AdidasUI extends StatelessWidget {
   const AdidasUI({required this.onPressedMenu, super.key});
@@ -60,31 +61,31 @@ class AdidasUI extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              TopSection(image: adidasModel.image, rating: adidasModel.rating),
+              _TopSection(image: adidasModel.image, rating: adidasModel.rating),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.only(top: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    AdidasDescription(description: adidasModel.description),
+                    _AdidasDescription(description: adidasModel.description),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          SizeSection(sizes: adidasModel.sizes),
+                          _SizeSection(sizes: adidasModel.sizes),
                           const Expanded(
                             child: Align(
                               alignment: Alignment.centerRight,
-                              child: QuantitySection(),
+                              child: _QuantitySection(),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    ColorListSection(colors: adidasModel.colors),
-                    PriceSection(price: adidasModel.price),
+                    _ColorListSection(colors: adidasModel.colors),
+                    _PriceSection(price: adidasModel.price),
                   ],
                 ),
               ),

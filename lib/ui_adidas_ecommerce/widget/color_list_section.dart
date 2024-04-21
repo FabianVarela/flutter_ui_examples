@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
-class ColorListSection extends HookWidget {
-  const ColorListSection({required this.colors, super.key});
+class _ColorListSection extends HookWidget {
+  const _ColorListSection({required this.colors});
 
   final List<Color> colors;
 
@@ -50,7 +50,7 @@ class ColorListSection extends HookWidget {
                         ],
                       ),
                       child: ClipPath(
-                        clipper: MyClipper(),
+                        clipper: AdidasClipper(),
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,

@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
-class AdidasDescription extends HookWidget {
-  const AdidasDescription({required this.description, super.key});
+class _AdidasDescription extends HookWidget {
+  const _AdidasDescription({required this.description});
 
   final String description;
 

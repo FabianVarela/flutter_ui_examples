@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
-class QuantitySection extends HookWidget {
-  const QuantitySection({super.key});
+class _QuantitySection extends HookWidget {
+  const _QuantitySection();
 
   @override
   Widget build(BuildContext context) {
