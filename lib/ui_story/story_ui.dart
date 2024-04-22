@@ -48,15 +48,15 @@ class StoryUI extends HookWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            const CustomTitle(title: 'Trending'),
-            const CustomTag(
+            const _CustomTitle(title: 'Trending'),
+            const _CustomTag(
               title: 'Animated',
               message: '25+ stories',
               tagColor: Color(0xFFFF6E6E),
             ),
             Stack(
               children: <Widget>[
-                CardScroll(stories: stories, currentPage: currentPage.value),
+                _CardScroll(stories: stories, currentPage: currentPage.value),
                 Positioned.fill(
                   child: PageView.builder(
                     reverse: true,
@@ -68,8 +68,8 @@ class StoryUI extends HookWidget {
                 ),
               ],
             ),
-            const CustomTitle(title: 'Favourite'),
-            const CustomTag(
+            const _CustomTitle(title: 'Favourite'),
+            const _CustomTag(
               title: 'Latest',
               message: '9+ Stories',
               tagColor: Colors.blueAccent,

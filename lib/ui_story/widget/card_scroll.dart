@@ -1,14 +1,15 @@
+// ignore_for_file: unused_element
+
 part of '../story_ui.dart';
 
 double _cardAspectRatio = 12.0 / 16.0;
 
-class CardScroll extends StatelessWidget {
-  const CardScroll({
+class _CardScroll extends StatelessWidget {
+  const _CardScroll({
     required this.stories,
     required this.currentPage,
     this.padding = 20,
     this.verticalInset = 20,
-    super.key,
   });
 
   final List<StoryModel> stories;
