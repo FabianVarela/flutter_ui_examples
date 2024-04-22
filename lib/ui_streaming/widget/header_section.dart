@@ -1,7 +1,7 @@
 part of '../streaming_ui.dart';
 
-class HeaderSection extends StatelessWidget {
-  const HeaderSection({required this.image, required this.title, super.key});
+class _HeaderSection extends StatelessWidget {
+  const _HeaderSection({required this.image, required this.title});
 
   final String image;
   final String title;
@@ -13,7 +13,7 @@ class HeaderSection extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           ClipPath(
-            clipper: MyClipper(),
+            clipper: StreamingClipper(),
             child: Container(
               height: 370,
               decoration: const BoxDecoration(

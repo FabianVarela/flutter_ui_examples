@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+part of '../../streaming_ui.dart';
 
-class MyClipper extends CustomClipper<Path> {
+class StreamingClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path()..lineTo(0, size.height - 100);

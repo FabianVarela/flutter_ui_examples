@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_streaming/model/streaming_model.dart';
-import 'package:flutter_ui_examples/ui_streaming/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/header_section.dart';
 
 part 'widget/streaming_list.dart';
+
+part 'widget/clipper/streaming_clipper.dart';
 
 class StreamingUI extends HookWidget {
   const StreamingUI({required this.onPressedMenu, super.key});
@@ -33,11 +34,11 @@ class StreamingUI extends HookWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            HeaderSection(
+            _HeaderSection(
               image: currentStreaming.value.image,
               title: currentStreaming.value.title,
             ),
-            StreamingList(
+            _StreamingList(
               streamingList: streamingList,
               onSelectStream: (value) => currentStreaming.value = value,
             ),
