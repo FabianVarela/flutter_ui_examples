@@ -43,15 +43,12 @@ flutter:
     - assets/images/login/
     # - assets/images/music/
     - assets/images/onboarding/
-    # - assets/images/shopping/
+    - assets/images/shopping/
     # - assets/images/story/
     # - assets/images/sneaky/
     # - assets/images/streaming/
     # - assets/images/
   fonts:
-    - family: CustomIcon
-      fonts:
-        - asset: assets/fonts/CustomIcon.ttf
     - family: CustomIcons
       fonts:
         - asset: assets/fonts/CustomIcons.ttf
