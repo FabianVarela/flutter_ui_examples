@@ -15,6 +15,9 @@ import 'package:vector_graphics/vector_graphics.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/adidas
+  $AssetsImagesAdidasGen get adidas => const $AssetsImagesAdidasGen();
+
   /// Directory path: assets/images/furniture
   $AssetsImagesFurnitureGen get furniture => const $AssetsImagesFurnitureGen();
 
@@ -36,6 +39,24 @@ class $AssetsImagesGen {
 
   /// Directory path: assets/images/streaming
   $AssetsImagesStreamingGen get streaming => const $AssetsImagesStreamingGen();
+}
+
+class $AssetsImagesAdidasGen {
+  const $AssetsImagesAdidasGen();
+
+  /// File path: assets/images/adidas/360.png
+  AssetGenImage get a360 => const AssetGenImage('assets/images/adidas/360.png');
+
+  /// File path: assets/images/adidas/adidas.png
+  AssetGenImage get adidas =>
+      const AssetGenImage('assets/images/adidas/adidas.png');
+
+  /// File path: assets/images/adidas/cart.png
+  AssetGenImage get cart =>
+      const AssetGenImage('assets/images/adidas/cart.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [a360, adidas, cart];
 }
 
 class $AssetsImagesFurnitureGen {
