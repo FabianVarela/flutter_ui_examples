@@ -17,6 +17,10 @@ class $AssetsImagesGen {
 
   /// Directory path: assets/images/login
   $AssetsImagesLoginGen get login => const $AssetsImagesLoginGen();
+
+  /// Directory path: assets/images/onboarding
+  $AssetsImagesOnboardingGen get onboarding =>
+      const $AssetsImagesOnboardingGen();
 }
 
 class $AssetsImagesLoginGen {
@@ -59,6 +63,26 @@ class $AssetsImagesLoginGen {
         loginLogo,
         twitter
       ];
+}
+
+class $AssetsImagesOnboardingGen {
+  const $AssetsImagesOnboardingGen();
+
+  /// File path: assets/images/onboarding/illustration.png
+  AssetGenImage get illustration =>
+      const AssetGenImage('assets/images/onboarding/illustration.png');
+
+  /// File path: assets/images/onboarding/illustration2.png
+  AssetGenImage get illustration2 =>
+      const AssetGenImage('assets/images/onboarding/illustration2.png');
+
+  /// File path: assets/images/onboarding/illustration3.png
+  AssetGenImage get illustration3 =>
+      const AssetGenImage('assets/images/onboarding/illustration3.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [illustration, illustration2, illustration3];
 }
 
 class Assets {
