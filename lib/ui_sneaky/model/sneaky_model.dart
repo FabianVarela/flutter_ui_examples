@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class SneakyCategory {
   SneakyCategory(this.name, this.quantity, this.sneakyList);
@@ -41,7 +42,7 @@ const description = "A remarkable shoe that's naturally soft, cozy all over, "
 
 final _sneakyList = <Sneaky>[
   Sneaky(
-    'assets/images/sneaky/black_sneaky.png',
+    Assets.images.sneaky.blackSneaky.path,
     'Men casual runners',
     description,
     96.99,
@@ -61,7 +62,7 @@ final _sneakyList = <Sneaky>[
     ],
   ),
   Sneaky(
-    'assets/images/sneaky/blue_sneaky.png',
+    Assets.images.sneaky.blueSneaky.path,
     'Women casual runners',
     description,
     98.99,
@@ -81,7 +82,7 @@ final _sneakyList = <Sneaky>[
     ],
   ),
   Sneaky(
-    'assets/images/sneaky/red_sneaky.png',
+    Assets.images.sneaky.redSneaky.path,
     'Child casual runners',
     description,
     89.99,
@@ -100,7 +101,7 @@ final _sneakyList = <Sneaky>[
     ],
   ),
   Sneaky(
-    'assets/images/sneaky/yellow_sneaky.png',
+    Assets.images.sneaky.yellowSneaky.path,
     'Unisex casual runners',
     description,
     100.99,
