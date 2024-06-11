@@ -21,6 +21,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/onboarding
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
+
+  /// Directory path: assets/images/shopping
+  $AssetsImagesShoppingGen get shopping => const $AssetsImagesShoppingGen();
 }
 
 class $AssetsImagesLoginGen {
@@ -83,6 +86,45 @@ class $AssetsImagesOnboardingGen {
   /// List of all assets
   List<AssetGenImage> get values =>
       [illustration, illustration2, illustration3];
+}
+
+class $AssetsImagesShoppingGen {
+  const $AssetsImagesShoppingGen();
+
+  /// File path: assets/images/shopping/cart.svg
+  SvgGenImage get cart => const SvgGenImage('assets/images/shopping/cart.svg');
+
+  /// File path: assets/images/shopping/favorite.svg
+  SvgGenImage get favorite =>
+      const SvgGenImage('assets/images/shopping/favorite.svg');
+
+  /// File path: assets/images/shopping/logo.png
+  AssetGenImage get logo =>
+      const AssetGenImage('assets/images/shopping/logo.png');
+
+  /// File path: assets/images/shopping/profile.png
+  AssetGenImage get profile =>
+      const AssetGenImage('assets/images/shopping/profile.png');
+
+  /// File path: assets/images/shopping/search.svg
+  SvgGenImage get search =>
+      const SvgGenImage('assets/images/shopping/search.svg');
+
+  /// File path: assets/images/shopping/shoes_01.png
+  AssetGenImage get shoes01 =>
+      const AssetGenImage('assets/images/shopping/shoes_01.png');
+
+  /// File path: assets/images/shopping/shoes_02.png
+  AssetGenImage get shoes02 =>
+      const AssetGenImage('assets/images/shopping/shoes_02.png');
+
+  /// File path: assets/images/shopping/store.png
+  AssetGenImage get store =>
+      const AssetGenImage('assets/images/shopping/store.png');
+
+  /// List of all assets
+  List<dynamic> get values =>
+      [cart, favorite, logo, profile, search, shoes01, shoes02, store];
 }
 
 class Assets {
