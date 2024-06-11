@@ -44,14 +44,11 @@ flutter:
     # - assets/images/music/
     - assets/images/onboarding/
     - assets/images/shopping/
-    # - assets/images/story/
+    - assets/images/story/
     # - assets/images/sneaky/
     # - assets/images/streaming/
     # - assets/images/
   fonts:
-    - family: CustomIcons
-      fonts:
-        - asset: assets/fonts/CustomIcons.ttf
     - family: CustomIconsFurniture
       fonts:
         - asset: assets/fonts/CustomIconsFurniture.ttf
