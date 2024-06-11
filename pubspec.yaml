@@ -37,7 +37,7 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
-    # - assets/images/adidas/
+    - assets/images/adidas/
     # - assets/images/beer/
     - assets/images/furniture/
     - assets/images/login/
