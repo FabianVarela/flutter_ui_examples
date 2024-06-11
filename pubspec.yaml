@@ -39,7 +39,7 @@ flutter:
   assets:
     # - assets/images/adidas/
     # - assets/images/beer/
-    # - assets/images/furniture/
+    - assets/images/furniture/
     - assets/images/login/
     - assets/images/music/
     - assets/images/onboarding/
@@ -49,9 +49,6 @@ flutter:
     - assets/images/streaming/
     # - assets/images/
   fonts:
-    - family: CustomIconsFurniture
-      fonts:
-        - asset: assets/fonts/CustomIconsFurniture.ttf
     - family: AvenirLTStd
       fonts:
         - asset: assets/fonts/AvenirLTStd/AvenirLTStd-Book.otf
