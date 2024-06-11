@@ -10,12 +10,12 @@ class _BackgroundImage extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: Image.asset('assets/images/login/login_image_01.png'),
+          child: Assets.images.login.loginImage01.image(),
         ),
         const Expanded(child: Offstage()),
         Padding(
           padding: const EdgeInsets.only(top: 20),
-          child: Image.asset('assets/images/login/login_image_02.png'),
+          child: Assets.images.login.loginImage02.image(),
         ),
       ],
     );
