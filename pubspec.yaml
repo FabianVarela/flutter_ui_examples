@@ -41,12 +41,12 @@ flutter:
     # - assets/images/beer/
     # - assets/images/furniture/
     - assets/images/login/
-    # - assets/images/music/
+    - assets/images/music/
     - assets/images/onboarding/
     - assets/images/shopping/
     - assets/images/story/
     # - assets/images/sneaky/
-    # - assets/images/streaming/
+    - assets/images/streaming/
     # - assets/images/
   fonts:
     - family: CustomIconsFurniture
