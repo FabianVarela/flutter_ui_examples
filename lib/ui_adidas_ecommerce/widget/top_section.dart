@@ -31,7 +31,7 @@ class _TopSection extends StatelessWidget {
                       color: Colors.black26,
                       shape: BoxShape.circle,
                     ),
-                    child: Image.asset('assets/images/adidas/360.png'),
+                    child: Assets.images.adidas.a360.image(),
                   ),
                 ),
               ),

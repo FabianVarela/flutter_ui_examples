@@ -82,8 +82,7 @@ class _PriceSection extends StatelessWidget {
               Positioned(
                 right: -40,
                 bottom: 0,
-                child: Image.asset(
-                  'assets/images/adidas/cart.png',
+                child: Assets.images.adidas.cart.image(
                   width: 190,
                   height: 155,
                   fit: BoxFit.cover,

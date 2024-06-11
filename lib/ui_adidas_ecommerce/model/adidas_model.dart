@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class AdidasModel {
   AdidasModel({
@@ -29,7 +30,7 @@ class AdidasRating {
 
 final adidasModel = AdidasModel(
   title: 'Energy Cloud',
-  image: 'assets/images/adidas/adidas.png',
+  image: Assets.images.adidas.adidas.path,
   rating: AdidasRating(value: 4.5, voted: 478),
   description:
       'Get maximum support, comfort and a refreshed look with these adidas '
