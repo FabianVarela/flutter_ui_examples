@@ -18,6 +18,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/adidas
   $AssetsImagesAdidasGen get adidas => const $AssetsImagesAdidasGen();
 
+  /// Directory path: assets/images/beer
+  $AssetsImagesBeerGen get beer => const $AssetsImagesBeerGen();
+
   /// Directory path: assets/images/furniture
   $AssetsImagesFurnitureGen get furniture => const $AssetsImagesFurnitureGen();
 
@@ -60,6 +63,94 @@ class $AssetsImagesAdidasGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [a360, adidas, cart];
+}
+
+class $AssetsImagesBeerGen {
+  const $AssetsImagesBeerGen();
+
+  /// File path: assets/images/beer/aguila.png
+  AssetGenImage get aguila =>
+      const AssetGenImage('assets/images/beer/aguila.png');
+
+  /// File path: assets/images/beer/aguila_back_logo.png
+  AssetGenImage get aguilaBackLogo =>
+      const AssetGenImage('assets/images/beer/aguila_back_logo.png');
+
+  /// File path: assets/images/beer/aguila_small_logo.png
+  AssetGenImage get aguilaSmallLogo =>
+      const AssetGenImage('assets/images/beer/aguila_small_logo.png');
+
+  /// File path: assets/images/beer/budweiser.png
+  AssetGenImage get budweiser =>
+      const AssetGenImage('assets/images/beer/budweiser.png');
+
+  /// File path: assets/images/beer/budweiser_back_logo.png
+  AssetGenImage get budweiserBackLogo =>
+      const AssetGenImage('assets/images/beer/budweiser_back_logo.png');
+
+  /// File path: assets/images/beer/budweiser_small_logo.png
+  AssetGenImage get budweiserSmallLogo =>
+      const AssetGenImage('assets/images/beer/budweiser_small_logo.png');
+
+  /// File path: assets/images/beer/club_colombia_back_logo.png
+  AssetGenImage get clubColombiaBackLogo =>
+      const AssetGenImage('assets/images/beer/club_colombia_back_logo.png');
+
+  /// File path: assets/images/beer/club_colombia_dorada.png
+  AssetGenImage get clubColombiaDorada =>
+      const AssetGenImage('assets/images/beer/club_colombia_dorada.png');
+
+  /// File path: assets/images/beer/club_colombia_negra.png
+  AssetGenImage get clubColombiaNegra =>
+      const AssetGenImage('assets/images/beer/club_colombia_negra.png');
+
+  /// File path: assets/images/beer/club_colombia_roja.png
+  AssetGenImage get clubColombiaRoja =>
+      const AssetGenImage('assets/images/beer/club_colombia_roja.png');
+
+  /// File path: assets/images/beer/club_colombia_small_logo.png
+  AssetGenImage get clubColombiaSmallLogo =>
+      const AssetGenImage('assets/images/beer/club_colombia_small_logo.png');
+
+  /// File path: assets/images/beer/club_colombia_trigo.png
+  AssetGenImage get clubColombiaTrigo =>
+      const AssetGenImage('assets/images/beer/club_colombia_trigo.png');
+
+  /// File path: assets/images/beer/profile.png
+  AssetGenImage get profile =>
+      const AssetGenImage('assets/images/beer/profile.png');
+
+  /// File path: assets/images/beer/stella_artois.png
+  AssetGenImage get stellaArtois =>
+      const AssetGenImage('assets/images/beer/stella_artois.png');
+
+  /// File path: assets/images/beer/stella_artois_back_logo.png
+  AssetGenImage get stellaArtoisBackLogo =>
+      const AssetGenImage('assets/images/beer/stella_artois_back_logo.png');
+
+  /// File path: assets/images/beer/stella_artois_small_logo.png
+  AssetGenImage get stellaArtoisSmallLogo =>
+      const AssetGenImage('assets/images/beer/stella_artois_small_logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        aguila,
+        aguilaBackLogo,
+        aguilaSmallLogo,
+        budweiser,
+        budweiserBackLogo,
+        budweiserSmallLogo,
+        clubColombiaBackLogo,
+        clubColombiaDorada,
+        clubColombiaNegra,
+        clubColombiaRoja,
+        clubColombiaSmallLogo,
+        clubColombiaTrigo,
+        profile,
+        stellaArtois,
+        stellaArtoisBackLogo,
+        stellaArtoisSmallLogo
+      ];
 }
 
 class $AssetsImagesFurnitureGen {
