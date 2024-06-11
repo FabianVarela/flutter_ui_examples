@@ -15,6 +15,9 @@ import 'package:vector_graphics/vector_graphics.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/furniture
+  $AssetsImagesFurnitureGen get furniture => const $AssetsImagesFurnitureGen();
+
   /// Directory path: assets/images/login
   $AssetsImagesLoginGen get login => const $AssetsImagesLoginGen();
 
@@ -33,6 +36,32 @@ class $AssetsImagesGen {
 
   /// Directory path: assets/images/streaming
   $AssetsImagesStreamingGen get streaming => const $AssetsImagesStreamingGen();
+}
+
+class $AssetsImagesFurnitureGen {
+  const $AssetsImagesFurnitureGen();
+
+  /// File path: assets/images/furniture/hemes.png
+  AssetGenImage get hemes =>
+      const AssetGenImage('assets/images/furniture/hemes.png');
+
+  /// File path: assets/images/furniture/menu.svg
+  SvgGenImage get menu => const SvgGenImage('assets/images/furniture/menu.svg');
+
+  /// File path: assets/images/furniture/search.svg
+  SvgGenImage get search =>
+      const SvgGenImage('assets/images/furniture/search.svg');
+
+  /// File path: assets/images/furniture/sofa.png
+  AssetGenImage get sofa =>
+      const AssetGenImage('assets/images/furniture/sofa.png');
+
+  /// File path: assets/images/furniture/wooden.png
+  AssetGenImage get wooden =>
+      const AssetGenImage('assets/images/furniture/wooden.png');
+
+  /// List of all assets
+  List<dynamic> get values => [hemes, menu, search, sofa, wooden];
 }
 
 class $AssetsImagesLoginGen {
