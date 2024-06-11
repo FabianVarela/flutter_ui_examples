@@ -45,7 +45,7 @@ flutter:
     - assets/images/onboarding/
     - assets/images/shopping/
     - assets/images/story/
-    # - assets/images/sneaky/
+    - assets/images/sneaky/
     - assets/images/streaming/
     # - assets/images/
   fonts:
