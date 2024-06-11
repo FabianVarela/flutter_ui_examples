@@ -1,0 +1,27 @@
+/// GENERATED CODE - DO NOT MODIFY BY HAND
+/// *****************************************************
+///  FlutterGen
+/// *****************************************************
+
+// coverage:ignore-file
+// ignore_for_file: type=lint
+// ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
+
+class FontFamily {
+  FontFamily._();
+
+  /// Font family: AvenirLTStd
+  static const String avenirLTStd = 'AvenirLTStd';
+
+  /// Font family: CustomIcon
+  static const String customIcon = 'CustomIcon';
+
+  /// Font family: CustomIcons
+  static const String customIcons = 'CustomIcons';
+
+  /// Font family: CustomIconsFurniture
+  static const String customIconsFurniture = 'CustomIconsFurniture';
+
+  /// Font family: PoetsenOne
+  static const String poetsenOne = 'PoetsenOne';
+}
