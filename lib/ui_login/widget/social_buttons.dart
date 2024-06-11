@@ -12,7 +12,7 @@ class _SocialButtons extends StatelessWidget {
         colors: const <Color>[Color(0xFF102397), Color(0xFF187ADF)],
       ),
       (
-        icon: Assets.images.login.gmail,
+        icon: Assets.images.login.google,
         colors: const <Color>[Color(0xFFFF4F38), Color(0xFFFF355D)],
       ),
       (

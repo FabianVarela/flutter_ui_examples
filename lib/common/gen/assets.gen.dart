@@ -30,8 +30,8 @@ class $AssetsImagesLoginGen {
   SvgGenImage get facebook =>
       const SvgGenImage('assets/images/login/facebook.svg');
 
-  /// File path: assets/images/login/gmail.svg
-  SvgGenImage get gmail => const SvgGenImage('assets/images/login/gmail.svg');
+  /// File path: assets/images/login/google.svg
+  SvgGenImage get google => const SvgGenImage('assets/images/login/google.svg');
 
   /// File path: assets/images/login/linked_in.svg
   SvgGenImage get linkedIn =>
@@ -56,7 +56,7 @@ class $AssetsImagesLoginGen {
   /// List of all assets
   List<dynamic> get values => [
         facebook,
-        gmail,
+        google,
         linkedIn,
         loginImage01,
         loginImage02,
