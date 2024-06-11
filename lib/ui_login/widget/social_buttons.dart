@@ -5,21 +5,22 @@ class _SocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final socialIconList = <({IconData icon, List<Color> colors})>[
+    Assets.images.login.facebook.svg();
+    final socialIconList = <({SvgGenImage icon, List<Color> colors})>[
       (
-        icon: CustomIcon.facebook,
+        icon: Assets.images.login.facebook,
         colors: const <Color>[Color(0xFF102397), Color(0xFF187ADF)],
       ),
       (
-        icon: CustomIcon.google,
+        icon: Assets.images.login.gmail,
         colors: const <Color>[Color(0xFFFF4F38), Color(0xFFFF355D)],
       ),
       (
-        icon: CustomIcon.twitter,
+        icon: Assets.images.login.twitter,
         colors: const <Color>[Color(0xFF17EAD9), Color(0xFF6078EA)],
       ),
       (
-        icon: CustomIcon.linkedin,
+        icon: Assets.images.login.linkedIn,
         colors: const <Color>[Color(0xFF00C6FB), Color(0xFF005BEA)],
       ),
     ];
@@ -60,7 +61,12 @@ class _SocialButtons extends StatelessWidget {
           children: socialIconList.map((socialIcon) {
             return _SocialIcons(
               colors: socialIcon.colors,
-              iconData: socialIcon.icon,
+              icon: socialIcon.icon.svg(
+                colorFilter: const ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
+              ),
               onPressed: () {},
             );
           }).toList(),
@@ -73,12 +79,12 @@ class _SocialButtons extends StatelessWidget {
 class _SocialIcons extends StatelessWidget {
   const _SocialIcons({
     required this.colors,
-    required this.iconData,
+    required this.icon,
     required this.onPressed,
   });
 
   final List<Color> colors;
-  final IconData iconData;
+  final Widget icon;
   final VoidCallback onPressed;
 
   @override
@@ -93,9 +99,10 @@ class _SocialIcons extends StatelessWidget {
             gradient: LinearGradient(colors: colors),
           ),
           child: RawMaterialButton(
+            padding: const EdgeInsets.all(12),
             shape: const CircleBorder(),
             onPressed: onPressed,
-            child: Icon(iconData, color: Colors.white),
+            child: icon,
           ),
         ),
       ),
