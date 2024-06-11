@@ -30,7 +30,7 @@ class _ProductCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 IconButton(
-                  icon: const Icon(CustomIcon.favorite),
+                  icon: Assets.images.shopping.favorite.svg(),
                   onPressed: () {},
                 ),
                 Column(
@@ -50,7 +50,7 @@ class _ProductCard extends StatelessWidget {
                   ],
                 ),
                 IconButton(
-                  icon: const Icon(CustomIcon.cart),
+                  icon: Assets.images.shopping.cart.svg(),
                   onPressed: () {},
                 ),
               ],

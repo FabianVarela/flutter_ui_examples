@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_shopping/model/shopping_model.dart';
-import 'package:flutter_ui_examples/ui_shopping/widget/custom_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/product_card.dart';
@@ -17,11 +17,11 @@ class ShoppingUI extends HookWidget {
     final currentIndex = useState(0);
 
     final bottomNavIconList = <Widget>[
-      Image.asset('assets/images/shopping/store.png', width: 35, height: 35),
-      const Icon(CustomIcon.search, size: 32),
-      const Icon(CustomIcon.favorite, size: 32),
-      const Icon(CustomIcon.cart, size: 32),
-      Image.asset('assets/images/shopping/profile.png', width: 35, height: 35),
+      Assets.images.shopping.store.image(width: 35, height: 35),
+      Assets.images.shopping.search.svg(width: 32, height: 32),
+      Assets.images.shopping.favorite.svg(width: 32, height: 32),
+      Assets.images.shopping.cart.svg(width: 32, height: 32),
+      Assets.images.shopping.profile.image(width: 35, height: 35),
     ];
 
     return Scaffold(
@@ -36,11 +36,7 @@ class ShoppingUI extends HookWidget {
             onPressed: onPressedMenu,
           ),
         ),
-        title: Image.asset(
-          'assets/images/shopping/logo.png',
-          width: 62,
-          height: 43,
-        ),
+        title: Assets.images.shopping.logo.image(width: 62, height: 43),
       ),
       body: ListView.builder(
         itemCount: shoppingList.length,
