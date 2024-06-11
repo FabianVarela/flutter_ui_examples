@@ -1,3 +1,5 @@
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
+
 class Furniture {
   Furniture(this.image, this.title, this.price);
 
@@ -7,7 +9,7 @@ class Furniture {
 }
 
 final furnitureList = <Furniture>[
-  Furniture('assets/images/furniture/hemes.png', 'Hemes ArmChair', '126'),
-  Furniture('assets/images/furniture/sofa.png', 'Sofar ArmChair', '148'),
-  Furniture('assets/images/furniture/wooden.png', 'Wooden ArmChair', '179'),
+  Furniture(Assets.images.furniture.hemes.path, 'Hemes ArmChair', '126'),
+  Furniture(Assets.images.furniture.sofa.path, 'Sofar ArmChair', '148'),
+  Furniture(Assets.images.furniture.wooden.path, 'Wooden ArmChair', '179'),
 ];

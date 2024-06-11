@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_furniture/model/furniture_model.dart';
-import 'package:flutter_ui_examples/ui_furniture/widget/custom_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/custom_title.dart';
@@ -29,7 +29,12 @@ class FurnitureUI extends HookWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 10),
           child: IconButton(
-            icon: const Icon(CustomIcons.menu, color: Colors.black),
+            icon: Assets.images.furniture.menu.svg(
+              colorFilter: const ColorFilter.mode(
+                Colors.black,
+                BlendMode.srcIn,
+              ),
+            ),
             onPressed: onPressedMenu,
           ),
         ),
@@ -37,7 +42,12 @@ class FurnitureUI extends HookWidget {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(
-              icon: const Icon(CustomIcons.search, color: Colors.black),
+              icon: Assets.images.furniture.search.svg(
+                colorFilter: const ColorFilter.mode(
+                  Colors.black,
+                  BlendMode.srcIn,
+                ),
+              ),
               onPressed: () {},
             ),
           ),
