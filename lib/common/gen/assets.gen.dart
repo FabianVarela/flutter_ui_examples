@@ -34,6 +34,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/shopping
   $AssetsImagesShoppingGen get shopping => const $AssetsImagesShoppingGen();
 
+  /// Directory path: assets/images/sneaky
+  $AssetsImagesSneakyGen get sneaky => const $AssetsImagesSneakyGen();
+
   /// Directory path: assets/images/story
   $AssetsImagesStoryGen get story => const $AssetsImagesStoryGen();
 
@@ -208,6 +211,30 @@ class $AssetsImagesShoppingGen {
   /// List of all assets
   List<dynamic> get values =>
       [cart, favorite, logo, profile, search, shoes01, shoes02, store];
+}
+
+class $AssetsImagesSneakyGen {
+  const $AssetsImagesSneakyGen();
+
+  /// File path: assets/images/sneaky/black_sneaky.png
+  AssetGenImage get blackSneaky =>
+      const AssetGenImage('assets/images/sneaky/black_sneaky.png');
+
+  /// File path: assets/images/sneaky/blue_sneaky.png
+  AssetGenImage get blueSneaky =>
+      const AssetGenImage('assets/images/sneaky/blue_sneaky.png');
+
+  /// File path: assets/images/sneaky/red_sneaky.png
+  AssetGenImage get redSneaky =>
+      const AssetGenImage('assets/images/sneaky/red_sneaky.png');
+
+  /// File path: assets/images/sneaky/yellow_sneaky.png
+  AssetGenImage get yellowSneaky =>
+      const AssetGenImage('assets/images/sneaky/yellow_sneaky.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [blackSneaky, blueSneaky, redSneaky, yellowSneaky];
 }
 
 class $AssetsImagesStoryGen {
