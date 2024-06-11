@@ -1,3 +1,5 @@
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
+
 class StreamingModel {
   StreamingModel(this.image, this.title);
 
@@ -7,47 +9,47 @@ class StreamingModel {
 
 final streamingList = <StreamingModel>[
   StreamingModel(
-    'assets/images/streaming/jujutsu.jpeg',
+    Assets.images.streaming.jujutsu.path,
     'Jujutsu Kaisen',
   ),
   StreamingModel(
-    'assets/images/streaming/mandalorian.png',
+    Assets.images.streaming.mandalorian.path,
     'The Mandalorian',
   ),
   StreamingModel(
-    'assets/images/streaming/succession.jpg',
+    Assets.images.streaming.succession.path,
     'Succession',
   ),
   StreamingModel(
-    'assets/images/streaming/theBear.jpg',
+    Assets.images.streaming.theBear.path,
     'The bear',
   ),
   StreamingModel(
-    'assets/images/streaming/fullMetalAlchemist.jpg',
+    Assets.images.streaming.fullMetalAlchemist.path,
     'Fullmetal alchemist: Brotherhood',
   ),
   StreamingModel(
-    'assets/images/streaming/daredevil.jpg',
+    Assets.images.streaming.daredevil.path,
     'Daredevil',
   ),
   StreamingModel(
-    'assets/images/streaming/avengers.jpeg',
+    Assets.images.streaming.avengers.path,
     'Avengers: Infinity war',
   ),
   StreamingModel(
-    'assets/images/streaming/batman.jpg',
+    Assets.images.streaming.batman.path,
     'Batman: The dark knight',
   ),
   StreamingModel(
-    'assets/images/streaming/onePunchMan.png',
+    Assets.images.streaming.onePunchMan.path,
     'One punch man',
   ),
   StreamingModel(
-    'assets/images/streaming/breakingBad.jpg',
+    Assets.images.streaming.breakingBad.path,
     'Breaking bad',
   ),
   StreamingModel(
-    'assets/images/streaming/dark.jpg',
+    Assets.images.streaming.dark.path,
     'Dark',
   ),
 ];

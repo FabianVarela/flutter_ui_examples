@@ -1,3 +1,5 @@
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
+
 class MusicModel {
   MusicModel(this.image, this.song, this.artist, {this.isCurrent = false});
 
@@ -9,33 +11,33 @@ class MusicModel {
 
 final musics = <MusicModel>[
   MusicModel(
-    'assets/images/music/metallica.jpg',
+    Assets.images.music.metallica.path,
     'The unforgiven',
     'Metallica',
   ),
   MusicModel(
-    'assets/images/music/gunsNroses.jpeg',
+    Assets.images.music.gunsNroses.path,
     'Stranged',
     'Guns n roses',
     isCurrent: true,
   ),
   MusicModel(
-    'assets/images/music/fooFighters.jpg',
+    Assets.images.music.fooFighters.path,
     'Walk',
     'Foo fighters',
   ),
   MusicModel(
-    'assets/images/music/bonJovi.jpg',
+    Assets.images.music.bonJovi.path,
     "Livin' On A Prayer",
     'Bon Jovi',
   ),
   MusicModel(
-    'assets/images/music/metallica.jpg',
+    Assets.images.music.metallica.path,
     'Fuel',
     'Metallica',
   ),
   MusicModel(
-    'assets/images/music/fooFighters.jpg',
+    Assets.images.music.fooFighters.path,
     'Everlong',
     'Foo fighters',
   ),
