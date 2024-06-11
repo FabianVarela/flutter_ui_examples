@@ -24,6 +24,9 @@ class $AssetsImagesGen {
 
   /// Directory path: assets/images/shopping
   $AssetsImagesShoppingGen get shopping => const $AssetsImagesShoppingGen();
+
+  /// Directory path: assets/images/story
+  $AssetsImagesStoryGen get story => const $AssetsImagesStoryGen();
 }
 
 class $AssetsImagesLoginGen {
@@ -125,6 +128,37 @@ class $AssetsImagesShoppingGen {
   /// List of all assets
   List<dynamic> get values =>
       [cart, favorite, logo, profile, search, shoes01, shoes02, store];
+}
+
+class $AssetsImagesStoryGen {
+  const $AssetsImagesStoryGen();
+
+  /// File path: assets/images/story/image_01.png
+  AssetGenImage get image01 =>
+      const AssetGenImage('assets/images/story/image_01.png');
+
+  /// File path: assets/images/story/image_02.jpg
+  AssetGenImage get image02 =>
+      const AssetGenImage('assets/images/story/image_02.jpg');
+
+  /// File path: assets/images/story/image_03.jpg
+  AssetGenImage get image03 =>
+      const AssetGenImage('assets/images/story/image_03.jpg');
+
+  /// File path: assets/images/story/image_04.jpg
+  AssetGenImage get image04 =>
+      const AssetGenImage('assets/images/story/image_04.jpg');
+
+  /// File path: assets/images/story/menu.svg
+  SvgGenImage get menu => const SvgGenImage('assets/images/story/menu.svg');
+
+  /// File path: assets/images/story/options.svg
+  SvgGenImage get options =>
+      const SvgGenImage('assets/images/story/options.svg');
+
+  /// List of all assets
+  List<dynamic> get values =>
+      [image01, image02, image03, image04, menu, options];
 }
 
 class Assets {

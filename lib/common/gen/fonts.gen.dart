@@ -13,9 +13,6 @@ class FontFamily {
   /// Font family: AvenirLTStd
   static const String avenirLTStd = 'AvenirLTStd';
 
-  /// Font family: CustomIcons
-  static const String customIcons = 'CustomIcons';
-
   /// Font family: CustomIconsFurniture
   static const String customIconsFurniture = 'CustomIconsFurniture';
 
