@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/my_clipper.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,10 +65,7 @@ class BeerUI extends HookWidget {
             padding: const EdgeInsets.only(right: 10),
             child: SizedBox.fromSize(
               size: const Size(36, 36),
-              child: Image.asset(
-                'assets/images/beer/profile.png',
-                fit: BoxFit.contain,
-              ),
+              child: Assets.images.beer.profile.image(fit: BoxFit.contain),
             ),
           ),
         ],
