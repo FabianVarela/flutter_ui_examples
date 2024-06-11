@@ -3,8 +3,8 @@ import 'dart:math';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_story/model/story_model.dart';
-import 'package:flutter_ui_examples/ui_story/widget/custom_icon.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/card_scroll.dart';
@@ -35,7 +35,10 @@ class StoryUI extends HookWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          icon: const Icon(CustomIcons.menu, color: Colors.white, size: 30),
+          icon: Assets.images.story.menu.svg(
+            height: 30,
+            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          ),
           onPressed: onPressedMenu,
         ),
         actions: <Widget>[

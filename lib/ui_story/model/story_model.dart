@@ -1,3 +1,5 @@
+import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
+
 class StoryModel {
   StoryModel({
     required this.image,
@@ -12,20 +14,20 @@ class StoryModel {
 
 final stories = <StoryModel>[
   StoryModel(
-    image: 'assets/images/story/image_01.png',
+    image: Assets.images.story.image01.path,
     name: 'Jack the Persian and the Black Castel',
   ),
   StoryModel(
-    image: 'assets/images/story/image_02.jpg',
+    image: Assets.images.story.image02.path,
     name: 'The Dreaming Moon',
     isFavorite: true,
   ),
   StoryModel(
-    image: 'assets/images/story/image_03.jpg',
+    image: Assets.images.story.image03.path,
     name: 'Fallen In Love',
   ),
   StoryModel(
-    image: 'assets/images/story/image_04.jpg',
+    image: Assets.images.story.image04.path,
     name: 'Hounted Ground',
   ),
 ];

@@ -21,7 +21,12 @@ class _CustomTitle extends StatelessWidget {
             ),
           ),
           IconButton(
-            icon: const Icon(CustomIcons.option, color: Colors.white, size: 12),
+            icon: Assets.images.story.options.svg(
+              colorFilter: const ColorFilter.mode(
+                Colors.white,
+                BlendMode.srcIn,
+              ),
+            ),
             onPressed: () {},
           ),
         ],
