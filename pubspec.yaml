@@ -38,7 +38,7 @@ flutter:
   generate: true
   assets:
     - assets/images/adidas/
-    # - assets/images/beer/
+    - assets/images/beer/
     - assets/images/furniture/
     - assets/images/login/
     - assets/images/music/
@@ -47,7 +47,6 @@ flutter:
     - assets/images/story/
     - assets/images/sneaky/
     - assets/images/streaming/
-    # - assets/images/
   fonts:
     - family: AvenirLTStd
       fonts:
