@@ -18,6 +18,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/login
   $AssetsImagesLoginGen get login => const $AssetsImagesLoginGen();
 
+  /// Directory path: assets/images/music
+  $AssetsImagesMusicGen get music => const $AssetsImagesMusicGen();
+
   /// Directory path: assets/images/onboarding
   $AssetsImagesOnboardingGen get onboarding =>
       const $AssetsImagesOnboardingGen();
@@ -27,6 +30,9 @@ class $AssetsImagesGen {
 
   /// Directory path: assets/images/story
   $AssetsImagesStoryGen get story => const $AssetsImagesStoryGen();
+
+  /// Directory path: assets/images/streaming
+  $AssetsImagesStreamingGen get streaming => const $AssetsImagesStreamingGen();
 }
 
 class $AssetsImagesLoginGen {
@@ -69,6 +75,30 @@ class $AssetsImagesLoginGen {
         loginLogo,
         twitter
       ];
+}
+
+class $AssetsImagesMusicGen {
+  const $AssetsImagesMusicGen();
+
+  /// File path: assets/images/music/bonJovi.jpg
+  AssetGenImage get bonJovi =>
+      const AssetGenImage('assets/images/music/bonJovi.jpg');
+
+  /// File path: assets/images/music/fooFighters.jpg
+  AssetGenImage get fooFighters =>
+      const AssetGenImage('assets/images/music/fooFighters.jpg');
+
+  /// File path: assets/images/music/gunsNroses.jpeg
+  AssetGenImage get gunsNroses =>
+      const AssetGenImage('assets/images/music/gunsNroses.jpeg');
+
+  /// File path: assets/images/music/metallica.jpg
+  AssetGenImage get metallica =>
+      const AssetGenImage('assets/images/music/metallica.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [bonJovi, fooFighters, gunsNroses, metallica];
 }
 
 class $AssetsImagesOnboardingGen {
@@ -159,6 +189,69 @@ class $AssetsImagesStoryGen {
   /// List of all assets
   List<dynamic> get values =>
       [image01, image02, image03, image04, menu, options];
+}
+
+class $AssetsImagesStreamingGen {
+  const $AssetsImagesStreamingGen();
+
+  /// File path: assets/images/streaming/avengers.jpeg
+  AssetGenImage get avengers =>
+      const AssetGenImage('assets/images/streaming/avengers.jpeg');
+
+  /// File path: assets/images/streaming/batman.jpg
+  AssetGenImage get batman =>
+      const AssetGenImage('assets/images/streaming/batman.jpg');
+
+  /// File path: assets/images/streaming/breakingBad.jpg
+  AssetGenImage get breakingBad =>
+      const AssetGenImage('assets/images/streaming/breakingBad.jpg');
+
+  /// File path: assets/images/streaming/daredevil.jpg
+  AssetGenImage get daredevil =>
+      const AssetGenImage('assets/images/streaming/daredevil.jpg');
+
+  /// File path: assets/images/streaming/dark.jpg
+  AssetGenImage get dark =>
+      const AssetGenImage('assets/images/streaming/dark.jpg');
+
+  /// File path: assets/images/streaming/fullMetalAlchemist.jpg
+  AssetGenImage get fullMetalAlchemist =>
+      const AssetGenImage('assets/images/streaming/fullMetalAlchemist.jpg');
+
+  /// File path: assets/images/streaming/jujutsu.jpeg
+  AssetGenImage get jujutsu =>
+      const AssetGenImage('assets/images/streaming/jujutsu.jpeg');
+
+  /// File path: assets/images/streaming/mandalorian.png
+  AssetGenImage get mandalorian =>
+      const AssetGenImage('assets/images/streaming/mandalorian.png');
+
+  /// File path: assets/images/streaming/onePunchMan.png
+  AssetGenImage get onePunchMan =>
+      const AssetGenImage('assets/images/streaming/onePunchMan.png');
+
+  /// File path: assets/images/streaming/succession.jpg
+  AssetGenImage get succession =>
+      const AssetGenImage('assets/images/streaming/succession.jpg');
+
+  /// File path: assets/images/streaming/theBear.jpg
+  AssetGenImage get theBear =>
+      const AssetGenImage('assets/images/streaming/theBear.jpg');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        avengers,
+        batman,
+        breakingBad,
+        daredevil,
+        dark,
+        fullMetalAlchemist,
+        jujutsu,
+        mandalorian,
+        onePunchMan,
+        succession,
+        theBear
+      ];
 }
 
 class Assets {
