@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
 import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
@@ -31,7 +32,7 @@ class SneakyUI extends StatelessWidget {
                           Text(
                             item.name,
                             style: const TextStyle(
-                              fontFamily: 'PoetsenOne',
+                              fontFamily: FontFamily.poetsenOne,
                               fontSize: 30,
                             ),
                           ),
@@ -40,7 +41,7 @@ class SneakyUI extends StatelessWidget {
                               Text(
                                 '${item.quantity}',
                                 style: const TextStyle(
-                                  fontFamily: 'PoetsenOne',
+                                  fontFamily: FontFamily.poetsenOne,
                                   fontSize: 18,
                                 ),
                               ),

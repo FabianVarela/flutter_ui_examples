@@ -15,7 +15,7 @@ class _SneakySizeList extends HookWidget {
         Text(
           'Size'.toUpperCase(),
           style: const TextStyle(
-            fontFamily: 'AvenirLTStd',
+            fontFamily: FontFamily.avenirLTStd,
             fontSize: 16,
             fontWeight: FontWeight.w900,
           ),
@@ -69,7 +69,7 @@ class _SizeItem extends StatelessWidget {
         child: Text(
           '${size.size}',
           style: const TextStyle(
-            fontFamily: 'AvenirLTStd',
+            fontFamily: FontFamily.avenirLTStd,
             fontSize: 15,
             fontWeight: FontWeight.w700,
           ),

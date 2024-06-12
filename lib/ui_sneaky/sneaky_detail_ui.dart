@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
 
@@ -55,7 +56,7 @@ class SneakyDetailUI extends HookWidget {
                           child: Text(
                             '\$ ${sneaky.price.toStringAsFixed(2)}',
                             style: const TextStyle(
-                              fontFamily: 'PoetsenOne',
+                              fontFamily: FontFamily.poetsenOne,
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
                             ),
@@ -66,7 +67,7 @@ class SneakyDetailUI extends HookWidget {
                           child: Text(
                             sneaky.name,
                             style: const TextStyle(
-                              fontFamily: 'AvenirLTStd',
+                              fontFamily: FontFamily.avenirLTStd,
                               fontSize: 25,
                               fontWeight: FontWeight.w500,
                             ),
@@ -85,7 +86,7 @@ class SneakyDetailUI extends HookWidget {
                           child: Text(
                             sneaky.description,
                             style: const TextStyle(
-                              fontFamily: 'AvenirLTStd',
+                              fontFamily: FontFamily.avenirLTStd,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                             ),
