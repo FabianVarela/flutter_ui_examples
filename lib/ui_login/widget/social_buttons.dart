@@ -99,7 +99,7 @@ class _SocialIcons extends StatelessWidget {
             gradient: LinearGradient(colors: colors),
           ),
           child: RawMaterialButton(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(8),
             shape: const CircleBorder(),
             onPressed: onPressed,
             child: icon,
