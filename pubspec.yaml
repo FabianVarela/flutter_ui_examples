@@ -4,8 +4,8 @@ description: Flutter UI Examples
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.4.0 <4.0.0"
-  flutter: 3.22.0
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: 3.24.0
 
 dependencies:
   circular_seek_bar: ^1.1.1
@@ -20,7 +20,7 @@ dependencies:
   uuid: ^4.4.2
 
 dev_dependencies:
-  build_runner: ^2.4.11
+  build_runner: ^2.4.12
   flutter_gen_runner: ^5.6.0
   flutter_test:
     sdk: flutter
