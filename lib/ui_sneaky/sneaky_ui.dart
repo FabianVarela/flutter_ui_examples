@@ -3,6 +3,7 @@ import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
 import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
+import 'package:gap/gap.dart';
 import 'package:uuid/uuid.dart';
 
 part 'widget/main/sneaky_item.dart';
@@ -45,7 +46,7 @@ class SneakyUI extends StatelessWidget {
                                   fontSize: 18,
                                 ),
                               ),
-                              const SizedBox(width: 2),
+                              const Gap(2),
                               const Icon(Icons.arrow_forward_ios, size: 18),
                             ],
                           ),
@@ -92,7 +93,7 @@ class SneakyUI extends StatelessWidget {
                         iconData: Icons.search_outlined,
                         onPressed: () {},
                       ),
-                      const SizedBox(height: 10),
+                      const Gap(10),
                       CustomIconButton(
                         iconData: Icons.arrow_right_alt_outlined,
                         onPressed: () {},

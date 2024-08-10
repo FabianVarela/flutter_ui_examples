@@ -83,7 +83,7 @@ class _HeaderSection extends StatelessWidget {
                     child: const Icon(Icons.add, color: Color(0xFFE52020)),
                     onPressed: () {},
                   ),
-                  const SizedBox(width: 12),
+                  const Gap(12),
                   Directionality(
                     textDirection: TextDirection.rtl,
                     child: ElevatedButton.icon(

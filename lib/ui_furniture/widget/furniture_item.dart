@@ -44,7 +44,7 @@ class _FurnitureItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Image.asset(image, width: 172, height: 199),
-                const SizedBox(height: 12),
+                const Gap(12),
                 Padding(
                   padding: const EdgeInsets.all(12),
                   child: Column(
@@ -60,7 +60,7 @@ class _FurnitureItem extends StatelessWidget {
                               : Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 7),
+                      const Gap(7),
                       Text(
                         'New Sell',
                         style: GoogleFonts.montserrat(
@@ -71,7 +71,7 @@ class _FurnitureItem extends StatelessWidget {
                               : Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 45),
+                      const Gap(45),
                       Text(
                         '$price \$',
                         style: GoogleFonts.montserrat(

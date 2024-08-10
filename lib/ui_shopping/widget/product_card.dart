@@ -17,13 +17,13 @@ class _ProductCard extends StatelessWidget {
       ),
       child: Column(
         children: <Widget>[
-          const SizedBox(height: 8),
+          const Gap(8),
           Image.asset(shopping.image, width: 201, height: 191),
           Text(
             shopping.title,
             style: GoogleFonts.ubuntu(fontSize: 25),
           ),
-          const SizedBox(height: 15),
+          const Gap(15),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
@@ -42,7 +42,7 @@ class _ProductCard extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
-                    const SizedBox(height: 12),
+                    const Gap(12),
                     Text(
                       shopping.discountPrice,
                       style: GoogleFonts.varelaRound(fontSize: 28),

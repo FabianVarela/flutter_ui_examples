@@ -49,7 +49,7 @@ class _CurrentSongSection extends HookWidget {
             ),
           ),
         ),
-        const SizedBox(height: 15),
+        const Gap(15),
         Column(
           children: <Widget>[
             Text(

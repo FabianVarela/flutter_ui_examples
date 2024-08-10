@@ -4,6 +4,7 @@ import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_music/model/music_model.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/control_section.dart';
@@ -48,7 +49,7 @@ class MusicUI extends HookWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            const SizedBox(height: 30),
+            const Gap(30),
             _CurrentSongSection(
               music: musics.firstWhere(
                 (music) => music.isCurrent,
@@ -56,9 +57,9 @@ class MusicUI extends HookWidget {
               ),
               percent: thumbPercent.value,
             ),
-            const SizedBox(height: 20),
+            const Gap(20),
             const _ControlSection(),
-            const SizedBox(height: 20),
+            const Gap(20),
             _PlaylistSection(musicList: musics),
           ],
         ),

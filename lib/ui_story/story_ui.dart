@@ -66,7 +66,7 @@ class StoryUI extends HookWidget {
                     itemCount: stories.length,
                     controller: pageController,
                     physics: const BouncingScrollPhysics(),
-                    itemBuilder: (_, __) => const SizedBox(),
+                    itemBuilder: (_, __) => const Offstage(),
                   ),
                 ),
               ],

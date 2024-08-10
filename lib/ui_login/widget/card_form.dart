@@ -47,7 +47,7 @@ class _CardForm extends StatelessWidget {
                 hintStyle: GoogleFonts.mulish(color: Colors.grey, fontSize: 14),
               ),
             ),
-            const SizedBox(height: 20),
+            const Gap(20),
             Text(
               'Password',
               style: GoogleFonts.mulish(fontSize: 20),
