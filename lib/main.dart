@@ -5,6 +5,7 @@ import 'package:flutter_ui_examples/common/menu/custom_hidden_menu.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas_ui.dart';
 import 'package:flutter_ui_examples/ui_beer/beer_ui.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture_ui.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/ice_cream_ui.dart';
 import 'package:flutter_ui_examples/ui_login/login_ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/on_boarding_ui.dart';
@@ -61,6 +62,7 @@ class _MyAppState extends State<MyApp> {
             '/sneaky' => SneakyUI(onPressedMenu: _openDrawer),
             '/sneaky_detail' => _goToSneakyScreen(settings.arguments),
             '/beer' => BeerUI(onPressedMenu: _openDrawer),
+            '/ice_cream' => IceCreamUI(onPressedMenu: _openDrawer),
             '/' || _ => const OnBoardingUI(),
           },
         ),
