@@ -60,3 +60,6 @@ flutter:
     - family: PoetsenOne
       fonts:
         - asset: assets/fonts/PoetsenOne/PoetsenOne-Regular.ttf
+    - family: Ritts
+      fonts:
+        - asset: assets/fonts/Ritts/Ritts-Cursive.ttf
