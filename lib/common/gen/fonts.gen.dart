@@ -15,4 +15,7 @@ class FontFamily {
 
   /// Font family: PoetsenOne
   static const String poetsenOne = 'PoetsenOne';
+
+  /// Font family: Ritts
+  static const String ritts = 'Ritts';
 }
