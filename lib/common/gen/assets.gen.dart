@@ -24,6 +24,9 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/furniture
   $AssetsImagesFurnitureGen get furniture => const $AssetsImagesFurnitureGen();
 
+  /// Directory path: assets/images/ice_cream
+  $AssetsImagesIceCreamGen get iceCream => const $AssetsImagesIceCreamGen();
+
   /// Directory path: assets/images/login
   $AssetsImagesLoginGen get login => const $AssetsImagesLoginGen();
 
@@ -177,6 +180,76 @@ class $AssetsImagesFurnitureGen {
 
   /// List of all assets
   List<dynamic> get values => [hemes, menu, search, sofa, wooden];
+}
+
+class $AssetsImagesIceCreamGen {
+  const $AssetsImagesIceCreamGen();
+
+  /// File path: assets/images/ice_cream/arrow_left.svg
+  SvgGenImage get arrowLeft =>
+      const SvgGenImage('assets/images/ice_cream/arrow_left.svg');
+
+  /// File path: assets/images/ice_cream/arrow_right.svg
+  SvgGenImage get arrowRight =>
+      const SvgGenImage('assets/images/ice_cream/arrow_right.svg');
+
+  /// File path: assets/images/ice_cream/bag.svg
+  SvgGenImage get bag => const SvgGenImage('assets/images/ice_cream/bag.svg');
+
+  /// File path: assets/images/ice_cream/bowl_cream.svg
+  SvgGenImage get bowlCream =>
+      const SvgGenImage('assets/images/ice_cream/bowl_cream.svg');
+
+  /// File path: assets/images/ice_cream/dots.svg
+  SvgGenImage get dots => const SvgGenImage('assets/images/ice_cream/dots.svg');
+
+  /// File path: assets/images/ice_cream/ice_cream.svg
+  SvgGenImage get iceCream =>
+      const SvgGenImage('assets/images/ice_cream/ice_cream.svg');
+
+  /// File path: assets/images/ice_cream/ice_cream_chocolate.png
+  AssetGenImage get iceCreamChocolate =>
+      const AssetGenImage('assets/images/ice_cream/ice_cream_chocolate.png');
+
+  /// File path: assets/images/ice_cream/ice_cream_pistachio.png
+  AssetGenImage get iceCreamPistachio =>
+      const AssetGenImage('assets/images/ice_cream/ice_cream_pistachio.png');
+
+  /// File path: assets/images/ice_cream/ice_cream_rasp.png
+  AssetGenImage get iceCreamRasp =>
+      const AssetGenImage('assets/images/ice_cream/ice_cream_rasp.png');
+
+  /// File path: assets/images/ice_cream/ice_cream_straw.png
+  AssetGenImage get iceCreamStraw =>
+      const AssetGenImage('assets/images/ice_cream/ice_cream_straw.png');
+
+  /// File path: assets/images/ice_cream/palette.svg
+  SvgGenImage get palette =>
+      const SvgGenImage('assets/images/ice_cream/palette.svg');
+
+  /// File path: assets/images/ice_cream/search.svg
+  SvgGenImage get search =>
+      const SvgGenImage('assets/images/ice_cream/search.svg');
+
+  /// File path: assets/images/ice_cream/star.svg
+  SvgGenImage get star => const SvgGenImage('assets/images/ice_cream/star.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [
+        arrowLeft,
+        arrowRight,
+        bag,
+        bowlCream,
+        dots,
+        iceCream,
+        iceCreamChocolate,
+        iceCreamPistachio,
+        iceCreamRasp,
+        iceCreamStraw,
+        palette,
+        search,
+        star
+      ];
 }
 
 class $AssetsImagesLoginGen {
@@ -429,11 +502,16 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName, {this.size = null});
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
 
   final String _assetName;
 
   final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -507,17 +585,19 @@ class AssetGenImage {
 class SvgGenImage {
   const SvgGenImage(
     this._assetName, {
-    this.size = null,
+    this.size,
+    this.flavors = const {},
   }) : _isVecFormat = false;
 
   const SvgGenImage.vec(
     this._assetName, {
-    this.size = null,
+    this.size,
+    this.flavors = const {},
   }) : _isVecFormat = true;
 
   final String _assetName;
-
   final Size? size;
+  final Set<String> flavors;
   final bool _isVecFormat;
 
   SvgPicture svg({
@@ -540,12 +620,23 @@ class SvgGenImage {
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
+    final BytesLoader loader;
+    if (_isVecFormat) {
+      loader = AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+      );
+    }
     return SvgPicture(
-      _isVecFormat
-          ? AssetBytesLoader(_assetName,
-              assetBundle: bundle, packageName: package)
-          : SvgAssetLoader(_assetName,
-              assetBundle: bundle, packageName: package),
+      loader,
       key: key,
       matchTextDirection: matchTextDirection,
       width: width,
@@ -556,7 +647,6 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      theme: theme,
       colorFilter: colorFilter ??
           (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
