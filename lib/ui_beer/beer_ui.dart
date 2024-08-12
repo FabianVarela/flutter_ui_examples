@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/my_clipper.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 part 'widget/beer_bottle_item.dart';
@@ -97,7 +98,6 @@ class BeerUI extends HookWidget {
           Positioned.fill(
             top: 150,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Expanded(
                   child: PageView.builder(
@@ -112,7 +112,7 @@ class BeerUI extends HookWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 270,
+                  height: 250,
                   child: PageView.builder(
                     itemCount: beers.length,
                     controller: detailPageController,
@@ -123,10 +123,7 @@ class BeerUI extends HookWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 30,
-                  ),
+                  padding: const EdgeInsets.fromLTRB(50, 10, 50, 30),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(width, 50),
