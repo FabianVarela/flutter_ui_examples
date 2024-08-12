@@ -17,13 +17,13 @@ class BeerBottleItem extends StatelessWidget {
     return AnimatedBuilder(
       animation: controller,
       builder: (_, child) {
-        var value = controller.position.haveDimensions
-            ? (controller.page ?? 0) - index
-            : index.toDouble();
-
-        value = Curves.easeOut.transform(
-          (1 - (value.abs() * .4)).clamp(0.0, 1.0),
-        );
+        var value = 1.0;
+        if (controller.position.haveDimensions) {
+          value = (controller.page ?? 0) - index;
+          value = Curves.easeOut.transform(
+            (1 - (value.abs() * .5)).clamp(0.0, 1.0),
+          );
+        }
 
         return Stack(
           clipBehavior: Clip.none,
@@ -39,7 +39,7 @@ class BeerBottleItem extends StatelessWidget {
             ),
             Center(
               child: SizedBox.fromSize(
-                size: Size(value * 250, value * 400),
+                size: Size(250, value * 350),
                 child: child,
               ),
             ),
