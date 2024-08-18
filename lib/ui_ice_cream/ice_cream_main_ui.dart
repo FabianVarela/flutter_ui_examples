@@ -73,21 +73,17 @@ class _Header extends StatelessWidget {
           bottom: false,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    OptionButton(
-                      path: Assets.images.iceCream.dots.path,
-                      foregroundColor: const Color(0xFFF11359),
-                      onPress: onPressMenu,
-                    ),
-                    OptionButton(
-                      path: Assets.images.iceCream.search.path,
-                      foregroundColor: const Color(0xFFF11359),
-                    ),
-                  ],
+                OptionButton(
+                  path: Assets.images.iceCream.dots.path,
+                  foregroundColor: const Color(0xFFF11359),
+                  onPress: onPressMenu,
+                ),
+                OptionButton(
+                  path: Assets.images.iceCream.search.path,
+                  foregroundColor: const Color(0xFFF11359),
                 ),
               ],
             ),
