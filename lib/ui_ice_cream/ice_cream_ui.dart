@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/widget/option_button.dart';
 import 'package:gap/gap.dart';
 
 class IceCreamUI extends HookWidget {
-  const IceCreamUI({required this.onPressedMenu, super.key});
-
-  final VoidCallback onPressedMenu;
+  const IceCreamUI({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,23 +61,14 @@ class IceCreamUI extends HookWidget {
                   ),
                 ),
                 const Gap(16),
-                SizedBox.fromSize(
+                OptionButton(
+                  path: Assets.images.iceCream.arrowLeft.path,
                   size: const Size(60, 60),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF01359),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Assets.images.iceCream.arrowLeft.svg(
-                        colorFilter: const ColorFilter.mode(
-                          Color(0xFFFFFFFF),
-                          BlendMode.srcIn,
-                        ),
-                      ),
-                    ),
+                  padding: const EdgeInsets.all(12),
+                  backgroundColor: const Color(0xFFF01359),
+                  foregroundColor: const Color(0xFFFFFFFF),
+                  onPress: () => Navigator.of(context).pushReplacementNamed(
+                    '/ice_cream_main',
                   ),
                 ),
               ],
