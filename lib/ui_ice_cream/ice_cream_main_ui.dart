@@ -27,7 +27,7 @@ class IceCreamMainUI extends StatelessWidget {
             ),
           ),
           const SliverPadding(
-            padding: EdgeInsets.only(top: 20, left: 30),
+            padding: EdgeInsets.only(top: 20, left: 30, right: 24),
             sliver: SliverToBoxAdapter(
               child: _Popular(),
             ),
@@ -174,15 +174,13 @@ class _Popular extends StatelessWidget {
         const Text(
           'Popular',
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 20,
             color: Color(0xFFF01359),
             fontWeight: FontWeight.w600,
           ),
         ),
         const Gap(20),
-        ...[
-          for (final item in iceCreamList) IceCreamItem(iceCream: item),
-        ],
+        ...[for (final item in iceCreamList) IceCreamItem(iceCream: item)],
       ],
     );
   }
