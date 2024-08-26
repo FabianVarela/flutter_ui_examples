@@ -21,27 +21,26 @@ class OptionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPress,
-      child: Container(
-        width: size.width,
-        height: size.height,
-        alignment: Alignment.center,
+    return IconButton(
+      onPressed: onPress,
+      style: IconButton.styleFrom(
+        elevation: 10,
         padding: padding,
-        decoration: BoxDecoration(
-          color: backgroundColor,
+        maximumSize: size,
+        shadowColor: Colors.black26,
+        backgroundColor: backgroundColor,
+        foregroundColor: foregroundColor,
+        disabledBackgroundColor: backgroundColor.withOpacity(.7),
+        disabledForegroundColor: foregroundColor.withOpacity(.7),
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
-          boxShadow: const <BoxShadow>[
-            BoxShadow(
-              color: Colors.black26,
-              offset: Offset(-1, 2),
-              blurRadius: 5,
-            ),
-          ],
         ),
-        child: SvgPicture.asset(
-          path,
-          colorFilter: ColorFilter.mode(foregroundColor, BlendMode.srcIn),
+      ),
+      icon: SvgPicture.asset(
+        path,
+        colorFilter: ColorFilter.mode(
+          onPress == null ? foregroundColor.withOpacity(.5) : foregroundColor,
+          BlendMode.srcIn,
         ),
       ),
     );

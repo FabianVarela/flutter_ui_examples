@@ -127,7 +127,7 @@ class _Options extends HookWidget {
             OptionButton(
               path: optionList[index].icon,
               size: const Size(80, 80),
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(20),
               backgroundColor: currentIndex.value == index
                   ? const Color(0xFFF01359)
                   : const Color(0xFFFFFFFF),
