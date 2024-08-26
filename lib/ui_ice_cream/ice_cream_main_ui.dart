@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_item.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/option_button.dart';
 import 'package:gap/gap.dart';
 
@@ -22,6 +24,12 @@ class IceCreamMainUI extends StatelessWidget {
             padding: EdgeInsets.only(top: 30, left: 30),
             sliver: SliverToBoxAdapter(
               child: _Options(),
+            ),
+          ),
+          const SliverPadding(
+            padding: EdgeInsets.only(top: 20, left: 30),
+            sliver: SliverToBoxAdapter(
+              child: _Popular(),
             ),
           ),
         ],
@@ -150,6 +158,32 @@ class _Options extends HookWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _Popular extends StatelessWidget {
+  const _Popular();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        const Text(
+          'Popular',
+          style: TextStyle(
+            fontSize: 22,
+            color: Color(0xFFF01359),
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const Gap(20),
+        ...[
+          for (final item in iceCreamList) IceCreamItem(iceCream: item),
+        ],
+      ],
     );
   }
 }
