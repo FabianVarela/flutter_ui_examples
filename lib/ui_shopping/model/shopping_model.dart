@@ -3,13 +3,13 @@ import 'dart:ui';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class ShoppingModel {
-  ShoppingModel(
-    this.image,
-    this.title,
-    this.originalPrice,
-    this.discountPrice,
-    this.color,
-  );
+  ShoppingModel({
+    required this.image,
+    required this.title,
+    required this.originalPrice,
+    required this.discountPrice,
+    required this.color,
+  });
 
   final String image;
   final String title;
@@ -20,17 +20,17 @@ class ShoppingModel {
 
 final shoppingList = <ShoppingModel>[
   ShoppingModel(
-    Assets.images.shopping.shoes01.path,
-    'Hybrid Rocket WNS',
-    r'$ 999.0',
-    r'$ 749.0',
-    const Color(0xFFFAECFB),
+    image: Assets.images.shopping.shoes01.path,
+    title: 'Hybrid Rocket WNS',
+    originalPrice: r'$ 999.0',
+    discountPrice: r'$ 749.0',
+    color: const Color(0xFFFAECFB),
   ),
   ShoppingModel(
-    Assets.images.shopping.shoes02.path,
-    'Hybrid Runner ARS',
-    r'$ 699.0',
-    r'$ 599.0"',
-    const Color(0xFFF8E1DA),
+    image: Assets.images.shopping.shoes02.path,
+    title: 'Hybrid Runner ARS',
+    originalPrice: r'$ 699.0',
+    discountPrice: r'$ 599.0"',
+    color: const Color(0xFFF8E1DA),
   ),
 ];

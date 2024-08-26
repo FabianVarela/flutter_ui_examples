@@ -1,7 +1,12 @@
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class MusicModel {
-  MusicModel(this.image, this.song, this.artist, {this.isCurrent = false});
+  MusicModel({
+    required this.image,
+    required this.song,
+    required this.artist,
+    this.isCurrent = false,
+  });
 
   final String image;
   final String song;
@@ -11,34 +16,34 @@ class MusicModel {
 
 final musics = <MusicModel>[
   MusicModel(
-    Assets.images.music.metallica.path,
-    'The unforgiven',
-    'Metallica',
+    image: Assets.images.music.metallica.path,
+    song: 'The unforgiven',
+    artist: 'Metallica',
   ),
   MusicModel(
-    Assets.images.music.gunsNroses.path,
-    'Stranged',
-    'Guns n roses',
+    image: Assets.images.music.gunsNroses.path,
+    song: 'Stranged',
+    artist: 'Guns n roses',
     isCurrent: true,
   ),
   MusicModel(
-    Assets.images.music.fooFighters.path,
-    'Walk',
-    'Foo fighters',
+    image: Assets.images.music.fooFighters.path,
+    song: 'Walk',
+    artist: 'Foo fighters',
   ),
   MusicModel(
-    Assets.images.music.bonJovi.path,
-    "Livin' On A Prayer",
-    'Bon Jovi',
+    image: Assets.images.music.bonJovi.path,
+    song: "Livin' On A Prayer",
+    artist: 'Bon Jovi',
   ),
   MusicModel(
-    Assets.images.music.metallica.path,
-    'Fuel',
-    'Metallica',
+    image: Assets.images.music.metallica.path,
+    song: 'Fuel',
+    artist: 'Metallica',
   ),
   MusicModel(
-    Assets.images.music.fooFighters.path,
-    'Everlong',
-    'Foo fighters',
+    image: Assets.images.music.fooFighters.path,
+    song: 'Everlong',
+    artist: 'Foo fighters',
   ),
 ];

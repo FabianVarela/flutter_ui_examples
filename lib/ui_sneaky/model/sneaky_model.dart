@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class SneakyCategory {
-  SneakyCategory(this.name, this.quantity, this.sneakyList);
+  SneakyCategory({
+    required this.name,
+    required this.quantity,
+    required this.sneakyList,
+  });
 
   final String name;
   final int quantity;
@@ -10,14 +14,14 @@ class SneakyCategory {
 }
 
 class Sneaky {
-  Sneaky(
-    this.image,
-    this.name,
-    this.description,
-    this.price,
-    this.colors,
-    this.sizes,
-  );
+  Sneaky({
+    required this.image,
+    required this.name,
+    required this.description,
+    required this.price,
+    required this.colors,
+    required this.sizes,
+  });
 
   final String image;
   final String name;
@@ -28,7 +32,7 @@ class Sneaky {
 }
 
 class SneakySize {
-  SneakySize(this.size, {this.isAvailable = false});
+  SneakySize({required this.size, this.isAvailable = false});
 
   final int size;
   final bool isAvailable;
@@ -42,87 +46,87 @@ const description = "A remarkable shoe that's naturally soft, cozy all over, "
 
 final _sneakyList = <Sneaky>[
   Sneaky(
-    Assets.images.sneaky.blackSneaky.path,
-    'Men casual runners',
-    description,
-    96.99,
-    <Color>[
+    image: Assets.images.sneaky.blackSneaky.path,
+    name: 'Men casual runners',
+    description: description,
+    price: 96.99,
+    colors: <Color>[
       Colors.black,
       Colors.red,
       Colors.lightBlue,
       Colors.yellowAccent,
       Colors.green,
     ],
-    <SneakySize>[
-      SneakySize(8, isAvailable: true),
-      SneakySize(9, isAvailable: true),
-      SneakySize(10),
-      SneakySize(11, isAvailable: true),
-      SneakySize(12, isAvailable: true),
+    sizes: <SneakySize>[
+      SneakySize(size: 8, isAvailable: true),
+      SneakySize(size: 9, isAvailable: true),
+      SneakySize(size: 10),
+      SneakySize(size: 11, isAvailable: true),
+      SneakySize(size: 12, isAvailable: true),
     ],
   ),
   Sneaky(
-    Assets.images.sneaky.blueSneaky.path,
-    'Women casual runners',
-    description,
-    98.99,
-    <Color>[
+    image: Assets.images.sneaky.blueSneaky.path,
+    name: 'Women casual runners',
+    description: description,
+    price: 98.99,
+    colors: <Color>[
       Colors.black,
       Colors.red,
       Colors.lightBlue,
       Colors.yellowAccent,
       Colors.green,
     ],
-    <SneakySize>[
-      SneakySize(6),
-      SneakySize(7, isAvailable: true),
-      SneakySize(8, isAvailable: true),
-      SneakySize(9, isAvailable: true),
-      SneakySize(10, isAvailable: true),
+    sizes: <SneakySize>[
+      SneakySize(size: 6),
+      SneakySize(size: 7, isAvailable: true),
+      SneakySize(size: 8, isAvailable: true),
+      SneakySize(size: 9, isAvailable: true),
+      SneakySize(size: 10, isAvailable: true),
     ],
   ),
   Sneaky(
-    Assets.images.sneaky.redSneaky.path,
-    'Child casual runners',
-    description,
-    89.99,
-    <Color>[
+    image: Assets.images.sneaky.redSneaky.path,
+    name: 'Child casual runners',
+    description: description,
+    price: 89.99,
+    colors: <Color>[
       Colors.black,
       Colors.red,
       Colors.lightBlue,
       Colors.yellowAccent,
       Colors.green,
     ],
-    <SneakySize>[
-      SneakySize(3, isAvailable: true),
-      SneakySize(4, isAvailable: true),
-      SneakySize(5),
-      SneakySize(6, isAvailable: true),
+    sizes: <SneakySize>[
+      SneakySize(size: 3, isAvailable: true),
+      SneakySize(size: 4, isAvailable: true),
+      SneakySize(size: 5),
+      SneakySize(size: 6, isAvailable: true),
     ],
   ),
   Sneaky(
-    Assets.images.sneaky.yellowSneaky.path,
-    'Unisex casual runners',
-    description,
-    100.99,
-    <Color>[
+    image: Assets.images.sneaky.yellowSneaky.path,
+    name: 'Unisex casual runners',
+    description: description,
+    price: 100.99,
+    colors: <Color>[
       Colors.black,
       Colors.red,
       Colors.lightBlue,
       Colors.yellowAccent,
       Colors.green,
     ],
-    <SneakySize>[
-      SneakySize(8, isAvailable: true),
-      SneakySize(9, isAvailable: true),
-      SneakySize(10, isAvailable: true),
-      SneakySize(11, isAvailable: true),
-      SneakySize(12),
+    sizes: <SneakySize>[
+      SneakySize(size: 8, isAvailable: true),
+      SneakySize(size: 9, isAvailable: true),
+      SneakySize(size: 10, isAvailable: true),
+      SneakySize(size: 11, isAvailable: true),
+      SneakySize(size: 12),
     ],
   ),
 ];
 
 final sneakyCategories = <SneakyCategory>[
-  SneakyCategory('Casual', 80, _sneakyList),
-  SneakyCategory('Sporty', 30, _sneakyList),
+  SneakyCategory(name: 'Casual', quantity: 80, sneakyList: _sneakyList),
+  SneakyCategory(name: 'Sporty', quantity: 30, sneakyList: _sneakyList),
 ];

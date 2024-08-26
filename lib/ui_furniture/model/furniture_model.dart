@@ -1,7 +1,7 @@
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class Furniture {
-  Furniture(this.image, this.title, this.price);
+  Furniture({required this.image, required this.title, required this.price});
 
   final String image;
   final String title;
@@ -9,7 +9,19 @@ class Furniture {
 }
 
 final furnitureList = <Furniture>[
-  Furniture(Assets.images.furniture.hemes.path, 'Hemes ArmChair', '126'),
-  Furniture(Assets.images.furniture.sofa.path, 'Sofar ArmChair', '148'),
-  Furniture(Assets.images.furniture.wooden.path, 'Wooden ArmChair', '179'),
+  Furniture(
+    image: Assets.images.furniture.hemes.path,
+    title: 'Hemes ArmChair',
+    price: '126',
+  ),
+  Furniture(
+    image: Assets.images.furniture.sofa.path,
+    title: 'Sofar ArmChair',
+    price: '148',
+  ),
+  Furniture(
+    image: Assets.images.furniture.wooden.path,
+    title: 'Wooden ArmChair',
+    price: '179',
+  ),
 ];

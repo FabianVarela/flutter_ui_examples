@@ -1,7 +1,7 @@
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class StreamingModel {
-  StreamingModel(this.image, this.title);
+  StreamingModel({required this.image, required this.title});
 
   final String image;
   final String title;
@@ -9,47 +9,47 @@ class StreamingModel {
 
 final streamingList = <StreamingModel>[
   StreamingModel(
-    Assets.images.streaming.jujutsu.path,
-    'Jujutsu Kaisen',
+    image: Assets.images.streaming.jujutsu.path,
+    title: 'Jujutsu Kaisen',
   ),
   StreamingModel(
-    Assets.images.streaming.mandalorian.path,
-    'The Mandalorian',
+    image: Assets.images.streaming.mandalorian.path,
+    title: 'The Mandalorian',
   ),
   StreamingModel(
-    Assets.images.streaming.succession.path,
-    'Succession',
+    image: Assets.images.streaming.succession.path,
+    title: 'Succession',
   ),
   StreamingModel(
-    Assets.images.streaming.theBear.path,
-    'The bear',
+    image: Assets.images.streaming.theBear.path,
+    title: 'The bear',
   ),
   StreamingModel(
-    Assets.images.streaming.fullMetalAlchemist.path,
-    'Fullmetal alchemist: Brotherhood',
+    image: Assets.images.streaming.fullMetalAlchemist.path,
+    title: 'Fullmetal alchemist: Brotherhood',
   ),
   StreamingModel(
-    Assets.images.streaming.daredevil.path,
-    'Daredevil',
+    image: Assets.images.streaming.daredevil.path,
+    title: 'Daredevil',
   ),
   StreamingModel(
-    Assets.images.streaming.avengers.path,
-    'Avengers: Infinity war',
+    image: Assets.images.streaming.avengers.path,
+    title: 'Avengers: Infinity war',
   ),
   StreamingModel(
-    Assets.images.streaming.batman.path,
-    'Batman: The dark knight',
+    image: Assets.images.streaming.batman.path,
+    title: 'Batman: The dark knight',
   ),
   StreamingModel(
-    Assets.images.streaming.onePunchMan.path,
-    'One punch man',
+    image: Assets.images.streaming.onePunchMan.path,
+    title: 'One punch man',
   ),
   StreamingModel(
-    Assets.images.streaming.breakingBad.path,
-    'Breaking bad',
+    image: Assets.images.streaming.breakingBad.path,
+    title: 'Breaking bad',
   ),
   StreamingModel(
-    Assets.images.streaming.dark.path,
-    'Dark',
+    image: Assets.images.streaming.dark.path,
+    title: 'Dark',
   ),
 ];
