@@ -180,7 +180,13 @@ class _Popular extends StatelessWidget {
           ),
         ),
         const Gap(20),
-        ...[for (final item in iceCreamList) IceCreamItem(iceCream: item)],
+        ...[
+          for (final item in iceCreamList)
+            IceCreamItem(
+              iceCream: item,
+              onPress: () {},
+            ),
+        ],
       ],
     );
   }

@@ -4,9 +4,10 @@ import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
 import 'package:gap/gap.dart';
 
 class IceCreamItem extends StatelessWidget {
-  const IceCreamItem({required this.iceCream, super.key});
+  const IceCreamItem({required this.iceCream, this.onPress, super.key});
 
   final IceCreamModel iceCream;
+  final VoidCallback? onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class IceCreamItem extends StatelessWidget {
     return SizedBox(
       height: 120,
       child: InkWell(
-        onTap: () {},
+        onTap: onPress,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
