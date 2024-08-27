@@ -179,13 +179,15 @@ class _Popular extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        const Gap(20),
+        const Gap(16),
         ...[
-          for (final item in iceCreamList)
+          for (final item in iceCreamList) ...[
             IceCreamItem(
               iceCream: item,
               onPress: () {},
             ),
+            const Gap(2),
+          ]
         ],
       ],
     );

@@ -15,13 +15,14 @@ class IceCreamItem extends StatelessWidget {
 
     return SizedBox(
       height: 120,
-      child: InkWell(
-        onTap: onPress,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            Card(
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          InkWell(
+            onTap: onPress,
+            child: Card(
               elevation: 8,
+              margin: const EdgeInsets.only(right: 10),
               color: iceCream.background,
               child: Container(
                 width: MediaQuery.sizeOf(context).width,
@@ -75,15 +76,18 @@ class IceCreamItem extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              right: -5,
-              child: SizedBox.fromSize(
-                size: const Size(140, 140),
-                child: Image.asset(iceCream.image),
+          ),
+          Positioned(
+            right: -10,
+            child: SizedBox.fromSize(
+              size: const Size(130, 130),
+              child: Hero(
+                tag: '${iceCream.name}_${iceCream.rate}',
+                child: Image.asset(iceCream.image, fit: BoxFit.contain),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
