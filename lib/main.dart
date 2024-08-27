@@ -5,6 +5,7 @@ import 'package:flutter_ui_examples/common/menu/custom_hidden_menu.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/adidas_ui.dart';
 import 'package:flutter_ui_examples/ui_beer/beer_ui.dart';
 import 'package:flutter_ui_examples/ui_furniture/furniture_ui.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/ice_cream_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/ice_cream_main_ui.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/ice_cream_ui.dart';
 import 'package:flutter_ui_examples/ui_login/login_ui.dart';
@@ -65,6 +66,7 @@ class _MyAppState extends State<MyApp> {
             '/beer' => BeerUI(onPressedMenu: _openDrawer),
             '/ice_cream' => const IceCreamUI(),
             '/ice_cream_main' => IceCreamMainUI(onPressedMenu: _openDrawer),
+            '/ice_cream_detail' => _goToIceCreamScreen(settings.arguments),
             '/' || _ => const OnBoardingUI(),
           },
         ),
@@ -75,6 +77,11 @@ class _MyAppState extends State<MyApp> {
   Widget _goToSneakyScreen(Object? arguments) {
     final args = arguments as SneakyDetailArguments?;
     return SneakyDetailUI(uuid: args!.uuid, sneaky: args.sneaky);
+  }
+
+  Widget _goToIceCreamScreen(Object? arguments) {
+    final args = arguments as IceCreamDetailArguments?;
+    return IceCreamDetailUI(iceCream: args!.iceCream);
   }
 
   void _openDrawer() {
