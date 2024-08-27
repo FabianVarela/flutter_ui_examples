@@ -33,7 +33,7 @@ final iceCreamList = <IceCreamModel>[
     name: 'Strawberry',
     price: 5.89,
     rate: 3.5,
-    image: Assets.images.iceCream.iceCreamStraw.path,
+    image: Assets.images.iceCream.iceCreamRasp.path,
     background: const Color(0xFFCFB091),
     foreground: const Color(0xFF6A1b03),
     energy: 1200,
