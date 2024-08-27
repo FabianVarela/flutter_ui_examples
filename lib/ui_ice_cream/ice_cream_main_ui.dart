@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/ice_cream_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_item.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/option_button.dart';
@@ -184,12 +185,19 @@ class _Popular extends StatelessWidget {
           for (final item in iceCreamList) ...[
             IceCreamItem(
               iceCream: item,
-              onPress: () {},
+              onPress: () => _goToDetail(context, item),
             ),
             const Gap(2),
-          ]
+          ],
         ],
       ],
+    );
+  }
+
+  void _goToDetail(BuildContext context, IceCreamModel iceCream) {
+    Navigator.of(context).pushNamed(
+      '/ice_cream_detail',
+      arguments: IceCreamDetailArguments(iceCream),
     );
   }
 }
