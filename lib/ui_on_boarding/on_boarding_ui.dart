@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_ui_examples/common/hooks/tween_animation_hook.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/model/page_model.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -15,14 +14,15 @@ class OnBoardingUI extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final currentPage = useState(0);
-    final isLastPage = useState(false);
     final pageController = usePageController();
 
     final animController = useAnimationController(
-      duration: const Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 500),
     );
-    final animation = useTweenAnimation(animController, begin: .6, end: 1)
-        .animate(animController);
+    final animation = CurvedAnimation(
+      parent: animController,
+      curve: Curves.fastOutSlowIn,
+    );
 
     return DecoratedBox(
       decoration: const BoxDecoration(
@@ -46,13 +46,9 @@ class OnBoardingUI extends HookWidget {
                   currentPage.value = index;
 
                   if (currentPage.value == pageList.length - 1) {
-                    isLastPage.value = true;
                     animController.forward().orCancel;
                   } else {
                     animController.reverse().orCancel;
-                    Future.delayed(const Duration(milliseconds: 300), () {
-                      isLastPage.value = false;
-                    });
                   }
                 },
                 itemBuilder: (_, index) => _OnboardingItem(
@@ -72,21 +68,21 @@ class OnBoardingUI extends HookWidget {
                   ),
                 ),
               ),
-              if (isLastPage.value)
-                Positioned(
-                  right: 30,
-                  bottom: 30,
-                  child: ScaleTransition(
-                    scale: animation,
-                    child: FloatingActionButton(
-                      backgroundColor: Colors.white,
-                      child: const Icon(Icons.arrow_forward),
-                      onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/login');
-                      },
+              Positioned(
+                right: 30,
+                bottom: 30,
+                child: ScaleTransition(
+                  scale: animation,
+                  child: FloatingActionButton(
+                    backgroundColor: Colors.white,
+                    child: const Icon(Icons.arrow_forward),
+                    onPressed: () => Navigator.pushReplacementNamed(
+                      context,
+                      '/login',
                     ),
                   ),
                 ),
+              ),
             ],
           ),
         ),
