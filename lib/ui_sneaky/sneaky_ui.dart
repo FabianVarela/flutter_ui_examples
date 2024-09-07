@@ -18,6 +18,7 @@ class SneakyUI extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(.9),
       body: SafeArea(
+        bottom: false,
         child: Stack(
           children: <Widget>[
             ListView(

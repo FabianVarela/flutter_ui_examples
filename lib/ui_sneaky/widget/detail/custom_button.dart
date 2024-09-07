@@ -19,8 +19,8 @@ class _CustomButton extends StatelessWidget {
       child: Text(
         text,
         style: const TextStyle(
-          fontFamily: FontFamily.avenirLTStd,
           fontSize: 14,
+          fontFamily: FontFamily.avenirLTStd,
           fontWeight: FontWeight.w700,
         ),
       ),

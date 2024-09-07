@@ -7,6 +7,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
+import 'package:gap/gap.dart';
 
 part 'widget/detail/control_360.dart';
 
@@ -51,47 +52,38 @@ class SneakyDetailUI extends HookWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
                         Hero(tag: uuid, child: Image.asset(sneaky.image)),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20),
-                          child: Text(
-                            '\$ ${sneaky.price.toStringAsFixed(2)}',
-                            style: const TextStyle(
-                              fontFamily: FontFamily.poetsenOne,
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        const Gap(20),
+                        Text(
+                          '\$ ${sneaky.price.toStringAsFixed(2)}',
+                          style: const TextStyle(
+                            fontFamily: FontFamily.poetsenOne,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            sneaky.name,
-                            style: const TextStyle(
-                              fontFamily: FontFamily.avenirLTStd,
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        const Gap(10),
+                        Text(
+                          sneaky.name,
+                          style: const TextStyle(
+                            fontFamily: FontFamily.avenirLTStd,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 30),
-                          child: _SneakyColorList(colors: sneaky.colors),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 30),
-                          child: _SneakySizeList(sizes: sneaky.sizes),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 50),
-                          child: Text(
-                            sneaky.description,
-                            style: const TextStyle(
-                              fontFamily: FontFamily.avenirLTStd,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        const Gap(30),
+                        _SneakyColorList(colors: sneaky.colors),
+                        const Gap(30),
+                        _SneakySizeList(sizes: sneaky.sizes),
+                        const Gap(50),
+                        Text(
+                          sneaky.description,
+                          style: const TextStyle(
+                            fontFamily: FontFamily.avenirLTStd,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
+                        const Gap(50),
                       ],
                     ),
                     FractionalTranslation(

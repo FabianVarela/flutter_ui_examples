@@ -23,10 +23,7 @@ class CustomIconButton extends StatelessWidget {
         minimumSize: const Size(50, 50),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       ),
-      child: Container(
-        alignment: Alignment.center,
-        child: Icon(iconData, size: 24),
-      ),
+      child: Icon(iconData, size: 24),
     );
   }
 }
