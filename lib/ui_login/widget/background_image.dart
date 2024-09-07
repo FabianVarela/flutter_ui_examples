@@ -8,15 +8,11 @@ class _BackgroundImage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Assets.images.login.loginImage01.image(),
-        ),
+        const Gap(20),
+        Assets.images.login.loginImage01.image(),
         const Expanded(child: Offstage()),
-        Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Assets.images.login.loginImage02.image(),
-        ),
+        const Gap(20),
+        Assets.images.login.loginImage02.image(),
       ],
     );
   }
