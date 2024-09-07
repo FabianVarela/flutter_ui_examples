@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -31,10 +32,9 @@ class LoginUI extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Image.asset(
-                    'assets/images/login/login_logo.png',
-                    width: 70,
-                    height: 70,
+                  SizedBox.fromSize(
+                    size: const Size(70, 70),
+                    child: Assets.images.login.loginLogo.image(),
                   ),
                   const Spacer(),
                   const Padding(
