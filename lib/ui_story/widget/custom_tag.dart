@@ -32,12 +32,10 @@ class _CustomTag extends StatelessWidget {
               style: GoogleFonts.ubuntu(color: Colors.white),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15),
-            child: Text(
-              message,
-              style: GoogleFonts.ubuntu(color: Colors.blueAccent),
-            ),
+          const Gap(15),
+          Text(
+            message,
+            style: GoogleFonts.ubuntu(color: Colors.blueAccent),
           ),
         ],
       ),
