@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
-import 'package:flutter_ui_examples/ui_ice_cream/widget/option_button.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
 import 'package:gap/gap.dart';
 
 class IceCreamUI extends HookWidget {
@@ -62,7 +62,7 @@ class IceCreamUI extends HookWidget {
                   ),
                 ),
                 const Gap(16),
-                OptionButton(
+                IceCreamIconButton(
                   path: Assets.images.iceCream.arrowLeft.path,
                   size: const Size(60, 60),
                   padding: const EdgeInsets.all(12),

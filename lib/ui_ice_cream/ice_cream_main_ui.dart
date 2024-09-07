@@ -4,8 +4,8 @@ import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/ice_cream_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_item.dart';
-import 'package:flutter_ui_examples/ui_ice_cream/widget/option_button.dart';
 import 'package:gap/gap.dart';
 
 class IceCreamMainUI extends StatelessWidget {
@@ -90,12 +90,12 @@ class _Header extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                OptionButton(
+                IceCreamIconButton(
                   path: Assets.images.iceCream.dots.path,
                   foregroundColor: const Color(0xFFF11359),
                   onPress: onPressMenu,
                 ),
-                OptionButton(
+                IceCreamIconButton(
                   path: Assets.images.iceCream.search.path,
                   foregroundColor: const Color(0xFFF11359),
                 ),
@@ -138,7 +138,7 @@ class _Options extends HookWidget {
         itemBuilder: (_, index) => Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            OptionButton(
+            IceCreamIconButton(
               path: optionList[index].icon,
               size: const Size(80, 80),
               padding: const EdgeInsets.all(20),

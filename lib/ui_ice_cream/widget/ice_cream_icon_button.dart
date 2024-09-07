@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class OptionButton extends StatelessWidget {
-  const OptionButton({
+class IceCreamIconButton extends StatelessWidget {
+  const IceCreamIconButton({
     required this.path,
     this.size = const Size(40, 40),
     this.backgroundColor = Colors.white,
