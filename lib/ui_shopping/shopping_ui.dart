@@ -47,8 +47,7 @@ class ShoppingUI extends HookWidget {
           child: _ProductCard(shopping: shoppingList[index]),
         ),
       ),
-      bottomNavigationBar: Container(
-        padding: const EdgeInsets.only(top: 20, bottom: 30),
+      bottomNavigationBar: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: <BoxShadow>[
@@ -59,26 +58,29 @@ class ShoppingUI extends HookWidget {
             ),
           ],
         ),
-        child: Row(
-          children: bottomNavIconList.mapIndexed((index, item) {
-            return Expanded(
-              child: GestureDetector(
-                onTap: () => currentIndex.value = index,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    boxShadow: <BoxShadow>[
-                      if (index == currentIndex.value)
-                        BoxShadow(
-                          color: Colors.black12.withOpacity(.2),
-                          blurRadius: 10,
-                        ),
-                    ],
+        child: Padding(
+          padding: const EdgeInsets.only(top: 20, bottom: 30),
+          child: Row(
+            children: bottomNavIconList.mapIndexed((index, item) {
+              return Expanded(
+                child: InkWell(
+                  onTap: () => currentIndex.value = index,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      boxShadow: <BoxShadow>[
+                        if (index == currentIndex.value)
+                          BoxShadow(
+                            color: Colors.black12.withOpacity(.2),
+                            blurRadius: 10,
+                          ),
+                      ],
+                    ),
+                    child: item,
                   ),
-                  child: item,
                 ),
-              ),
-            );
-          }).toList(),
+              );
+            }).toList(),
+          ),
         ),
       ),
     );
