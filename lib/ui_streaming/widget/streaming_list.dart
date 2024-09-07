@@ -8,42 +8,40 @@ class _StreamingList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 320,
-      margin: const EdgeInsets.only(left: 65),
-      child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  'Watch more',
-                  style: GoogleFonts.mulish(fontSize: 22),
-                ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: const Color(0xFFE52020),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 65),
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    'Watch more',
+                    style: GoogleFonts.mulish(fontSize: 22),
                   ),
-                  child: const Text('View more'),
-                  onPressed: () {},
-                ),
-              ],
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: const Color(0xFFE52020),
+                    ),
+                    child: const Text('View more'),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: 250,
-            child: ListView.builder(
-              itemCount: streamingList.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (_, index) => GestureDetector(
-                onTap: () => onSelectStream?.call(streamingList[index]),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 25,
-                    horizontal: 12,
-                  ),
+            SizedBox(
+              height: 250,
+              child: ListView.separated(
+                itemCount: streamingList.length,
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.fromLTRB(12, 25, 0, 25),
+                separatorBuilder: (_, __) => const Gap(24),
+                itemBuilder: (_, index) => InkWell(
+                  onTap: () => onSelectStream?.call(streamingList[index]),
                   child: Card(
                     elevation: 10,
                     surfaceTintColor: Colors.white,
@@ -77,8 +75,8 @@ class _StreamingList extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

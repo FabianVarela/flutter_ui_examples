@@ -14,60 +14,67 @@ class _HeaderSection extends StatelessWidget {
         children: <Widget>[
           ClipPath(
             clipper: StreamingClipper(),
-            child: Container(
+            child: SizedBox(
               height: 370,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.black12,
-                    offset: Offset(0, 10),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-              child: Stack(
-                children: <Widget>[
-                  Image.asset(
-                    image,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                  Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    padding: const EdgeInsets.only(top: 100, left: 90),
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: <Color>[Color(0x00000000), Color(0xD9333333)],
-                        stops: <double>[0, 0.9],
-                        begin: FractionalOffset.topLeft,
-                        end: FractionalOffset.bottomLeft,
+              child: DecoratedBox(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Colors.black12,
+                      offset: Offset(0, 10),
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+                child: Stack(
+                  children: <Widget>[
+                    Image.asset(
+                      image,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity,
+                    ),
+                    SizedBox.expand(
+                      child: DecoratedBox(
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: <Color>[
+                              Color(0x00000000),
+                              Color(0xD9333333),
+                            ],
+                            stops: <double>[0, 0.9],
+                            begin: FractionalOffset.topLeft,
+                            end: FractionalOffset.bottomLeft,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 100, left: 90),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'WATCH BEFORE EVERYONE',
+                                style: GoogleFonts.mulish(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                ),
+                              ),
+                              Text(
+                                title,
+                                style: GoogleFonts.mulish(
+                                  color: Colors.white,
+                                  fontSize: 35,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          'WATCH BEFORE EVERYONE',
-                          style: GoogleFonts.mulish(
-                            color: Colors.white,
-                            fontSize: 15,
-                          ),
-                        ),
-                        Text(
-                          title,
-                          style: GoogleFonts.mulish(
-                            color: Colors.white,
-                            fontSize: 35,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
@@ -84,27 +91,25 @@ class _HeaderSection extends StatelessWidget {
                     onPressed: () {},
                   ),
                   const Gap(12),
-                  Directionality(
-                    textDirection: TextDirection.rtl,
-                    child: ElevatedButton.icon(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFE52020),
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 15,
-                          horizontal: 80,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
+                  ElevatedButton.icon(
+                    onPressed: () {},
+                    iconAlignment: IconAlignment.end,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFE52020),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 15,
+                        horizontal: 80,
                       ),
-                      icon: const Icon(Icons.arrow_back, color: Colors.white),
-                      label: Text(
-                        'Watch now',
-                        style: GoogleFonts.mulish(
-                          color: Colors.white,
-                          fontSize: 15,
-                        ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    icon: const Icon(Icons.arrow_forward, color: Colors.white),
+                    label: Text(
+                      'Watch now',
+                      style: GoogleFonts.mulish(
+                        color: Colors.white,
+                        fontSize: 15,
                       ),
                     ),
                   ),

@@ -53,7 +53,7 @@ class StreamingUI extends HookWidget {
         unselectedLabelStyle: GoogleFonts.mulish(),
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Color(0xFFE52020)),
+            icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
