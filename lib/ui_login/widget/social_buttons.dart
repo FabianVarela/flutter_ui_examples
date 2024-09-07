@@ -88,7 +88,7 @@ class _SocialIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        overlayColor: Colors.white,
+        overlayColor: Colors.black,
         minimumSize: const Size(45, 45),
         padding: const EdgeInsets.all(8),
         shape: const CircleBorder(),

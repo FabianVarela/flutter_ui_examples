@@ -48,10 +48,9 @@ class _SignInButtons extends HookWidget {
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
+            overlayColor: Colors.black,
             foregroundColor: Colors.white,
             disabledForegroundColor: Colors.white60,
-            shadowColor: const Color(0xFF6078EA).withOpacity(.3),
-            overlayColor: Colors.white,
             minimumSize: const Size(200, 60),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(6),
@@ -62,6 +61,7 @@ class _SignInButtons extends HookWidget {
 
               return Ink(
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
                   gradient: LinearGradient(
                     colors: <Color>[
                       const Color(0xFF17EAD9).withOpacity(opacity),
