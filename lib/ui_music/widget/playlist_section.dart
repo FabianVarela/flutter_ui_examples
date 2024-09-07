@@ -8,9 +8,8 @@ class _PlaylistSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: SizedBox(
-        width: double.infinity,
-        height: 250,
+      child: SizedBox.fromSize(
+        size: const Size(double.infinity, 250),
         child: Stack(
           children: <Widget>[
             const _PaintedPositioned(position: _PaintedPosition.left),
@@ -90,20 +89,21 @@ class _PaintedPositioned extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final container = Container(
-      width: 50,
-      height: 250,
-      decoration: BoxDecoration(
-        color: const Color(0xFF4B9AD5),
-        borderRadius: position == _PaintedPosition.left
-            ? const BorderRadius.only(
-                topRight: Radius.circular(30),
-                bottomRight: Radius.circular(30),
-              )
-            : const BorderRadius.only(
-                topLeft: Radius.circular(30),
-                bottomLeft: Radius.circular(30),
-              ),
+    final container = SizedBox.fromSize(
+      size: const Size(50, 250),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: const Color(0xFF4B9AD5),
+          borderRadius: position == _PaintedPosition.left
+              ? const BorderRadius.only(
+                  topRight: Radius.circular(30),
+                  bottomRight: Radius.circular(30),
+                )
+              : const BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  bottomLeft: Radius.circular(30),
+                ),
+        ),
       ),
     );
 

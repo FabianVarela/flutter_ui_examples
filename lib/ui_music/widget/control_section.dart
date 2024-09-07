@@ -5,45 +5,45 @@ class _ControlSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 350,
-      height: 110,
+    final controlIcons = <IconData>[Icons.fast_rewind, Icons.fast_forward];
+
+    return SizedBox.fromSize(
+      size: const Size(350, 110),
       child: Stack(
         children: <Widget>[
           Center(
             child: Container(
               width: 290,
               height: 65,
-              padding: const EdgeInsets.symmetric(horizontal: 25),
               decoration: BoxDecoration(
                 border: Border.all(color: const Color(0xFF4B9AD5), width: 3),
                 borderRadius: BorderRadius.circular(40),
               ),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Icon(Icons.fast_rewind, size: 55, color: Color(0xFF4B9AD5)),
-                  Icon(Icons.fast_forward, size: 55, color: Color(0xFF4B9AD5)),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    for (final icon in controlIcons)
+                      Icon(icon, size: 55, color: const Color(0xFF4B9AD5)),
+                  ],
+                ),
               ),
             ),
           ),
           Align(
-            child: Container(
-              width: 92,
-              height: 92,
-              decoration: const BoxDecoration(
-                color: Color(0xFF4B9AD5),
-                shape: BoxShape.circle,
+            child: IconButton(
+              style: IconButton.styleFrom(
+                minimumSize: const Size(92, 92),
+                shape: const CircleBorder(),
+                backgroundColor: const Color(0xFF4B9AD5),
               ),
-              child: IconButton(
-                icon: const Icon(
-                  Icons.play_arrow,
-                  size: 45,
-                  color: Colors.white,
-                ),
-                onPressed: () {},
+              icon: const Icon(
+                Icons.play_arrow,
+                size: 45,
+                color: Colors.white,
               ),
+              onPressed: () {},
             ),
           ),
         ],
