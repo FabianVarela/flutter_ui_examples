@@ -13,6 +13,9 @@ class FontFamily {
   /// Font family: AvenirLTStd
   static const String avenirLTStd = 'AvenirLTStd';
 
+  /// Font family: MuseoSansCyrl
+  static const String museoSansCyrl = 'MuseoSansCyrl';
+
   /// Font family: PoetsenOne
   static const String poetsenOne = 'PoetsenOne';
 
