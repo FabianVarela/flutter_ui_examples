@@ -101,25 +101,28 @@ class FurnitureUI extends HookWidget {
           ),
         ],
       ),
-      floatingActionButton: SizedBox.fromSize(
-        size: const Size(65, 65),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: const Color(0x0FFA7B58),
-            shape: BoxShape.circle,
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: const Color(0xFFF78A6C).withOpacity(.8),
-                blurRadius: 10,
-              ),
-            ],
-          ),
-          child: RawMaterialButton(
-            onPressed: () {},
-            shape: const CircleBorder(),
-            child: const Icon(Icons.add, size: 35, color: Colors.white),
+      floatingActionButton: TextButton(
+        clipBehavior: Clip.none,
+        style: TextButton.styleFrom(
+          overlayColor: Colors.black,
+          minimumSize: const Size(65, 65),
+          shape: const CircleBorder(),
+          backgroundBuilder: (_, __, child) => DecoratedBox(
+            decoration: BoxDecoration(
+              color: const Color(0x0FFA7B58),
+              shape: BoxShape.circle,
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  color: const Color(0xFFF78A6C).withOpacity(.8),
+                  blurRadius: 10,
+                ),
+              ],
+            ),
+            child: child,
           ),
         ),
+        onPressed: () {},
+        child: const Icon(Icons.add, size: 35, color: Colors.white),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
