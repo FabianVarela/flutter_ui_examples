@@ -26,22 +26,20 @@ class _ColorListSection extends HookWidget {
         Container(
           width: double.infinity,
           height: 34,
-          margin: const EdgeInsets.only(left: 20, bottom: 20),
+          margin: const EdgeInsets.only(left: 30, bottom: 20),
           child: Row(
             children: <Widget>[
-              for (var i = 0; i < colors.length; i++)
-                GestureDetector(
-                  onTap: () => currentColor.value = i,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Container(
-                      width: 30,
-                      height: 30,
+              for (final (index, color) in colors.indexed) ...[
+                InkWell(
+                  onTap: () => currentColor.value = index,
+                  child: SizedBox.fromSize(
+                    size: const Size(30, 30),
+                    child: DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(5),
                         boxShadow: <BoxShadow>[
-                          if (currentColor.value == i)
+                          if (currentColor.value == index)
                             BoxShadow(
                               color: Colors.black.withOpacity(.8),
                               blurRadius: 10,
@@ -54,12 +52,14 @@ class _ColorListSection extends HookWidget {
                         child: Container(
                           width: double.infinity,
                           height: double.infinity,
-                          color: colors[i],
+                          color: color,
                         ),
                       ),
                     ),
                   ),
                 ),
+                if (index <= colors.length - 1) const Gap(10),
+              ],
             ],
           ),
         ),

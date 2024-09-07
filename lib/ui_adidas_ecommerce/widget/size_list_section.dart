@@ -12,38 +12,35 @@ class _SizeSection extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(bottom: 8),
-          child: Text(
-            'Size',
-            style: GoogleFonts.montserrat(
-              color: const Color(0xFF949598),
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
+        Text(
+          'Size',
+          style: GoogleFonts.montserrat(
+            color: const Color(0xFF949598),
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
           ),
         ),
+        const Gap(8),
         SizedBox(
           height: 38,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              for (var i = 0; i < sizes.length; i++)
-                GestureDetector(
-                  onTap: () => currentSize.value = i,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 12),
-                    child: Container(
-                      width: 40,
-                      height: 40,
+              const Gap(12),
+              for (final (index, size) in sizes.indexed) ...[
+                InkWell(
+                  onTap: () => currentSize.value = index,
+                  child: SizedBox.fromSize(
+                    size: const Size(40, 40),
+                    child: DecoratedBox(
                       decoration: BoxDecoration(
-                        color: i == currentSize.value
+                        color: index == currentSize.value
                             ? const Color(0xFFFC3930)
                             : const Color(0xFF525663),
                         borderRadius: BorderRadius.circular(5),
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                            color: i == currentSize.value
+                            color: index == currentSize.value
                                 ? Colors.black.withOpacity(.5)
                                 : Colors.black12,
                             offset: const Offset(0, 10),
@@ -53,7 +50,7 @@ class _SizeSection extends HookWidget {
                       ),
                       child: Center(
                         child: Text(
-                          '${sizes[i]}',
+                          '$size',
                           style: GoogleFonts.montserrat(
                             color: Colors.white,
                             fontWeight: FontWeight.w900,
@@ -63,6 +60,8 @@ class _SizeSection extends HookWidget {
                     ),
                   ),
                 ),
+                if (index <= sizes.length - 1) const Gap(10),
+              ],
             ],
           ),
         ),

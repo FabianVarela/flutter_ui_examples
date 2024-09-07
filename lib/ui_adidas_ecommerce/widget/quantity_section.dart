@@ -10,17 +10,15 @@ class _QuantitySection extends HookWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(bottom: 12),
-          child: Text(
-            'Quantity',
-            style: GoogleFonts.montserrat(
-              color: const Color(0xFF949598),
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
+        Text(
+          'Quantity',
+          style: GoogleFonts.montserrat(
+            color: const Color(0xFF949598),
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
           ),
         ),
+        const Gap(12),
         Container(
           height: 40,
           margin: const EdgeInsets.only(left: 12),
