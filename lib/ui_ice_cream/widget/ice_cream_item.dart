@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
 import 'package:gap/gap.dart';
 
@@ -39,6 +40,7 @@ class IceCreamItem extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         color: foreground,
+                        fontFamily: FontFamily.museoSansCyrl,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
@@ -51,6 +53,7 @@ class IceCreamItem extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 18,
                               color: Color(0xFFFFFFFF),
+                              fontFamily: FontFamily.museoSansCyrl,
                               fontWeight: FontWeight.w600,
                             ),
                           ),

@@ -57,6 +57,7 @@ class IceCreamUI extends HookWidget {
                   style: TextStyle(
                     fontSize: 20,
                     color: Color(0xFFFFFFFF),
+                    fontFamily: FontFamily.museoSansCyrl,
                     fontWeight: FontWeight.w600,
                   ),
                 ),

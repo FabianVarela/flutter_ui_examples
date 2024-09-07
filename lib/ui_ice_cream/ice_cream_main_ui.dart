@@ -62,8 +62,13 @@ class _Header extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: RichText(
               text: const TextSpan(
-                text: '\t\t\t\tTHE WORLD OF\n',
-                style: TextStyle(fontSize: 16, color: Colors.white),
+                text: '\t\t\t\t\tTHE WORLD OF\n',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                  fontFamily: FontFamily.museoSansCyrl,
+                  fontWeight: FontWeight.w300,
+                ),
                 children: <TextSpan>[
                   TextSpan(
                     text: 'yummm',
@@ -149,10 +154,11 @@ class _Options extends HookWidget {
             Text(
               optionList[index].text,
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 14,
                 color: currentIndex.value == index
                     ? const Color(0xFFF01359)
                     : Colors.grey,
+                fontFamily: FontFamily.museoSansCyrl,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -177,6 +183,7 @@ class _Popular extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             color: Color(0xFFF01359),
+            fontFamily: FontFamily.museoSansCyrl,
             fontWeight: FontWeight.w600,
           ),
         ),
