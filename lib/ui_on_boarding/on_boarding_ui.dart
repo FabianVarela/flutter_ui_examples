@@ -47,9 +47,9 @@ class OnBoardingUI extends HookWidget {
 
                   if (currentPage.value == pageList.length - 1) {
                     isLastPage.value = true;
-                    animController.forward();
+                    animController.forward().orCancel;
                   } else {
-                    animController.reverse();
+                    animController.reverse().orCancel;
                     Future.delayed(const Duration(milliseconds: 300), () {
                       isLastPage.value = false;
                     });
