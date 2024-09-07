@@ -12,16 +12,14 @@ class _SignInButtons extends HookWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(left: 12),
-          child: GestureDetector(
-            onTap: () => isSelected.value = !isSelected.value,
-            child: Row(
-              children: <Widget>[
-                Container(
-                  width: 16,
-                  height: 16,
-                  padding: const EdgeInsets.all(2),
+        const Gap(0),
+        GestureDetector(
+          onTap: () => isSelected.value = !isSelected.value,
+          child: Row(
+            children: <Widget>[
+              SizedBox.fromSize(
+                size: const Size(16, 16),
+                child: DecoratedBox(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(width: 2),
@@ -31,6 +29,7 @@ class _SignInButtons extends HookWidget {
                     child: Container(
                       width: double.infinity,
                       height: double.infinity,
+                      margin: const EdgeInsets.all(4),
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.black,
@@ -38,48 +37,46 @@ class _SignInButtons extends HookWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Text(
-                    'Remember me',
-                    style: GoogleFonts.mulish(fontSize: 12),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        DecoratedBox(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(6),
-            gradient: const LinearGradient(
-              colors: <Color>[Color(0xFF17EAD9), Color(0xFF6078EA)],
-            ),
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                color: const Color(0xFF6078EA).withOpacity(.3),
-                offset: const Offset(0, 8),
-                blurRadius: 8,
+              ),
+              const Gap(8),
+              Text(
+                'Remember me',
+                style: GoogleFonts.mulish(fontSize: 12),
               ),
             ],
           ),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              disabledForegroundColor: Colors.transparent,
-              disabledBackgroundColor: Colors.transparent,
-              shadowColor: Colors.transparent,
-              minimumSize: const Size(200, 60),
+        ),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            foregroundColor: Colors.white,
+            disabledForegroundColor: Colors.white60,
+            shadowColor: const Color(0xFF6078EA).withOpacity(.3),
+            overlayColor: Colors.white,
+            minimumSize: const Size(200, 60),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
             ),
-            onPressed: onSignIn,
-            child: Text(
-              'Sign In',
-              style: GoogleFonts.mulish(
-                color: Colors.white,
-                fontSize: 18,
-                letterSpacing: 1,
-              ),
-            ),
+            backgroundBuilder: (_, state, child) {
+              var opacity = 1.0;
+              if (state.contains(WidgetState.disabled)) opacity = .6;
+
+              return Ink(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: <Color>[
+                      const Color(0xFF17EAD9).withOpacity(opacity),
+                      const Color(0xFF6078EA).withOpacity(opacity),
+                    ],
+                  ),
+                ),
+                child: child,
+              );
+            },
+          ),
+          onPressed: onSignIn,
+          child: Text(
+            'Sign In',
+            style: GoogleFonts.mulish(fontSize: 18, letterSpacing: 1),
           ),
         ),
       ],

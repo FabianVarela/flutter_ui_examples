@@ -5,7 +5,6 @@ class _SocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Assets.images.login.facebook.svg();
     final socialIconList = <({SvgGenImage icon, List<Color> colors})>[
       (
         icon: Assets.images.login.facebook,
@@ -58,18 +57,16 @@ class _SocialButtons extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: socialIconList.map((socialIcon) {
-            return _SocialIcons(
-              colors: socialIcon.colors,
-              icon: socialIcon.icon.svg(
-                colorFilter: const ColorFilter.mode(
-                  Colors.white,
-                  BlendMode.srcIn,
-                ),
+          children: <Widget>[
+            for (final (index, item) in socialIconList.indexed) ...[
+              _SocialIcons(
+                colors: item.colors,
+                iconPath: item.icon.path,
+                onPressed: () {},
               ),
-              onPressed: () {},
-            );
-          }).toList(),
+              if (index <= socialIconList.length - 1) const Gap(14),
+            ],
+          ],
         ),
       ],
     );
@@ -79,31 +76,43 @@ class _SocialButtons extends StatelessWidget {
 class _SocialIcons extends StatelessWidget {
   const _SocialIcons({
     required this.colors,
-    required this.icon,
+    required this.iconPath,
     required this.onPressed,
   });
 
   final List<Color> colors;
-  final Widget icon;
-  final VoidCallback onPressed;
+  final String iconPath;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 14),
-      child: SizedBox.fromSize(
-        size: const Size(45, 45),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: LinearGradient(colors: colors),
-          ),
-          child: RawMaterialButton(
-            padding: const EdgeInsets.all(8),
-            shape: const CircleBorder(),
-            onPressed: onPressed,
-            child: icon,
-          ),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        overlayColor: Colors.white,
+        minimumSize: const Size(45, 45),
+        padding: const EdgeInsets.all(8),
+        shape: const CircleBorder(),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        backgroundBuilder: (_, state, child) {
+          var opacity = 1.0;
+          if (state.contains(WidgetState.disabled)) opacity = .6;
+
+          return Ink(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: colors.map((e) => e.withOpacity(opacity)).toList(),
+              ),
+            ),
+            child: child,
+          );
+        },
+      ),
+      onPressed: onPressed,
+      child: SvgPicture.asset(
+        iconPath,
+        colorFilter: ColorFilter.mode(
+          onPressed != null ? Colors.white : Colors.white70,
+          BlendMode.srcIn,
         ),
       ),
     );
