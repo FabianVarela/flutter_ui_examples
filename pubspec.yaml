@@ -63,3 +63,9 @@ flutter:
     - family: Ritts
       fonts:
         - asset: assets/fonts/Ritts/Ritts-Cursive.ttf
+    - family: MuseoSansCyrl
+      fonts:
+        - asset: assets/fonts/MuseoSansCyrl/Museo-Sans-Cyrl-300.ttf
+          weight: 300
+        - asset: assets/fonts/MuseoSansCyrl/Museo-Sans-Cyrl-700.ttf
+          weight: 700
