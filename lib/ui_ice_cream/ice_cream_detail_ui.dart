@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_button.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
 import 'package:gap/gap.dart';
 
@@ -57,6 +58,7 @@ class IceCreamDetailUI extends HookWidget {
               const Gap(10),
               _IceCreamTotal(totalValue: totalValue.value),
               const Gap(20),
+              IceCreamButton(onPressed: () {}),
             ],
           ),
         ),
