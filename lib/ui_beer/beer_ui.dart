@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
-import 'package:flutter_ui_examples/ui_beer/widget/my_clipper.dart';
+import 'package:flutter_ui_examples/ui_beer/widget/clipper/my_clipper.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -105,9 +105,9 @@ class BeerUI extends HookWidget {
                     controller: bottlePageController,
                     onPageChanged: (index) => currentIndex.value = index,
                     itemBuilder: (_, index) => BeerBottleItem(
-                      index: index,
                       beer: beers[index],
-                      controller: bottlePageController,
+                      pageController: bottlePageController,
+                      index: index,
                     ),
                   ),
                 ),
