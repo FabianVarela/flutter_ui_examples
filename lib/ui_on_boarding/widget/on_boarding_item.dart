@@ -19,13 +19,12 @@ class _OnboardingItem extends StatelessWidget {
         AnimatedBuilder(
           animation: pageController,
           builder: (_, __) {
-            double delta;
-            var y = 1.0;
-
+            var delta = 1.0;
             if (pageController.position.haveDimensions) {
-              delta = (pageController.page ?? 0) - index;
-              y = 1 - delta.abs().clamp(0.0, 1.0);
+              final resultPage = (pageController.page ?? 0) - index;
+              delta = 1 - resultPage.abs().clamp(0.0, 1.0);
             }
+            final yValue = 50 * (1 - delta);
 
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -68,7 +67,7 @@ class _OnboardingItem extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 12, left: 34),
                   child: Transform(
-                    transform: Matrix4.translationValues(0, 50 * (1 - y), 0),
+                    transform: Matrix4.translationValues(0, yValue, 0),
                     child: Text(
                       pageModel.body,
                       style: GoogleFonts.montserrat(
