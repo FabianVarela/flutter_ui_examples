@@ -5,6 +5,7 @@ import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_button.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
+import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_quantity.dart';
 import 'package:gap/gap.dart';
 
 class IceCreamDetailArguments {
@@ -20,14 +21,16 @@ class IceCreamDetailUI extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final totalValue = useState<double>(0);
+    final quantity = useState(1);
+    final totalValue = useState<double>(iceCream.price);
 
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: SingleChildScrollView(
+        child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Row(
@@ -46,18 +49,22 @@ class IceCreamDetailUI extends HookWidget {
                   ),
                 ],
               ),
-              const Gap(20),
               _IceCreamName(name: iceCream.name),
-              const Gap(10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   _IceCreamDescription(iceCream: iceCream),
+                  IceCreamQuantity(
+                    iceCream: iceCream,
+                    currentQuantity: quantity.value,
+                    onChanged: (value) {
+                      quantity.value = value;
+                      totalValue.value = iceCream.price * value;
+                    },
+                  ),
                 ],
               ),
-              const Gap(10),
               _IceCreamTotal(totalValue: totalValue.value),
-              const Gap(20),
               IceCreamButton(onPressed: () {}),
             ],
           ),

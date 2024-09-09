@@ -86,6 +86,7 @@ class IceCreamItem extends StatelessWidget {
               size: const Size(130, 130),
               child: Hero(
                 tag: '${iceCream.name}_${iceCream.rate}',
+                transitionOnUserGestures: true,
                 child: Image.asset(iceCream.image, fit: BoxFit.contain),
               ),
             ),
