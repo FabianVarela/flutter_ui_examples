@@ -43,35 +43,57 @@ class _BeerHeaderState extends State<BeerHeader> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.only(top: 130, left: 40, right: 20),
-          child: AnimatedDefaultTextStyle(
-            curve: Curves.fastOutSlowIn,
-            duration: const Duration(seconds: 1),
-            style: GoogleFonts.montserrat(
-              fontSize: 30,
-              fontWeight: FontWeight.w700,
-              color: beers[widget.index].textColor,
+    final width = MediaQuery.sizeOf(context).width;
+    final height = MediaQuery.sizeOf(context).height;
+
+    return ClipPath(
+      clipper: MyClipper(),
+      child: AnimatedContainer(
+        curve: Curves.fastOutSlowIn,
+        duration: const Duration(seconds: 1),
+        width: width,
+        height: height * .53,
+        decoration: BoxDecoration(
+          color: beers[_imageIndex].color,
+          boxShadow: const <BoxShadow>[
+            BoxShadow(
+              color: Colors.black12,
+              offset: Offset(0, 10),
+              blurRadius: 10,
             ),
-            child: const Text('Grab\nyour\nbeer.'),
-          ),
+          ],
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: FractionalTranslation(
-            translation: const Offset(0, .25),
-            child: SlideTransition(
-              position: _animation,
-              child: Opacity(
-                opacity: .15,
-                child: Image.asset(beers[_imageIndex].backImage),
+        child: Stack(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 130, left: 40, right: 20),
+              child: AnimatedDefaultTextStyle(
+                curve: Curves.fastOutSlowIn,
+                duration: const Duration(seconds: 1),
+                style: GoogleFonts.montserrat(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700,
+                  color: beers[_imageIndex].textColor,
+                ),
+                child: const Text('Grab\nyour\nbeer.'),
               ),
             ),
-          ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: FractionalTranslation(
+                translation: const Offset(0, .25),
+                child: SlideTransition(
+                  position: _animation,
+                  child: Opacity(
+                    opacity: .15,
+                    child: Image.asset(beers[_imageIndex].backImage),
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

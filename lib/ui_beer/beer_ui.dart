@@ -21,7 +21,6 @@ class BeerUI extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.sizeOf(context).width;
-    final height = MediaQuery.sizeOf(context).height;
 
     final currentIndex = useState(0);
     final bottlePageController = usePageController(viewportFraction: .5);
@@ -74,25 +73,10 @@ class BeerUI extends HookWidget {
       body: Stack(
         clipBehavior: Clip.none,
         children: <Widget>[
-          ClipPath(
-            clipper: MyClipper(),
-            child: AnimatedContainer(
-              curve: Curves.fastOutSlowIn,
-              duration: const Duration(seconds: 1),
-              width: width,
-              height: height * .53,
-              decoration: BoxDecoration(
-                color: beers[currentIndex.value].color,
-                boxShadow: const <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.black12,
-                    offset: Offset(0, 10),
-                    blurRadius: 10,
-                  ),
-                ],
-              ),
-              child: BeerHeader(index: currentIndex.value),
-            ),
+          Hero(
+            tag: '${beers[currentIndex.value].name}_tag',
+            transitionOnUserGestures: true,
+            child: BeerHeader(index: currentIndex.value),
           ),
           const SizedBox.expand(),
           Positioned.fill(
