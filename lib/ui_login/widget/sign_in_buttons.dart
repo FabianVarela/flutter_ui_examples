@@ -64,8 +64,8 @@ class _SignInButtons extends HookWidget {
                   borderRadius: BorderRadius.circular(6),
                   gradient: LinearGradient(
                     colors: <Color>[
-                      const Color(0xFF17EAD9).withOpacity(opacity),
-                      const Color(0xFF6078EA).withOpacity(opacity),
+                      const Color(0xFF17EAD9).withValues(alpha: opacity),
+                      const Color(0xFF6078EA).withValues(alpha: opacity),
                     ],
                   ),
                 ),

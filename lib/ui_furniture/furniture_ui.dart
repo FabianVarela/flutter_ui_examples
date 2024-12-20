@@ -113,7 +113,7 @@ class FurnitureUI extends HookWidget {
               shape: BoxShape.circle,
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: const Color(0xFFF78A6C).withOpacity(.8),
+                  color: const Color(0xFFF78A6C).withValues(alpha: .8),
                   blurRadius: 10,
                 ),
               ],

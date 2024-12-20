@@ -30,8 +30,8 @@ class IceCreamIconButton extends StatelessWidget {
         shadowColor: Colors.black26,
         backgroundColor: backgroundColor,
         foregroundColor: foregroundColor,
-        disabledBackgroundColor: backgroundColor.withOpacity(.7),
-        disabledForegroundColor: foregroundColor.withOpacity(.7),
+        disabledBackgroundColor: backgroundColor.withValues(alpha: .7),
+        disabledForegroundColor: foregroundColor.withValues(alpha: .7),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -39,7 +39,9 @@ class IceCreamIconButton extends StatelessWidget {
       icon: SvgPicture.asset(
         path,
         colorFilter: ColorFilter.mode(
-          onPress == null ? foregroundColor.withOpacity(.5) : foregroundColor,
+          onPress == null
+              ? foregroundColor.withValues(alpha: .5)
+              : foregroundColor,
           BlendMode.srcIn,
         ),
       ),

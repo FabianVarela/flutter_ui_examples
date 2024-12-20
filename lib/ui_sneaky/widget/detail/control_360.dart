@@ -1,3 +1,4 @@
+// This is a private part with default value.
 // ignore_for_file: unused_element
 
 part of '../../sneaky_detail_ui.dart';

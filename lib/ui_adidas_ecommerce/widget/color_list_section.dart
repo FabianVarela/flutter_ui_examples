@@ -41,7 +41,7 @@ class _ColorListSection extends HookWidget {
                         boxShadow: <BoxShadow>[
                           if (currentColor.value == index)
                             BoxShadow(
-                              color: Colors.black.withOpacity(.8),
+                              color: Colors.black.withValues(alpha: .8),
                               blurRadius: 10,
                               offset: const Offset(0, 10),
                             ),

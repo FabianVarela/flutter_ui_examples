@@ -18,7 +18,7 @@ class IceCreamButton extends StatelessWidget {
         foregroundColor: Colors.white,
         disabledForegroundColor: Colors.white60,
         backgroundColor: const Color(0xFFF11359),
-        disabledBackgroundColor: const Color(0xFFF11359).withOpacity(.6),
+        disabledBackgroundColor: const Color(0xFFF11359).withValues(alpha: .6),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),

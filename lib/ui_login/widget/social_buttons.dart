@@ -35,7 +35,7 @@ class _SocialButtons extends StatelessWidget {
                 width: 85,
                 child: Divider(
                   height: 1,
-                  color: Colors.black26.withOpacity(.2),
+                  color: Colors.black26.withValues(alpha: .2),
                 ),
               ),
               Padding(
@@ -49,7 +49,7 @@ class _SocialButtons extends StatelessWidget {
                 width: 85,
                 child: Divider(
                   height: 1,
-                  color: Colors.black26.withOpacity(.2),
+                  color: Colors.black26.withValues(alpha: .2),
                 ),
               ),
             ],
@@ -100,7 +100,9 @@ class _SocialIcons extends StatelessWidget {
           return Ink(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: colors.map((e) => e.withOpacity(opacity)).toList(),
+                colors: colors.map((e) {
+                  return e.withValues(alpha: opacity);
+                }).toList(),
               ),
             ),
             child: child,

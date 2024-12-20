@@ -17,7 +17,7 @@ class _CurrentSongSection extends HookWidget {
             size: const Size(250, 250),
             child: DecoratedBox(
               decoration: BoxDecoration(
-                color: const Color(0xFF4B9AD5).withOpacity(.5),
+                color: const Color(0xFF4B9AD5).withValues(alpha: .5),
                 shape: BoxShape.circle,
               ),
               child: Padding(
@@ -26,7 +26,7 @@ class _CurrentSongSection extends HookWidget {
                   width: double.infinity,
                   height: double.infinity,
                   progressColor: const Color(0xFF4B9AD5),
-                  trackColor: Colors.blue.withOpacity(.5),
+                  trackColor: Colors.blue.withValues(alpha: .5),
                   barWidth: 5,
                   progress: currentPercent.value,
                   innerThumbRadius: 10,
@@ -62,7 +62,7 @@ class _CurrentSongSection extends HookWidget {
             Text(
               music.song,
               style: GoogleFonts.mulish(
-                color: const Color(0xFF4B9AD5).withOpacity(.5),
+                color: const Color(0xFF4B9AD5).withValues(alpha: .5),
                 fontSize: 18,
               ),
             ),

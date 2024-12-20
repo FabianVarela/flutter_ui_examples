@@ -63,7 +63,7 @@ class _SizeItem extends StatelessWidget {
                 ),
               )
             : BoxDecoration(
-                color: Colors.grey.withOpacity(.3),
+                color: Colors.grey.withValues(alpha: .3),
                 borderRadius: BorderRadius.circular(10),
               ),
         child: Text(

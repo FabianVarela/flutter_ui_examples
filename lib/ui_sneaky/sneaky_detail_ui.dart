@@ -36,7 +36,7 @@ class SneakyDetailUI extends HookWidget {
     final isDisableScroll = useState(false);
 
     return Scaffold(
-      backgroundColor: Colors.white.withOpacity(.9),
+      backgroundColor: Colors.white.withValues(alpha: .9),
       body: SafeArea(
         child: Stack(
           children: <Widget>[

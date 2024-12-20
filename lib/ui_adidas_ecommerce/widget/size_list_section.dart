@@ -41,7 +41,7 @@ class _SizeSection extends HookWidget {
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                             color: index == currentSize.value
-                                ? Colors.black.withOpacity(.5)
+                                ? Colors.black.withValues(alpha: .5)
                                 : Colors.black12,
                             offset: const Offset(0, 10),
                             blurRadius: 10,

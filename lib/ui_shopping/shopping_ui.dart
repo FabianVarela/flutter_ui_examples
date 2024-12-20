@@ -52,7 +52,7 @@ class ShoppingUI extends HookWidget {
           color: Colors.white,
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: Colors.black12.withOpacity(0.065),
+              color: Colors.black12.withValues(alpha: 0.065),
               offset: const Offset(0, -3),
               blurRadius: 10,
             ),
@@ -70,7 +70,7 @@ class ShoppingUI extends HookWidget {
                       boxShadow: <BoxShadow>[
                         if (index == currentIndex.value)
                           BoxShadow(
-                            color: Colors.black12.withOpacity(.2),
+                            color: Colors.black12.withValues(alpha: .2),
                             blurRadius: 10,
                           ),
                       ],

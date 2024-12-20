@@ -13,7 +13,10 @@ class _ProductCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: shopping.color,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: Colors.grey.withOpacity(.3), width: .2),
+          border: Border.all(
+            color: Colors.grey.withValues(alpha: .3),
+            width: .2,
+          ),
         ),
         child: Column(
           children: <Widget>[
