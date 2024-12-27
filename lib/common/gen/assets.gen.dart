@@ -7,10 +7,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart' as _svg;
-import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
@@ -50,6 +47,25 @@ class $AssetsImagesGen {
   $AssetsImagesStreamingGen get streaming => const $AssetsImagesStreamingGen();
 }
 
+class $AssetsSvgGen {
+  const $AssetsSvgGen();
+
+  /// Directory path: assets/svg/furniture
+  $AssetsSvgFurnitureGen get furniture => const $AssetsSvgFurnitureGen();
+
+  /// Directory path: assets/svg/ice_cream
+  $AssetsSvgIceCreamGen get iceCream => const $AssetsSvgIceCreamGen();
+
+  /// Directory path: assets/svg/login
+  $AssetsSvgLoginGen get login => const $AssetsSvgLoginGen();
+
+  /// Directory path: assets/svg/shopping
+  $AssetsSvgShoppingGen get shopping => const $AssetsSvgShoppingGen();
+
+  /// Directory path: assets/svg/story
+  $AssetsSvgStoryGen get story => const $AssetsSvgStoryGen();
+}
+
 class $AssetsImagesAdidasGen {
   const $AssetsImagesAdidasGen();
 
@@ -82,6 +98,10 @@ class $AssetsImagesBeerGen {
   /// File path: assets/images/beer/aguila_small_logo.png
   AssetGenImage get aguilaSmallLogo =>
       const AssetGenImage('assets/images/beer/aguila_small_logo.png');
+
+  /// File path: assets/images/beer/basket.png
+  AssetGenImage get basket =>
+      const AssetGenImage('assets/images/beer/basket.png');
 
   /// File path: assets/images/beer/budweiser.png
   AssetGenImage get budweiser =>
@@ -140,6 +160,7 @@ class $AssetsImagesBeerGen {
         aguila,
         aguilaBackLogo,
         aguilaSmallLogo,
+        basket,
         budweiser,
         budweiserBackLogo,
         budweiserSmallLogo,
@@ -163,13 +184,6 @@ class $AssetsImagesFurnitureGen {
   AssetGenImage get hemes =>
       const AssetGenImage('assets/images/furniture/hemes.png');
 
-  /// File path: assets/images/furniture/menu.svg
-  SvgGenImage get menu => const SvgGenImage('assets/images/furniture/menu.svg');
-
-  /// File path: assets/images/furniture/search.svg
-  SvgGenImage get search =>
-      const SvgGenImage('assets/images/furniture/search.svg');
-
   /// File path: assets/images/furniture/sofa.png
   AssetGenImage get sofa =>
       const AssetGenImage('assets/images/furniture/sofa.png');
@@ -179,33 +193,11 @@ class $AssetsImagesFurnitureGen {
       const AssetGenImage('assets/images/furniture/wooden.png');
 
   /// List of all assets
-  List<dynamic> get values => [hemes, menu, search, sofa, wooden];
+  List<AssetGenImage> get values => [hemes, sofa, wooden];
 }
 
 class $AssetsImagesIceCreamGen {
   const $AssetsImagesIceCreamGen();
-
-  /// File path: assets/images/ice_cream/arrow_left.svg
-  SvgGenImage get arrowLeft =>
-      const SvgGenImage('assets/images/ice_cream/arrow_left.svg');
-
-  /// File path: assets/images/ice_cream/arrow_right.svg
-  SvgGenImage get arrowRight =>
-      const SvgGenImage('assets/images/ice_cream/arrow_right.svg');
-
-  /// File path: assets/images/ice_cream/bag.svg
-  SvgGenImage get bag => const SvgGenImage('assets/images/ice_cream/bag.svg');
-
-  /// File path: assets/images/ice_cream/bowl_cream.svg
-  SvgGenImage get bowlCream =>
-      const SvgGenImage('assets/images/ice_cream/bowl_cream.svg');
-
-  /// File path: assets/images/ice_cream/dots.svg
-  SvgGenImage get dots => const SvgGenImage('assets/images/ice_cream/dots.svg');
-
-  /// File path: assets/images/ice_cream/ice_cream.svg
-  SvgGenImage get iceCream =>
-      const SvgGenImage('assets/images/ice_cream/ice_cream.svg');
 
   /// File path: assets/images/ice_cream/ice_cream_chocolate.png
   AssetGenImage get iceCreamChocolate =>
@@ -223,48 +215,13 @@ class $AssetsImagesIceCreamGen {
   AssetGenImage get iceCreamStraw =>
       const AssetGenImage('assets/images/ice_cream/ice_cream_straw.png');
 
-  /// File path: assets/images/ice_cream/palette.svg
-  SvgGenImage get palette =>
-      const SvgGenImage('assets/images/ice_cream/palette.svg');
-
-  /// File path: assets/images/ice_cream/search.svg
-  SvgGenImage get search =>
-      const SvgGenImage('assets/images/ice_cream/search.svg');
-
-  /// File path: assets/images/ice_cream/star.svg
-  SvgGenImage get star => const SvgGenImage('assets/images/ice_cream/star.svg');
-
   /// List of all assets
-  List<dynamic> get values => [
-        arrowLeft,
-        arrowRight,
-        bag,
-        bowlCream,
-        dots,
-        iceCream,
-        iceCreamChocolate,
-        iceCreamPistachio,
-        iceCreamRasp,
-        iceCreamStraw,
-        palette,
-        search,
-        star
-      ];
+  List<AssetGenImage> get values =>
+      [iceCreamChocolate, iceCreamPistachio, iceCreamRasp, iceCreamStraw];
 }
 
 class $AssetsImagesLoginGen {
   const $AssetsImagesLoginGen();
-
-  /// File path: assets/images/login/facebook.svg
-  SvgGenImage get facebook =>
-      const SvgGenImage('assets/images/login/facebook.svg');
-
-  /// File path: assets/images/login/google.svg
-  SvgGenImage get google => const SvgGenImage('assets/images/login/google.svg');
-
-  /// File path: assets/images/login/linked_in.svg
-  SvgGenImage get linkedIn =>
-      const SvgGenImage('assets/images/login/linked_in.svg');
 
   /// File path: assets/images/login/login_image_01.png
   AssetGenImage get loginImage01 =>
@@ -278,20 +235,8 @@ class $AssetsImagesLoginGen {
   AssetGenImage get loginLogo =>
       const AssetGenImage('assets/images/login/login_logo.png');
 
-  /// File path: assets/images/login/twitter.svg
-  SvgGenImage get twitter =>
-      const SvgGenImage('assets/images/login/twitter.svg');
-
   /// List of all assets
-  List<dynamic> get values => [
-        facebook,
-        google,
-        linkedIn,
-        loginImage01,
-        loginImage02,
-        loginLogo,
-        twitter
-      ];
+  List<AssetGenImage> get values => [loginImage01, loginImage02, loginLogo];
 }
 
 class $AssetsImagesMusicGen {
@@ -341,13 +286,6 @@ class $AssetsImagesOnboardingGen {
 class $AssetsImagesShoppingGen {
   const $AssetsImagesShoppingGen();
 
-  /// File path: assets/images/shopping/cart.svg
-  SvgGenImage get cart => const SvgGenImage('assets/images/shopping/cart.svg');
-
-  /// File path: assets/images/shopping/favorite.svg
-  SvgGenImage get favorite =>
-      const SvgGenImage('assets/images/shopping/favorite.svg');
-
   /// File path: assets/images/shopping/logo.png
   AssetGenImage get logo =>
       const AssetGenImage('assets/images/shopping/logo.png');
@@ -355,10 +293,6 @@ class $AssetsImagesShoppingGen {
   /// File path: assets/images/shopping/profile.png
   AssetGenImage get profile =>
       const AssetGenImage('assets/images/shopping/profile.png');
-
-  /// File path: assets/images/shopping/search.svg
-  SvgGenImage get search =>
-      const SvgGenImage('assets/images/shopping/search.svg');
 
   /// File path: assets/images/shopping/shoes_01.png
   AssetGenImage get shoes01 =>
@@ -373,8 +307,7 @@ class $AssetsImagesShoppingGen {
       const AssetGenImage('assets/images/shopping/store.png');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [cart, favorite, logo, profile, search, shoes01, shoes02, store];
+  List<AssetGenImage> get values => [logo, profile, shoes01, shoes02, store];
 }
 
 class $AssetsImagesSneakyGen {
@@ -420,16 +353,8 @@ class $AssetsImagesStoryGen {
   AssetGenImage get image04 =>
       const AssetGenImage('assets/images/story/image_04.jpg');
 
-  /// File path: assets/images/story/menu.svg
-  SvgGenImage get menu => const SvgGenImage('assets/images/story/menu.svg');
-
-  /// File path: assets/images/story/options.svg
-  SvgGenImage get options =>
-      const SvgGenImage('assets/images/story/options.svg');
-
   /// List of all assets
-  List<dynamic> get values =>
-      [image01, image02, image03, image04, menu, options];
+  List<AssetGenImage> get values => [image01, image02, image03, image04];
 }
 
 class $AssetsImagesStreamingGen {
@@ -495,10 +420,116 @@ class $AssetsImagesStreamingGen {
       ];
 }
 
+class $AssetsSvgFurnitureGen {
+  const $AssetsSvgFurnitureGen();
+
+  /// File path: assets/svg/furniture/menu.svg
+  String get menu => 'assets/svg/furniture/menu.svg';
+
+  /// File path: assets/svg/furniture/search.svg
+  String get search => 'assets/svg/furniture/search.svg';
+
+  /// List of all assets
+  List<String> get values => [menu, search];
+}
+
+class $AssetsSvgIceCreamGen {
+  const $AssetsSvgIceCreamGen();
+
+  /// File path: assets/svg/ice_cream/arrow_left.svg
+  String get arrowLeft => 'assets/svg/ice_cream/arrow_left.svg';
+
+  /// File path: assets/svg/ice_cream/arrow_right.svg
+  String get arrowRight => 'assets/svg/ice_cream/arrow_right.svg';
+
+  /// File path: assets/svg/ice_cream/bag.svg
+  String get bag => 'assets/svg/ice_cream/bag.svg';
+
+  /// File path: assets/svg/ice_cream/bowl_cream.svg
+  String get bowlCream => 'assets/svg/ice_cream/bowl_cream.svg';
+
+  /// File path: assets/svg/ice_cream/dots.svg
+  String get dots => 'assets/svg/ice_cream/dots.svg';
+
+  /// File path: assets/svg/ice_cream/ice_cream.svg
+  String get iceCream => 'assets/svg/ice_cream/ice_cream.svg';
+
+  /// File path: assets/svg/ice_cream/palette.svg
+  String get palette => 'assets/svg/ice_cream/palette.svg';
+
+  /// File path: assets/svg/ice_cream/search.svg
+  String get search => 'assets/svg/ice_cream/search.svg';
+
+  /// File path: assets/svg/ice_cream/star.svg
+  String get star => 'assets/svg/ice_cream/star.svg';
+
+  /// List of all assets
+  List<String> get values => [
+        arrowLeft,
+        arrowRight,
+        bag,
+        bowlCream,
+        dots,
+        iceCream,
+        palette,
+        search,
+        star
+      ];
+}
+
+class $AssetsSvgLoginGen {
+  const $AssetsSvgLoginGen();
+
+  /// File path: assets/svg/login/facebook.svg
+  String get facebook => 'assets/svg/login/facebook.svg';
+
+  /// File path: assets/svg/login/google.svg
+  String get google => 'assets/svg/login/google.svg';
+
+  /// File path: assets/svg/login/linked_in.svg
+  String get linkedIn => 'assets/svg/login/linked_in.svg';
+
+  /// File path: assets/svg/login/twitter.svg
+  String get twitter => 'assets/svg/login/twitter.svg';
+
+  /// List of all assets
+  List<String> get values => [facebook, google, linkedIn, twitter];
+}
+
+class $AssetsSvgShoppingGen {
+  const $AssetsSvgShoppingGen();
+
+  /// File path: assets/svg/shopping/cart.svg
+  String get cart => 'assets/svg/shopping/cart.svg';
+
+  /// File path: assets/svg/shopping/favorite.svg
+  String get favorite => 'assets/svg/shopping/favorite.svg';
+
+  /// File path: assets/svg/shopping/search.svg
+  String get search => 'assets/svg/shopping/search.svg';
+
+  /// List of all assets
+  List<String> get values => [cart, favorite, search];
+}
+
+class $AssetsSvgStoryGen {
+  const $AssetsSvgStoryGen();
+
+  /// File path: assets/svg/story/menu.svg
+  String get menu => 'assets/svg/story/menu.svg';
+
+  /// File path: assets/svg/story/options.svg
+  String get options => 'assets/svg/story/options.svg';
+
+  /// List of all assets
+  List<String> get values => [menu, options];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
 class AssetGenImage {
@@ -531,7 +562,7 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
     FilterQuality filterQuality = FilterQuality.low,
@@ -574,83 +605,6 @@ class AssetGenImage {
       _assetName,
       bundle: bundle,
       package: package,
-    );
-  }
-
-  String get path => _assetName;
-
-  String get keyName => _assetName;
-}
-
-class SvgGenImage {
-  const SvgGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = false;
-
-  const SvgGenImage.vec(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  }) : _isVecFormat = true;
-
-  final String _assetName;
-  final Size? size;
-  final Set<String> flavors;
-  final bool _isVecFormat;
-
-  _svg.SvgPicture svg({
-    Key? key,
-    bool matchTextDirection = false,
-    AssetBundle? bundle,
-    String? package,
-    double? width,
-    double? height,
-    BoxFit fit = BoxFit.contain,
-    AlignmentGeometry alignment = Alignment.center,
-    bool allowDrawingOutsideViewBox = false,
-    WidgetBuilder? placeholderBuilder,
-    String? semanticsLabel,
-    bool excludeFromSemantics = false,
-    _svg.SvgTheme? theme,
-    ColorFilter? colorFilter,
-    Clip clipBehavior = Clip.hardEdge,
-    @deprecated Color? color,
-    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated bool cacheColorFilter = false,
-  }) {
-    final _svg.BytesLoader loader;
-    if (_isVecFormat) {
-      loader = _vg.AssetBytesLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-      );
-    } else {
-      loader = _svg.SvgAssetLoader(
-        _assetName,
-        assetBundle: bundle,
-        packageName: package,
-        theme: theme,
-      );
-    }
-    return _svg.SvgPicture(
-      loader,
-      key: key,
-      matchTextDirection: matchTextDirection,
-      width: width,
-      height: height,
-      fit: fit,
-      alignment: alignment,
-      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
-      placeholderBuilder: placeholderBuilder,
-      semanticsLabel: semanticsLabel,
-      excludeFromSemantics: excludeFromSemantics,
-      colorFilter: colorFilter ??
-          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
-      clipBehavior: clipBehavior,
-      cacheColorFilter: cacheColorFilter,
     );
   }
 
