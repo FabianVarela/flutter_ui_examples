@@ -5,6 +5,7 @@ import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_shopping/model/shopping_model.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 part 'widget/product_card.dart';
 
@@ -16,12 +17,20 @@ class ShoppingUI extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final currentIndex = useState(0);
+    final svgImages = <String>[
+      Assets.svg.shopping.search,
+      Assets.svg.shopping.favorite,
+      Assets.svg.shopping.cart,
+    ];
 
     final bottomNavIconList = <Widget>[
       Assets.images.shopping.store.image(width: 35, height: 35),
-      Assets.images.shopping.search.svg(width: 32, height: 32),
-      Assets.images.shopping.favorite.svg(width: 32, height: 32),
-      Assets.images.shopping.cart.svg(width: 32, height: 32),
+      ...List.generate(3, (index) {
+        return SizedBox.fromSize(
+          size: const Size(32, 32),
+          child: VectorGraphic(loader: AssetBytesLoader(svgImages[index])),
+        );
+      }),
       Assets.images.shopping.profile.image(width: 35, height: 35),
     ];
 

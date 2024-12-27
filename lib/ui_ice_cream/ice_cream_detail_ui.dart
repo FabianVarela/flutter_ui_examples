@@ -37,13 +37,13 @@ class IceCreamDetailUI extends HookWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   IceCreamIconButton(
-                    path: Assets.images.iceCream.arrowRight.path,
+                    path: Assets.svg.iceCream.arrowRight,
                     backgroundColor: const Color(0xFFF11359),
                     foregroundColor: const Color(0xFFFFFFFF),
                     onPress: () => Navigator.of(context).pop(),
                   ),
                   IceCreamIconButton(
-                    path: Assets.images.iceCream.bag.path,
+                    path: Assets.svg.iceCream.bag,
                     backgroundColor: const Color(0xFFF11359),
                     foregroundColor: const Color(0xFFFFFFFF),
                   ),

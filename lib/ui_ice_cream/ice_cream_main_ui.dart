@@ -91,12 +91,12 @@ class _Header extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 IceCreamIconButton(
-                  path: Assets.images.iceCream.dots.path,
+                  path: Assets.svg.iceCream.dots,
                   foregroundColor: const Color(0xFFF11359),
                   onPress: onPressMenu,
                 ),
                 IceCreamIconButton(
-                  path: Assets.images.iceCream.search.path,
+                  path: Assets.svg.iceCream.search,
                   foregroundColor: const Color(0xFFF11359),
                 ),
               ],
@@ -120,12 +120,11 @@ class _Options extends HookWidget {
   Widget build(BuildContext context) {
     final currentIndex = useState(0);
 
-    final iceCreamAssets = Assets.images.iceCream;
     final optionList = <({String text, String icon})>[
-      (text: 'Cup', icon: iceCreamAssets.bowlCream.path),
-      (text: 'Candy', icon: iceCreamAssets.palette.path),
-      (text: 'Cones', icon: iceCreamAssets.iceCream.path),
-      (text: 'Favorites', icon: iceCreamAssets.star.path),
+      (text: 'Cup', icon: Assets.svg.iceCream.bowlCream),
+      (text: 'Candy', icon: Assets.svg.iceCream.palette),
+      (text: 'Cones', icon: Assets.svg.iceCream.iceCream),
+      (text: 'Favorites', icon: Assets.svg.iceCream.star),
     ];
 
     return SizedBox.fromSize(

@@ -4,6 +4,7 @@ import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_furniture/model/furniture_model.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 part 'widget/custom_title.dart';
 
@@ -30,7 +31,8 @@ class FurnitureUI extends HookWidget {
         leading: Padding(
           padding: const EdgeInsets.only(left: 10),
           child: IconButton(
-            icon: Assets.images.furniture.menu.svg(
+            icon: VectorGraphic(
+              loader: AssetBytesLoader(Assets.svg.furniture.menu),
               colorFilter: const ColorFilter.mode(
                 Colors.black,
                 BlendMode.srcIn,
@@ -43,7 +45,8 @@ class FurnitureUI extends HookWidget {
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(
-              icon: Assets.images.furniture.search.svg(
+              icon: VectorGraphic(
+                loader: AssetBytesLoader(Assets.svg.furniture.search),
                 colorFilter: const ColorFilter.mode(
                   Colors.black,
                   BlendMode.srcIn,

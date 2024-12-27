@@ -63,7 +63,7 @@ class IceCreamUI extends HookWidget {
                 ),
                 const Gap(16),
                 IceCreamIconButton(
-                  path: Assets.images.iceCream.arrowLeft.path,
+                  path: Assets.svg.iceCream.arrowLeft,
                   size: const Size(60, 60),
                   padding: const EdgeInsets.all(12),
                   backgroundColor: const Color(0xFFF01359),

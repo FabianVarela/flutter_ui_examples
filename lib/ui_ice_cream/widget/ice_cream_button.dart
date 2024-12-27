@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 class IceCreamButton extends StatelessWidget {
   const IceCreamButton({
@@ -25,7 +26,8 @@ class IceCreamButton extends StatelessWidget {
         minimumSize: const Size(double.infinity, 60),
       ),
       onPressed: onPressed,
-      icon: Assets.images.iceCream.arrowLeft.svg(
+      icon: VectorGraphic(
+        loader: AssetBytesLoader(Assets.svg.iceCream.arrowLeft),
         width: 30,
         colorFilter: ColorFilter.mode(
           onPressed != null ? Colors.white : Colors.white60,

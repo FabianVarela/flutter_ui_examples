@@ -33,7 +33,9 @@ class _ProductCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   IconButton(
-                    icon: Assets.images.shopping.favorite.svg(),
+                    icon: VectorGraphic(
+                      loader: AssetBytesLoader(Assets.svg.shopping.favorite),
+                    ),
                     onPressed: () {},
                   ),
                   Column(
@@ -53,7 +55,9 @@ class _ProductCard extends StatelessWidget {
                     ],
                   ),
                   IconButton(
-                    icon: Assets.images.shopping.cart.svg(),
+                    icon: VectorGraphic(
+                      loader: AssetBytesLoader(Assets.svg.shopping.cart),
+                    ),
                     onPressed: () {},
                   ),
                 ],

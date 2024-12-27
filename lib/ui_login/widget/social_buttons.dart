@@ -5,21 +5,21 @@ class _SocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final socialIconList = <({SvgGenImage icon, List<Color> colors})>[
+    final socialIconList = <({String icon, List<Color> colors})>[
       (
-        icon: Assets.images.login.facebook,
+        icon: Assets.svg.login.facebook,
         colors: const <Color>[Color(0xFF102397), Color(0xFF187ADF)],
       ),
       (
-        icon: Assets.images.login.google,
+        icon: Assets.svg.login.google,
         colors: const <Color>[Color(0xFFFF4F38), Color(0xFFFF355D)],
       ),
       (
-        icon: Assets.images.login.twitter,
+        icon: Assets.svg.login.twitter,
         colors: const <Color>[Color(0xFF17EAD9), Color(0xFF6078EA)],
       ),
       (
-        icon: Assets.images.login.linkedIn,
+        icon: Assets.svg.login.linkedIn,
         colors: const <Color>[Color(0xFF00C6FB), Color(0xFF005BEA)],
       ),
     ];
@@ -61,7 +61,7 @@ class _SocialButtons extends StatelessWidget {
             for (final (index, item) in socialIconList.indexed) ...[
               _SocialIcons(
                 colors: item.colors,
-                iconPath: item.icon.path,
+                iconPath: item.icon,
                 onPressed: () {},
               ),
               if (index <= socialIconList.length - 1) const Gap(14),
@@ -110,8 +110,8 @@ class _SocialIcons extends StatelessWidget {
         },
       ),
       onPressed: onPressed,
-      child: SvgPicture.asset(
-        iconPath,
+      child: VectorGraphic(
+        loader: AssetBytesLoader(iconPath),
         colorFilter: ColorFilter.mode(
           onPressed != null ? Colors.white : Colors.white70,
           BlendMode.srcIn,

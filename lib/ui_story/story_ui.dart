@@ -7,6 +7,7 @@ import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_story/model/story_model.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 part 'widget/card_scroll.dart';
 
@@ -36,7 +37,8 @@ class StoryUI extends HookWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          icon: Assets.images.story.menu.svg(
+          icon: VectorGraphic(
+            loader: AssetBytesLoader(Assets.svg.story.menu),
             height: 30,
             colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
           ),

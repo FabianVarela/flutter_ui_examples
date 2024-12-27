@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 class IceCreamIconButton extends StatelessWidget {
   const IceCreamIconButton({
@@ -36,8 +36,8 @@ class IceCreamIconButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
       ),
-      icon: SvgPicture.asset(
-        path,
+      icon: VectorGraphic(
+        loader: AssetBytesLoader(path),
         colorFilter: ColorFilter.mode(
           onPress == null
               ? foregroundColor.withValues(alpha: .5)
