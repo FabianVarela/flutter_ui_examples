@@ -8,6 +8,7 @@ class _QuantitySection extends HookWidget {
     final amount = useState(0);
 
     return Column(
+      spacing: 12,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
@@ -18,7 +19,6 @@ class _QuantitySection extends HookWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        const Gap(12),
         Container(
           height: 40,
           margin: const EdgeInsets.only(left: 12),

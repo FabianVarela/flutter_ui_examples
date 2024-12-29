@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_story/model/story_model.dart';
-import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 

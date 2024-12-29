@@ -16,6 +16,7 @@ class _CustomTag extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: Row(
+        spacing: 15,
         children: <Widget>[
           ElevatedButton(
             onPressed: () {},
@@ -32,7 +33,6 @@ class _CustomTag extends StatelessWidget {
               style: GoogleFonts.ubuntu(color: Colors.white),
             ),
           ),
-          const Gap(15),
           Text(
             message,
             style: GoogleFonts.ubuntu(color: Colors.blueAccent),

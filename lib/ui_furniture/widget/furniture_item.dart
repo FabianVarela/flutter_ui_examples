@@ -41,10 +41,10 @@ class _FurnitureItem extends StatelessWidget {
               ),
             ),
             Column(
+              spacing: 12,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Image.asset(image, width: 172, height: 199),
-                const Gap(12),
                 Padding(
                   padding: const EdgeInsets.all(12),
                   child: Column(

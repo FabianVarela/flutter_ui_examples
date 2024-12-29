@@ -10,6 +10,7 @@ class _SizeSection extends HookWidget {
     final currentSize = useState<int?>(null);
 
     return Column(
+      spacing: 8,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
@@ -20,7 +21,6 @@ class _SizeSection extends HookWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        const Gap(8),
         SizedBox(
           height: 38,
           child: Row(

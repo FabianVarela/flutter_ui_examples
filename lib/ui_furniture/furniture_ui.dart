@@ -41,7 +41,7 @@ class FurnitureUI extends HookWidget {
             onPressed: onPressedMenu,
           ),
         ),
-        actions: [
+        actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 10),
             child: IconButton(

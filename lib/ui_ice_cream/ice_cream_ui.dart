@@ -3,7 +3,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
-import 'package:gap/gap.dart';
 
 class IceCreamUI extends HookWidget {
   const IceCreamUI({super.key});
@@ -15,6 +14,7 @@ class IceCreamUI extends HookWidget {
       body: Stack(
         children: <Widget>[
           Column(
+            spacing: 50,
             children: <Widget>[
               const Expanded(
                 child: Align(
@@ -31,7 +31,6 @@ class IceCreamUI extends HookWidget {
                   ),
                 ),
               ),
-              const Gap(50),
               Expanded(
                 flex: 2,
                 child: FractionalTranslation(
@@ -51,6 +50,7 @@ class IceCreamUI extends HookWidget {
             right: 30,
             bottom: 30,
             child: Row(
+              spacing: 16,
               children: <Widget>[
                 const Text(
                   'Explore',
@@ -61,7 +61,6 @@ class IceCreamUI extends HookWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                const Gap(16),
                 IceCreamIconButton(
                   path: Assets.svg.iceCream.arrowLeft,
                   size: const Size(60, 60),

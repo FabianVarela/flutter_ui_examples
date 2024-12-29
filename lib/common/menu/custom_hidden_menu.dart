@@ -57,11 +57,7 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
   @override
   void didUpdateWidget(CustomHiddenMenu oldWidget) {
     if (oldWidget.isOpen != widget.isOpen) {
-      if (widget.isOpen) {
-        _open();
-      } else {
-        _close();
-      }
+      widget.isOpen ? _open() : _close();
     }
 
     super.didUpdateWidget(oldWidget);
