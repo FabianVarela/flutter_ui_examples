@@ -89,17 +89,21 @@ class FurnitureUI extends HookWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        fixedColor: Colors.black,
-        currentIndex: currentIndex.value,
-        onTap: (index) => currentIndex.value = index,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.panorama_horizontal),
+      bottomNavigationBar: NavigationBar(
+        indicatorColor: Colors.black12,
+        selectedIndex: currentIndex.value,
+        backgroundColor: const Color(0xFFFBFCFD),
+        onDestinationSelected: (index) => currentIndex.value = index,
+        labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+        destinations: const <NavigationDestination>[
+          NavigationDestination(
+            selectedIcon: Icon(Icons.panorama_horizontal_select_rounded),
+            icon: Icon(Icons.panorama_horizontal_rounded),
             label: '',
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark_border),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.bookmark_outlined),
+            icon: Icon(Icons.bookmark_border_outlined),
             label: '',
           ),
         ],

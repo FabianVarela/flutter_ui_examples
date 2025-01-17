@@ -17,6 +17,7 @@ class StreamingUI extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentIndex = useState(0);
     final currentStreaming = useState(streamingList.first);
 
     return Scaffold(
@@ -46,29 +47,41 @@ class StreamingUI extends HookWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        fixedColor: const Color(0xFFE52020),
-        selectedLabelStyle: GoogleFonts.mulish(),
-        unselectedLabelStyle: GoogleFonts.mulish(),
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark),
-            label: 'Bookmarks',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+          labelTextStyle: WidgetStateTextStyle.resolveWith((states) {
+            return states.contains(WidgetState.selected)
+                ? GoogleFonts.mulish(color: const Color(0xFFE52020))
+                : GoogleFonts.mulish();
+          }),
+        ),
+        child: NavigationBar(
+          selectedIndex: currentIndex.value,
+          onDestinationSelected: (index) => currentIndex.value = index,
+          indicatorColor: const Color(0xFFE52020).withValues(alpha: .2),
+          destinations: const <Widget>[
+            NavigationDestination(
+              selectedIcon: Icon(Icons.home, color: Color(0xFFE52020)),
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.search, color: Color(0xFFE52020)),
+              icon: Icon(Icons.search_rounded),
+              label: 'Search',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.bookmark, color: Color(0xFFE52020)),
+              icon: Icon(Icons.bookmark_border),
+              label: 'Bookmarks',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(Icons.person, color: Color(0xFFE52020)),
+              icon: Icon(Icons.person_outline),
+              label: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }
