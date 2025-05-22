@@ -22,8 +22,10 @@ class _BeerHeaderState extends State<BeerHeader> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 500),
     );
 
-    _animation = Tween<Offset>(begin: Offset.zero, end: const Offset(0, 1))
-        .animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
+    _animation = Tween<Offset>(
+      begin: Offset.zero,
+      end: const Offset(0, 1),
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
 
     super.initState();
   }

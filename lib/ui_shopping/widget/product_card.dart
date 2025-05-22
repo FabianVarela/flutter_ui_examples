@@ -22,10 +22,7 @@ class _ProductCard extends StatelessWidget {
           children: <Widget>[
             const Gap(8),
             Image.asset(shopping.image, width: 201, height: 191),
-            Text(
-              shopping.title,
-              style: GoogleFonts.ubuntu(fontSize: 25),
-            ),
+            Text(shopping.title, style: GoogleFonts.ubuntu(fontSize: 25)),
             const Gap(15),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),

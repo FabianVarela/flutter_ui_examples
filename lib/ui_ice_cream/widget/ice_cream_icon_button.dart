@@ -32,9 +32,7 @@ class IceCreamIconButton extends StatelessWidget {
         foregroundColor: foregroundColor,
         disabledBackgroundColor: backgroundColor.withValues(alpha: .7),
         disabledForegroundColor: foregroundColor.withValues(alpha: .7),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
       icon: VectorGraphic(
         loader: AssetBytesLoader(path),

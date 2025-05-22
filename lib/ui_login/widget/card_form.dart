@@ -26,16 +26,10 @@ class _CardForm extends StatelessWidget {
           children: <Widget>[
             Text(
               'Login',
-              style: GoogleFonts.mulish(
-                fontSize: 35,
-                letterSpacing: .6,
-              ),
+              style: GoogleFonts.mulish(fontSize: 35, letterSpacing: .6),
             ),
             const Gap(20),
-            Text(
-              'Username',
-              style: GoogleFonts.mulish(fontSize: 20),
-            ),
+            Text('Username', style: GoogleFonts.mulish(fontSize: 20)),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Set the username',
@@ -43,10 +37,7 @@ class _CardForm extends StatelessWidget {
               ),
             ),
             const Gap(20),
-            Text(
-              'Password',
-              style: GoogleFonts.mulish(fontSize: 20),
-            ),
+            Text('Password', style: GoogleFonts.mulish(fontSize: 20)),
             TextField(
               obscureText: true,
               decoration: InputDecoration(

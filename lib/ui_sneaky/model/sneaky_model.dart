@@ -38,7 +38,8 @@ class SneakySize {
   final bool isAvailable;
 }
 
-const description = "A remarkable shoe that's naturally soft, cozy all over, "
+const description =
+    "A remarkable shoe that's naturally soft, cozy all over, "
     'and fits your every move.\n Lorem ipsum dolor sit amet, consectetur '
     'adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore '
     'magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco '

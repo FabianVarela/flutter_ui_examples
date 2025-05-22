@@ -101,9 +101,9 @@ class BeerUI extends HookWidget {
                     itemCount: beers.length,
                     controller: detailPageController,
                     onPageChanged: (index) => currentIndex.value = index,
-                    itemBuilder: (_, index) => BeerDetailItem(
-                      beer: beers[index],
-                    ),
+                    itemBuilder: (_, index) {
+                      return BeerDetailItem(beer: beers[index]);
+                    },
                   ),
                 ),
                 Padding(

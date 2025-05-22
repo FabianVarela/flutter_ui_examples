@@ -67,9 +67,9 @@ class IceCreamUI extends HookWidget {
                   padding: const EdgeInsets.all(12),
                   backgroundColor: const Color(0xFFF01359),
                   foregroundColor: const Color(0xFFFFFFFF),
-                  onPress: () => Navigator.of(context).pushReplacementNamed(
-                    '/ice_cream_main',
-                  ),
+                  onPress: () => Navigator.of(
+                    context,
+                  ).pushReplacementNamed('/ice_cream_main'),
                 ),
               ],
             ),

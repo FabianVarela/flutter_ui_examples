@@ -4,10 +4,7 @@ import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
 class IceCreamButton extends StatelessWidget {
-  const IceCreamButton({
-    required this.onPressed,
-    super.key,
-  });
+  const IceCreamButton({required this.onPressed, super.key});
 
   final VoidCallback? onPressed;
 
@@ -20,9 +17,7 @@ class IceCreamButton extends StatelessWidget {
         disabledForegroundColor: Colors.white60,
         backgroundColor: const Color(0xFFF11359),
         disabledBackgroundColor: const Color(0xFFF11359).withValues(alpha: .6),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         minimumSize: const Size(double.infinity, 60),
       ),
       onPressed: onPressed,

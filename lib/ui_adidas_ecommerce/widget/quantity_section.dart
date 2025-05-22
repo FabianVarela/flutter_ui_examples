@@ -34,11 +34,7 @@ class _QuantitySection extends HookWidget {
                 flex: 3,
                 child: IconButton(
                   onPressed: amount.value > 0 ? () => amount.value-- : null,
-                  icon: const Icon(
-                    Icons.remove,
-                    size: 24,
-                    color: Colors.white,
-                  ),
+                  icon: const Icon(Icons.remove, size: 24, color: Colors.white),
                 ),
               ),
               const Padding(

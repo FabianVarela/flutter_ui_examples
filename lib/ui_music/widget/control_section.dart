@@ -38,11 +38,7 @@ class _ControlSection extends StatelessWidget {
                 shape: const CircleBorder(),
                 backgroundColor: const Color(0xFF4B9AD5),
               ),
-              icon: const Icon(
-                Icons.play_arrow,
-                size: 45,
-                color: Colors.white,
-              ),
+              icon: const Icon(Icons.play_arrow, size: 45, color: Colors.white),
               onPressed: () {},
             ),
           ),

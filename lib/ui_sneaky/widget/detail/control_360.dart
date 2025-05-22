@@ -45,22 +45,22 @@ class _Control360State extends State<_Control360> {
           gestures: {
             _AllowMultipleGestures:
                 GestureRecognizerFactoryWithHandlers<_AllowMultipleGestures>(
-              _AllowMultipleGestures.new,
-              (_AllowMultipleGestures instance) {
-                instance
-                  ..onStart = (details) {
-                    _onPanStart(details, widget.size, width);
-                    widget.onDisableScroll?.call(true);
-                  }
-                  ..onUpdate = (details) {
-                    _onPanUpdate(details, widget.size);
-                  }
-                  ..onEnd = (_) {
-                    widget.onDisableScroll?.call(false);
-                    if (!_isValid) return;
-                  };
-              },
-            ),
+                  _AllowMultipleGestures.new,
+                  (_AllowMultipleGestures instance) {
+                    instance
+                      ..onStart = (details) {
+                        _onPanStart(details, widget.size, width);
+                        widget.onDisableScroll?.call(true);
+                      }
+                      ..onUpdate = (details) {
+                        _onPanUpdate(details, widget.size);
+                      }
+                      ..onEnd = (_) {
+                        widget.onDisableScroll?.call(false);
+                        if (!_isValid) return;
+                      };
+                  },
+                ),
           },
           child: Container(
             alignment: FractionalOffset.center,

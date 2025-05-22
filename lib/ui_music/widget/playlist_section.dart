@@ -17,10 +17,9 @@ class _PlaylistSection extends StatelessWidget {
             Center(
               child: ListView.builder(
                 itemCount: musicList.length,
-                itemBuilder: (_, index) => _PlayListItem(
-                  music: musicList[index],
-                  index: index,
-                ),
+                itemBuilder: (_, index) {
+                  return _PlayListItem(music: musicList[index], index: index);
+                },
               ),
             ),
           ],

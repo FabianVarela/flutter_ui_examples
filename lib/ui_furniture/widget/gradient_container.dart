@@ -12,10 +12,7 @@ class _GradientContainer extends StatelessWidget {
         height: MediaQuery.sizeOf(context).height / 2,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: <Color>[
-              Color(0xFFFBFCFD),
-              Color(0xFFF2F3F8),
-            ],
+            colors: <Color>[Color(0xFFFBFCFD), Color(0xFFF2F3F8)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),

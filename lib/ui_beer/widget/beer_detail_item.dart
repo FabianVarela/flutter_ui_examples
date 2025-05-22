@@ -19,18 +19,12 @@ class BeerDetailItem extends StatelessWidget {
           ),
         ),
         const Gap(5),
-        Text(
-          beer.slogan,
-          style: GoogleFonts.montserrat(fontSize: 14),
-        ),
+        Text(beer.slogan, style: GoogleFonts.montserrat(fontSize: 14)),
         const Gap(10),
         RatingBarIndicator(
           itemSize: 22,
           rating: beer.rating,
-          itemBuilder: (_, __) => const Icon(
-            Icons.star,
-            color: Colors.yellow,
-          ),
+          itemBuilder: (_, __) => const Icon(Icons.star, color: Colors.yellow),
         ),
         const Gap(5),
         Padding(

@@ -19,10 +19,7 @@ class _StreamingList extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(
-                    'Watch more',
-                    style: GoogleFonts.mulish(fontSize: 22),
-                  ),
+                  Text('Watch more', style: GoogleFonts.mulish(fontSize: 22)),
                   TextButton(
                     style: TextButton.styleFrom(
                       foregroundColor: const Color(0xFFE52020),

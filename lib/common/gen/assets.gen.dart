@@ -157,24 +157,24 @@ class $AssetsImagesBeerGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        aguila,
-        aguilaBackLogo,
-        aguilaSmallLogo,
-        basket,
-        budweiser,
-        budweiserBackLogo,
-        budweiserSmallLogo,
-        clubColombiaBackLogo,
-        clubColombiaDorada,
-        clubColombiaNegra,
-        clubColombiaRoja,
-        clubColombiaSmallLogo,
-        clubColombiaTrigo,
-        profile,
-        stellaArtois,
-        stellaArtoisBackLogo,
-        stellaArtoisSmallLogo
-      ];
+    aguila,
+    aguilaBackLogo,
+    aguilaSmallLogo,
+    basket,
+    budweiser,
+    budweiserBackLogo,
+    budweiserSmallLogo,
+    clubColombiaBackLogo,
+    clubColombiaDorada,
+    clubColombiaNegra,
+    clubColombiaRoja,
+    clubColombiaSmallLogo,
+    clubColombiaTrigo,
+    profile,
+    stellaArtois,
+    stellaArtoisBackLogo,
+    stellaArtoisSmallLogo,
+  ];
 }
 
 class $AssetsImagesFurnitureGen {
@@ -216,8 +216,12 @@ class $AssetsImagesIceCreamGen {
       const AssetGenImage('assets/images/ice_cream/ice_cream_straw.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [iceCreamChocolate, iceCreamPistachio, iceCreamRasp, iceCreamStraw];
+  List<AssetGenImage> get values => [
+    iceCreamChocolate,
+    iceCreamPistachio,
+    iceCreamRasp,
+    iceCreamStraw,
+  ];
 }
 
 class $AssetsImagesLoginGen {
@@ -259,8 +263,12 @@ class $AssetsImagesMusicGen {
       const AssetGenImage('assets/images/music/metallica.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [bonJovi, fooFighters, gunsNroses, metallica];
+  List<AssetGenImage> get values => [
+    bonJovi,
+    fooFighters,
+    gunsNroses,
+    metallica,
+  ];
 }
 
 class $AssetsImagesOnboardingGen {
@@ -279,8 +287,11 @@ class $AssetsImagesOnboardingGen {
       const AssetGenImage('assets/images/onboarding/illustration3.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [illustration, illustration2, illustration3];
+  List<AssetGenImage> get values => [
+    illustration,
+    illustration2,
+    illustration3,
+  ];
 }
 
 class $AssetsImagesShoppingGen {
@@ -330,8 +341,12 @@ class $AssetsImagesSneakyGen {
       const AssetGenImage('assets/images/sneaky/yellow_sneaky.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [blackSneaky, blueSneaky, redSneaky, yellowSneaky];
+  List<AssetGenImage> get values => [
+    blackSneaky,
+    blueSneaky,
+    redSneaky,
+    yellowSneaky,
+  ];
 }
 
 class $AssetsImagesStoryGen {
@@ -406,18 +421,18 @@ class $AssetsImagesStreamingGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
-        avengers,
-        batman,
-        breakingBad,
-        daredevil,
-        dark,
-        fullMetalAlchemist,
-        jujutsu,
-        mandalorian,
-        onePunchMan,
-        succession,
-        theBear
-      ];
+    avengers,
+    batman,
+    breakingBad,
+    daredevil,
+    dark,
+    fullMetalAlchemist,
+    jujutsu,
+    mandalorian,
+    onePunchMan,
+    succession,
+    theBear,
+  ];
 }
 
 class $AssetsSvgFurnitureGen {
@@ -465,16 +480,16 @@ class $AssetsSvgIceCreamGen {
 
   /// List of all assets
   List<String> get values => [
-        arrowLeft,
-        arrowRight,
-        bag,
-        bowlCream,
-        dots,
-        iceCream,
-        palette,
-        search,
-        star
-      ];
+    arrowLeft,
+    arrowRight,
+    bag,
+    bowlCream,
+    dots,
+    iceCream,
+    palette,
+    search,
+    star,
+  ];
 }
 
 class $AssetsSvgLoginGen {
@@ -533,11 +548,7 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(
-    this._assetName, {
-    this.size,
-    this.flavors = const {},
-  });
+  const AssetGenImage(this._assetName, {this.size, this.flavors = const {}});
 
   final String _assetName;
 
@@ -597,15 +608,8 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
-    return AssetImage(
-      _assetName,
-      bundle: bundle,
-      package: package,
-    );
+  ImageProvider provider({AssetBundle? bundle, String? package}) {
+    return AssetImage(_assetName, bundle: bundle, package: package);
   }
 
   String get path => _assetName;

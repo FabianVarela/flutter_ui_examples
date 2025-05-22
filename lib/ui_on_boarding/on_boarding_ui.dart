@@ -76,10 +76,9 @@ class OnBoardingUI extends HookWidget {
                   child: FloatingActionButton(
                     backgroundColor: Colors.white,
                     child: const Icon(Icons.arrow_forward),
-                    onPressed: () => Navigator.pushReplacementNamed(
-                      context,
-                      '/login',
-                    ),
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
                   ),
                 ),
               ),

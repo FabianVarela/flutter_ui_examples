@@ -28,15 +28,9 @@ class _CustomTag extends StatelessWidget {
               ),
               padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 6),
             ),
-            child: Text(
-              title,
-              style: GoogleFonts.ubuntu(color: Colors.white),
-            ),
+            child: Text(title, style: GoogleFonts.ubuntu(color: Colors.white)),
           ),
-          Text(
-            message,
-            style: GoogleFonts.ubuntu(color: Colors.blueAccent),
-          ),
+          Text(message, style: GoogleFonts.ubuntu(color: Colors.blueAccent)),
         ],
       ),
     );

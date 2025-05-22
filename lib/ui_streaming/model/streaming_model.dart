@@ -48,8 +48,5 @@ final streamingList = <StreamingModel>[
     image: Assets.images.streaming.breakingBad.path,
     title: 'Breaking bad',
   ),
-  StreamingModel(
-    image: Assets.images.streaming.dark.path,
-    title: 'Dark',
-  ),
+  StreamingModel(image: Assets.images.streaming.dark.path, title: 'Dark'),
 ];

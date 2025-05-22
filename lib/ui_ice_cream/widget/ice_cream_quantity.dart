@@ -108,10 +108,7 @@ class IceCreamQuantity extends HookWidget {
 }
 
 class _QuantityButtons extends StatelessWidget {
-  const _QuantityButtons({
-    this.quantity = 0,
-    this.onChanged,
-  });
+  const _QuantityButtons({this.quantity = 0, this.onChanged});
 
   final int quantity;
   final ValueSetter<int>? onChanged;
@@ -129,8 +126,9 @@ class _QuantityButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IceCreamCircleButton(
-              onPressed:
-                  quantity > 1 ? () => onChanged?.call(quantity - 1) : null,
+              onPressed: quantity > 1
+                  ? () => onChanged?.call(quantity - 1)
+                  : null,
               child: const Icon(Icons.remove, color: Color(0xFFF01359)),
             ),
             Text(
@@ -143,8 +141,9 @@ class _QuantityButtons extends StatelessWidget {
               ),
             ),
             IceCreamCircleButton(
-              onPressed:
-                  quantity < 20 ? () => onChanged?.call(quantity + 1) : null,
+              onPressed: quantity < 20
+                  ? () => onChanged?.call(quantity + 1)
+                  : null,
               color: const Color(0xFFF01359),
               child: const Icon(Icons.add, color: Colors.white),
             ),

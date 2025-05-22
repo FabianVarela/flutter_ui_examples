@@ -22,12 +22,6 @@ final stories = <StoryModel>[
     name: 'The Dreaming Moon',
     isFavorite: true,
   ),
-  StoryModel(
-    image: Assets.images.story.image03.path,
-    name: 'Fallen In Love',
-  ),
-  StoryModel(
-    image: Assets.images.story.image04.path,
-    name: 'Hounted Ground',
-  ),
+  StoryModel(image: Assets.images.story.image03.path, name: 'Fallen In Love'),
+  StoryModel(image: Assets.images.story.image04.path, name: 'Hounted Ground'),
 ];

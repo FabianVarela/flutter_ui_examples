@@ -39,10 +39,7 @@ class _SignInButtons extends HookWidget {
                 ),
               ),
               const Gap(8),
-              Text(
-                'Remember me',
-                style: GoogleFonts.mulish(fontSize: 12),
-              ),
+              Text('Remember me', style: GoogleFonts.mulish(fontSize: 12)),
             ],
           ),
         ),

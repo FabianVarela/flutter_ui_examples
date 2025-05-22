@@ -18,20 +18,14 @@ class IceCreamMainUI extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverToBoxAdapter(
-            child: _Header(onPressMenu: onPressedMenu),
-          ),
+          SliverToBoxAdapter(child: _Header(onPressMenu: onPressedMenu)),
           const SliverPadding(
             padding: EdgeInsets.only(top: 30, left: 30),
-            sliver: SliverToBoxAdapter(
-              child: _Options(),
-            ),
+            sliver: SliverToBoxAdapter(child: _Options()),
           ),
           const SliverPadding(
             padding: EdgeInsets.only(top: 20, left: 30, right: 24),
-            sliver: SliverToBoxAdapter(
-              child: _Popular(),
-            ),
+            sliver: SliverToBoxAdapter(child: _Popular()),
           ),
         ],
       ),
@@ -54,9 +48,7 @@ class _Header extends StatelessWidget {
           padding: const EdgeInsets.only(left: 24),
           decoration: const BoxDecoration(
             color: Color(0xFFF593AF),
-            borderRadius: BorderRadius.only(
-              bottomRight: Radius.circular(20),
-            ),
+            borderRadius: BorderRadius.only(bottomRight: Radius.circular(20)),
           ),
           child: Align(
             alignment: Alignment.centerLeft,

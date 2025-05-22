@@ -55,7 +55,8 @@ final beers = <BeerModel>[
   BeerModel(
     name: 'Club Colombia\nDorada',
     slogan: 'Colombian Lager & Pure Tradition',
-    description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
+    description:
+        'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 3.9,
     bottleImage: Assets.images.beer.clubColombiaDorada.path,
@@ -67,7 +68,8 @@ final beers = <BeerModel>[
   BeerModel(
     name: 'Club Colombia\nRoja',
     slogan: 'Colombian Lager & Pure Tradition',
-    description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
+    description:
+        'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 3.5,
     bottleImage: Assets.images.beer.clubColombiaRoja.path,
@@ -79,7 +81,8 @@ final beers = <BeerModel>[
   BeerModel(
     name: 'Club Colombia\nNegra',
     slogan: 'Colombian Lager & Pure Tradition',
-    description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
+    description:
+        'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 4.5,
     bottleImage: Assets.images.beer.clubColombiaNegra.path,
@@ -91,7 +94,8 @@ final beers = <BeerModel>[
   BeerModel(
     name: 'Club Colombia Trigo',
     slogan: 'Colombian Lager & Pure Tradition',
-    description: 'Born in 1949 in Colombia with the name of Club Sixty, in '
+    description:
+        'Born in 1949 in Colombia with the name of Club Sixty, in '
         'commemoration of the sixty years of the Bavaria foundation.',
     rating: 4.3,
     bottleImage: Assets.images.beer.clubColombiaTrigo.path,
