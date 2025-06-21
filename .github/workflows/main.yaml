@@ -19,5 +19,6 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
+      analyze_directories: lib
       flutter_channel: stable
       min_coverage: 0
