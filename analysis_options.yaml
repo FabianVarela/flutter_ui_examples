@@ -8,3 +8,6 @@ linter:
   rules:
     library_private_types_in_public_api: false
     public_member_api_docs: false
+
+formatter:
+  trailing_commas: preserve
