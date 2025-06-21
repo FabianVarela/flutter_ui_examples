@@ -18,7 +18,7 @@ class _OnboardingItem extends StatelessWidget {
       children: <Widget>[
         AnimatedBuilder(
           animation: pageController,
-          builder: (_, __) {
+          builder: (_, _) {
             var delta = 1.0;
             if (pageController.position.haveDimensions) {
               final resultPage = (pageController.page ?? 0) - index;

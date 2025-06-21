@@ -114,7 +114,7 @@ class FurnitureUI extends HookWidget {
           overlayColor: Colors.black,
           minimumSize: const Size(65, 65),
           shape: const CircleBorder(),
-          backgroundBuilder: (_, __, child) => DecoratedBox(
+          backgroundBuilder: (_, _, child) => DecoratedBox(
             decoration: BoxDecoration(
               color: const Color(0x0FFA7B58),
               shape: BoxShape.circle,

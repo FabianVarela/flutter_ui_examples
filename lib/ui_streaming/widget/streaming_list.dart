@@ -36,7 +36,7 @@ class _StreamingList extends StatelessWidget {
                 itemCount: streamingList.length,
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.fromLTRB(12, 25, 0, 25),
-                separatorBuilder: (_, __) => const Gap(24),
+                separatorBuilder: (_, _) => const Gap(24),
                 itemBuilder: (_, index) => InkWell(
                   onTap: () => onSelectStream?.call(streamingList[index]),
                   child: Card(

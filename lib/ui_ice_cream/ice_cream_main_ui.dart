@@ -125,7 +125,7 @@ class _Options extends HookWidget {
         itemCount: optionList.length,
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.only(left: 10, top: 5),
-        separatorBuilder: (_, __) => const Gap(20),
+        separatorBuilder: (_, _) => const Gap(20),
         itemBuilder: (_, index) => Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[

@@ -55,7 +55,7 @@ class _SneakyItem extends StatelessWidget {
                           itemCount: sneaky.colors.length,
                           scrollDirection: Axis.horizontal,
                           physics: const NeverScrollableScrollPhysics(),
-                          separatorBuilder: (_, __) => const Gap(8),
+                          separatorBuilder: (_, _) => const Gap(8),
                           itemBuilder: (_, index) => SizedBox.fromSize(
                             size: const Size(10, 10),
                             child: Container(color: sneaky.colors[index]),

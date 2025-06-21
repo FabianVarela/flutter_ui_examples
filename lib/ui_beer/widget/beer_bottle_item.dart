@@ -22,7 +22,7 @@ class BeerBottleItem extends StatelessWidget {
           right: -30,
           child: AnimatedBuilder(
             animation: pageController,
-            builder: (_, __) {
+            builder: (_, _) {
               var delta = 1.0;
               if (pageController.position.haveDimensions) {
                 final resultPage = (pageController.page ?? 0) - index;
@@ -41,7 +41,7 @@ class BeerBottleItem extends StatelessWidget {
         ),
         AnimatedBuilder(
           animation: pageController,
-          builder: (_, __) {
+          builder: (_, _) {
             var value = 1.0;
             if (pageController.position.haveDimensions) {
               value = (pageController.page ?? 0) - index;

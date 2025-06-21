@@ -29,7 +29,7 @@ class _Control360 extends StatefulWidget {
 }
 
 class _Control360State extends State<_Control360> {
-  final _circleKey = GlobalKey();
+  final _circleKey = GlobalKey<State<StatefulWidget>>();
 
   bool _isValid = false;
 

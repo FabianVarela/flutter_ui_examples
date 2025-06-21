@@ -24,7 +24,7 @@ class BeerDetailItem extends StatelessWidget {
         RatingBarIndicator(
           itemSize: 22,
           rating: beer.rating,
-          itemBuilder: (_, __) => const Icon(Icons.star, color: Colors.yellow),
+          itemBuilder: (_, _) => const Icon(Icons.star, color: Colors.yellow),
         ),
         const Gap(5),
         Padding(
