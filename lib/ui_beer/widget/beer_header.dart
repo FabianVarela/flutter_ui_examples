@@ -33,11 +33,11 @@ class _BeerHeaderState extends State<BeerHeader> with TickerProviderStateMixin {
   @override
   void didUpdateWidget(covariant BeerHeader oldWidget) {
     if (oldWidget.index != widget.index) {
-      _controller.forward();
+      unawaited(_controller.forward());
 
       Future.delayed(const Duration(milliseconds: 800), () {
         setState(() => _imageIndex = widget.index);
-        _controller.reverse();
+        unawaited(_controller.reverse());
       });
     }
     super.didUpdateWidget(oldWidget);

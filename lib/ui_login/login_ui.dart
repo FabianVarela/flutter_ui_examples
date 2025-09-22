@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -42,9 +44,9 @@ class LoginUI extends StatelessWidget {
                     child: _CardForm(),
                   ),
                   _SignInButtons(
-                    onSignIn: () {
-                      Navigator.pushReplacementNamed(context, '/shopping');
-                    },
+                    onSignIn: () => unawaited(
+                      Navigator.pushReplacementNamed(context, '/shopping'),
+                    ),
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),

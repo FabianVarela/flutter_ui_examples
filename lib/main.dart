@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ui_examples/common/menu/custom_drawer.dart';
@@ -49,7 +51,7 @@ class _MyAppState extends State<MyApp> {
           menu: CustomDrawer(
             isShowing: _isExpand,
             onRedirect: (route) {
-              Navigator.of(buildContext).pushReplacementNamed(route);
+              unawaited(Navigator.of(buildContext).pushReplacementNamed(route));
             },
             onCloseMenu: () => setState(() => _isExpand = false),
           ),

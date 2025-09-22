@@ -110,8 +110,12 @@ class SneakyUI extends StatelessWidget {
     );
   }
 
-  void _goToDetail(BuildContext context, Sneaky sneaky, String uuid) {
-    Navigator.of(context).pushNamed(
+  Future<void> _goToDetail(
+    BuildContext context,
+    Sneaky sneaky,
+    String uuid,
+  ) async {
+    await Navigator.of(context).pushNamed(
       '/sneaky_detail',
       arguments: SneakyDetailArguments(sneaky, uuid),
     );

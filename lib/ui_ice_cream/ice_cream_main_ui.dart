@@ -192,8 +192,8 @@ class _Popular extends StatelessWidget {
     );
   }
 
-  void _goToDetail(BuildContext context, IceCreamModel iceCream) {
-    Navigator.of(context).pushNamed(
+  Future<void> _goToDetail(BuildContext context, IceCreamModel iceCream) async {
+    await Navigator.of(context).pushNamed(
       '/ice_cream_detail',
       arguments: IceCreamDetailArguments(iceCream),
     );

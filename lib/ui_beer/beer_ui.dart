@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -26,16 +28,16 @@ class BeerUI extends HookWidget {
     final bottlePageController = usePageController(viewportFraction: .5);
     final detailPageController = usePageController();
 
-    bottlePageController.addListener(() {
-      detailPageController.animateToPage(
+    bottlePageController.addListener(() async {
+      await detailPageController.animateToPage(
         currentIndex.value,
         duration: const Duration(milliseconds: 100),
         curve: Curves.ease,
       );
     });
 
-    detailPageController.addListener(() {
-      bottlePageController.animateToPage(
+    detailPageController.addListener(() async {
+      await bottlePageController.animateToPage(
         currentIndex.value,
         duration: const Duration(milliseconds: 100),
         curve: Curves.ease,

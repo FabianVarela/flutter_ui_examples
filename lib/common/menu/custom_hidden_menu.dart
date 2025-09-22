@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vector_math/vector_math_64.dart' as vm;
 
 class CustomHiddenMenu extends StatefulWidget {
   const CustomHiddenMenu({
@@ -83,7 +84,7 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
 
             return Transform(
               transform: Matrix4.translationValues(_slideAmount, 0, 0)
-                ..scale(_contentScale, _contentScale),
+                ..scaleByVector3(vm.Vector3(_contentScale, _contentScale, 1)),
               alignment: Alignment.centerLeft,
               child: DecoratedBox(
                 decoration: const BoxDecoration(

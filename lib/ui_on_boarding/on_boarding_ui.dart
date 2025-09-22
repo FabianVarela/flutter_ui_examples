@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/model/page_model.dart';
@@ -46,9 +48,9 @@ class OnBoardingUI extends HookWidget {
                   currentPage.value = index;
 
                   if (currentPage.value == pageList.length - 1) {
-                    animController.forward().orCancel;
+                    unawaited(animController.forward().orCancel);
                   } else {
-                    animController.reverse().orCancel;
+                    unawaited(animController.reverse().orCancel);
                   }
                 },
                 itemBuilder: (_, index) => _OnboardingItem(
@@ -76,9 +78,9 @@ class OnBoardingUI extends HookWidget {
                   child: FloatingActionButton(
                     backgroundColor: Colors.white,
                     child: const Icon(Icons.arrow_forward),
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/login');
-                    },
+                    onPressed: () => unawaited(
+                      Navigator.pushReplacementNamed(context, '/login'),
+                    ),
                   ),
                 ),
               ),
