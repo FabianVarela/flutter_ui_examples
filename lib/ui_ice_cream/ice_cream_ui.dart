@@ -18,15 +18,15 @@ class IceCreamUI extends HookWidget {
             children: <Widget>[
               const Expanded(
                 child: Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: .bottomCenter,
                   child: Text(
                     'Ice Cream\nShop',
-                    textAlign: TextAlign.center,
+                    textAlign: .center,
                     style: TextStyle(
                       fontSize: 48,
                       color: Colors.white,
                       fontFamily: FontFamily.ritts,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: .bold,
                     ),
                   ),
                 ),
@@ -39,7 +39,7 @@ class IceCreamUI extends HookWidget {
                     flipX: true,
                     child: Assets.images.iceCream.iceCreamChocolate.image(
                       height: MediaQuery.sizeOf(context).height,
-                      fit: BoxFit.fill,
+                      fit: .fill,
                     ),
                   ),
                 ),
@@ -58,13 +58,13 @@ class IceCreamUI extends HookWidget {
                     fontSize: 20,
                     color: Color(0xFFFFFFFF),
                     fontFamily: FontFamily.museoSansCyrl,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: .w600,
                   ),
                 ),
                 IceCreamIconButton(
                   path: Assets.svg.iceCream.arrowLeft,
-                  size: const Size(60, 60),
-                  padding: const EdgeInsets.all(12),
+                  size: const .square(60),
+                  padding: const .all(12),
                   backgroundColor: const Color(0xFFF01359),
                   foregroundColor: const Color(0xFFFFFFFF),
                   onPress: () => Navigator.of(

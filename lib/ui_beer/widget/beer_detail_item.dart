@@ -8,15 +8,12 @@ class BeerDetailItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: .center,
       children: <Widget>[
         Text(
           beer.name,
-          textAlign: TextAlign.center,
-          style: GoogleFonts.montserrat(
-            fontSize: 30,
-            fontWeight: FontWeight.w700,
-          ),
+          textAlign: .center,
+          style: GoogleFonts.montserrat(fontSize: 30, fontWeight: .w700),
         ),
         const Gap(5),
         Text(beer.slogan, style: GoogleFonts.montserrat(fontSize: 14)),
@@ -28,14 +25,11 @@ class BeerDetailItem extends StatelessWidget {
         ),
         const Gap(5),
         Padding(
-          padding: const EdgeInsets.fromLTRB(30, 8, 30, 8),
+          padding: const .fromLTRB(30, 8, 30, 8),
           child: Text(
             beer.description,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.montserrat(
-              fontSize: 16,
-              fontWeight: FontWeight.w300,
-            ),
+            textAlign: .center,
+            style: GoogleFonts.montserrat(fontSize: 16, fontWeight: .w300),
           ),
         ),
       ],

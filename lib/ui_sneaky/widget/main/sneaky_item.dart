@@ -11,14 +11,14 @@ class _SneakyItem extends StatelessWidget {
     return Card(
       elevation: 10,
       surfaceTintColor: Colors.white,
-      clipBehavior: Clip.antiAliasWithSaveLayer,
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      clipBehavior: .antiAliasWithSaveLayer,
+      margin: const .symmetric(horizontal: 16),
+      shape: RoundedRectangleBorder(borderRadius: .circular(20)),
       child: Container(
         width: 300,
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const .symmetric(vertical: 10, horizontal: 20),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: .center,
           children: <Widget>[
             Hero(
               tag: uuid,
@@ -26,18 +26,18 @@ class _SneakyItem extends StatelessWidget {
             ),
             const Gap(35),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: .end,
               children: <Widget>[
                 Expanded(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: .start,
                     children: <Widget>[
                       Text(
                         '\$ ${sneaky.price.toStringAsFixed(2)}',
                         style: const TextStyle(
                           fontFamily: FontFamily.avenirLTStd,
                           fontSize: 20,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: .bold,
                         ),
                       ),
                       const Gap(2),
@@ -53,11 +53,11 @@ class _SneakyItem extends StatelessWidget {
                         height: 10,
                         child: ListView.separated(
                           itemCount: sneaky.colors.length,
-                          scrollDirection: Axis.horizontal,
+                          scrollDirection: .horizontal,
                           physics: const NeverScrollableScrollPhysics(),
                           separatorBuilder: (_, _) => const Gap(8),
-                          itemBuilder: (_, index) => SizedBox.fromSize(
-                            size: const Size(10, 10),
+                          itemBuilder: (_, index) => SizedBox.square(
+                            dimension: 10,
                             child: Container(color: sneaky.colors[index]),
                           ),
                         ),
@@ -65,12 +65,12 @@ class _SneakyItem extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox.fromSize(
-                  size: const Size(40, 40),
+                SizedBox.square(
+                  dimension: 40,
                   child: DecoratedBox(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 2),
+                      borderRadius: .circular(10),
+                      border: .all(width: 2),
                     ),
                     child: const Icon(Icons.add),
                   ),

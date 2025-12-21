@@ -10,22 +10,22 @@ class _SneakySizeList extends HookWidget {
     final current = useState<int?>(null);
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment: .stretch,
       children: <Widget>[
         Text(
           'Size'.toUpperCase(),
           style: const TextStyle(
             fontFamily: FontFamily.avenirLTStd,
             fontSize: 16,
-            fontWeight: FontWeight.w900,
+            fontWeight: .w900,
           ),
         ),
         Container(
           height: 50,
-          margin: const EdgeInsets.only(top: 15),
+          margin: const .only(top: 15),
           child: ListView.builder(
             itemCount: sizes.length,
-            scrollDirection: Axis.horizontal,
+            scrollDirection: .horizontal,
             itemBuilder: (_, index) => _SizeItem(
               size: sizes[index],
               isSelected: current.value != null && current.value == index,
@@ -51,27 +51,27 @@ class _SizeItem extends StatelessWidget {
       onTap: size.isAvailable ? onTap : null,
       child: Container(
         width: 50,
-        alignment: Alignment.center,
-        margin: const EdgeInsets.only(right: 10),
+        alignment: .center,
+        margin: const .only(right: 10),
         decoration: size.isAvailable
             ? BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(
+                borderRadius: .circular(10),
+                border: .all(
                   color: isSelected ? Colors.black : Colors.grey,
                   width: isSelected ? 2 : 1,
                 ),
               )
             : BoxDecoration(
                 color: Colors.grey.withValues(alpha: .3),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: .circular(10),
               ),
         child: Text(
           '${size.size}',
           style: const TextStyle(
             fontFamily: FontFamily.avenirLTStd,
             fontSize: 15,
-            fontWeight: FontWeight.w700,
+            fontWeight: .w700,
           ),
         ),
       ),

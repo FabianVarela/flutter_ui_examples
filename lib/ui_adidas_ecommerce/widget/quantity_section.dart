@@ -9,26 +9,26 @@ class _QuantitySection extends HookWidget {
 
     return Column(
       spacing: 12,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
       children: <Widget>[
         Text(
           'Quantity',
           style: GoogleFonts.montserrat(
             color: const Color(0xFF949598),
             fontSize: 14,
-            fontWeight: FontWeight.w500,
+            fontWeight: .w500,
           ),
         ),
         Container(
           height: 40,
-          margin: const EdgeInsets.only(left: 12),
+          margin: const .only(left: 12),
           decoration: BoxDecoration(
             color: const Color(0xFF525663),
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: .circular(5),
           ),
           child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: .min,
+            mainAxisAlignment: .spaceEvenly,
             children: <Widget>[
               Flexible(
                 flex: 3,
@@ -38,27 +38,27 @@ class _QuantitySection extends HookWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8),
+                padding: .symmetric(vertical: 8),
                 child: VerticalDivider(color: Colors.black, width: 2),
               ),
               Flexible(
                 flex: 3,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  padding: const .symmetric(horizontal: 12),
                   child: FittedBox(
                     child: Text(
                       '${amount.value}',
                       style: GoogleFonts.montserrat(
                         color: Colors.white,
                         fontSize: 22,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: .w900,
                       ),
                     ),
                   ),
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(vertical: 8),
+                padding: .symmetric(vertical: 8),
                 child: VerticalDivider(color: Colors.black, width: 2),
               ),
               Flexible(

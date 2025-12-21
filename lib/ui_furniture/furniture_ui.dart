@@ -29,28 +29,22 @@ class FurnitureUI extends HookWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
+          padding: const .only(left: 10),
           child: IconButton(
             icon: VectorGraphic(
               loader: AssetBytesLoader(Assets.svg.furniture.menu),
-              colorFilter: const ColorFilter.mode(
-                Colors.black,
-                BlendMode.srcIn,
-              ),
+              colorFilter: const .mode(Colors.black, .srcIn),
             ),
             onPressed: onPressedMenu,
           ),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 10),
+            padding: const .only(right: 10),
             child: IconButton(
               icon: VectorGraphic(
                 loader: AssetBytesLoader(Assets.svg.furniture.search),
-                colorFilter: const ColorFilter.mode(
-                  Colors.black,
-                  BlendMode.srcIn,
-                ),
+                colorFilter: const .mode(Colors.black, .srcIn),
               ),
               onPressed: () {},
             ),
@@ -58,7 +52,7 @@ class FurnitureUI extends HookWidget {
         ],
       ),
       body: Stack(
-        fit: StackFit.expand,
+        fit: .expand,
         children: <Widget>[
           const _GradientContainer(),
           Positioned(
@@ -71,12 +65,12 @@ class FurnitureUI extends HookWidget {
             ),
           ),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: .bottomCenter,
             child: SizedBox(
               height: height >= 750 ? height * .55 : height * .65,
               child: ListView.builder(
                 itemCount: furnitureList.length,
-                scrollDirection: Axis.horizontal,
+                scrollDirection: .horizontal,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (_, index) => _FurnitureItem(
                   image: furnitureList[index].image,
@@ -109,15 +103,15 @@ class FurnitureUI extends HookWidget {
         ],
       ),
       floatingActionButton: TextButton(
-        clipBehavior: Clip.none,
+        clipBehavior: .none,
         style: TextButton.styleFrom(
           overlayColor: Colors.black,
-          minimumSize: const Size(65, 65),
+          minimumSize: const .square(65),
           shape: const CircleBorder(),
           backgroundBuilder: (_, _, child) => DecoratedBox(
             decoration: BoxDecoration(
               color: const Color(0x0FFA7B58),
-              shape: BoxShape.circle,
+              shape: .circle,
               boxShadow: <BoxShadow>[
                 BoxShadow(
                   color: const Color(0xFFF78A6C).withValues(alpha: .8),
@@ -131,7 +125,7 @@ class FurnitureUI extends HookWidget {
         onPressed: () {},
         child: const Icon(Icons.add, size: 35, color: Colors.white),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: .centerDocked,
     );
   }
 }

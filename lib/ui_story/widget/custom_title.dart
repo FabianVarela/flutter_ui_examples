@@ -8,9 +8,9 @@ class _CustomTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+      padding: const .symmetric(horizontal: 20, vertical: 8),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: .spaceBetween,
         children: <Widget>[
           Text(
             title,
@@ -23,10 +23,7 @@ class _CustomTitle extends StatelessWidget {
           IconButton(
             icon: VectorGraphic(
               loader: AssetBytesLoader(Assets.svg.story.options),
-              colorFilter: const ColorFilter.mode(
-                Colors.white,
-                BlendMode.srcIn,
-              ),
+              colorFilter: const .mode(Colors.white, .srcIn),
             ),
             onPressed: () {},
           ),

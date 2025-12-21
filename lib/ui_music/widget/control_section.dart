@@ -16,13 +16,13 @@ class _ControlSection extends StatelessWidget {
               width: 290,
               height: 65,
               decoration: BoxDecoration(
-                border: Border.all(color: const Color(0xFF4B9AD5), width: 3),
-                borderRadius: BorderRadius.circular(40),
+                border: .all(color: const Color(0xFF4B9AD5), width: 3),
+                borderRadius: .circular(40),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
+                padding: const .symmetric(horizontal: 25),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: .spaceBetween,
                   children: <Widget>[
                     for (final icon in controlIcons)
                       Icon(icon, size: 55, color: const Color(0xFF4B9AD5)),
@@ -34,7 +34,7 @@ class _ControlSection extends StatelessWidget {
           Align(
             child: IconButton(
               style: IconButton.styleFrom(
-                minimumSize: const Size(92, 92),
+                minimumSize: const .square(92),
                 shape: const CircleBorder(),
                 backgroundColor: const Color(0xFF4B9AD5),
               ),

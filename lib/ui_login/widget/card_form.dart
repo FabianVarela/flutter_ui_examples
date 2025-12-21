@@ -10,7 +10,7 @@ class _CardForm extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: .circular(8),
         boxShadow: blurRadiusList.map((item) {
           return BoxShadow(
             color: Colors.black12,
@@ -20,7 +20,7 @@ class _CardForm extends StatelessWidget {
         }).toList(),
       ),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 16, 16, 40),
+        padding: const .fromLTRB(16, 16, 16, 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -47,7 +47,7 @@ class _CardForm extends StatelessWidget {
             ),
             const Gap(40),
             Align(
-              alignment: Alignment.centerRight,
+              alignment: .centerRight,
               child: InkWell(
                 onTap: () {},
                 child: Text(

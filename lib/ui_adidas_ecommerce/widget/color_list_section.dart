@@ -10,34 +10,34 @@ class _ColorListSection extends HookWidget {
     final currentColor = useState<int?>(null);
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 18, bottom: 10),
+          padding: const .only(left: 18, bottom: 10),
           child: Text(
             'Select Color',
             style: GoogleFonts.montserrat(
               color: const Color(0xFF949598),
               fontSize: 14,
-              fontWeight: FontWeight.w900,
+              fontWeight: .w900,
             ),
           ),
         ),
         Container(
-          width: double.infinity,
+          width: .infinity,
           height: 34,
-          margin: const EdgeInsets.only(left: 30, bottom: 20),
+          margin: const .only(left: 30, bottom: 20),
           child: Row(
             children: <Widget>[
               for (final (index, color) in colors.indexed) ...[
                 InkWell(
                   onTap: () => currentColor.value = index,
-                  child: SizedBox.fromSize(
-                    size: const Size(30, 30),
+                  child: SizedBox.square(
+                    dimension: 30,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         color: Colors.black,
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: .circular(5),
                         boxShadow: <BoxShadow>[
                           if (currentColor.value == index)
                             BoxShadow(
@@ -50,8 +50,8 @@ class _ColorListSection extends HookWidget {
                       child: ClipPath(
                         clipper: AdidasClipper(),
                         child: Container(
-                          width: double.infinity,
-                          height: double.infinity,
+                          width: .infinity,
+                          height: .infinity,
                           color: color,
                         ),
                       ),

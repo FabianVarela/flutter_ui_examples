@@ -30,8 +30,8 @@ class OnBoardingUI extends HookWidget {
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: <Color>[Color(0xFF485563), Color(0xFF29323C)],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: .topCenter,
+          end: .bottomCenter,
           stops: <double>[0, 1],
         ),
       ),
@@ -39,7 +39,7 @@ class OnBoardingUI extends HookWidget {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: Stack(
-            fit: StackFit.expand,
+            fit: .expand,
             children: <Widget>[
               PageView.builder(
                 itemCount: pageList.length,

@@ -20,11 +20,11 @@ class IceCreamMainUI extends StatelessWidget {
         slivers: <Widget>[
           SliverToBoxAdapter(child: _Header(onPressMenu: onPressedMenu)),
           const SliverPadding(
-            padding: EdgeInsets.only(top: 30, left: 30),
+            padding: .only(top: 30, left: 30),
             sliver: SliverToBoxAdapter(child: _Options()),
           ),
           const SliverPadding(
-            padding: EdgeInsets.only(top: 20, left: 30, right: 24),
+            padding: .only(top: 20, left: 30, right: 24),
             sliver: SliverToBoxAdapter(child: _Popular()),
           ),
         ],
@@ -45,13 +45,13 @@ class _Header extends StatelessWidget {
         Container(
           width: MediaQuery.sizeOf(context).width * .88,
           height: MediaQuery.sizeOf(context).height * .45,
-          padding: const EdgeInsets.only(left: 24),
+          padding: const .only(left: 24),
           decoration: const BoxDecoration(
             color: Color(0xFFF593AF),
-            borderRadius: BorderRadius.only(bottomRight: Radius.circular(20)),
+            borderRadius: .only(bottomRight: .circular(20)),
           ),
           child: Align(
-            alignment: Alignment.centerLeft,
+            alignment: .centerLeft,
             child: RichText(
               text: const TextSpan(
                 text: '\t\t\t\t\tTHE WORLD OF\n',
@@ -59,7 +59,7 @@ class _Header extends StatelessWidget {
                   fontSize: 16,
                   color: Colors.white,
                   fontFamily: FontFamily.museoSansCyrl,
-                  fontWeight: FontWeight.w300,
+                  fontWeight: .w300,
                 ),
                 children: <TextSpan>[
                   TextSpan(
@@ -67,7 +67,7 @@ class _Header extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 40,
                       fontFamily: FontFamily.ritts,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: .bold,
                     ),
                   ),
                 ],
@@ -78,9 +78,9 @@ class _Header extends StatelessWidget {
         SafeArea(
           bottom: false,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
+            padding: const .symmetric(horizontal: 24),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: .spaceBetween,
               children: <Widget>[
                 IceCreamIconButton(
                   path: Assets.svg.iceCream.dots,
@@ -120,19 +120,19 @@ class _Options extends HookWidget {
     ];
 
     return SizedBox.fromSize(
-      size: const Size(double.infinity, 120),
+      size: const .fromHeight(120),
       child: ListView.separated(
         itemCount: optionList.length,
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.only(left: 10, top: 5),
+        scrollDirection: .horizontal,
+        padding: const .only(left: 10, top: 5),
         separatorBuilder: (_, _) => const Gap(20),
         itemBuilder: (_, index) => Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: .min,
           children: <Widget>[
             IceCreamIconButton(
               path: optionList[index].icon,
-              size: const Size(80, 80),
-              padding: const EdgeInsets.all(20),
+              size: const .square(80),
+              padding: const .all(20),
               backgroundColor: currentIndex.value == index
                   ? const Color(0xFFF01359)
                   : const Color(0xFFFFFFFF),
@@ -150,7 +150,7 @@ class _Options extends HookWidget {
                     ? const Color(0xFFF01359)
                     : Colors.grey,
                 fontFamily: FontFamily.museoSansCyrl,
-                fontWeight: FontWeight.w600,
+                fontWeight: .w600,
               ),
             ),
           ],
@@ -166,8 +166,8 @@ class _Popular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: .min,
+      crossAxisAlignment: .start,
       children: <Widget>[
         const Text(
           'Popular',
@@ -175,7 +175,7 @@ class _Popular extends StatelessWidget {
             fontSize: 20,
             color: Color(0xFFF01359),
             fontFamily: FontFamily.museoSansCyrl,
-            fontWeight: FontWeight.w600,
+            fontWeight: .w600,
           ),
         ),
         const Gap(16),

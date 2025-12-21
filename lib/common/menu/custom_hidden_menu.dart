@@ -83,9 +83,9 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
             _cornerRadius = 30 * _value;
 
             return Transform(
-              transform: Matrix4.translationValues(_slideAmount, 0, 0)
+              transform: .translationValues(_slideAmount, 0, 0)
                 ..scaleByVector3(vm.Vector3(_contentScale, _contentScale, 1)),
-              alignment: Alignment.centerLeft,
+              alignment: .centerLeft,
               child: DecoratedBox(
                 decoration: const BoxDecoration(
                   boxShadow: <BoxShadow>[
@@ -98,7 +98,7 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
                   ],
                 ),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(_cornerRadius),
+                  borderRadius: .circular(_cornerRadius),
                   child: child,
                 ),
               ),

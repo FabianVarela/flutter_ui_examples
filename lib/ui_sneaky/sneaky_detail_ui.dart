@@ -45,11 +45,11 @@ class SneakyDetailUI extends HookWidget {
                 physics: isDisableScroll.value
                     ? const NeverScrollableScrollPhysics()
                     : const AlwaysScrollableScrollPhysics(),
-                padding: const EdgeInsets.fromLTRB(16, 10, 16, 30),
+                padding: const .fromLTRB(16, 10, 16, 30),
                 child: Stack(
                   children: <Widget>[
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      crossAxisAlignment: .stretch,
                       children: <Widget>[
                         Hero(tag: uuid, child: Image.asset(sneaky.image)),
                         const Gap(20),
@@ -58,7 +58,7 @@ class SneakyDetailUI extends HookWidget {
                           style: const TextStyle(
                             fontFamily: FontFamily.poetsenOne,
                             fontSize: 30,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: .bold,
                           ),
                         ),
                         const Gap(10),
@@ -67,7 +67,7 @@ class SneakyDetailUI extends HookWidget {
                           style: const TextStyle(
                             fontFamily: FontFamily.avenirLTStd,
                             fontSize: 25,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: .w500,
                           ),
                         ),
                         const Gap(30),
@@ -80,7 +80,7 @@ class SneakyDetailUI extends HookWidget {
                           style: const TextStyle(
                             fontFamily: FontFamily.avenirLTStd,
                             fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: .w500,
                           ),
                         ),
                         const Gap(50),
@@ -112,7 +112,7 @@ class SneakyDetailUI extends HookWidget {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding: const .symmetric(horizontal: 10),
                       child: _CustomButton(
                         text: 'Add to bag'.toUpperCase(),
                         onPressed: () {},

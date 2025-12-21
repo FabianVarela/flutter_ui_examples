@@ -29,11 +29,9 @@ class _HeaderSection extends StatelessWidget {
                 ),
                 child: Stack(
                   children: <Widget>[
-                    Image.asset(
-                      image,
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                      height: double.infinity,
+                    SizedBox.fromSize(
+                      size: .infinite,
+                      child: Image.asset(image, fit: .cover),
                     ),
                     SizedBox.expand(
                       child: DecoratedBox(
@@ -49,10 +47,10 @@ class _HeaderSection extends StatelessWidget {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.only(top: 100, left: 90),
+                          padding: const .only(top: 100, left: 90),
                           child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: .center,
+                            crossAxisAlignment: .start,
                             children: <Widget>[
                               Text(
                                 'WATCH BEFORE EVERYONE',
@@ -93,15 +91,12 @@ class _HeaderSection extends StatelessWidget {
                   const Gap(12),
                   ElevatedButton.icon(
                     onPressed: () {},
-                    iconAlignment: IconAlignment.end,
+                    iconAlignment: .end,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFE52020),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 80,
-                      ),
+                      padding: const .symmetric(vertical: 15, horizontal: 80),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: .circular(30),
                       ),
                     ),
                     icon: const Icon(Icons.arrow_forward, color: Colors.white),

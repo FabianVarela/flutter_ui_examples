@@ -27,9 +27,9 @@ class _SocialButtons extends StatelessWidget {
     return Column(
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(bottom: 30),
+          padding: const .only(bottom: 30),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: .center,
             children: <Widget>[
               SizedBox(
                 width: 85,
@@ -39,7 +39,7 @@ class _SocialButtons extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const .symmetric(horizontal: 16),
                 child: Text(
                   'Social login',
                   style: GoogleFonts.mulish(fontSize: 16),
@@ -56,7 +56,7 @@ class _SocialButtons extends StatelessWidget {
           ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: .center,
           children: <Widget>[
             for (final (index, item) in socialIconList.indexed) ...[
               _SocialIcons(
@@ -89,10 +89,10 @@ class _SocialIcons extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         overlayColor: Colors.black,
-        minimumSize: const Size(45, 45),
-        padding: const EdgeInsets.all(8),
+        minimumSize: const .square(45),
+        padding: const .all(8),
         shape: const CircleBorder(),
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        tapTargetSize: .shrinkWrap,
         backgroundBuilder: (_, state, child) {
           var opacity = 1.0;
           if (state.contains(WidgetState.disabled)) opacity = .6;
@@ -112,9 +112,9 @@ class _SocialIcons extends StatelessWidget {
       onPressed: onPressed,
       child: VectorGraphic(
         loader: AssetBytesLoader(iconPath),
-        colorFilter: ColorFilter.mode(
+        colorFilter: .mode(
           onPressed != null ? Colors.white : Colors.white70,
-          BlendMode.srcIn,
+          .srcIn,
         ),
       ),
     );

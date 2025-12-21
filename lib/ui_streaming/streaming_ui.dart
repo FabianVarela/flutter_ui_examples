@@ -26,7 +26,7 @@ class StreamingUI extends HookWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 20),
+          padding: const .only(left: 20),
           child: IconButton(
             icon: const Icon(Icons.menu, color: Colors.white),
             onPressed: onPressedMenu,

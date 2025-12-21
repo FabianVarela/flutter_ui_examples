@@ -11,13 +11,13 @@ class _StreamingList extends StatelessWidget {
     return SizedBox(
       height: 320,
       child: Padding(
-        padding: const EdgeInsets.only(left: 65),
+        padding: const .only(left: 65),
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const .symmetric(horizontal: 20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: .spaceBetween,
                 children: <Widget>[
                   Text('Watch more', style: GoogleFonts.mulish(fontSize: 22)),
                   TextButton(
@@ -34,34 +34,33 @@ class _StreamingList extends StatelessWidget {
               height: 250,
               child: ListView.separated(
                 itemCount: streamingList.length,
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.fromLTRB(12, 25, 0, 25),
+                scrollDirection: .horizontal,
+                padding: const .fromLTRB(12, 25, 0, 25),
                 separatorBuilder: (_, _) => const Gap(24),
                 itemBuilder: (_, index) => InkWell(
                   onTap: () => onSelectStream?.call(streamingList[index]),
                   child: Card(
                     elevation: 10,
                     surfaceTintColor: Colors.white,
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                    clipBehavior: .antiAliasWithSaveLayer,
+                    shape: RoundedRectangleBorder(borderRadius: .circular(10)),
                     child: SizedBox.fromSize(
                       size: const Size(220, 135),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: .start,
                         children: <Widget>[
-                          Image.asset(
-                            streamingList[index].image,
-                            width: double.infinity,
-                            height: 150,
-                            fit: BoxFit.cover,
+                          SizedBox.fromSize(
+                            size: const Size.fromHeight(150),
+                            child: Image.asset(
+                              streamingList[index].image,
+                              fit: .cover,
+                            ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8),
+                            padding: const .all(8),
                             child: Text(
                               streamingList[index].title,
-                              overflow: TextOverflow.ellipsis,
+                              overflow: .ellipsis,
                               style: GoogleFonts.mulish(fontSize: 16),
                             ),
                           ),

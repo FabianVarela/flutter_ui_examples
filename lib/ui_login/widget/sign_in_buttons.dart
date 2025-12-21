@@ -10,7 +10,7 @@ class _SignInButtons extends HookWidget {
     final isSelected = useState(false);
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: .spaceBetween,
       children: <Widget>[
         const Gap(0),
         GestureDetector(
@@ -18,20 +18,20 @@ class _SignInButtons extends HookWidget {
           child: Row(
             children: <Widget>[
               SizedBox.fromSize(
-                size: const Size(16, 16),
+                size: const .square(16),
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(width: 2),
+                    shape: .circle,
+                    border: .all(width: 2),
                   ),
                   child: Offstage(
                     offstage: !isSelected.value,
                     child: Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      margin: const EdgeInsets.all(4),
+                      width: .infinity,
+                      height: .infinity,
+                      margin: const .all(4),
                       decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
+                        shape: .circle,
                         color: Colors.black,
                       ),
                     ),
@@ -49,16 +49,14 @@ class _SignInButtons extends HookWidget {
             foregroundColor: Colors.white,
             disabledForegroundColor: Colors.white60,
             minimumSize: const Size(200, 60),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(6),
-            ),
+            shape: RoundedRectangleBorder(borderRadius: .circular(6)),
             backgroundBuilder: (_, state, child) {
               var opacity = 1.0;
               if (state.contains(WidgetState.disabled)) opacity = .6;
 
               return Ink(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
+                  borderRadius: .circular(6),
                   gradient: LinearGradient(
                     colors: <Color>[
                       const Color(0xFF17EAD9).withValues(alpha: opacity),

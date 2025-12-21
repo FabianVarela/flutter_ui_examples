@@ -15,7 +15,7 @@ class BeerBottleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      clipBehavior: Clip.none,
+      clipBehavior: .none,
       children: <Widget>[
         Positioned(
           top: 10,
@@ -33,7 +33,7 @@ class BeerBottleItem extends StatelessWidget {
                 opacity: delta,
                 child: SizedBox.fromSize(
                   size: const Size(70, 40),
-                  child: Image.asset(beer.smallImage, fit: BoxFit.contain),
+                  child: Image.asset(beer.smallImage, fit: .contain),
                 ),
               );
             },
@@ -53,7 +53,7 @@ class BeerBottleItem extends StatelessWidget {
             return Center(
               child: SizedBox.fromSize(
                 size: Size(250, value * 350),
-                child: Image.asset(beer.bottleImage, fit: BoxFit.fitHeight),
+                child: Image.asset(beer.bottleImage, fit: .fitHeight),
               ),
             );
           },

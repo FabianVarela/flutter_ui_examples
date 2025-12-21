@@ -39,7 +39,7 @@ class StoryUI extends HookWidget {
           icon: VectorGraphic(
             loader: AssetBytesLoader(Assets.svg.story.menu),
             height: 30,
-            colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+            colorFilter: const .mode(Colors.white, .srcIn),
           ),
           onPressed: onPressedMenu,
         ),
@@ -51,7 +51,7 @@ class StoryUI extends HookWidget {
         ],
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.only(bottom: 20),
+        padding: const .only(bottom: 20),
         child: Column(
           children: <Widget>[
             const _CustomTitle(title: 'Trending'),
@@ -84,16 +84,15 @@ class StoryUI extends HookWidget {
               height: 250,
               child: ListView.builder(
                 itemCount: favoriteList.length,
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                scrollDirection: .horizontal,
+                padding: const .symmetric(vertical: 20),
                 itemBuilder: (_, index) => Padding(
-                  padding: const EdgeInsets.only(left: 18, right: 12),
+                  padding: const .only(left: 18, right: 12),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image.asset(
-                      favoriteList[index].image,
-                      width: 296,
-                      height: 222,
+                    borderRadius: .circular(20),
+                    child: SizedBox.fromSize(
+                      size: const Size(296, 222),
+                      child: Image.asset(favoriteList[index].image),
                     ),
                   ),
                 ),

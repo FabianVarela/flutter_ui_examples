@@ -39,7 +39,7 @@ class _Control360State extends State<_Control360> {
     final circleSize = Size(widget.size * 0.8, widget.size * 0.8);
 
     return Stack(
-      alignment: Alignment.center,
+      alignment: .center,
       children: <Widget>[
         RawGestureDetector(
           gestures: {
@@ -77,17 +77,17 @@ class _Control360State extends State<_Control360> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          width: widget.size * 0.6,
-          height: widget.size * 0.6,
-          alignment: Alignment.centerLeft,
+          padding: const .symmetric(horizontal: 10),
+          width: widget.size * .6,
+          height: widget.size * .6,
+          alignment: .centerLeft,
           decoration: const BoxDecoration(
-            shape: BoxShape.circle,
+            shape: .circle,
             color: Colors.transparent,
           ),
           child: Text(
             '${widget.value.round()}º',
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 15, fontWeight: .bold),
           ),
         ),
       ],

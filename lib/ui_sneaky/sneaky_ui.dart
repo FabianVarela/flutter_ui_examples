@@ -22,14 +22,14 @@ class SneakyUI extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 30),
+              padding: const .symmetric(horizontal: 16, vertical: 30),
               children: sneakyCategories.map((item) {
                 return Padding(
-                  padding: const EdgeInsets.only(bottom: 40),
+                  padding: const .only(bottom: 40),
                   child: Column(
                     children: <Widget>[
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: .spaceBetween,
                         children: <Widget>[
                           Text(
                             item.name,
@@ -56,9 +56,9 @@ class SneakyUI extends StatelessWidget {
                       SizedBox(
                         height: 330,
                         child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
+                          scrollDirection: .horizontal,
                           itemCount: item.sneakyList.length,
-                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          padding: const .symmetric(vertical: 20),
                           itemBuilder: (_, index) {
                             final uuid = const Uuid().v1();
                             final sneaky = item.sneakyList[index];
@@ -80,15 +80,15 @@ class SneakyUI extends StatelessWidget {
               right: 16,
               bottom: 50,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: .spaceBetween,
+                crossAxisAlignment: .end,
                 children: <Widget>[
                   CustomIconButton(
                     iconData: Icons.menu_rounded,
                     onPressed: onPressedMenu,
                   ),
                   Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisSize: .min,
                     children: <Widget>[
                       CustomIconButton(
                         iconData: Icons.search_outlined,

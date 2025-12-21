@@ -9,10 +9,10 @@ class _PageIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: List.generate(pageCount, (index) {
+      children: .generate(pageCount, (index) {
         return Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
+            padding: const .symmetric(horizontal: 4),
             child: Container(
               height: 4,
               decoration: BoxDecoration(

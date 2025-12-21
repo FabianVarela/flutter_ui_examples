@@ -8,15 +8,12 @@ class _ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
-      size: const Size(double.infinity, 330),
+      size: const .fromHeight(330),
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: shopping.color,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(
-            color: Colors.grey.withValues(alpha: .3),
-            width: .2,
-          ),
+          borderRadius: .circular(20),
+          border: .all(color: Colors.grey.withValues(alpha: .3), width: .2),
         ),
         child: Column(
           children: <Widget>[
@@ -25,9 +22,9 @@ class _ProductCard extends StatelessWidget {
             Text(shopping.title, style: GoogleFonts.ubuntu(fontSize: 25)),
             const Gap(15),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const .symmetric(horizontal: 30),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: .spaceBetween,
                 children: <Widget>[
                   IconButton(
                     icon: VectorGraphic(

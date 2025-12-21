@@ -19,9 +19,9 @@ class CustomIconButton extends StatelessWidget {
         foregroundColor: Colors.black,
         shadowColor: Colors.black,
         elevation: 10,
-        padding: const EdgeInsets.all(10),
-        minimumSize: const Size(50, 50),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        padding: const .all(10),
+        minimumSize: const .square(50),
+        shape: RoundedRectangleBorder(borderRadius: .circular(10)),
       ),
       child: Icon(iconData, size: 24),
     );

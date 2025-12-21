@@ -46,7 +46,7 @@ class _CardScroll extends StatelessWidget {
 
               return Positioned.directional(
                 start: start,
-                textDirection: TextDirection.rtl,
+                textDirection: .rtl,
                 top: padding + verticalInset * max(-delta, 0.0),
                 bottom: padding + verticalInset * max(-delta, 0.0),
                 child: _CardItem(image: item.image, name: item.name),
@@ -68,7 +68,7 @@ class _CardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: .circular(16),
       child: DecoratedBox(
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -83,20 +83,17 @@ class _CardItem extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: _cardAspectRatio,
           child: Stack(
-            fit: StackFit.expand,
+            fit: .expand,
             children: <Widget>[
-              Image.asset(image, fit: BoxFit.cover),
+              Image.asset(image, fit: .cover),
               Align(
-                alignment: Alignment.bottomLeft,
+                alignment: .bottomLeft,
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: .min,
+                  crossAxisAlignment: .start,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 8,
-                      ),
+                      padding: const .symmetric(horizontal: 16, vertical: 8),
                       child: Text(
                         name,
                         style: GoogleFonts.varelaRound(
@@ -106,16 +103,16 @@ class _CardItem extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 12, bottom: 12),
+                      padding: const .only(left: 12, bottom: 12),
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          minimumSize: Size.zero,
+                          minimumSize: .zero,
                           backgroundColor: Colors.blueAccent,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: .circular(20),
                           ),
-                          padding: const EdgeInsets.symmetric(
+                          padding: const .symmetric(
                             horizontal: 22,
                             vertical: 6,
                           ),

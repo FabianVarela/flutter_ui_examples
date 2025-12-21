@@ -11,33 +11,33 @@ class _SizeSection extends HookWidget {
 
     return Column(
       spacing: 8,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
       children: <Widget>[
         Text(
           'Size',
           style: GoogleFonts.montserrat(
             color: const Color(0xFF949598),
             fontSize: 14,
-            fontWeight: FontWeight.w500,
+            fontWeight: .w500,
           ),
         ),
         SizedBox(
           height: 38,
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: .min,
             children: <Widget>[
               const Gap(12),
               for (final (index, size) in sizes.indexed) ...[
                 InkWell(
                   onTap: () => currentSize.value = index,
-                  child: SizedBox.fromSize(
-                    size: const Size(40, 40),
+                  child: SizedBox.square(
+                    dimension: 40,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
                         color: index == currentSize.value
                             ? const Color(0xFFFC3930)
                             : const Color(0xFF525663),
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: .circular(5),
                         boxShadow: <BoxShadow>[
                           BoxShadow(
                             color: index == currentSize.value
@@ -53,7 +53,7 @@ class _SizeSection extends HookWidget {
                           '$size',
                           style: GoogleFonts.montserrat(
                             color: Colors.white,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: .w900,
                           ),
                         ),
                       ),

@@ -25,22 +25,22 @@ class LoginUI extends StatelessWidget {
       backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       body: Stack(
-        fit: StackFit.expand,
+        fit: .expand,
         children: <Widget>[
           const _BackgroundImage(),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const .symmetric(horizontal: 20),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: .start,
                 children: <Widget>[
                   SizedBox.fromSize(
-                    size: const Size(70, 70),
+                    size: const .square(70),
                     child: Assets.images.login.loginLogo.image(),
                   ),
                   const Spacer(),
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: .symmetric(vertical: 20),
                     child: _CardForm(),
                   ),
                   _SignInButtons(
@@ -49,11 +49,11 @@ class LoginUI extends StatelessWidget {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20),
+                    padding: .symmetric(vertical: 20),
                     child: _SocialButtons(),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
+                    padding: const .only(bottom: 20),
                     child: Align(
                       child: RichText(
                         text: TextSpan(

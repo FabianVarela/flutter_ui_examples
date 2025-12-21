@@ -26,8 +26,8 @@ class ShoppingUI extends HookWidget {
     final bottomNavIconList = <Widget>[
       Assets.images.shopping.store.image(width: 35, height: 35),
       ...List.generate(3, (index) {
-        return SizedBox.fromSize(
-          size: const Size(32, 32),
+        return SizedBox.square(
+          dimension: 32,
           child: VectorGraphic(loader: AssetBytesLoader(svgImages[index])),
         );
       }),
@@ -40,7 +40,7 @@ class ShoppingUI extends HookWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
+          padding: const .only(left: 10),
           child: IconButton(
             icon: const Icon(Icons.menu, color: Colors.black),
             onPressed: onPressedMenu,
@@ -50,9 +50,9 @@ class ShoppingUI extends HookWidget {
       ),
       body: ListView.builder(
         itemCount: shoppingList.length,
-        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+        padding: const .symmetric(horizontal: 50, vertical: 30),
         itemBuilder: (_, index) => Padding(
-          padding: const EdgeInsets.only(bottom: 32),
+          padding: const .only(bottom: 32),
           child: _ProductCard(shopping: shoppingList[index]),
         ),
       ),
@@ -68,7 +68,7 @@ class ShoppingUI extends HookWidget {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 20, bottom: 30),
+          padding: const .only(top: 20, bottom: 30),
           child: Row(
             children: bottomNavIconList.mapIndexed((index, item) {
               return Expanded(

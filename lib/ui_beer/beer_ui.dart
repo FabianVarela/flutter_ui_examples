@@ -55,25 +55,25 @@ class BeerUI extends HookWidget {
         ),
         title: Text(
           'Welcome, Fabián',
-          textAlign: TextAlign.center,
+          textAlign: .center,
           style: GoogleFonts.montserrat(
             color: Colors.black,
             fontSize: 20,
-            fontWeight: FontWeight.w300,
+            fontWeight: .w300,
           ),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(right: 10),
-            child: SizedBox.fromSize(
-              size: const Size(36, 36),
-              child: Assets.images.beer.profile.image(fit: BoxFit.contain),
+            padding: const .only(right: 10),
+            child: SizedBox.square(
+              dimension: 36,
+              child: Assets.images.beer.profile.image(fit: .contain),
             ),
           ),
         ],
       ),
       body: Stack(
-        clipBehavior: Clip.none,
+        clipBehavior: .none,
         children: <Widget>[
           Hero(
             tag: '${beers[currentIndex.value].name}_tag',
@@ -109,13 +109,13 @@ class BeerUI extends HookWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(50, 10, 50, 30),
+                  padding: const .fromLTRB(50, 10, 50, 30),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(width, 50),
                       backgroundColor: Colors.blueAccent,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: .circular(10),
                       ),
                     ),
                     onPressed: () {},

@@ -17,16 +17,16 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        width: double.maxFinite,
-        height: double.maxFinite,
+        width: .maxFinite,
+        height: .maxFinite,
         color: Colors.blueGrey,
-        padding: const EdgeInsets.all(8),
+        padding: const .all(8),
         child: AnimatedOpacity(
           duration: const Duration(milliseconds: 500),
           opacity: isShowing ? 1 : 0,
           child: Center(
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisSize: .min,
               children: <Widget>[
                 _MenuItem(
                   text: 'Shopping UI',

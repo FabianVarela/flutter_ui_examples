@@ -27,12 +27,12 @@ class AdidasUI extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: .infinity,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: <Color>[Color(0xFF696D77), Color(0xFF292C36)],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+          begin: .topCenter,
+          end: .bottomCenter,
         ),
       ),
       child: Scaffold(
@@ -49,7 +49,7 @@ class AdidasUI extends StatelessWidget {
             style: GoogleFonts.montserrat(
               color: Colors.white,
               fontSize: 20,
-              fontWeight: FontWeight.w900,
+              fontWeight: .w900,
             ),
           ),
           centerTitle: true,
@@ -61,26 +61,26 @@ class AdidasUI extends StatelessWidget {
           ],
         ),
         body: SingleChildScrollView(
-          padding: const EdgeInsets.only(bottom: 30),
+          padding: const .only(bottom: 30),
           child: Column(
             children: <Widget>[
               _TopSection(image: adidasModel.image, rating: adidasModel.rating),
               Container(
-                width: double.infinity,
-                padding: const EdgeInsets.only(top: 10),
+                width: .infinity,
+                padding: const .only(top: 10),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: .start,
                   children: <Widget>[
                     _AdidasDescription(description: adidasModel.description),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(15, 0, 15, 10),
+                      padding: const .fromLTRB(15, 0, 15, 10),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: .spaceBetween,
                         children: <Widget>[
                           _SizeSection(sizes: adidasModel.sizes),
                           const Expanded(
                             child: Align(
-                              alignment: Alignment.centerRight,
+                              alignment: .centerRight,
                               child: _QuantitySection(),
                             ),
                           ),

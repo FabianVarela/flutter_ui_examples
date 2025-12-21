@@ -6,7 +6,7 @@ class _BackgroundImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: .end,
       children: <Widget>[
         const Gap(20),
         Assets.images.login.loginImage01.image(),

@@ -16,10 +16,10 @@ class IceCreamCircleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
-      child: SizedBox.fromSize(
-        size: const Size(28, 28),
+      child: SizedBox.square(
+        dimension: 28,
         child: DecoratedBox(
-          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+          decoration: BoxDecoration(color: color, shape: .circle),
           child: Align(child: child),
         ),
       ),

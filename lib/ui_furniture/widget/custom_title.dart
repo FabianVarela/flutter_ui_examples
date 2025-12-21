@@ -9,21 +9,15 @@ class _CustomTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
       children: <Widget>[
         Text(
           title,
-          style: GoogleFonts.montserrat(
-            fontSize: 20,
-            fontWeight: FontWeight.w900,
-          ),
+          style: GoogleFonts.montserrat(fontSize: 20, fontWeight: .w900),
         ),
         Text(
           subtitle,
-          style: GoogleFonts.montserrat(
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
+          style: GoogleFonts.montserrat(fontSize: 16, fontWeight: .w500),
         ),
       ],
     );

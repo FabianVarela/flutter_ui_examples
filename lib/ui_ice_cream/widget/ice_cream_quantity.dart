@@ -23,32 +23,32 @@ class IceCreamQuantity extends HookWidget {
     final currentSize = useState(sizes.first);
 
     return Stack(
-      clipBehavior: Clip.none,
-      alignment: Alignment.center,
+      clipBehavior: .none,
+      alignment: .center,
       children: <Widget>[
         SizedBox.fromSize(
           size: Size(200, MediaQuery.sizeOf(context).height * .4),
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: const Color(0xFFfAD4DE),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: .circular(20),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(6),
+              padding: const .all(6),
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   color: const Color(0xFFF593AF),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: .circular(20),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const .symmetric(horizontal: 30),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: .min,
+                    mainAxisAlignment: .end,
+                    crossAxisAlignment: .start,
                     children: <Widget>[
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: .spaceBetween,
                         children: <Widget>[
                           for (final item in sizes)
                             IceCreamCircleButton(
@@ -62,7 +62,7 @@ class IceCreamQuantity extends HookWidget {
                                   fontSize: 20,
                                   color: Colors.white,
                                   fontFamily: FontFamily.museoSansCyrl,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: .w600,
                                 ),
                               ),
                             ),
@@ -75,7 +75,7 @@ class IceCreamQuantity extends HookWidget {
                           fontSize: 20,
                           color: Colors.white,
                           fontFamily: FontFamily.museoSansCyrl,
-                          fontWeight: FontWeight.w600,
+                          fontWeight: .w600,
                         ),
                       ),
                       const Gap(10),
@@ -94,11 +94,11 @@ class IceCreamQuantity extends HookWidget {
         Positioned(
           top: -40,
           child: SizedBox.fromSize(
-            size: const Size(180, 180),
+            size: const .square(180),
             child: Hero(
               tag: '${iceCream.name}_${iceCream.rate}',
               transitionOnUserGestures: true,
-              child: Image.asset(iceCream.image, fit: BoxFit.contain),
+              child: Image.asset(iceCream.image, fit: .contain),
             ),
           ),
         ),
@@ -118,12 +118,12 @@ class _QuantityButtons extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: const Color(0xFFfAD4DE),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: .circular(12),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const .symmetric(horizontal: 16, vertical: 10),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: .spaceBetween,
           children: <Widget>[
             IceCreamCircleButton(
               onPressed: quantity > 1
@@ -137,7 +137,7 @@ class _QuantityButtons extends StatelessWidget {
                 fontSize: 22,
                 color: Color(0xFFF01359),
                 fontFamily: FontFamily.museoSansCyrl,
-                fontWeight: FontWeight.w600,
+                fontWeight: .w600,
               ),
             ),
             IceCreamCircleButton(

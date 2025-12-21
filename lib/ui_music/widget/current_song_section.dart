@@ -14,17 +14,17 @@ class _CurrentSongSection extends HookWidget {
       children: <Widget>[
         Center(
           child: SizedBox.fromSize(
-            size: const Size(250, 250),
+            size: const .square(250),
             child: DecoratedBox(
               decoration: BoxDecoration(
                 color: const Color(0xFF4B9AD5).withValues(alpha: .5),
-                shape: BoxShape.circle,
+                shape: .circle,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12),
+                padding: const .all(12),
                 child: CircularSeekBar(
-                  width: double.infinity,
-                  height: double.infinity,
+                  width: .infinity,
+                  height: .infinity,
                   progressColor: const Color(0xFF4B9AD5),
                   trackColor: Colors.blue.withValues(alpha: .5),
                   barWidth: 5,
@@ -34,9 +34,9 @@ class _CurrentSongSection extends HookWidget {
                   valueNotifier: currentPercent,
                   child: Center(
                     child: SizedBox.fromSize(
-                      size: const Size(200, 200),
+                      size: const .square(200),
                       child: Padding(
-                        padding: const EdgeInsets.all(3),
+                        padding: const .all(3),
                         child: ClipOval(
                           clipper: MyClipper(),
                           child: Image.asset(music.image, fit: BoxFit.cover),

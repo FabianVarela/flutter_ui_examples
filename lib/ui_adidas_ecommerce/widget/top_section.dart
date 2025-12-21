@@ -9,27 +9,25 @@ class _TopSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
-      size: const Size(double.infinity, 300),
+      size: const Size.fromHeight(300),
       child: Stack(
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Image.asset(
-                image,
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.cover,
+              SizedBox.fromSize(
+                size: .infinite,
+                child: Image.asset(image, fit: .cover),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 60, right: 35),
+                padding: const .only(top: 60, right: 35),
                 child: Align(
-                  alignment: Alignment.topRight,
-                  child: SizedBox.fromSize(
-                    size: const Size(50, 50),
+                  alignment: .topRight,
+                  child: SizedBox.square(
+                    dimension: 50,
                     child: DecoratedBox(
                       decoration: const BoxDecoration(
                         color: Colors.black26,
-                        shape: BoxShape.circle,
+                        shape: .circle,
                       ),
                       child: Assets.images.adidas.a360.image(),
                     ),
@@ -42,21 +40,21 @@ class _TopSection extends StatelessWidget {
             left: 18,
             bottom: 15,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: .start,
               children: <Widget>[
                 Text(
                   'Rating',
                   style: GoogleFonts.montserrat(
                     color: const Color(0xFF949598),
                     fontSize: 14,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: .w500,
                   ),
                 ),
                 const Gap(8),
                 Row(
                   children: <Widget>[
                     const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      padding: .symmetric(horizontal: 8),
                       child: Icon(Icons.star, color: Color(0xFFFFE600)),
                     ),
                     Text(

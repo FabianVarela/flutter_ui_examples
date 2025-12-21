@@ -28,13 +28,13 @@ class IceCreamDetailUI extends HookWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const .symmetric(horizontal: 24),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: .start,
+            mainAxisAlignment: .spaceBetween,
             children: <Widget>[
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: .spaceBetween,
                 children: <Widget>[
                   IceCreamIconButton(
                     path: Assets.svg.iceCream.arrowRight,
@@ -51,7 +51,7 @@ class IceCreamDetailUI extends HookWidget {
               ),
               _IceCreamName(name: iceCream.name),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: .spaceBetween,
                 children: <Widget>[
                   _IceCreamDescription(iceCream: iceCream),
                   IceCreamQuantity(
@@ -87,7 +87,7 @@ class _IceCreamName extends StatelessWidget {
         fontSize: 30,
         color: Color(0xFFF593AF),
         fontFamily: FontFamily.ritts,
-        fontWeight: FontWeight.bold,
+        fontWeight: .bold,
       ),
     );
   }
@@ -109,8 +109,8 @@ class _IceCreamDescription extends StatelessWidget {
     ];
 
     return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: .min,
+      crossAxisAlignment: .start,
       children: <Widget>[
         for (final (index, item) in descriptionList.indexed) ...[
           RichText(
@@ -120,7 +120,7 @@ class _IceCreamDescription extends StatelessWidget {
                 fontSize: 20,
                 color: Color(0xFFF11359),
                 fontFamily: FontFamily.museoSansCyrl,
-                fontWeight: FontWeight.w600,
+                fontWeight: .w600,
               ),
               children: <TextSpan>[
                 TextSpan(
@@ -129,7 +129,7 @@ class _IceCreamDescription extends StatelessWidget {
                     fontSize: 12,
                     color: Color(0xFFF11359),
                     fontFamily: FontFamily.museoSansCyrl,
-                    fontWeight: FontWeight.w300,
+                    fontWeight: .w300,
                   ),
                 ),
               ],
@@ -141,7 +141,7 @@ class _IceCreamDescription extends StatelessWidget {
               fontSize: 12,
               color: Colors.grey,
               fontFamily: FontFamily.museoSansCyrl,
-              fontWeight: FontWeight.w300,
+              fontWeight: .w300,
             ),
           ),
           if (index <= descriptionList.length - 1) const Gap(20),
@@ -159,8 +159,8 @@ class _IceCreamTotal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: .min,
+      crossAxisAlignment: .start,
       children: <Widget>[
         const Text(
           'Total:',
@@ -168,7 +168,7 @@ class _IceCreamTotal extends StatelessWidget {
             fontSize: 28,
             color: Colors.grey,
             fontFamily: FontFamily.museoSansCyrl,
-            fontWeight: FontWeight.w300,
+            fontWeight: .w300,
           ),
         ),
         Text(
@@ -177,7 +177,7 @@ class _IceCreamTotal extends StatelessWidget {
             fontSize: 30,
             color: Color(0xFFF11359),
             fontFamily: FontFamily.museoSansCyrl,
-            fontWeight: FontWeight.w600,
+            fontWeight: .w600,
           ),
         ),
       ],

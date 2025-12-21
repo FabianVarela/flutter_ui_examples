@@ -13,15 +13,15 @@ class _CustomButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        padding: const EdgeInsets.symmetric(vertical: 15),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        padding: const .symmetric(vertical: 15),
+        shape: RoundedRectangleBorder(borderRadius: .circular(10)),
       ),
       child: Text(
         text,
         style: const TextStyle(
           fontSize: 14,
           fontFamily: FontFamily.avenirLTStd,
-          fontWeight: FontWeight.w700,
+          fontWeight: .w700,
         ),
       ),
     );

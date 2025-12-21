@@ -17,23 +17,20 @@ class IceCreamItem extends StatelessWidget {
     return SizedBox(
       height: 120,
       child: Stack(
-        alignment: Alignment.center,
+        alignment: .center,
         children: <Widget>[
           InkWell(
             onTap: onPress,
             child: Card(
               elevation: 8,
-              margin: const EdgeInsets.only(right: 10),
+              margin: const .only(right: 10),
               color: iceCream.background,
               child: Container(
                 width: MediaQuery.sizeOf(context).width,
-                padding: const EdgeInsets.symmetric(
-                  vertical: 4,
-                  horizontal: 16,
-                ),
+                padding: const .symmetric(vertical: 4, horizontal: 16),
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: .min,
+                  crossAxisAlignment: .start,
                   children: <Widget>[
                     Text(
                       iceCream.name,
@@ -41,7 +38,7 @@ class IceCreamItem extends StatelessWidget {
                         fontSize: 20,
                         color: foreground,
                         fontFamily: FontFamily.museoSansCyrl,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: .w700,
                       ),
                     ),
                     const Gap(4),
@@ -54,7 +51,7 @@ class IceCreamItem extends StatelessWidget {
                               fontSize: 18,
                               color: Color(0xFFFFFFFF),
                               fontFamily: FontFamily.museoSansCyrl,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: .w600,
                             ),
                           ),
                         ),
@@ -83,11 +80,11 @@ class IceCreamItem extends StatelessWidget {
           Positioned(
             right: -10,
             child: SizedBox.fromSize(
-              size: const Size(130, 130),
+              size: const .square(130),
               child: Hero(
                 tag: '${iceCream.name}_${iceCream.rate}',
                 transitionOnUserGestures: true,
-                child: Image.asset(iceCream.image, fit: BoxFit.contain),
+                child: Image.asset(iceCream.image, fit: .contain),
               ),
             ),
           ),

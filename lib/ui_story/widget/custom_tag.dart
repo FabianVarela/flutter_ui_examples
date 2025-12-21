@@ -14,19 +14,17 @@ class _CustomTag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20),
+      padding: const .only(left: 20),
       child: Row(
         spacing: 15,
         children: <Widget>[
           ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              minimumSize: Size.zero,
+              minimumSize: .zero,
               backgroundColor: tagColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 6),
+              shape: RoundedRectangleBorder(borderRadius: .circular(20)),
+              padding: const .symmetric(horizontal: 22, vertical: 6),
             ),
             child: Text(title, style: GoogleFonts.ubuntu(color: Colors.white)),
           ),

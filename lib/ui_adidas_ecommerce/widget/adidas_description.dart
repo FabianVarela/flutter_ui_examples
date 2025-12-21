@@ -10,21 +10,21 @@ class _AdidasDescription extends HookWidget {
     final isExpanded = useState(false);
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: .start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 18, bottom: 8),
+          padding: const .only(left: 18, bottom: 8),
           child: Text(
             'Product Description',
             style: GoogleFonts.montserrat(
               color: const Color(0xFF949598),
               fontSize: 14,
-              fontWeight: FontWeight.w600,
+              fontWeight: .w600,
             ),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 26, right: 18),
+          padding: const .only(left: 26, right: 18),
           child: AnimatedCrossFade(
             firstChild: Text(
               description,
@@ -32,7 +32,7 @@ class _AdidasDescription extends HookWidget {
               style: GoogleFonts.montserrat(
                 color: Colors.white,
                 fontSize: 14,
-                fontWeight: FontWeight.w500,
+                fontWeight: .w500,
               ),
             ),
             secondChild: Text(
@@ -40,23 +40,21 @@ class _AdidasDescription extends HookWidget {
               style: GoogleFonts.montserrat(
                 color: Colors.white,
                 fontSize: 14,
-                fontWeight: FontWeight.w500,
+                fontWeight: .w500,
               ),
             ),
-            crossFadeState: isExpanded.value
-                ? CrossFadeState.showSecond
-                : CrossFadeState.showFirst,
+            crossFadeState: isExpanded.value ? .showSecond : .showFirst,
             duration: kThemeAnimationDuration,
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 26, right: 18, bottom: 12),
+          padding: const .only(left: 26, right: 18, bottom: 12),
           child: GestureDetector(
             child: Text(
               isExpanded.value ? 'less' : 'more...',
               style: GoogleFonts.montserrat(
                 color: const Color(0xFFFB382F),
-                fontWeight: FontWeight.w700,
+                fontWeight: .w700,
               ),
             ),
             onTap: () => isExpanded.value = !isExpanded.value,
