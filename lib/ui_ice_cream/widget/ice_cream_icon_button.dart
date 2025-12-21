@@ -4,10 +4,10 @@ import 'package:vector_graphics/vector_graphics.dart';
 class IceCreamIconButton extends StatelessWidget {
   const IceCreamIconButton({
     required this.path,
-    this.size = const Size(40, 40),
+    this.size = const .square(40),
     this.backgroundColor = Colors.white,
     this.foregroundColor = Colors.black,
-    this.padding = const EdgeInsets.all(8),
+    this.padding = const .all(8),
     this.onPress,
     super.key,
   });

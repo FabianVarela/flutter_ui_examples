@@ -68,7 +68,7 @@ class _BeerHeaderState extends State<BeerHeader> with TickerProviderStateMixin {
         child: Stack(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 130, left: 40, right: 20),
+              padding: const .only(top: 130, left: 40, right: 20),
               child: AnimatedDefaultTextStyle(
                 curve: Curves.fastOutSlowIn,
                 duration: const Duration(seconds: 1),

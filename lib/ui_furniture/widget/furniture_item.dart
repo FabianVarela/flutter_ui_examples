@@ -46,7 +46,7 @@ class _FurnitureItem extends StatelessWidget {
               children: <Widget>[
                 Image.asset(image, width: 172, height: 199),
                 Padding(
-                  padding: const EdgeInsets.all(12),
+                  padding: const .all(12),
                   child: Column(
                     crossAxisAlignment: .start,
                     children: <Widget>[
