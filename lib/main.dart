@@ -18,6 +18,7 @@ import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/sneaky_ui.dart';
 import 'package:flutter_ui_examples/ui_story/story_ui.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming_ui.dart';
+import 'package:flutter_ui_examples/ui_switch/switch_ui.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,6 +70,7 @@ class _MyAppState extends State<MyApp> {
             '/ice_cream' => const IceCreamUI(),
             '/ice_cream_main' => IceCreamMainUI(onPressedMenu: _openDrawer),
             '/ice_cream_detail' => _goToIceCreamScreen(settings.arguments),
+            '/switch' => SwitchUI(onPressedMenu: _openDrawer),
             '/' || _ => const OnBoardingUI(),
           },
         ),

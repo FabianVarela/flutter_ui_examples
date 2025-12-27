@@ -64,6 +64,10 @@ class CustomDrawer extends StatelessWidget {
                   text: 'Ice Cream UI',
                   onTap: () => _redirectTo(context, '/ice_cream'),
                 ),
+                _MenuItem(
+                  text: 'Switch Demo',
+                  onTap: () => _redirectTo(context, '/switch'),
+                ),
               ],
             ),
           ),
