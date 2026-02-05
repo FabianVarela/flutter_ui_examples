@@ -46,10 +46,10 @@ class _CustomHiddenMenuState extends State<CustomHiddenMenu>
     _controller
       ..duration = const Duration(milliseconds: 500)
       ..addListener(() => _value = _curve.transform(_controller.value))
-      ..addStatusListener((AnimationStatus status) {
-        if (status == AnimationStatus.dismissed) {
+      ..addStatusListener((status) {
+        if (status == .dismissed) {
           _value = 0.0;
-        } else if (status == AnimationStatus.completed) {
+        } else if (status == .completed) {
           _value = 1.0;
         }
       });

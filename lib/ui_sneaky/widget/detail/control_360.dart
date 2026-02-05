@@ -46,7 +46,7 @@ class _Control360State extends State<_Control360> {
             _AllowMultipleGestures:
                 GestureRecognizerFactoryWithHandlers<_AllowMultipleGestures>(
                   _AllowMultipleGestures.new,
-                  (_AllowMultipleGestures instance) {
+                  (instance) {
                     instance
                       ..onStart = (details) {
                         _onPanStart(details, widget.size, width);
