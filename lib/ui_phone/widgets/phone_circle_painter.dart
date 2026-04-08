@@ -95,20 +95,53 @@ class _RotaryDialPainter extends CustomPainter {
     final startRad = _deg2rad(_kWhiteArcStartDeg - 90);
     final sweepRad = _deg2rad(_kWhiteArcSweepDeg);
 
+    // Grosor del arco
+    final thickness = dialR * 0.998 - innerR * 1.050;
+
     final arcPath = Path()
       ..arcTo(
         Rect.fromCircle(center: c, radius: dialR * 0.998),
         startRad,
         sweepRad,
         false,
-      )
-      ..arcTo(
-        Rect.fromCircle(center: c, radius: innerR * 1.050),
-        startRad + sweepRad,
-        -sweepRad,
-        false,
-      )
-      ..close();
+      );
+
+    // Extremo derecho (semicírculo curvo)
+    final endAngle = startRad + sweepRad;
+    final endCenter = Offset(
+      c.dx + ((dialR * 0.998 + innerR * 1.050) / 2) * math.cos(endAngle),
+      c.dy + ((dialR * 0.998 + innerR * 1.050) / 2) * math.sin(endAngle),
+    );
+
+    arcPath.arcTo(
+      Rect.fromCircle(center: endCenter, radius: thickness / 2),
+      endAngle - math.pi / 2,
+      math.pi,
+      false,
+    );
+
+    // Arco interior (regreso)
+    arcPath.arcTo(
+      Rect.fromCircle(center: c, radius: innerR * 1.050),
+      startRad + sweepRad,
+      -sweepRad,
+      false,
+    );
+
+    // Extremo izquierdo (semicírculo curvo)
+    final startCenter = Offset(
+      c.dx + ((dialR * 0.998 + innerR * 1.050) / 2) * math.cos(startRad),
+      c.dy + ((dialR * 0.998 + innerR * 1.050) / 2) * math.sin(startRad),
+    );
+
+    arcPath.arcTo(
+      Rect.fromCircle(center: startCenter, radius: thickness / 2),
+      startRad + math.pi / 2,
+      math.pi,
+      false,
+    );
+
+    arcPath.close();
 
     for (final e in _kDigitAngleDeg.entries) {
       final rad = _deg2rad(e.value - 90);
@@ -136,32 +169,12 @@ class _RotaryDialPainter extends CustomPainter {
         stroke,
       )
       ..drawArc(
-        Rect.fromCircle(center: c, radius: innerR * 1.002),
+        Rect.fromCircle(center: c, radius: innerR * 1.050),
         startRad,
         sweepRad,
         false,
         stroke,
       );
-
-    final arcDegList = [
-      _kWhiteArcStartDeg,
-      _kWhiteArcStartDeg + _kWhiteArcSweepDeg,
-    ];
-
-    for (final deg in arcDegList) {
-      final rad = _deg2rad(deg - 90);
-      canvas.drawLine(
-        Offset(
-          c.dx + innerR * 1.002 * math.cos(rad),
-          c.dy + innerR * 1.002 * math.sin(rad),
-        ),
-        Offset(
-          c.dx + dialR * 0.998 * math.cos(rad),
-          c.dy + dialR * 0.998 * math.sin(rad),
-        ),
-        stroke,
-      );
-    }
   }
 
   @override
