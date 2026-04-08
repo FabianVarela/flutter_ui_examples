@@ -1,5 +1,12 @@
+import 'dart:async';
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_examples/ui_phone/dial_widget.dart';
+import 'package:flutter/services.dart';
+
+part 'widgets/dial_widget.dart';
+
+part 'widgets/phone_circle_painter.dart';
 
 class PhoneUI extends StatelessWidget {
   const PhoneUI({required this.onPressedMenu, super.key});
@@ -8,11 +15,7 @@ class PhoneUI extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const RotaryPasscodeScreen();
-
-    /*
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -24,8 +27,15 @@ class PhoneUI extends StatelessWidget {
           ),
         ),
       ),
-      body: const PhoneRingDial(),
+      body: SafeArea(
+        child: RotaryPasscodeWidget(
+          passcode: '1234',
+          onSuccess: () => ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('✓ Acceso concedido')),
+          ),
+          onFailure: () {},
+        ),
+      ),
     );
-    */
   }
 }
