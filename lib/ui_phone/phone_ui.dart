@@ -31,9 +31,17 @@ class PhoneUI extends StatelessWidget {
         child: RotaryPasscodeWidget(
           passcode: '1234',
           onSuccess: () => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('✓ Acceso concedido')),
+            const SnackBar(
+              content: Text('✓ Access granted'),
+              backgroundColor: Colors.lightGreen,
+            ),
           ),
-          onFailure: () {},
+          onFailure: () => ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('✓ Access denied'),
+              backgroundColor: Colors.redAccent,
+            ),
+          ),
         ),
       ),
     );
