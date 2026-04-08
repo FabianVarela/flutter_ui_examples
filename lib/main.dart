@@ -13,6 +13,7 @@ import 'package:flutter_ui_examples/ui_ice_cream/ice_cream_ui.dart';
 import 'package:flutter_ui_examples/ui_login/login_ui.dart';
 import 'package:flutter_ui_examples/ui_music/music_ui.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/on_boarding_ui.dart';
+import 'package:flutter_ui_examples/ui_phone/phone_ui.dart';
 import 'package:flutter_ui_examples/ui_shopping/shopping_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/sneaky_ui.dart';
@@ -71,6 +72,7 @@ class _MyAppState extends State<MyApp> {
             '/ice_cream_main' => IceCreamMainUI(onPressedMenu: _openDrawer),
             '/ice_cream_detail' => _goToIceCreamScreen(settings.arguments),
             '/switch' => SwitchUI(onPressedMenu: _openDrawer),
+            '/phone' => PhoneUI(onPressedMenu: _openDrawer),
             '/' || _ => const OnBoardingUI(),
           },
         ),
