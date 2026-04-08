@@ -2,10 +2,10 @@ part of '../phone_ui.dart';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Layers (bottom → top):
-//  [A] Borde exterior                     — static
-//  [B] Dona negra + números               — static
-//  [C] Pin blanco                         — static
-//  [D] Arco blanco con huecos             — ROTATE
+//  [A] Outer border                     — static
+//  [B] Black donut + numbers            — static
+//  [C] White pin                        — static
+//  [D] White arc with gaps              — ROTATE
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _RotaryDialPainter extends CustomPainter {
@@ -95,53 +95,54 @@ class _RotaryDialPainter extends CustomPainter {
     final startRad = _deg2rad(_kWhiteArcStartDeg - 90);
     final sweepRad = _deg2rad(_kWhiteArcSweepDeg);
 
-    // Grosor del arco
-    final thickness = dialR * 0.998 - innerR * 1.050;
+    final outerR = dialR * 0.998;
+    final innerRadiusArc = innerR * 1.050;
+
+    final thickness = outerR - innerRadiusArc;
+    final midRadius = (outerR + innerRadiusArc) / 2;
+    final capRadius = thickness / 2;
 
     final arcPath = Path()
       ..arcTo(
-        Rect.fromCircle(center: c, radius: dialR * 0.998),
+        Rect.fromCircle(center: c, radius: outerR),
         startRad,
         sweepRad,
         false,
       );
 
-    // Extremo derecho (semicírculo curvo)
     final endAngle = startRad + sweepRad;
     final endCenter = Offset(
-      c.dx + ((dialR * 0.998 + innerR * 1.050) / 2) * math.cos(endAngle),
-      c.dy + ((dialR * 0.998 + innerR * 1.050) / 2) * math.sin(endAngle),
+      c.dx + midRadius * math.cos(endAngle),
+      c.dy + midRadius * math.sin(endAngle),
     );
 
-    arcPath.arcTo(
-      Rect.fromCircle(center: endCenter, radius: thickness / 2),
-      endAngle - math.pi / 2,
-      math.pi,
-      false,
-    );
+    arcPath
+      ..arcTo(
+        Rect.fromCircle(center: endCenter, radius: capRadius),
+        endAngle,
+        math.pi,
+        false,
+      )
+      ..arcTo(
+        Rect.fromCircle(center: c, radius: innerRadiusArc),
+        endAngle,
+        -sweepRad,
+        false,
+      );
 
-    // Arco interior (regreso)
-    arcPath.arcTo(
-      Rect.fromCircle(center: c, radius: innerR * 1.050),
-      startRad + sweepRad,
-      -sweepRad,
-      false,
-    );
-
-    // Extremo izquierdo (semicírculo curvo)
     final startCenter = Offset(
-      c.dx + ((dialR * 0.998 + innerR * 1.050) / 2) * math.cos(startRad),
-      c.dy + ((dialR * 0.998 + innerR * 1.050) / 2) * math.sin(startRad),
+      c.dx + midRadius * math.cos(startRad),
+      c.dy + midRadius * math.sin(startRad),
     );
 
-    arcPath.arcTo(
-      Rect.fromCircle(center: startCenter, radius: thickness / 2),
-      startRad + math.pi / 2,
-      math.pi,
-      false,
-    );
-
-    arcPath.close();
+    arcPath
+      ..arcTo(
+        Rect.fromCircle(center: startCenter, radius: capRadius),
+        startRad + math.pi,
+        math.pi,
+        false,
+      )
+      ..close();
 
     for (final e in _kDigitAngleDeg.entries) {
       final rad = _deg2rad(e.value - 90);
