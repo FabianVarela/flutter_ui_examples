@@ -72,6 +72,10 @@ class CustomDrawer extends StatelessWidget {
                   text: 'Phone UI',
                   onTap: () => _redirectTo(context, '/phone'),
                 ),
+                _MenuItem(
+                  text: 'Upload animation UI',
+                  onTap: () => _redirectTo(context, '/upload'),
+                ),
               ],
             ),
           ),
