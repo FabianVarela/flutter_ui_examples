@@ -114,7 +114,11 @@ lib/
 ├── ui_streaming/               # Video streaming UI
 │   ├── model/
 │   └── widget/
-└── ui_switch/                  # Custom switch widgets
+├── ui_phone/                   # Phone dialer UI
+│   └── widget/
+├── ui_switch/                  # Custom switch widgets
+│   └── widget/
+└── ui_upload/                  # Upload progress UI
     └── widget/
 assets/
 ├── fonts/                      # Custom fonts
@@ -263,6 +267,24 @@ assets/
     - Custom designs
     - Interactive toggles
     - Reusable components
+
+### 13. Phone Dialer
+
+- **Description**: Modern phone dialer interface
+- **Features**:
+    - Numeric keypad
+    - Call button with animation
+    - Contact display
+    - Clean, minimal layout
+
+### 14. Upload Progress
+
+- **Description**: File upload flow with animated step progress
+- **Features**:
+    - Stepper and bar progress styles
+    - Step states: pending, active, completed, error
+    - Outlined circle indicators with checkmarks
+    - Simulated upload with random error handling
 
 ## Features
 
