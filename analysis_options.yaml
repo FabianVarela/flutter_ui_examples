@@ -9,6 +9,3 @@ linter:
     library_private_types_in_public_api: false
     public_member_api_docs: false
     specify_nonobvious_property_types: false
-
-formatter:
-  trailing_commas: preserve
