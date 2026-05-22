@@ -16,10 +16,10 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.blueGrey,
       child: Container(
         width: .maxFinite,
         height: .maxFinite,
-        color: Colors.blueGrey,
         padding: const .all(8),
         child: AnimatedOpacity(
           duration: const Duration(milliseconds: 500),
