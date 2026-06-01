@@ -716,10 +716,10 @@ packages:
     dependency: "direct dev"
     description:
       name: vector_graphics_compiler
-      sha256: "09854c7633b215e6f7bb2a9adb607bc525bae8655c7fc29db880c33e62f72230"
+      sha256: "7ee12e6dffe0fc8e755179d6d91b3b34f5924223fc104d85572ef9180d73d172"
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.4"
+    version: "1.2.5"
   vector_math:
     dependency: "direct main"
     description:
