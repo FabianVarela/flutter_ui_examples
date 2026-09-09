@@ -27,7 +27,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   vector_graphics_compiler: ^1.2.3
-  very_good_analysis: ^10.2.0
+  very_good_analysis: ">=10.2.0 <12.0.0"
 
 flutter_gen:
   output: lib/common/gen/
