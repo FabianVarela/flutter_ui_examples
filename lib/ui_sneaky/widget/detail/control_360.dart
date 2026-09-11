@@ -8,7 +8,7 @@ num _degToRad(num deg) => deg * (pi / 180.0);
 num _radToDeg(num rad) => rad * (180.0 / pi);
 
 class _Control360 extends StatefulWidget {
-  const _Control360({
+  const new({
     required this.onChangeValue,
     this.size = 200,
     this.value = 0,
@@ -154,7 +154,7 @@ class _AllowMultipleGestures extends PanGestureRecognizer {
 }
 
 class _CircularPainter extends CustomPainter {
-  _CircularPainter({
+  new({
     required this.value,
     required this.width,
     required this.backgroundColor,

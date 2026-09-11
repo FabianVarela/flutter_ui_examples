@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class IceCreamModel {
-  IceCreamModel({
+  new({
     required this.name,
     required this.price,
     required this.rate,

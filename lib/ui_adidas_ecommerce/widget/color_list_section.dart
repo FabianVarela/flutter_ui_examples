@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
 class _ColorListSection extends HookWidget {
-  const _ColorListSection({required this.colors});
+  const new({required this.colors});
 
   final List<Color> colors;
 

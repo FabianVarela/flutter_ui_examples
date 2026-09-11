@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
@@ -7,9 +6,10 @@ import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_item.dart';
 import 'package:gap/gap.dart';
+import 'package:material_ui/material_ui.dart';
 
 class IceCreamMainUI extends StatelessWidget {
-  const IceCreamMainUI({required this.onPressedMenu, super.key});
+  const new({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
@@ -34,7 +34,7 @@ class IceCreamMainUI extends StatelessWidget {
 }
 
 class _Header extends StatelessWidget {
-  const _Header({this.onPressMenu});
+  const new({this.onPressMenu});
 
   final VoidCallback? onPressMenu;
 
@@ -106,7 +106,7 @@ class _Header extends StatelessWidget {
 }
 
 class _Options extends HookWidget {
-  const _Options();
+  const new();
 
   @override
   Widget build(BuildContext context) {
@@ -161,7 +161,7 @@ class _Options extends HookWidget {
 }
 
 class _Popular extends StatelessWidget {
-  const _Popular();
+  const new();
 
   @override
   Widget build(BuildContext context) {

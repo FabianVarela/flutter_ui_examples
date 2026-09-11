@@ -6,7 +6,7 @@ part of '../story_ui.dart';
 double _cardAspectRatio = 12.0 / 16.0;
 
 class _CardScroll extends StatelessWidget {
-  const _CardScroll({
+  const new({
     required this.stories,
     required this.currentPage,
     this.padding = 20,
@@ -60,7 +60,7 @@ class _CardScroll extends StatelessWidget {
 }
 
 class _CardItem extends StatelessWidget {
-  const _CardItem({required this.image, required this.name});
+  const new({required this.image, required this.name});
 
   final String image;
   final String name;

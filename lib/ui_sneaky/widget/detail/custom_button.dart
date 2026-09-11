@@ -1,7 +1,7 @@
 part of '../../sneaky_detail_ui.dart';
 
 class _CustomButton extends StatelessWidget {
-  const _CustomButton({required this.text, required this.onPressed});
+  const new({required this.text, required this.onPressed});
 
   final String text;
   final VoidCallback? onPressed;

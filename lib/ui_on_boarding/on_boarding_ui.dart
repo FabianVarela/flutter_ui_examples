@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_on_boarding/model/page_model.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 part 'widget/on_boarding_item.dart';
@@ -11,7 +11,7 @@ part 'widget/on_boarding_item.dart';
 part 'widget/page_indicator.dart';
 
 class OnBoardingUI extends HookWidget {
-  const OnBoardingUI({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,9 +78,9 @@ class OnBoardingUI extends HookWidget {
                   child: FloatingActionButton(
                     backgroundColor: Colors.white,
                     child: const Icon(Icons.arrow_forward),
-                    onPressed: () => unawaited(
-                      Navigator.pushReplacementNamed(context, '/login'),
-                    ),
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
                   ),
                 ),
               ),

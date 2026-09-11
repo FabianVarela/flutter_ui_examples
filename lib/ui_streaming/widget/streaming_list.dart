@@ -1,7 +1,7 @@
 part of '../streaming_ui.dart';
 
 class _StreamingList extends StatelessWidget {
-  const _StreamingList({required this.streamingList, this.onSelectStream});
+  const new({required this.streamingList, this.onSelectStream});
 
   final List<StreamingModel> streamingList;
   final ValueSetter<StreamingModel>? onSelectStream;

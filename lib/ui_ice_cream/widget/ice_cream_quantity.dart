@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_circle_button.dart';
 import 'package:gap/gap.dart';
+import 'package:material_ui/material_ui.dart';
 
 class IceCreamQuantity extends HookWidget {
-  const IceCreamQuantity({
+  const new({
     required this.iceCream,
     required this.currentQuantity,
     this.onChanged,
@@ -108,7 +108,7 @@ class IceCreamQuantity extends HookWidget {
 }
 
 class _QuantityButtons extends StatelessWidget {
-  const _QuantityButtons({this.quantity = 0, this.onChanged});
+  const new({this.quantity = 0, this.onChanged});
 
   final int quantity;
   final ValueSetter<int>? onChanged;

@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/ui_upload/widget/upload_progress.dart';
+import 'package:material_ui/material_ui.dart';
 
 class UploadUI extends StatefulWidget {
-  const UploadUI({required this.onPressedMenu, super.key});
+  const new({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 

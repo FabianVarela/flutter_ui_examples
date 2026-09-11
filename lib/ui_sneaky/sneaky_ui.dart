@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
 import 'package:flutter_ui_examples/ui_sneaky/sneaky_detail_ui.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
 import 'package:gap/gap.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:uuid/uuid.dart';
 
 part 'widget/main/sneaky_item.dart';
 
 class SneakyUI extends StatelessWidget {
-  const SneakyUI({required this.onPressedMenu, super.key});
+  const new({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 

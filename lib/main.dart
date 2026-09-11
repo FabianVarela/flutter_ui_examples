@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_ui_examples/common/menu/custom_drawer.dart';
 import 'package:flutter_ui_examples/common/menu/custom_hidden_menu.dart';
@@ -21,6 +20,7 @@ import 'package:flutter_ui_examples/ui_story/story_ui.dart';
 import 'package:flutter_ui_examples/ui_streaming/streaming_ui.dart';
 import 'package:flutter_ui_examples/ui_switch/switch_ui.dart';
 import 'package:flutter_ui_examples/ui_upload/upload_ui.dart';
+import 'package:material_ui/material_ui.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +33,7 @@ Future<void> main() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const new({super.key});
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> {
           menu: CustomDrawer(
             isShowing: _isExpand,
             onRedirect: (route) {
-              unawaited(Navigator.of(buildContext).pushReplacementNamed(route));
+              Navigator.of(buildContext).pushReplacementNamed(route);
             },
             onCloseMenu: () => setState(() => _isExpand = false),
           ),

@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
+import 'package:material_ui/material_ui.dart';
 
 class AdidasModel {
-  AdidasModel({
+  new({
     required this.title,
     required this.image,
     required this.rating,
@@ -22,7 +22,7 @@ class AdidasModel {
 }
 
 class AdidasRating {
-  AdidasRating({required this.value, required this.voted});
+  new({required this.value, required this.voted});
 
   final double value;
   final int voted;

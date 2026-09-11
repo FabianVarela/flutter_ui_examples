@@ -1,7 +1,7 @@
 part of '../furniture_ui.dart';
 
 class _FurnitureItem extends StatelessWidget {
-  const _FurnitureItem({
+  const new({
     required this.image,
     required this.title,
     required this.price,

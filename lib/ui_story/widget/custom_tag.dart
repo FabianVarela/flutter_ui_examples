@@ -1,7 +1,7 @@
 part of '../story_ui.dart';
 
 class _CustomTag extends StatelessWidget {
-  const _CustomTag({
+  const new({
     required this.title,
     required this.message,
     required this.tagColor,

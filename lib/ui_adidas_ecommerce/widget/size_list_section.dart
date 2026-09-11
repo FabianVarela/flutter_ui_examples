@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
 class _SizeSection extends HookWidget {
-  const _SizeSection({required this.sizes});
+  const new({required this.sizes});
 
   final List<int> sizes;
 

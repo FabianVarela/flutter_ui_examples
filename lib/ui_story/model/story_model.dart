@@ -1,11 +1,7 @@
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class StoryModel {
-  StoryModel({
-    required this.image,
-    required this.name,
-    this.isFavorite = false,
-  });
+  new({required this.image, required this.name, this.isFavorite = false});
 
   final String image;
   final String name;

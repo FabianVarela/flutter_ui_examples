@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 enum ProgressStyle { stepper, bar }
 
@@ -13,7 +13,7 @@ const _kCircleSize = 24.0;
 const _kConnectorGap = 16.0;
 
 class UploadProgressWidget extends StatelessWidget {
-  const UploadProgressWidget({
+  const new({
     required this.progress,
     required this.currentStep,
     this.style = .stepper,
@@ -76,7 +76,7 @@ class UploadProgressWidget extends StatelessWidget {
 }
 
 class _UploadTitle extends StatelessWidget {
-  const _UploadTitle({required this.progress, this.errorStep});
+  const new({required this.progress, this.errorStep});
 
   final double progress;
   final ProcessStep? errorStep;
@@ -111,7 +111,7 @@ class _UploadTitle extends StatelessWidget {
 }
 
 class _UploadStepper extends StatelessWidget {
-  const _UploadStepper({
+  const new({
     required this.progress,
     required this.currentStep,
     this.errorStep,
@@ -182,7 +182,7 @@ class _UploadStepper extends StatelessWidget {
 }
 
 class _UploadLinear extends StatelessWidget {
-  const _UploadLinear({
+  const new({
     required this.progress,
     required this.currentStep,
     this.errorStep,
@@ -249,7 +249,7 @@ class _UploadLinear extends StatelessWidget {
 }
 
 class _UploadStep extends StatelessWidget {
-  const _UploadStep({
+  const new({
     required this.label,
     required this.step,
     required this.currentStep,

@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
 class IceCreamIconButton extends StatelessWidget {
-  const IceCreamIconButton({
+  const new({
     required this.path,
     this.size = const .square(40),
     this.backgroundColor = Colors.white,

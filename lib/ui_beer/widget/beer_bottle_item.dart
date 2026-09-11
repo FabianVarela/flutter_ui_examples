@@ -1,7 +1,7 @@
 part of '../beer_ui.dart';
 
 class BeerBottleItem extends StatelessWidget {
-  const BeerBottleItem({
+  const new({
     required this.beer,
     required this.pageController,
     this.index = 0,

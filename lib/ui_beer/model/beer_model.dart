@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
+import 'package:material_ui/material_ui.dart';
 
 class BeerModel {
-  BeerModel({
+  new({
     required this.name,
     required this.slogan,
     required this.description,

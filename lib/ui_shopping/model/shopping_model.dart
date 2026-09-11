@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class ShoppingModel {
-  ShoppingModel({
+  new({
     required this.image,
     required this.title,
     required this.originalPrice,

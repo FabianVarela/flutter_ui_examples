@@ -26,7 +26,7 @@ double _maxRotDeg(int digit) {
 }
 
 class RotaryPasscodeWidget extends StatefulWidget {
-  const RotaryPasscodeWidget({
+  const new({
     required this.passcode,
     this.onSuccess,
     this.onFailure,
@@ -190,9 +190,10 @@ class _RotaryPasscodeWidgetState extends State<RotaryPasscodeWidget>
     }
 
     _springFrom = _rotation;
-    _springCtrl.reset();
 
-    unawaited(_springCtrl.forward());
+    _springCtrl
+      ..reset()
+      ..forward();
   }
 
   void _registerDigit(int digit) {
@@ -302,11 +303,7 @@ class _RotaryPasscodeWidgetState extends State<RotaryPasscodeWidget>
 }
 
 class _DotsIndicator extends StatelessWidget {
-  const _DotsIndicator({
-    required this.total,
-    required this.filled,
-    required this.state,
-  });
+  const new({required this.total, required this.filled, required this.state});
 
   final int total;
   final int filled;

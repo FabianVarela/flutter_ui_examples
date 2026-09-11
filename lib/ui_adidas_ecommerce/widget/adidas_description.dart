@@ -1,7 +1,7 @@
 part of '../adidas_ui.dart';
 
 class _AdidasDescription extends HookWidget {
-  const _AdidasDescription({required this.description});
+  const new({required this.description});
 
   final String description;
 

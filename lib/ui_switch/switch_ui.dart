@@ -1,13 +1,13 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 part 'widget/switch_animation.dart';
 
 part 'widget/switch_circular_animation.dart';
 
 class SwitchUI extends StatelessWidget {
-  const SwitchUI({required this.onPressedMenu, super.key});
+  const new({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 
@@ -28,10 +28,7 @@ class SwitchUI extends StatelessWidget {
         child: Column(
           spacing: 50,
           mainAxisAlignment: .center,
-          children: <Widget>[
-            SwitchAnimation(),
-            SwitchCircularAnimation(),
-          ],
+          children: <Widget>[SwitchAnimation(), SwitchCircularAnimation()],
         ),
       ),
     );

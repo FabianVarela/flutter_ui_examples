@@ -2,12 +2,12 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_sneaky/model/sneaky_model.dart';
 import 'package:flutter_ui_examples/ui_sneaky/widget/custom_icon_button.dart';
 import 'package:gap/gap.dart';
+import 'package:material_ui/material_ui.dart';
 
 part 'widget/detail/control_360.dart';
 
@@ -18,14 +18,14 @@ part 'widget/detail/sneaky_color_list.dart';
 part 'widget/detail/sneaky_size_list.dart';
 
 class SneakyDetailArguments {
-  SneakyDetailArguments(this.sneaky, this.uuid);
+  new(this.sneaky, this.uuid);
 
   final Sneaky sneaky;
   final String uuid;
 }
 
 class SneakyDetailUI extends HookWidget {
-  const SneakyDetailUI({required this.sneaky, required this.uuid, super.key});
+  const new({required this.sneaky, required this.uuid, super.key});
 
   final Sneaky sneaky;
   final String uuid;

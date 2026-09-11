@@ -1,7 +1,7 @@
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class Furniture {
-  Furniture({required this.image, required this.title, required this.price});
+  new({required this.image, required this.title, required this.price});
 
   final String image;
   final String title;

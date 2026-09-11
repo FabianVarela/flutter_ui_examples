@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:vector_math/vector_math_64.dart' as vm;
 
 class CustomHiddenMenu extends StatefulWidget {
-  const CustomHiddenMenu({
+  const new({
     required this.menu,
     required this.child,
     this.isOpen = false,

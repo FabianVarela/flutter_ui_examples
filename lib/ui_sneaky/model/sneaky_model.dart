@@ -1,12 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SneakyCategory {
-  SneakyCategory({
-    required this.name,
-    required this.quantity,
-    required this.sneakyList,
-  });
+  new({required this.name, required this.quantity, required this.sneakyList});
 
   final String name;
   final int quantity;
@@ -14,7 +10,7 @@ class SneakyCategory {
 }
 
 class Sneaky {
-  Sneaky({
+  new({
     required this.image,
     required this.name,
     required this.description,
@@ -32,7 +28,7 @@ class Sneaky {
 }
 
 class SneakySize {
-  SneakySize({required this.size, this.isAvailable = false});
+  new({required this.size, this.isAvailable = false});
 
   final int size;
   final bool isAvailable;

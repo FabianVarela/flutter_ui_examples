@@ -1,7 +1,7 @@
 part of '../beer_ui.dart';
 
 class BeerDetailItem extends StatelessWidget {
-  const BeerDetailItem({required this.beer, super.key});
+  const new({required this.beer, super.key});
 
   final BeerModel beer;
 

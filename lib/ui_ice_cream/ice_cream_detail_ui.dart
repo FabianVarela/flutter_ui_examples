@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
@@ -7,15 +6,16 @@ import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_button.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_quantity.dart';
 import 'package:gap/gap.dart';
+import 'package:material_ui/material_ui.dart';
 
 class IceCreamDetailArguments {
-  IceCreamDetailArguments(this.iceCream);
+  new(this.iceCream);
 
   final IceCreamModel iceCream;
 }
 
 class IceCreamDetailUI extends HookWidget {
-  const IceCreamDetailUI({required this.iceCream, super.key});
+  const new({required this.iceCream, super.key});
 
   final IceCreamModel iceCream;
 
@@ -75,7 +75,7 @@ class IceCreamDetailUI extends HookWidget {
 }
 
 class _IceCreamName extends StatelessWidget {
-  const _IceCreamName({required this.name});
+  const new({required this.name});
 
   final String name;
 
@@ -94,7 +94,7 @@ class _IceCreamName extends StatelessWidget {
 }
 
 class _IceCreamDescription extends StatelessWidget {
-  const _IceCreamDescription({required this.iceCream});
+  const new({required this.iceCream});
 
   final IceCreamModel iceCream;
 
@@ -152,7 +152,7 @@ class _IceCreamDescription extends StatelessWidget {
 }
 
 class _IceCreamTotal extends StatelessWidget {
-  const _IceCreamTotal({required this.totalValue});
+  const new({required this.totalValue});
 
   final double totalValue;
 

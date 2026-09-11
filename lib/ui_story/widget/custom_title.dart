@@ -1,7 +1,7 @@
 part of '../story_ui.dart';
 
 class _CustomTitle extends StatelessWidget {
-  const _CustomTitle({required this.title});
+  const new({required this.title});
 
   final String title;
 

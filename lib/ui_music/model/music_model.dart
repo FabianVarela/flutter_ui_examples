@@ -1,7 +1,7 @@
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class MusicModel {
-  MusicModel({
+  new({
     required this.image,
     required this.song,
     required this.artist,

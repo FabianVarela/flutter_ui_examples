@@ -1,7 +1,7 @@
 part of '../furniture_ui.dart';
 
 class _GradientContainer extends StatelessWidget {
-  const _GradientContainer();
+  const new();
 
   @override
   Widget build(BuildContext context) {

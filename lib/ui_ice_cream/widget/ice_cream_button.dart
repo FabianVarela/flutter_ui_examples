@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
 class IceCreamButton extends StatelessWidget {
-  const IceCreamButton({required this.onPressed, super.key});
+  const new({required this.onPressed, super.key});
 
   final VoidCallback? onPressed;
 

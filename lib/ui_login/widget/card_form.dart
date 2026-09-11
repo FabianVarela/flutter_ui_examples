@@ -1,7 +1,7 @@
 part of '../login_ui.dart';
 
 class _CardForm extends StatelessWidget {
-  const _CardForm();
+  const new();
 
   @override
   Widget build(BuildContext context) {

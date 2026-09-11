@@ -1,7 +1,7 @@
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 
 class StreamingModel {
-  StreamingModel({required this.image, required this.title});
+  new({required this.image, required this.title});
 
   final String image;
   final String title;

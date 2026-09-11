@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
@@ -8,15 +7,14 @@ import 'package:flutter_ui_examples/ui_beer/model/beer_model.dart';
 import 'package:flutter_ui_examples/ui_beer/widget/clipper/my_clipper.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_ui/material_ui.dart';
 
 part 'widget/beer_bottle_item.dart';
-
 part 'widget/beer_detail_item.dart';
-
 part 'widget/beer_header.dart';
 
 class BeerUI extends HookWidget {
-  const BeerUI({required this.onPressedMenu, super.key});
+  const new({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 

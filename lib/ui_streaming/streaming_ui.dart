@@ -1,17 +1,17 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/ui_streaming/model/streaming_model.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_ui/material_ui.dart';
+
+part 'widget/clipper/streaming_clipper.dart';
 
 part 'widget/header_section.dart';
 
 part 'widget/streaming_list.dart';
 
-part 'widget/clipper/streaming_clipper.dart';
-
 class StreamingUI extends HookWidget {
-  const StreamingUI({required this.onPressedMenu, super.key});
+  const new({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 

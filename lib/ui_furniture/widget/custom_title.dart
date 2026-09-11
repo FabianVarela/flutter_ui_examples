@@ -1,7 +1,7 @@
 part of '../furniture_ui.dart';
 
 class _CustomTitle extends StatelessWidget {
-  const _CustomTitle({required this.title, required this.subtitle});
+  const new({required this.title, required this.subtitle});
 
   final String title;
   final String subtitle;

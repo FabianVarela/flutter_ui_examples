@@ -1,7 +1,7 @@
 part of '../login_ui.dart';
 
 class _SignInButtons extends HookWidget {
-  const _SignInButtons({required this.onSignIn});
+  const new({required this.onSignIn});
 
   final VoidCallback onSignIn;
 

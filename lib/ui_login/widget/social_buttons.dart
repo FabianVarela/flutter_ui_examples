@@ -1,7 +1,7 @@
 part of '../login_ui.dart';
 
 class _SocialButtons extends StatelessWidget {
-  const _SocialButtons();
+  const new();
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _SocialButtons extends StatelessWidget {
 }
 
 class _SocialIcons extends StatelessWidget {
-  const _SocialIcons({
+  const new({
     required this.colors,
     required this.iconPath,
     required this.onPressed,

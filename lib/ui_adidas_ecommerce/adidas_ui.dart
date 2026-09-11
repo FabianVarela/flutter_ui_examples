@@ -1,26 +1,20 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/ui_adidas_ecommerce/model/adidas_model.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_ui/material_ui.dart';
 
 part 'widget/adidas_description.dart';
-
+part 'widget/clipper/adidas_clipper.dart';
 part 'widget/color_list_section.dart';
-
 part 'widget/price_section.dart';
-
 part 'widget/quantity_section.dart';
-
 part 'widget/size_list_section.dart';
-
 part 'widget/top_section.dart';
 
-part 'widget/clipper/adidas_clipper.dart';
-
 class AdidasUI extends StatelessWidget {
-  const AdidasUI({required this.onPressedMenu, super.key});
+  const new({required this.onPressedMenu, super.key});
 
   final VoidCallback onPressedMenu;
 

@@ -1,7 +1,7 @@
 part of '../switch_ui.dart';
 
 class SwitchAnimation extends StatefulWidget {
-  const SwitchAnimation({
+  const new({
     this.initialValue = false,
     this.size = 150,
     this.onText = 'ON',
@@ -47,36 +47,35 @@ class _SwitchAnimationState extends State<SwitchAnimation>
         }
       });
 
-    _trapezeAnimation = TweenSequence<double>(
-      <TweenSequenceItem<double>>[
-        TweenSequenceItem(
-          tween: Tween<double>(begin: 0, end: 1).chain(
-            CurveTween(curve: Curves.linear),
-          ),
-          weight: 1,
-        ),
-        TweenSequenceItem(tween: ConstantTween(1), weight: 2),
-        TweenSequenceItem(
-          tween: Tween<double>(begin: 1, end: 0).chain(
-            CurveTween(curve: Curves.linear),
-          ),
-          weight: 1,
-        ),
-      ],
-    ).animate(_animationController);
+    _trapezeAnimation = TweenSequence<double>(<TweenSequenceItem<double>>[
+      TweenSequenceItem(
+        tween: Tween<double>(
+          begin: 0,
+          end: 1,
+        ).chain(CurveTween(curve: Curves.linear)),
+        weight: 1,
+      ),
+      TweenSequenceItem(tween: ConstantTween(1), weight: 2),
+      TweenSequenceItem(
+        tween: Tween<double>(
+          begin: 1,
+          end: 0,
+        ).chain(CurveTween(curve: Curves.linear)),
+        weight: 1,
+      ),
+    ]).animate(_animationController);
 
-    _pseudoLinearAnimation = TweenSequence<double>(
-      <TweenSequenceItem<double>>[
-        TweenSequenceItem(tween: ConstantTween(0), weight: 1),
-        TweenSequenceItem(
-          tween: Tween<double>(begin: 0, end: 1).chain(
-            CurveTween(curve: Curves.linear),
-          ),
-          weight: 2,
-        ),
-        TweenSequenceItem(tween: ConstantTween(1), weight: 1),
-      ],
-    ).animate(_animationController);
+    _pseudoLinearAnimation = TweenSequence<double>(<TweenSequenceItem<double>>[
+      TweenSequenceItem(tween: ConstantTween(0), weight: 1),
+      TweenSequenceItem(
+        tween: Tween<double>(
+          begin: 0,
+          end: 1,
+        ).chain(CurveTween(curve: Curves.linear)),
+        weight: 2,
+      ),
+      TweenSequenceItem(tween: ConstantTween(1), weight: 1),
+    ]).animate(_animationController);
   }
 
   @override

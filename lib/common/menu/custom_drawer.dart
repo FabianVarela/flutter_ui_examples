@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:material_ui/material_ui.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({
+  const new({
     required this.onRedirect,
     required this.onCloseMenu,
     this.isShowing = false,
@@ -91,7 +91,7 @@ class CustomDrawer extends StatelessWidget {
 }
 
 class _MenuItem extends StatelessWidget {
-  const _MenuItem({required this.text, required this.onTap});
+  const new({required this.text, required this.onTap});
 
   final String text;
   final VoidCallback onTap;

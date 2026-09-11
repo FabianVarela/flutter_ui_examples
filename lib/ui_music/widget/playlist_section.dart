@@ -1,7 +1,7 @@
 part of '../music_ui.dart';
 
 class _PlaylistSection extends StatelessWidget {
-  const _PlaylistSection({required this.musicList});
+  const new({required this.musicList});
 
   final List<MusicModel> musicList;
 
@@ -30,7 +30,7 @@ class _PlaylistSection extends StatelessWidget {
 }
 
 class _PlayListItem extends StatelessWidget {
-  const _PlayListItem({required this.music, this.index = 0});
+  const new({required this.music, this.index = 0});
 
   final MusicModel music;
   final int index;
@@ -80,7 +80,7 @@ class _PlayListItem extends StatelessWidget {
 enum _PaintedPosition { left, right }
 
 class _PaintedPositioned extends StatelessWidget {
-  const _PaintedPositioned({required this.position});
+  const new({required this.position});
 
   final _PaintedPosition position;
 

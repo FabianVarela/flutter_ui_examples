@@ -1,7 +1,7 @@
 part of '../beer_ui.dart';
 
 class BeerHeader extends StatefulWidget {
-  const BeerHeader({required this.index, super.key});
+  const new({required this.index, super.key});
 
   final int index;
 
@@ -33,11 +33,11 @@ class _BeerHeaderState extends State<BeerHeader> with TickerProviderStateMixin {
   @override
   void didUpdateWidget(covariant BeerHeader oldWidget) {
     if (oldWidget.index != widget.index) {
-      unawaited(_controller.forward());
+      _controller.forward();
 
       Future.delayed(const Duration(milliseconds: 800), () {
         setState(() => _imageIndex = widget.index);
-        unawaited(_controller.reverse());
+        _controller.reverse();
       });
     }
     super.didUpdateWidget(oldWidget);

@@ -1,7 +1,7 @@
 part of '../streaming_ui.dart';
 
 class _HeaderSection extends StatelessWidget {
-  const _HeaderSection({required this.image, required this.title});
+  const new({required this.image, required this.title});
 
   final String image;
   final String title;

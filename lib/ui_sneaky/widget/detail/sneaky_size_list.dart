@@ -1,7 +1,7 @@
 part of '../../sneaky_detail_ui.dart';
 
 class _SneakySizeList extends HookWidget {
-  const _SneakySizeList({required this.sizes});
+  const new({required this.sizes});
 
   final List<SneakySize> sizes;
 
@@ -39,7 +39,7 @@ class _SneakySizeList extends HookWidget {
 }
 
 class _SizeItem extends StatelessWidget {
-  const _SizeItem({required this.size, this.isSelected = false, this.onTap});
+  const new({required this.size, this.isSelected = false, this.onTap});
 
   final SneakySize size;
   final bool isSelected;

@@ -1,7 +1,7 @@
 part of '../music_ui.dart';
 
 class _ControlSection extends StatelessWidget {
-  const _ControlSection();
+  const new();
 
   @override
   Widget build(BuildContext context) {

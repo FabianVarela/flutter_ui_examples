@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/model/ice_cream_model.dart';
 import 'package:gap/gap.dart';
+import 'package:material_ui/material_ui.dart';
 
 class IceCreamItem extends StatelessWidget {
-  const IceCreamItem({required this.iceCream, this.onPress, super.key});
+  const new({required this.iceCream, this.onPress, super.key});
 
   final IceCreamModel iceCream;
   final VoidCallback? onPress;

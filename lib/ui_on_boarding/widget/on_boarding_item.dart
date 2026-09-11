@@ -1,7 +1,7 @@
 part of '../on_boarding_ui.dart';
 
 class _OnboardingItem extends StatelessWidget {
-  const _OnboardingItem({
+  const new({
     required this.pageModel,
     required this.pageController,
     this.index = 0,

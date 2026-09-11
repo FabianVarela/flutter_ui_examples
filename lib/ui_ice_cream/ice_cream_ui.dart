@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_ui_examples/common/gen/assets.gen.dart';
 import 'package:flutter_ui_examples/common/gen/fonts.gen.dart';
 import 'package:flutter_ui_examples/ui_ice_cream/widget/ice_cream_icon_button.dart';
+import 'package:material_ui/material_ui.dart';
 
 class IceCreamUI extends HookWidget {
-  const IceCreamUI({super.key});
+  const new({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +67,9 @@ class IceCreamUI extends HookWidget {
                   padding: const .all(12),
                   backgroundColor: const Color(0xFFF01359),
                   foregroundColor: const Color(0xFFFFFFFF),
-                  onPress: () => Navigator.of(
-                    context,
-                  ).pushReplacementNamed('/ice_cream_main'),
+                  onPress: () =>
+                      Navigator.of(context)
+                          .pushReplacementNamed('/ice_cream_main'),
                 ),
               ],
             ),

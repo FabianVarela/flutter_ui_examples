@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class IceCreamCircleButton extends StatelessWidget {
-  const IceCreamCircleButton({
+  const new({
     required this.child,
     this.color = Colors.transparent,
     this.onPressed,

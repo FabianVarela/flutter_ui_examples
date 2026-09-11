@@ -9,7 +9,7 @@ part of '../phone_ui.dart';
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _RotaryDialPainter extends CustomPainter {
-  const _RotaryDialPainter({required this.rotationRad, required this.vState});
+  const new({required this.rotationRad, required this.vState});
 
   final double rotationRad;
   final ValidationState vState;
