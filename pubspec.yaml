@@ -16,7 +16,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   gap: ^3.0.1
   google_fonts: ^8.2.1
-  material_ui: ^1.2.0
+  material_ui: ^1.4.0
   simple_gradient_text: ^1.4.0
   uuid: ^4.6.0
   vector_graphics: ^1.2.3
